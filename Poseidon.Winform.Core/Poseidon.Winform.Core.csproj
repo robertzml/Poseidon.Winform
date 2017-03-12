@@ -96,6 +96,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Control\UserGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UserGrid.Designer.cs">
+      <DependentUpon>UserGrid.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Poseidon.Winform.Base\Poseidon.Winform.Base.csproj">
@@ -119,6 +125,9 @@
     <EmbeddedResource Include="Control\OrganizationGrid.resx">
       <DependentUpon>OrganizationGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\UserGrid.resx">
+      <DependentUpon>UserGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -126,6 +135,7 @@
     <None Include="Properties\DataSources\Poseidon.Core.DL.DictItem.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Group.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Organization.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.User.datasource" />
     <None Include="Properties\DataSources\Poseidon.Winform.Core.Model.DictItem.datasource" />
     <None Include="Properties\licenses.licx" />
   </ItemGroup>

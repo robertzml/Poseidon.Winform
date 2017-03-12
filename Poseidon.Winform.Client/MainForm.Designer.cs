@@ -40,10 +40,11 @@
             this.bbiFund = new DevExpress.XtraBars.BarButtonItem();
             this.bbiTargetOverview = new DevExpress.XtraBars.BarButtonItem();
             this.bbiTargetMake = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiUserAdd = new DevExpress.XtraBars.BarButtonItem();
             this.bbiExpenseOv = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDictOv = new DevExpress.XtraBars.BarButtonItem();
             this.bbiExpenseReceipt = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiUserList = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiRoleList = new DevExpress.XtraBars.BarButtonItem();
             this.rpTarget = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgTargetEnergy = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgTargetBase = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -74,12 +75,13 @@
             this.bbiFund,
             this.bbiTargetOverview,
             this.bbiTargetMake,
-            this.bbiUserAdd,
             this.bbiExpenseOv,
             this.bbiDictOv,
-            this.bbiExpenseReceipt});
+            this.bbiExpenseReceipt,
+            this.bbiUserList,
+            this.bbiRoleList});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 30;
+            this.ribbonControl.MaxItemId = 32;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpTarget,
@@ -176,16 +178,6 @@
             this.bbiTargetMake.Name = "bbiTargetMake";
             this.bbiTargetMake.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiTargetMake_ItemClick);
             // 
-            // bbiUserAdd
-            // 
-            this.bbiUserAdd.Caption = "添加用户";
-            this.bbiUserAdd.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.bbiUserAdd.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiUserAdd.Glyph")));
-            this.bbiUserAdd.Id = 26;
-            this.bbiUserAdd.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiUserAdd.LargeGlyph")));
-            this.bbiUserAdd.Name = "bbiUserAdd";
-            this.bbiUserAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiUserAdd_ItemClick);
-            // 
             // bbiExpenseOv
             // 
             this.bbiExpenseOv.Caption = "支出总览";
@@ -215,6 +207,26 @@
             this.bbiExpenseReceipt.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiExpenseReceipt.LargeGlyph")));
             this.bbiExpenseReceipt.Name = "bbiExpenseReceipt";
             this.bbiExpenseReceipt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExpenseReceipt_ItemClick);
+            // 
+            // bbiUserList
+            // 
+            this.bbiUserList.Caption = "用户列表";
+            this.bbiUserList.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiUserList.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiUserList.Glyph")));
+            this.bbiUserList.Id = 30;
+            this.bbiUserList.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiUserList.LargeGlyph")));
+            this.bbiUserList.Name = "bbiUserList";
+            this.bbiUserList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiUserList_ItemClick);
+            // 
+            // bbiRoleList
+            // 
+            this.bbiRoleList.Caption = "角色列表";
+            this.bbiRoleList.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiRoleList.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiRoleList.Glyph")));
+            this.bbiRoleList.Id = 31;
+            this.bbiRoleList.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiRoleList.LargeGlyph")));
+            this.bbiRoleList.Name = "bbiRoleList";
+            this.bbiRoleList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRoleList_ItemClick);
             // 
             // rpTarget
             // 
@@ -285,7 +297,8 @@
             // 
             // rpgPrivilege
             // 
-            this.rpgPrivilege.ItemLinks.Add(this.bbiUserAdd);
+            this.rpgPrivilege.ItemLinks.Add(this.bbiUserList);
+            this.rpgPrivilege.ItemLinks.Add(this.bbiRoleList);
             this.rpgPrivilege.Name = "rpgPrivilege";
             this.rpgPrivilege.Text = "权限管理";
             // 
@@ -347,11 +360,12 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgTargetEnergy;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgTargetBase;
         private DevExpress.XtraBars.BarButtonItem bbiTargetMake;
-        private DevExpress.XtraBars.BarButtonItem bbiUserAdd;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgPrivilege;
         private DevExpress.XtraBars.BarButtonItem bbiExpenseOv;
         private DevExpress.XtraBars.BarButtonItem bbiDictOv;
         private DevExpress.XtraBars.BarButtonItem bbiExpenseReceipt;
+        private DevExpress.XtraBars.BarButtonItem bbiUserList;
+        private DevExpress.XtraBars.BarButtonItem bbiRoleList;
     }
 }
 

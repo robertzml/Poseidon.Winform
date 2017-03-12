@@ -172,6 +172,7 @@ namespace Poseidon.Winform.Client
             ChildFormManage.LoadMdiForm(this, typeof(FrmGroupOverview));
         }
 
+        #region System
         /// <summary>
         /// 字典总览
         /// </summary>
@@ -183,13 +184,23 @@ namespace Poseidon.Winform.Client
         }
 
         /// <summary>
-        /// 添加用户
+        /// 用户列表
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void bbiUserAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void bbiUserList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ChildFormManage.ShowDialogForm(typeof(FrmUserAdd));
+            ChildFormManage.LoadMdiForm(this, typeof(FrmUserList));
+        }
+
+        /// <summary>
+        /// 角色列表
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiRoleList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
 
         /// <summary>
@@ -201,9 +212,10 @@ namespace Poseidon.Winform.Client
         {
             this.Close();
         }
+        #endregion //System
+
         #endregion //Ribbon Event
 
         #endregion //Event
-
     }
 }
