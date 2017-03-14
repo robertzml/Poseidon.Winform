@@ -72,7 +72,8 @@ namespace Poseidon.Winform.Client
             this.txtName.Text = this.currentDict.Name;
             this.txtCode.Text = this.currentDict.Code;
             this.txtRemark.Text = this.currentDict.Remark;
-            //this.gridDictItem.SetDataSource(this.currentDict.Data);
+
+            this.dictItemGrid.DataSource = this.currentDict.Items;
         }
 
         /// <summary>
@@ -119,7 +120,19 @@ namespace Poseidon.Winform.Client
         {
             ChildFormManage.ShowDialogForm(typeof(FrmDictAdd));
         }
-        #endregion //Event
+        
+        /// <summary>
+        /// 编辑字典
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDictEdit_Click(object sender, EventArgs e)
+        {
+            if (this.currentDict == null)
+                return;
 
+            ChildFormManage.ShowDialogForm(typeof(FrmDictEdit), new object[] { this.currentDict.Id });
+        }
+        #endregion //Event
     }
 }

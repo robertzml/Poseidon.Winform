@@ -163,6 +163,9 @@ namespace Poseidon.Winform.Core
         /// <param name="e"></param>
         private void tlData_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
+            if (e.Node == null)
+                return;
+
             int type = Convert.ToInt32(e.Node["colType"]);
             if (type == 1)
             {

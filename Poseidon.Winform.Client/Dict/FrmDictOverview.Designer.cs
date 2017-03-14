@@ -33,6 +33,7 @@
             this.treeDict = new Poseidon.Winform.Core.DictTree();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtCode = new DevExpress.XtraEditors.TextEdit();
             this.btnDictDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnDictEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnDictAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -50,9 +51,9 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.txtCode = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.dictItemGrid = new Poseidon.Winform.Core.DictItemGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -60,6 +61,7 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -71,9 +73,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -143,6 +145,14 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(39, 36);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(505, 20);
+            this.txtCode.StyleController = this.layoutControl1;
+            this.txtCode.TabIndex = 12;
+            // 
             // btnDictDelete
             // 
             this.btnDictDelete.Location = new System.Drawing.Point(375, 137);
@@ -160,6 +170,7 @@
             this.btnDictEdit.StyleController = this.layoutControl1;
             this.btnDictEdit.TabIndex = 10;
             this.btnDictEdit.Text = "编辑字典";
+            this.btnDictEdit.Click += new System.EventHandler(this.btnDictEdit_Click);
             // 
             // btnDictAdd
             // 
@@ -308,23 +319,6 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
-            // groupControl3
-            // 
-            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(203, 203);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(560, 286);
-            this.groupControl3.TabIndex = 2;
-            this.groupControl3.Text = "字典项";
-            // 
-            // txtCode
-            // 
-            this.txtCode.Location = new System.Drawing.Point(39, 36);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(505, 20);
-            this.txtCode.StyleController = this.layoutControl1;
-            this.txtCode.TabIndex = 12;
-            // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.txtCode;
@@ -333,6 +327,33 @@
             this.layoutControlItem9.Size = new System.Drawing.Size(536, 24);
             this.layoutControlItem9.Text = "代码";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(24, 14);
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.dictItemGrid);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(203, 203);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(560, 286);
+            this.groupControl3.TabIndex = 2;
+            this.groupControl3.Text = "字典项";
+            // 
+            // dictItemGrid
+            // 
+            this.dictItemGrid.AllowFilter = false;
+            this.dictItemGrid.AllowGroup = false;
+            this.dictItemGrid.AllowSort = false;
+            this.dictItemGrid.DataSource = null;
+            this.dictItemGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dictItemGrid.Editable = false;
+            this.dictItemGrid.Location = new System.Drawing.Point(2, 21);
+            this.dictItemGrid.Name = "dictItemGrid";
+            this.dictItemGrid.ShowAddMenu = false;
+            this.dictItemGrid.ShowFooter = false;
+            this.dictItemGrid.ShowLineNumber = true;
+            this.dictItemGrid.ShowNavigator = false;
+            this.dictItemGrid.Size = new System.Drawing.Size(556, 263);
+            this.dictItemGrid.TabIndex = 0;
             // 
             // FrmDictOverview
             // 
@@ -349,6 +370,7 @@
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -360,9 +382,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -394,5 +416,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraEditors.TextEdit txtCode;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private Core.DictItemGrid dictItemGrid;
     }
 }
