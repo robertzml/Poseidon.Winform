@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
@@ -63,9 +62,9 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.orgGrid = new Poseidon.Winform.Core.OrganizationGrid();
+            this.groupItemGrid = new Poseidon.Winform.Core.GroupItemGrid();
             this.luModelTypes = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsModelType = new System.Windows.Forms.BindingSource(this.components);
+            this.bsModelType = new System.Windows.Forms.BindingSource();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -422,7 +421,7 @@
             // 
             // layoutControl2
             // 
-            this.layoutControl2.Controls.Add(this.orgGrid);
+            this.layoutControl2.Controls.Add(this.groupItemGrid);
             this.layoutControl2.Controls.Add(this.luModelTypes);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl2.Location = new System.Drawing.Point(2, 21);
@@ -432,16 +431,20 @@
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
-            // orgGrid
+            // groupItemGrid
             // 
-            this.orgGrid.DataSource = null;
-            this.orgGrid.Editable = false;
-            this.orgGrid.Location = new System.Drawing.Point(12, 36);
-            this.orgGrid.Name = "orgGrid";
-            this.orgGrid.ShowFooter = false;
-            this.orgGrid.ShowLineNumber = true;
-            this.orgGrid.Size = new System.Drawing.Size(679, 251);
-            this.orgGrid.TabIndex = 5;
+            this.groupItemGrid.AllowFilter = false;
+            this.groupItemGrid.AllowGroup = false;
+            this.groupItemGrid.AllowSort = true;
+            this.groupItemGrid.DataSource = null;
+            this.groupItemGrid.Editable = false;
+            this.groupItemGrid.Location = new System.Drawing.Point(12, 36);
+            this.groupItemGrid.Name = "groupItemGrid";
+            this.groupItemGrid.ShowAddMenu = false;
+            this.groupItemGrid.ShowFooter = false;
+            this.groupItemGrid.ShowLineNumber = true;
+            this.groupItemGrid.Size = new System.Drawing.Size(679, 251);
+            this.groupItemGrid.TabIndex = 5;
             // 
             // luModelTypes
             // 
@@ -491,7 +494,7 @@
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.orgGrid;
+            this.layoutControlItem8.Control = this.groupItemGrid;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(683, 255);
@@ -568,10 +571,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
-        private Core.OrganizationGrid orgGrid;
         private DevExpress.XtraEditors.LookUpEdit luModelTypes;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraEditors.SimpleButton btnModelTypeBind;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
@@ -579,5 +580,7 @@
         private DevExpress.XtraEditors.SimpleButton btnOrganizationSelect;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private System.Windows.Forms.BindingSource bsModelType;
+        private Core.GroupItemGrid groupItemGrid;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
     }
 }

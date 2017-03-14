@@ -25,11 +25,6 @@ namespace Poseidon.Winform.Client
         /// 当前选中分组
         /// </summary>
         private Group currentGroup;
-
-        /// <summary>
-        /// 当前分组关联组织
-        /// </summary>
-        private List<Organization> relateOrganizations;
         #endregion //Field
 
         #region Constructor
@@ -67,6 +62,8 @@ namespace Poseidon.Winform.Client
             this.txtCode.Text = this.currentGroup.Code;
             this.txtStatus.Text = this.currentGroup.Status.ToString();
             this.txtRemark.Text = this.currentGroup.Remark;
+
+            this.groupItemGrid.DataSource = this.currentGroup.Items;
         }
 
         /// <summary>
@@ -76,14 +73,6 @@ namespace Poseidon.Winform.Client
         {
             var data = BusinessFactory<ModelTypeBusiness>.Instance.FindWithCodes(this.currentGroup.ModelTypes).ToList();
             this.bsModelType.DataSource = data;
-        }
-
-        /// <summary>
-        /// 载入已有组织
-        /// </summary>
-        private void LoadOrganizations()
-        {
-            this.relateOrganizations = BusinessFactory<OrganizationBusiness>.Instance.FindWithIds(this.currentGroup.Organizations).ToList();
         }
         #endregion //Function
 
@@ -111,9 +100,6 @@ namespace Poseidon.Winform.Client
 
             SetGroupInfo();
             LoadModelTypes();
-            LoadOrganizations();
-
-            this.orgGrid.DataSource = this.relateOrganizations;
         }
 
         /// <summary>
@@ -194,12 +180,13 @@ namespace Poseidon.Winform.Client
         {
             if (this.luModelTypes.EditValue == null)
             {
-                this.orgGrid.DataSource = this.relateOrganizations;
+                this.groupItemGrid.DataSource = this.currentGroup.Items;
             }
             else
             {
-                var data = this.relateOrganizations.Where(r => r.ModelType == this.luModelTypes.EditValue.ToString());
-                this.orgGrid.DataSource = data.ToList();
+                var code = this.luModelTypes.EditValue.ToString();
+                var data = this.currentGroup.Items.Where(r => r.ModelType == code);
+                this.groupItemGrid.DataSource = data.ToList();
             }
         }
         #endregion //Event

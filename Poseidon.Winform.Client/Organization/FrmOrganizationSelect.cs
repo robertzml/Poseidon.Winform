@@ -30,7 +30,7 @@ namespace Poseidon.Winform.Client
         /// <summary>
         /// 分组关联组织
         /// </summary>
-        private List<Organization> relateOrganizations;
+        //private List<Organization> relateOrganizations;
         #endregion //Field
 
         #region Constructor
@@ -74,8 +74,8 @@ namespace Poseidon.Winform.Client
         /// </summary>
         private void LoadOrganizations()
         {
-            this.relateOrganizations = BusinessFactory<OrganizationBusiness>.Instance.FindWithIds(this.currentGroup.Organizations).ToList();
-            this.ogridRight.DataSource = this.relateOrganizations;
+            var group = BusinessFactory<GroupBusiness>.Instance.FindById(this.currentGroup.Id);
+            this.itemGrid.DataSource = group.Items;
         }
         #endregion //Function
 
@@ -101,10 +101,15 @@ namespace Poseidon.Winform.Client
         private void btnMoveIn_Click(object sender, EventArgs e)
         {
             var select = this.ogridLeft.GetCurrentSelect();
-            if (select != null && !this.relateOrganizations.Any(r => r.Id == select.Id))
+            if (select != null && !this.itemGrid.DataSource.Any(r => r.OrganizationId == select.Id))
             {
-                this.relateOrganizations.Add(select);
-                this.ogridRight.UpdateBindingData();
+                GroupItem item = new GroupItem
+                {
+                    OrganizationId = select.Id,
+                    ModelType = select.ModelType
+                };
+                this.itemGrid.DataSource.Add(item);
+                this.itemGrid.UpdateBindingData();
             }
         }
 
@@ -115,11 +120,11 @@ namespace Poseidon.Winform.Client
         /// <param name="e"></param>
         private void btnMoveOut_Click(object sender, EventArgs e)
         {
-            var select = this.ogridRight.GetCurrentSelect();
+            var select = this.itemGrid.GetCurrentSelect();
             if (select != null)
             {
-                this.relateOrganizations.Remove(select);
-                this.ogridRight.UpdateBindingData();
+                this.itemGrid.DataSource.Remove(select);
+                this.itemGrid.UpdateBindingData();
             }
         }
 
@@ -130,11 +135,11 @@ namespace Poseidon.Winform.Client
         /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            var orgIds = this.ogridRight.DataSource.Select(r => r.Id).ToList();
+            this.itemGrid.CloseEditor();
 
             try
             {
-                BusinessFactory<GroupBusiness>.Instance.SetOrganizations(this.currentGroup.Id, orgIds);
+                BusinessFactory<GroupBusiness>.Instance.SetOrganizations(this.currentGroup.Id, this.itemGrid.DataSource);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();
