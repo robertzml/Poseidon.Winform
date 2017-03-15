@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,11 +25,6 @@ namespace Poseidon.Winform.Client
         /// 当前关联分组
         /// </summary>
         private Group currentGroup;
-
-        /// <summary>
-        /// 分组关联组织
-        /// </summary>
-        //private List<Organization> relateOrganizations;
         #endregion //Field
 
         #region Constructor
@@ -105,6 +99,7 @@ namespace Poseidon.Winform.Client
             {
                 GroupItem item = new GroupItem
                 {
+                    GroupCode = this.currentGroup.Code,
                     OrganizationId = select.Id,
                     ModelType = select.ModelType
                 };

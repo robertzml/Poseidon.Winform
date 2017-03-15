@@ -19,12 +19,18 @@ namespace Poseidon.Winform.Core
     /// </summary>
     public partial class GroupItemGrid : WinEntityGrid<GroupItem>
     {
+        #region Field
+
+        #endregion //Field
+
         #region Constructor
         public GroupItemGrid()
         {
             InitializeComponent();
         }
         #endregion //Constructor
+
+
 
         #region Event
         /// <summary>

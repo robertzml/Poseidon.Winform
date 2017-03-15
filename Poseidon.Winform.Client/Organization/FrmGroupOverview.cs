@@ -62,31 +62,19 @@ namespace Poseidon.Winform.Client
             this.txtCode.Text = this.currentGroup.Code;
             this.txtStatus.Text = this.currentGroup.Status.ToString();
             this.txtRemark.Text = this.currentGroup.Remark;
-
-            this.groupItemGrid.DataSource = this.currentGroup.Items;
         }
 
         /// <summary>
-        /// 载入关联模型类型
+        /// 载入包含组织
         /// </summary>
-        private void LoadModelTypes()
+        private void LoadOrganizations()
         {
-            var data = BusinessFactory<ModelTypeBusiness>.Instance.FindWithCodes(this.currentGroup.ModelTypes).ToList();
-            this.bsModelType.DataSource = data;
+            var data = BusinessFactory<GroupBusiness>.Instance.FindAllItems(this.currentGroup.Id).ToList();
+            this.groupItemGrid.DataSource = data;
         }
         #endregion //Function
 
         #region Event
-        /// <summary>
-        /// 窗体载入
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void FrmGroupOverview_Load(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// 选择分组
         /// </summary>
@@ -99,7 +87,7 @@ namespace Poseidon.Winform.Client
                 return;
 
             SetGroupInfo();
-            LoadModelTypes();
+            LoadOrganizations();
         }
 
         /// <summary>
@@ -121,6 +109,7 @@ namespace Poseidon.Winform.Client
         private void btnEdit_Click(object sender, EventArgs e)
         {
             ChildFormManage.ShowDialogForm(typeof(FrmGroupEdit), new object[] { this.currentGroup.Id });
+            LoadGroupsTree();
         }
 
         /// <summary>
@@ -157,7 +146,6 @@ namespace Poseidon.Winform.Client
         {
             ChildFormManage.ShowDialogForm(typeof(FrmModelTypeBind), new object[] { this.currentGroup.Id });
             LoadGroupsTree();
-            LoadModelTypes();
         }
 
         /// <summary>
@@ -169,25 +157,6 @@ namespace Poseidon.Winform.Client
         {
             ChildFormManage.ShowDialogForm(typeof(FrmOrganizationSelect), new object[] { this.currentGroup.Id });
             LoadGroupsTree();
-        }
-
-        /// <summary>
-        /// 选择模型类型
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void luModelTypes_EditValueChanged(object sender, EventArgs e)
-        {
-            if (this.luModelTypes.EditValue == null)
-            {
-                this.groupItemGrid.DataSource = this.currentGroup.Items;
-            }
-            else
-            {
-                var code = this.luModelTypes.EditValue.ToString();
-                var data = this.currentGroup.Items.Where(r => r.ModelType == code);
-                this.groupItemGrid.DataSource = data.ToList();
-            }
         }
         #endregion //Event
     }

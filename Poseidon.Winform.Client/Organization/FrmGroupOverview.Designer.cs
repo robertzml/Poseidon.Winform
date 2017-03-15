@@ -63,10 +63,7 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.groupItemGrid = new Poseidon.Winform.Core.GroupItemGrid();
-            this.luModelTypes = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsModelType = new System.Windows.Forms.BindingSource();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -95,10 +92,7 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.luModelTypes.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsModelType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
@@ -422,7 +416,6 @@
             // layoutControl2
             // 
             this.layoutControl2.Controls.Add(this.groupItemGrid);
-            this.layoutControl2.Controls.Add(this.luModelTypes);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl2.Location = new System.Drawing.Point(2, 21);
             this.layoutControl2.Name = "layoutControl2";
@@ -433,71 +426,36 @@
             // 
             // groupItemGrid
             // 
-            this.groupItemGrid.AllowFilter = false;
+            this.groupItemGrid.AllowFilter = true;
             this.groupItemGrid.AllowGroup = false;
             this.groupItemGrid.AllowSort = true;
             this.groupItemGrid.DataSource = null;
             this.groupItemGrid.Editable = false;
-            this.groupItemGrid.Location = new System.Drawing.Point(12, 36);
+            this.groupItemGrid.Location = new System.Drawing.Point(12, 12);
             this.groupItemGrid.Name = "groupItemGrid";
             this.groupItemGrid.ShowAddMenu = false;
             this.groupItemGrid.ShowFooter = false;
             this.groupItemGrid.ShowLineNumber = true;
-            this.groupItemGrid.Size = new System.Drawing.Size(679, 251);
+            this.groupItemGrid.Size = new System.Drawing.Size(679, 275);
             this.groupItemGrid.TabIndex = 5;
-            // 
-            // luModelTypes
-            // 
-            this.luModelTypes.Location = new System.Drawing.Point(63, 12);
-            this.luModelTypes.Name = "luModelTypes";
-            this.luModelTypes.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.luModelTypes.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luModelTypes.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "名称", 54, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Code", "代码", 38, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Remark", "备注", 51, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.luModelTypes.Properties.DataSource = this.bsModelType;
-            this.luModelTypes.Properties.DisplayMember = "Name";
-            this.luModelTypes.Properties.NullText = "全部";
-            this.luModelTypes.Properties.ShowFooter = false;
-            this.luModelTypes.Properties.ValueMember = "Code";
-            this.luModelTypes.Size = new System.Drawing.Size(628, 20);
-            this.luModelTypes.StyleController = this.layoutControl2;
-            this.luModelTypes.TabIndex = 4;
-            this.luModelTypes.EditValueChanged += new System.EventHandler(this.luModelTypes_EditValueChanged);
-            // 
-            // bsModelType
-            // 
-            this.bsModelType.DataSource = typeof(Poseidon.Core.DL.ModelType);
             // 
             // layoutControlGroup4
             // 
             this.layoutControlGroup4.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup4.GroupBordersVisible = false;
             this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem7,
             this.layoutControlItem8});
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.Size = new System.Drawing.Size(703, 299);
             this.layoutControlGroup4.TextVisible = false;
             // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.luModelTypes;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(683, 24);
-            this.layoutControlItem7.Text = "模型选择";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(48, 14);
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.groupItemGrid;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(683, 255);
+            this.layoutControlItem8.Size = new System.Drawing.Size(683, 279);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -509,7 +467,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmGroupOverview";
             this.Text = "分组总览";
-            this.Load += new System.EventHandler(this.FrmGroupOverview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
@@ -537,10 +494,7 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.luModelTypes.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsModelType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
 
@@ -571,15 +525,12 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
-        private DevExpress.XtraEditors.LookUpEdit luModelTypes;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraEditors.SimpleButton btnModelTypeBind;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraEditors.SimpleButton btnOrganizationSelect;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private System.Windows.Forms.BindingSource bsModelType;
         private Core.GroupItemGrid groupItemGrid;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
     }

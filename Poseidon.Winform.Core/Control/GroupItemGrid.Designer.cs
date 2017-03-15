@@ -32,6 +32,7 @@
             this.colModelType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSort = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGroupCode = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -45,6 +46,7 @@
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colSort,
+            this.colGroupCode,
             this.colOrganizationId,
             this.colModelType,
             this.colRemark});
@@ -60,22 +62,25 @@
             // 
             // colOrganizationId
             // 
+            this.colOrganizationId.Caption = "组织名称";
             this.colOrganizationId.FieldName = "OrganizationId";
             this.colOrganizationId.Name = "colOrganizationId";
             this.colOrganizationId.OptionsColumn.AllowEdit = false;
             this.colOrganizationId.Visible = true;
-            this.colOrganizationId.VisibleIndex = 1;
+            this.colOrganizationId.VisibleIndex = 2;
             // 
             // colModelType
             // 
+            this.colModelType.Caption = "组织模型类型";
             this.colModelType.FieldName = "ModelType";
             this.colModelType.Name = "colModelType";
             this.colModelType.OptionsColumn.AllowEdit = false;
             this.colModelType.Visible = true;
-            this.colModelType.VisibleIndex = 2;
+            this.colModelType.VisibleIndex = 3;
             // 
             // colSort
             // 
+            this.colSort.Caption = "排序码";
             this.colSort.FieldName = "Sort";
             this.colSort.Name = "colSort";
             this.colSort.Visible = true;
@@ -89,7 +94,16 @@
             this.colRemark.OptionsColumn.AllowEdit = false;
             this.colRemark.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 3;
+            this.colRemark.VisibleIndex = 4;
+            // 
+            // colGroupCode
+            // 
+            this.colGroupCode.Caption = "分组代码";
+            this.colGroupCode.FieldName = "GroupCode";
+            this.colGroupCode.Name = "colGroupCode";
+            this.colGroupCode.OptionsColumn.AllowEdit = false;
+            this.colGroupCode.Visible = true;
+            this.colGroupCode.VisibleIndex = 1;
             // 
             // GroupItemGrid
             // 
@@ -109,5 +123,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colModelType;
         private DevExpress.XtraGrid.Columns.GridColumn colSort;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
+        private DevExpress.XtraGrid.Columns.GridColumn colGroupCode;
     }
 }
