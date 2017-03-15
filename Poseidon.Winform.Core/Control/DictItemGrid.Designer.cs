@@ -31,7 +31,6 @@
             this.colKey = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dataNavigator1 = new DevExpress.XtraEditors.DataNavigator();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -80,26 +79,12 @@
             this.colRemark.Visible = true;
             this.colRemark.VisibleIndex = 2;
             // 
-            // dataNavigator1
-            // 
-            this.dataNavigator1.DataSource = this.bsEntity;
-            this.dataNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataNavigator1.Location = new System.Drawing.Point(0, 354);
-            this.dataNavigator1.Name = "dataNavigator1";
-            this.dataNavigator1.Size = new System.Drawing.Size(568, 24);
-            this.dataNavigator1.TabIndex = 1;
-            this.dataNavigator1.Text = "dataNavigator1";
-            this.dataNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
-            this.dataNavigator1.TextStringFormat = "记录 {0} of {1}";
-            // 
             // DictItemGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataNavigator1);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;        
             this.Name = "DictItemGrid";
-            this.Load += new System.EventHandler(this.DictItemGrid_Load);
-            this.Controls.SetChildIndex(this.dataNavigator1, 0);
+            this.Load += new System.EventHandler(this.DictItemGrid_Load);          
             this.Controls.SetChildIndex(this.dgcEntity, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
@@ -113,6 +98,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn colKey;
         private DevExpress.XtraGrid.Columns.GridColumn colValue;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
-        private DevExpress.XtraEditors.DataNavigator dataNavigator1;
     }
 }

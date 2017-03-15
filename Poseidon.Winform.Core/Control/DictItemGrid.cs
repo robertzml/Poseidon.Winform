@@ -17,13 +17,6 @@ namespace Poseidon.Winform.Core
     /// </summary>
     public partial class DictItemGrid : WinEntityGrid<DictItem>
     {
-        #region Field
-        /// <summary>
-        /// 是否显示导航
-        /// </summary>
-        private bool showNavigator;
-        #endregion //Field
-
         #region Constructor
         public DictItemGrid()
         {
@@ -39,26 +32,8 @@ namespace Poseidon.Winform.Core
         /// <param name="e"></param>
         private void DictItemGrid_Load(object sender, EventArgs e)
         {
-            this.dataNavigator1.Visible = this.showNavigator;
+           
         }
         #endregion //Event
-
-        #region Property
-        /// <summary>
-        /// 是否显示导航条
-        /// </summary>
-        [Category("界面"), Description("是否显示导航条"), Browsable(true)]
-        public bool ShowNavigator
-        {
-            get
-            {
-                return this.showNavigator;
-            }
-            set
-            {
-                this.showNavigator = value;
-            }
-        }
-        #endregion //Property
     }
 }

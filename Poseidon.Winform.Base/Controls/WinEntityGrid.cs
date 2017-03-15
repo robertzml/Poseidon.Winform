@@ -55,6 +55,11 @@ namespace Poseidon.Winform.Base
         /// 是否显示新增菜单
         /// </summary>
         protected bool showAddMenu = false;
+
+        /// <summary>
+        /// 是否显示导航
+        /// </summary>
+        protected bool showNavigator = false;
         #endregion //Field
 
         #region Constructor
@@ -121,6 +126,8 @@ namespace Poseidon.Winform.Base
             this.dgvEntity.OptionsCustomization.AllowFilter = this.allowFilter;
             this.dgvEntity.OptionsCustomization.AllowGroup = this.allowGroup;
             this.dgvEntity.OptionsCustomization.AllowSort = this.allowSort;
+
+            this.dataNavigator.Visible = this.showNavigator;
         }
 
         /// <summary>
@@ -258,7 +265,7 @@ namespace Poseidon.Winform.Base
         /// <summary>
         /// 是否显示行号
         /// </summary>
-        [Description("是否显示行号")]
+        [Category("界面"), Description("是否显示行号"), Browsable(true)]
         public bool ShowLineNumber
         {
             get
@@ -274,7 +281,7 @@ namespace Poseidon.Winform.Base
         /// <summary>
         /// 是否显示Footer
         /// </summary>
-        [Description("是否显示Footer")]
+        [Category("界面"), Description("是否显示Footer"), Browsable(true)]
         public bool ShowFooter
         {
             get
@@ -284,6 +291,22 @@ namespace Poseidon.Winform.Base
             set
             {
                 this.showFooter = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否显示导航条
+        /// </summary>
+        [Category("界面"), Description("是否显示导航条"), Browsable(true)]
+        public bool ShowNavigator
+        {
+            get
+            {
+                return this.showNavigator;
+            }
+            set
+            {
+                this.showNavigator = value;
             }
         }
 
