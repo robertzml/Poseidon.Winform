@@ -42,7 +42,7 @@
             // 
             // dgcEntity
             // 
-            this.dgcEntity.Size = new System.Drawing.Size(568, 354);
+            this.dgcEntity.Size = new System.Drawing.Size(568, 378);
             // 
             // dgvEntity
             // 
@@ -82,10 +82,8 @@
             // DictItemGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;        
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "DictItemGrid";
-            this.Load += new System.EventHandler(this.DictItemGrid_Load);          
-            this.Controls.SetChildIndex(this.dgcEntity, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();

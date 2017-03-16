@@ -28,9 +28,7 @@ namespace Poseidon.Winform.Core
         {
             InitializeComponent();
         }
-        #endregion //Constructor
-
-
+        #endregion //Constructor        
 
         #region Event
         /// <summary>

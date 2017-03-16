@@ -119,8 +119,9 @@ namespace Poseidon.Winform.Client
         private void btnDictAdd_Click(object sender, EventArgs e)
         {
             ChildFormManage.ShowDialogForm(typeof(FrmDictAdd));
+            this.treeDict.Reload();
         }
-        
+
         /// <summary>
         /// 编辑字典
         /// </summary>
@@ -132,6 +133,7 @@ namespace Poseidon.Winform.Client
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmDictEdit), new object[] { this.currentDict.Id });
+            this.treeDict.Reload();
         }
         #endregion //Event
     }

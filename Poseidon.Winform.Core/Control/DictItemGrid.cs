@@ -23,17 +23,5 @@ namespace Poseidon.Winform.Core
             InitializeComponent();
         }
         #endregion //Constructor
-
-        #region Event
-        /// <summary>
-        /// 控件载入
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DictItemGrid_Load(object sender, EventArgs e)
-        {
-           
-        }
-        #endregion //Event
     }
 }
