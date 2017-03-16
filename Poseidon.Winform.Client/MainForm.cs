@@ -44,7 +44,7 @@ namespace Poseidon.Winform.Client
 
         #region Ribbon Event
 
-        #region Target
+        #region Energy
         /// <summary>
         /// 指标总览
         /// </summary>
@@ -72,6 +72,58 @@ namespace Poseidon.Winform.Client
         }
 
         /// <summary>
+        /// 人数总览
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiPopulationOv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string assemblyName = "Poseidon.Energy.ClientDx";
+            string typeName = "Poseidon.Energy.ClientDx.FrmPopulationOverview";
+
+            ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
+        }
+
+        /// <summary>
+        /// 人数管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiPopulationMan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string assemblyName = "Poseidon.Energy.ClientDx";
+            string typeName = "Poseidon.Energy.ClientDx.FrmPopulationManage";
+
+            ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
+        }
+
+        /// <summary>
+        /// 经费总览
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbtFundOv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string assemblyName = "Poseidon.Energy.ClientDx";
+            string typeName = "Poseidon.Energy.ClientDx.FrmFundOverview";
+
+            ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
+        }
+
+        /// <summary>
+        /// 经费管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiFundMan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string assemblyName = "Poseidon.Energy.ClientDx";
+            string typeName = "Poseidon.Energy.ClientDx.FrmFundManage";
+
+            ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
+        }
+
+        /// <summary>
         /// 部门总览
         /// </summary>
         /// <param name="sender"></param>
@@ -83,33 +135,7 @@ namespace Poseidon.Winform.Client
 
             ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
         }
-
-        /// <summary>
-        /// 人数统计
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void bbiPopulation_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            string assemblyName = "Poseidon.Energy.ClientDx";
-            string typeName = "Poseidon.Energy.ClientDx.FrmPopulationOverview";
-
-            ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
-        }
-
-        /// <summary>
-        /// 经费统计
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void bbiFund_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            string assemblyName = "Poseidon.Energy.ClientDx";
-            string typeName = "Poseidon.Energy.ClientDx.FrmFundOverview";
-
-            ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
-        }
-        #endregion //Target
+        #endregion //Energy
 
         #region Expense
         /// <summary>
@@ -212,6 +238,7 @@ namespace Poseidon.Winform.Client
         {
             this.Close();
         }
+
         #endregion //System
 
         #endregion //Ribbon Event
