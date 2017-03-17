@@ -232,13 +232,13 @@ namespace Poseidon.Winform.Client
         }
 
         /// <summary>
-        /// 角色列表
+        /// 角色管理
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void bbiRoleList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void bbiRoleMan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            ChildFormManage.LoadMdiForm(this, typeof(FrmRoleManage));
         }
 
         /// <summary>
@@ -266,6 +266,5 @@ namespace Poseidon.Winform.Client
         #endregion //Ribbon Event
 
         #endregion //Event
-
     }
 }

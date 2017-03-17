@@ -44,7 +44,7 @@
             this.bbiDictOv = new DevExpress.XtraBars.BarButtonItem();
             this.bbiExpenseReceipt = new DevExpress.XtraBars.BarButtonItem();
             this.bbiUserList = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiRoleList = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiRoleMan = new DevExpress.XtraBars.BarButtonItem();
             this.bbiPopulationOv = new DevExpress.XtraBars.BarButtonItem();
             this.bbtFundOv = new DevExpress.XtraBars.BarButtonItem();
             this.barLoginUser = new DevExpress.XtraBars.BarStaticItem();
@@ -84,7 +84,7 @@
             this.bbiDictOv,
             this.bbiExpenseReceipt,
             this.bbiUserList,
-            this.bbiRoleList,
+            this.bbiRoleMan,
             this.bbiPopulationOv,
             this.bbtFundOv,
             this.barLoginUser,
@@ -227,15 +227,15 @@
             this.bbiUserList.Name = "bbiUserList";
             this.bbiUserList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiUserList_ItemClick);
             // 
-            // bbiRoleList
+            // bbiRoleMan
             // 
-            this.bbiRoleList.Caption = "角色列表";
-            this.bbiRoleList.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.bbiRoleList.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiRoleList.Glyph")));
-            this.bbiRoleList.Id = 31;
-            this.bbiRoleList.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiRoleList.LargeGlyph")));
-            this.bbiRoleList.Name = "bbiRoleList";
-            this.bbiRoleList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRoleList_ItemClick);
+            this.bbiRoleMan.Caption = "角色管理";
+            this.bbiRoleMan.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiRoleMan.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiRoleMan.Glyph")));
+            this.bbiRoleMan.Id = 31;
+            this.bbiRoleMan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiRoleMan.LargeGlyph")));
+            this.bbiRoleMan.Name = "bbiRoleMan";
+            this.bbiRoleMan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRoleMan_ItemClick);
             // 
             // bbiPopulationOv
             // 
@@ -348,7 +348,7 @@
             // rpgPrivilege
             // 
             this.rpgPrivilege.ItemLinks.Add(this.bbiUserList);
-            this.rpgPrivilege.ItemLinks.Add(this.bbiRoleList);
+            this.rpgPrivilege.ItemLinks.Add(this.bbiRoleMan);
             this.rpgPrivilege.Name = "rpgPrivilege";
             this.rpgPrivilege.Text = "权限管理";
             // 
@@ -422,7 +422,7 @@
         private DevExpress.XtraBars.BarButtonItem bbiDictOv;
         private DevExpress.XtraBars.BarButtonItem bbiExpenseReceipt;
         private DevExpress.XtraBars.BarButtonItem bbiUserList;
-        private DevExpress.XtraBars.BarButtonItem bbiRoleList;
+        private DevExpress.XtraBars.BarButtonItem bbiRoleMan;
         private DevExpress.XtraBars.BarButtonItem bbiPopulationOv;
         private DevExpress.XtraBars.BarButtonItem bbtFundOv;
         private DevExpress.XtraBars.BarStaticItem barLoginUser;

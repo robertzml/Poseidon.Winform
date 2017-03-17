@@ -83,6 +83,24 @@
     <Compile Include="Dict\FrmDictEdit.Designer.cs">
       <DependentUpon>FrmDictEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Privilege\FrmUserSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmUserSelect.Designer.cs">
+      <DependentUpon>FrmUserSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmRoleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmRoleAdd.Designer.cs">
+      <DependentUpon>FrmRoleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmRoleManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmRoleManage.Designer.cs">
+      <DependentUpon>FrmRoleManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Privilege\FrmChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +212,12 @@
     <EmbeddedResource Include="Privilege\FrmChangePassword.resx">
       <DependentUpon>FrmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmRoleAdd.resx">
+      <DependentUpon>FrmRoleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmRoleManage.resx">
+      <DependentUpon>FrmRoleManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmUserAdd.resx">
       <DependentUpon>FrmUserAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,7 +272,12 @@
     <EmbeddedResource Include="Privilege\FrmUserList.resx">
       <DependentUpon>FrmUserList.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Role.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.User.datasource" />
     <None Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Privilege\FrmUserSelect.resx">
+      <DependentUpon>FrmUserSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
