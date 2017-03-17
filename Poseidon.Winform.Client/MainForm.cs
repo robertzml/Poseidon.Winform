@@ -31,6 +31,16 @@ namespace Poseidon.Winform.Client
         }
         #endregion //Constructor
 
+        #region Function
+        /// <summary>
+        /// 设置状态栏显示
+        /// </summary>
+        private void SetStatusBar()
+        {
+            this.barLoginUser.Caption = string.Format("当前用户：{0}", GlobalAction.CurrentUser.Name);
+        }
+        #endregion //Function
+
         #region Event
         /// <summary>
         /// 窗体载入
@@ -40,6 +50,8 @@ namespace Poseidon.Winform.Client
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.Text = AppConfig.ApplicationName;
+
+            SetStatusBar();
         }
 
         #region Ribbon Event
@@ -230,6 +242,16 @@ namespace Poseidon.Winform.Client
         }
 
         /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiChangePassword_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ChildFormManage.ShowDialogForm(typeof(FrmChangePassword));
+        }
+
+        /// <summary>
         /// 退出系统
         /// </summary>
         /// <param name="sender"></param>
@@ -244,5 +266,6 @@ namespace Poseidon.Winform.Client
         #endregion //Ribbon Event
 
         #endregion //Event
+
     }
 }

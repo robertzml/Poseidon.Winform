@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barChildList = new DevExpress.XtraBars.BarMdiChildrenListItem();
@@ -45,6 +46,9 @@
             this.bbiUserList = new DevExpress.XtraBars.BarButtonItem();
             this.bbiRoleList = new DevExpress.XtraBars.BarButtonItem();
             this.bbiPopulationOv = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtFundOv = new DevExpress.XtraBars.BarButtonItem();
+            this.barLoginUser = new DevExpress.XtraBars.BarStaticItem();
+            this.bbiChangePassword = new DevExpress.XtraBars.BarButtonItem();
             this.rpEnergy = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgTarget = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgTargetBase = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -55,9 +59,9 @@
             this.rpSystem = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgSystemFunction = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgPrivilege = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rpgPersonnel = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
-            this.bbtFundOv = new DevExpress.XtraBars.BarButtonItem();
+            this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -82,9 +86,11 @@
             this.bbiUserList,
             this.bbiRoleList,
             this.bbiPopulationOv,
-            this.bbtFundOv});
+            this.bbtFundOv,
+            this.barLoginUser,
+            this.bbiChangePassword});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 34;
+            this.ribbonControl.MaxItemId = 1;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpEnergy,
@@ -241,6 +247,34 @@
             this.bbiPopulationOv.Name = "bbiPopulationOv";
             this.bbiPopulationOv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPopulationOv_ItemClick);
             // 
+            // bbtFundOv
+            // 
+            this.bbtFundOv.Caption = "经费总览";
+            this.bbtFundOv.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbtFundOv.Glyph = ((System.Drawing.Image)(resources.GetObject("bbtFundOv.Glyph")));
+            this.bbtFundOv.Id = 33;
+            this.bbtFundOv.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbtFundOv.LargeGlyph")));
+            this.bbtFundOv.Name = "bbtFundOv";
+            this.bbtFundOv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtFundOv_ItemClick);
+            // 
+            // barLoginUser
+            // 
+            this.barLoginUser.Caption = "当前用户：";
+            this.barLoginUser.Glyph = ((System.Drawing.Image)(resources.GetObject("barLoginUser.Glyph")));
+            this.barLoginUser.Id = 34;
+            this.barLoginUser.Name = "barLoginUser";
+            this.barLoginUser.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // bbiChangePassword
+            // 
+            this.bbiChangePassword.Caption = "修改密码";
+            this.bbiChangePassword.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiChangePassword.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiChangePassword.Glyph")));
+            this.bbiChangePassword.Id = 35;
+            this.bbiChangePassword.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiChangePassword.LargeGlyph")));
+            this.bbiChangePassword.Name = "bbiChangePassword";
+            this.bbiChangePassword.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiChangePassword_ItemClick);
+            // 
             // rpEnergy
             // 
             this.rpEnergy.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -299,7 +333,8 @@
             // 
             this.rpSystem.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.rpgSystemFunction,
-            this.rpgPrivilege});
+            this.rpgPrivilege,
+            this.rpgPersonnel});
             this.rpSystem.Name = "rpSystem";
             this.rpSystem.Text = "系统管理";
             // 
@@ -317,8 +352,15 @@
             this.rpgPrivilege.Name = "rpgPrivilege";
             this.rpgPrivilege.Text = "权限管理";
             // 
+            // rpgPersonnel
+            // 
+            this.rpgPersonnel.ItemLinks.Add(this.bbiChangePassword);
+            this.rpgPersonnel.Name = "rpgPersonnel";
+            this.rpgPersonnel.Text = "个人信息";
+            // 
             // ribbonStatusBar
             // 
+            this.ribbonStatusBar.ItemLinks.Add(this.barLoginUser);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 557);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
@@ -329,16 +371,6 @@
             this.tabMdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.tabMdiManager.MdiParent = this;
             this.tabMdiManager.PinPageButtonShowMode = DevExpress.XtraTab.PinPageButtonShowMode.InActiveTabPageHeader;
-            // 
-            // bbtFundOv
-            // 
-            this.bbtFundOv.Caption = "经费总览";
-            this.bbtFundOv.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.bbtFundOv.Glyph = ((System.Drawing.Image)(resources.GetObject("bbtFundOv.Glyph")));
-            this.bbtFundOv.Id = 33;
-            this.bbtFundOv.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbtFundOv.LargeGlyph")));
-            this.bbtFundOv.Name = "bbtFundOv";
-            this.bbtFundOv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtFundOv_ItemClick);
             // 
             // MainForm
             // 
@@ -393,6 +425,9 @@
         private DevExpress.XtraBars.BarButtonItem bbiRoleList;
         private DevExpress.XtraBars.BarButtonItem bbiPopulationOv;
         private DevExpress.XtraBars.BarButtonItem bbtFundOv;
+        private DevExpress.XtraBars.BarStaticItem barLoginUser;
+        private DevExpress.XtraBars.BarButtonItem bbiChangePassword;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgPersonnel;
     }
 }
 

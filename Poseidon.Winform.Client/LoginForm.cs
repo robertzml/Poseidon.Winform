@@ -110,6 +110,10 @@ namespace Poseidon.Winform.Client
                 {
                     SaveRemember();
                 }
+                else
+                {
+                    ConfigUtility.RemoveRememberUser();
+                }
 
                 this.user = BusinessFactory<UserBusiness>.Instance.FindByUserName(this.txtUserName.Text);
                 this.DialogResult = DialogResult.OK;

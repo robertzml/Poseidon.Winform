@@ -83,6 +83,12 @@
     <Compile Include="Dict\FrmDictEdit.Designer.cs">
       <DependentUpon>FrmDictEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Privilege\FrmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmChangePassword.Designer.cs">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Privilege\FrmUserList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Dict\FrmDictEdit.resx">
       <DependentUpon>FrmDictEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmChangePassword.resx">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmUserAdd.resx">
       <DependentUpon>FrmUserAdd.cs</DependentUpon>
