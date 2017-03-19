@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
-    using Poseidon.Core.BL;
+    using Poseidon.Caller.Facade;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -27,19 +27,19 @@ namespace Poseidon.Winform.Client
         #endregion //Constructor
 
         #region Function
+        protected override void InitForm()
+        {
+            LoadModelType();
+            base.InitForm();
+        }
+
         /// <summary>
         /// 载入模型类型
         /// </summary>
         private void LoadModelType()
         {
-            var data = BusinessFactory<ModelTypeBusiness>.Instance.FindAll().ToList();
+            var data = CallerFactory<IModelTypeService>.Instance.FindAll().ToList();
             this.mtGrid.DataSource = data;
-        }
-
-        protected override void InitForm()
-        {
-            LoadModelType();
-            base.InitForm();
         }
         #endregion //Function
 

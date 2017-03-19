@@ -11,6 +11,7 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Caller.Facade;
     using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
@@ -49,7 +50,8 @@ namespace Poseidon.Winform.Client
         /// </summary>
         private void LoadGroupsTree()
         {
-            var groups = BusinessFactory<GroupBusiness>.Instance.FindAll().ToList();
+            var groups = CallerFactory<IGroupService>.Instance.FindAll().ToList();
+            //var groups = BusinessFactory<GroupBusiness>.Instance.FindAll().ToList();
             this.trGroup.DataSource = groups;
         }
 

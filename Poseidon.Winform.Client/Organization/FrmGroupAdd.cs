@@ -10,8 +10,8 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Caller.Facade;
     using Poseidon.Common;
-    using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
     using Poseidon.Winform.Core;
@@ -34,7 +34,7 @@ namespace Poseidon.Winform.Client
         /// </summary>
         protected override void InitForm()
         {
-            var groups = BusinessFactory<GroupBusiness>.Instance.FindAll();
+            var groups = CallerFactory<IGroupService>.Instance.FindAll();
             this.bsGroup.DataSource = groups.ToList();
             base.InitForm();
         }
@@ -98,7 +98,7 @@ namespace Poseidon.Winform.Client
 
             try
             {
-                BusinessFactory<GroupBusiness>.Instance.Create(entity);
+                CallerFactory<IGroupService>.Instance.Create(entity);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

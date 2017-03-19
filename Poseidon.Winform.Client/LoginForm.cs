@@ -10,6 +10,7 @@ using System.Windows.Forms;
 namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Caller.Facade;
     using Poseidon.Common;
     using Poseidon.Core.BL;
     using Poseidon.Core.DL;
@@ -102,7 +103,7 @@ namespace Poseidon.Winform.Client
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             var hash = Hasher.SHA1Encrypt(this.txtPassword.Text);
-            var result = BusinessFactory<UserBusiness>.Instance.Login(this.txtUserName.Text, hash);
+            var result = CallerFactory<IUserService>.Instance.Login(this.txtUserName.Text, hash);
 
             if (result)
             {
@@ -115,7 +116,7 @@ namespace Poseidon.Winform.Client
                     ConfigUtility.RemoveRememberUser();
                 }
 
-                this.user = BusinessFactory<UserBusiness>.Instance.FindByUserName(this.txtUserName.Text);
+                this.user = CallerFactory<IUserService>.Instance.FindByUserName(this.txtUserName.Text);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

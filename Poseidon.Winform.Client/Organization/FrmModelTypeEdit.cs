@@ -10,8 +10,8 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Caller.Facade;
     using Poseidon.Common;
-    using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -43,7 +43,7 @@ namespace Poseidon.Winform.Client
         #region Function
         private void InitData(string id)
         {
-            this.currentEntity = BusinessFactory<ModelTypeBusiness>.Instance.FindById(id);
+            this.currentEntity = CallerFactory<IModelTypeService>.Instance.FindById(id);
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Poseidon.Winform.Client
 
             try
             {
-                BusinessFactory<ModelTypeBusiness>.Instance.Update(this.currentEntity);
+                CallerFactory<IModelTypeService>.Instance.Update(this.currentEntity);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

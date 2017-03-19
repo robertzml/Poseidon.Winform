@@ -10,8 +10,8 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Caller.Facade;
     using Poseidon.Common;
-    using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -78,12 +78,12 @@ namespace Poseidon.Winform.Client
                 return;
             }
 
-            ModelType type = new ModelType();
-            SetEntity(type);
+            ModelType entity = new ModelType();
+            SetEntity(entity);
 
             try
             {
-                BusinessFactory<ModelTypeBusiness>.Instance.Create(type);
+                CallerFactory<IModelTypeService>.Instance.Create(entity);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

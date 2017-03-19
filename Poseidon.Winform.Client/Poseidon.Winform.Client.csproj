@@ -54,6 +54,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Assembly\Poseidon.Base.dll</HintPath>
     </Reference>
+    <Reference Include="Poseidon.Caller">
+      <HintPath>..\..\Assembly\Poseidon.Caller.dll</HintPath>
+    </Reference>
     <Reference Include="Poseidon.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Assembly\Poseidon.Common.dll</HintPath>
