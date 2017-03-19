@@ -11,8 +11,8 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Caller.Facade;
     using Poseidon.Common;
-    using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -31,7 +31,7 @@ namespace Poseidon.Winform.Client
         #region Funtion
         protected override void InitForm()
         {
-            this.bsCategory.DataSource = BusinessFactory<DictCategoryBusiness>.Instance.FindAll();
+            this.bsCategory.DataSource = CallerFactory<IDictCategoryService>.Instance.FindAll();
             this.itemGrid.DataSource = new List<DictItem>();
 
             base.InitForm();
@@ -116,7 +116,7 @@ namespace Poseidon.Winform.Client
 
             try
             {
-                BusinessFactory<DictBusiness>.Instance.Create(entity);
+                CallerFactory<IDictService>.Instance.Create(entity);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

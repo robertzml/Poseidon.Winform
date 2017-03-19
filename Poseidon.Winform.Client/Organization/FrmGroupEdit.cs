@@ -11,8 +11,8 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Caller.Facade;
     using Poseidon.Common;
-    using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -40,7 +40,7 @@ namespace Poseidon.Winform.Client
         #region Function
         private void InitData(string id)
         {
-            this.currentEntity = BusinessFactory<GroupBusiness>.Instance.FindById(id);
+            this.currentEntity = CallerFactory<IGroupService>.Instance.FindById(id);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Poseidon.Winform.Client
             this.txtCode.Text = this.currentEntity.Code;
             this.txtRemark.Text = this.currentEntity.Remark;
 
-            this.bsGroup.DataSource = BusinessFactory<GroupBusiness>.Instance.FindAll().ToList();
+            this.bsGroup.DataSource = CallerFactory<IGroupService>.Instance.FindAll().ToList();
 
             this.cmbParent.EditValue = this.currentEntity.ParentId;
 
@@ -113,7 +113,7 @@ namespace Poseidon.Winform.Client
 
             try
             {
-                bool result = BusinessFactory<GroupBusiness>.Instance.Update(this.currentEntity);
+                bool result = CallerFactory<IGroupService>.Instance.Update(this.currentEntity);
 
                 if (result)
                 {

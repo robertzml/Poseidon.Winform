@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace Poseidon.Winform.Core
 {
     using Poseidon.Base.Framework;
-    using Poseidon.Core.BL;
+    using Poseidon.Caller.Facade;
     using Poseidon.Core.DL;
 
     /// <summary>
@@ -38,7 +38,7 @@ namespace Poseidon.Winform.Core
         /// </summary>
         private void LoadRootNode()
         {
-            this.categories = BusinessFactory<DictCategoryBusiness>.Instance.FindAll().ToList();
+            this.categories = CallerFactory<IDictCategoryService>.Instance.FindAll().ToList();
 
             this.tlData.BeginUnboundLoad();
             this.tlData.Nodes.Clear();
@@ -142,9 +142,9 @@ namespace Poseidon.Winform.Core
                 this.tlData.BeginUnboundLoad();
                 e.Node.Nodes.Clear();
 
-                // load contain dict
+                // load contain dict                
+                var dicts = CallerFactory<IDictService>.Instance.FindByCategory(id);
 
-                var dicts = BusinessFactory<DictBusiness>.Instance.FindByCategory(id);
                 foreach (var item in dicts)
                 {
                     var node = this.tlData.AppendNode(new object[] { item.Id, item.Name, 2 }, e.Node);

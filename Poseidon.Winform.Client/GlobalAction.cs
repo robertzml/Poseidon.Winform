@@ -32,18 +32,22 @@ namespace Poseidon.Winform.Client
         {
             // 设置连接字符串
             string source = AppConfig.GetAppSetting("ConnectionSource");
+            if (string.IsNullOrEmpty(source))
+                throw new PoseidonException(ErrorCode.DatabaseConnectionNotFound);
+
             string connection = "";
             if (source == "dbconfig")
             {
                 string name = AppConfig.GetAppSetting("DbConnection");
                 connection = ConfigUtility.GetConnectionString(name);
-                if (string.IsNullOrEmpty(connection))
-                    throw new PoseidonException(ErrorCode.DatabaseConnectionNotFound);
             }
             else if (source == "appconfig")
             {
                 connection = AppConfig.GetConnectionString();
             }
+
+            if (string.IsNullOrEmpty(connection))
+                throw new PoseidonException(ErrorCode.DatabaseConnectionNotFound);
 
             Cache.Instance.Add("ConnectionString", connection);
         }

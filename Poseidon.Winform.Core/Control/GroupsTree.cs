@@ -120,7 +120,7 @@ namespace Poseidon.Winform.Core
         /// <summary>
         /// 是否显示代码列
         /// </summary>
-        [Description("是否显示代码列")]
+        [Category("界面"), Description("是否显示代码列"), Browsable(true)]
         public bool ShowCode
         {
             get
@@ -136,7 +136,7 @@ namespace Poseidon.Winform.Core
         /// <summary>
         /// 是否显示备注列
         /// </summary>
-        [Description("是否显示备注列")]
+        [Category("界面"), Description("是否显示备注列"), Browsable(true)]
         public bool ShowRemark
         {
             get

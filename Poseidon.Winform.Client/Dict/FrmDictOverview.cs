@@ -11,7 +11,7 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
-    using Poseidon.Core.BL;
+    using Poseidon.Caller.Facade;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -51,10 +51,12 @@ namespace Poseidon.Winform.Client
             if (id == null)
                 return;
 
-            this.currentCategory = BusinessFactory<DictCategoryBusiness>.Instance.FindById(id);
+            this.currentCategory = CallerFactory<IDictCategoryService>.Instance.FindById(id);
             this.txtName.Text = this.currentCategory.Name;
             this.txtCode.Text = "";
             this.txtRemark.Text = this.currentCategory.Remark;
+
+            this.dictItemGrid.DataSource = null;
         }
 
         /// <summary>
@@ -68,7 +70,7 @@ namespace Poseidon.Winform.Client
             if (id == null)
                 return;
 
-            this.currentDict = BusinessFactory<DictBusiness>.Instance.FindById(id);
+            this.currentDict = CallerFactory<IDictService>.Instance.FindById(id);
             this.txtName.Text = this.currentDict.Name;
             this.txtCode.Text = this.currentDict.Code;
             this.txtRemark.Text = this.currentDict.Remark;

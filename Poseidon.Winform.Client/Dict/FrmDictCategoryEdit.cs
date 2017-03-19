@@ -11,8 +11,8 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Caller.Facade;
     using Poseidon.Common;
-    using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -40,7 +40,7 @@ namespace Poseidon.Winform.Client
         #region Function
         private void InitData(string id)
         {
-            this.currentCategory = BusinessFactory<DictCategoryBusiness>.Instance.FindById(id);
+            this.currentCategory = CallerFactory<IDictCategoryService>.Instance.FindById(id);
         }
 
         protected override void InitForm()
@@ -79,6 +79,11 @@ namespace Poseidon.Winform.Client
         #endregion //Function
 
         #region Event
+        /// <summary>
+        /// 保存
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             var input = CheckInput();
@@ -92,7 +97,7 @@ namespace Poseidon.Winform.Client
 
             try
             {
-                BusinessFactory<DictCategoryBusiness>.Instance.Update(this.currentCategory);
+                CallerFactory<IDictCategoryService>.Instance.Update(this.currentCategory);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

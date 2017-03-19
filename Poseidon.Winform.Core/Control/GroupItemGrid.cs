@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace Poseidon.Winform.Core
 {
     using Poseidon.Base.Framework;
-    using Poseidon.Core.BL;
+    using Poseidon.Caller.Facade;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -43,7 +43,7 @@ namespace Poseidon.Winform.Core
                 return;
 
             var item = this.bsEntity[rowIndex] as GroupItem;
-            var org = BusinessFactory<OrganizationBusiness>.Instance.FindById(item.OrganizationId);
+            var org = CallerFactory<IOrganizationService>.Instance.FindById(item.OrganizationId);
 
             if (e.Column.FieldName == "OrganizationId")
             {
@@ -63,7 +63,7 @@ namespace Poseidon.Winform.Core
                 return;
 
             var item = this.bsEntity[rowIndex] as GroupItem;
-            var org = BusinessFactory<OrganizationBusiness>.Instance.FindById(item.OrganizationId);
+            var org = CallerFactory<IOrganizationService>.Instance.FindById(item.OrganizationId);
 
             if (e.Column.FieldName == "colRemark" && e.IsGetData)
                 e.Value = org.Remark;

@@ -11,8 +11,8 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Caller.Facade;
     using Poseidon.Common;
-    using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -39,12 +39,12 @@ namespace Poseidon.Winform.Client
         #region Function
         private void InitData(string id)
         {
-            this.currentDict = BusinessFactory<DictBusiness>.Instance.FindById(id);
+            this.currentDict = CallerFactory<IDictService>.Instance.FindById(id);
         }
 
         protected override void InitForm()
         {
-            this.bsCategory.DataSource = BusinessFactory<DictCategoryBusiness>.Instance.FindAll();
+            this.bsCategory.DataSource = CallerFactory<IDictCategoryService>.Instance.FindAll();
 
             this.txtName.Text = this.currentDict.Name;
             this.txtCode.Text = this.currentDict.Code;
@@ -133,7 +133,7 @@ namespace Poseidon.Winform.Client
 
             try
             {
-                BusinessFactory<DictBusiness>.Instance.Update(this.currentDict);
+                CallerFactory<IDictService>.Instance.Update(this.currentDict);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();
