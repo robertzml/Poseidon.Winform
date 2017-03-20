@@ -42,6 +42,11 @@ namespace Poseidon.Winform.Base
         protected bool allowSort = true;
 
         /// <summary>
+        /// 是否启用Master View
+        /// </summary>
+        protected bool enableMasterView = false;
+
+        /// <summary>
         /// 是否显示行号
         /// </summary>
         protected bool showLineNumber = true;
@@ -100,6 +105,21 @@ namespace Poseidon.Winform.Base
         }
 
         /// <summary>
+        /// 选择行
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <remarks>
+        /// 选择指定对象行，使用ID判断
+        /// </remarks>
+        public void SelectRow(T entity)
+        {
+            var ds = this.bsEntity.DataSource as List<T>;
+            var index = ds.FindIndex(r => r.Id == entity.Id);
+            var rowIndex = this.dgvEntity.GetRowHandle(index);
+            this.dgvEntity.FocusedRowHandle = rowIndex;
+        }
+
+        /// <summary>
         /// 完成编辑
         /// </summary>
         public void CloseEditor()
@@ -126,6 +146,7 @@ namespace Poseidon.Winform.Base
             this.dgvEntity.OptionsCustomization.AllowFilter = this.allowFilter;
             this.dgvEntity.OptionsCustomization.AllowGroup = this.allowGroup;
             this.dgvEntity.OptionsCustomization.AllowSort = this.allowSort;
+            this.dgvEntity.OptionsDetail.EnableMasterViewMode = this.enableMasterView;
 
             this.dataNavigator.Visible = this.showNavigator;
         }
@@ -259,6 +280,22 @@ namespace Poseidon.Winform.Base
             set
             {
                 this.allowSort = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否启用Master View
+        /// </summary>
+        [Category("功能"), Description("是否启用Master View"), Browsable(true)]
+        public bool EnableMasterView
+        {
+            get
+            {
+                return this.enableMasterView;
+            }
+            set
+            {
+                this.enableMasterView = value;
             }
         }
 

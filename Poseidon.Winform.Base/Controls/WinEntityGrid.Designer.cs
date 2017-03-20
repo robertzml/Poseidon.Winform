@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dgcEntity = new DevExpress.XtraGrid.GridControl();
-            this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenu = new System.Windows.Forms.ContextMenuStrip();
             this.menuAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.bsEntity = new System.Windows.Forms.BindingSource(this.components);
+            this.bsEntity = new System.Windows.Forms.BindingSource();
             this.dgvEntity = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dataNavigator = new DevExpress.XtraEditors.DataNavigator();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
