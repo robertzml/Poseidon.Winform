@@ -11,7 +11,7 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
-    using Poseidon.Core.BL;
+    using Poseidon.Caller.Facade;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -37,13 +37,6 @@ namespace Poseidon.Winform.Client
         #endregion //Constructor
 
         #region Function
-        protected override void InitForm()
-        {
-            LoadModelTypes();
-            LoadOrganizations();
-
-            base.InitForm();
-        }
 
         /// <summary>
         /// 初始化数据
@@ -51,25 +44,16 @@ namespace Poseidon.Winform.Client
         /// <param name="groupId">分组ID</param>
         private void InitData(string groupId)
         {
-            this.currentGroup = BusinessFactory<GroupBusiness>.Instance.FindById(groupId);
+            this.currentGroup = CallerFactory<IGroupService>.Instance.FindById(groupId);
+
         }
 
-        /// <summary>
-        /// 载入关联模型类型
-        /// </summary>
-        private void LoadModelTypes()
+        protected override void InitForm()
         {
-            var data = BusinessFactory<ModelTypeBusiness>.Instance.FindWithCodes(this.currentGroup.ModelTypes).ToList();
-            this.bsModelType.DataSource = data;
-        }
+            this.itemGrid.DataSource = this.currentGroup.Items;
+            this.bsModelType.DataSource = CallerFactory<IModelTypeService>.Instance.FindWithCodes(this.currentGroup.ModelTypes);
 
-        /// <summary>
-        /// 载入已有组织
-        /// </summary>
-        private void LoadOrganizations()
-        {
-            var group = BusinessFactory<GroupBusiness>.Instance.FindById(this.currentGroup.Id);
-            this.itemGrid.DataSource = group.Items;
+            base.InitForm();
         }
         #endregion //Function
 
@@ -84,7 +68,7 @@ namespace Poseidon.Winform.Client
             if (this.luModelTypes.EditValue == null)
                 return;
 
-            this.ogridLeft.DataSource = BusinessFactory<OrganizationBusiness>.Instance.FindByModelType(this.luModelTypes.EditValue.ToString()).ToList();
+            this.ogridLeft.DataSource = CallerFactory<IOrganizationService>.Instance.FindByModelType(this.luModelTypes.EditValue.ToString()).ToList();
         }
 
         /// <summary>
@@ -134,7 +118,7 @@ namespace Poseidon.Winform.Client
 
             try
             {
-                BusinessFactory<GroupBusiness>.Instance.SetOrganizations(this.currentGroup.Id, this.itemGrid.DataSource);
+                CallerFactory<IGroupService>.Instance.SetOrganizations(this.currentGroup.Id, this.itemGrid.DataSource);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

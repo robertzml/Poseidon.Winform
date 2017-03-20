@@ -11,7 +11,7 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
-    using Poseidon.Core.BL;
+    using Poseidon.Caller.Facade;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -46,7 +46,7 @@ namespace Poseidon.Winform.Client
         #region Function
         protected override void InitForm()
         {
-            var data = BusinessFactory<ModelTypeBusiness>.Instance.FindAll().ToList();
+            var data = CallerFactory<IModelTypeService>.Instance.FindAll().ToList();
             this.bsModelType.DataSource = data;
 
             SetSelectItem();
@@ -58,7 +58,7 @@ namespace Poseidon.Winform.Client
         /// </summary>
         private void SetSelectItem()
         {
-            var group = BusinessFactory<GroupBusiness>.Instance.FindById(this.groupId);
+            var group = CallerFactory<IGroupService>.Instance.FindById(this.groupId);
 
             for (int i = 0; i < this.bsModelType.Count; i++)
             {
@@ -87,7 +87,7 @@ namespace Poseidon.Winform.Client
 
             try
             {
-                BusinessFactory<GroupBusiness>.Instance.SetModelTypes(this.groupId, codes);
+                CallerFactory<IGroupService>.Instance.SetModelTypes(this.groupId, codes);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

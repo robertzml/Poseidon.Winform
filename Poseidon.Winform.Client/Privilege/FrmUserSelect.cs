@@ -11,8 +11,8 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Caller.Facade;
     using Poseidon.Common;
-    using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
     using Poseidon.Winform.Core;
@@ -40,7 +40,7 @@ namespace Poseidon.Winform.Client
         #region Function
         private void InitData(string roleId)
         {
-            this.currentRole = BusinessFactory<RoleBusiness>.Instance.FindById(roleId);
+            this.currentRole = CallerFactory<IRoleService>.Instance.FindById(roleId);
         }
 
         protected override void InitForm()
@@ -55,7 +55,7 @@ namespace Poseidon.Winform.Client
         /// </summary>
         private void LoadUsers()
         {
-            this.bsUser.DataSource = BusinessFactory<UserBusiness>.Instance.FindAll().ToList();
+            this.bsUser.DataSource = CallerFactory<IUserService>.Instance.FindAll().ToList();
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Poseidon.Winform.Client
 
             try
             {
-                BusinessFactory<RoleBusiness>.Instance.SetUsers(this.currentRole.Id, uids);
+                CallerFactory<IRoleService>.Instance.SetUsers(this.currentRole.Id, uids);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

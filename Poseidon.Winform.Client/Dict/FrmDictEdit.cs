@@ -129,11 +129,13 @@ namespace Poseidon.Winform.Client
                 return;
             }
 
-            SetEntity(this.currentDict);
-
             try
             {
-                CallerFactory<IDictService>.Instance.Update(this.currentDict);
+                var entity = CallerFactory<IDictService>.Instance.FindById(this.currentDict.Id);
+
+                SetEntity(entity);
+
+                CallerFactory<IDictService>.Instance.Update(entity);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

@@ -11,8 +11,8 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Caller.Facade;
     using Poseidon.Common;
-    using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
     using Poseidon.Winform.Core;
@@ -86,7 +86,7 @@ namespace Poseidon.Winform.Client
 
             try
             {
-                BusinessFactory<RoleBusiness>.Instance.Create(entity);
+                CallerFactory<IRoleService>.Instance.Create(entity);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

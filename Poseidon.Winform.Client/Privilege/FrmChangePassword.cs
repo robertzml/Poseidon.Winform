@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +11,8 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Caller.Facade;
     using Poseidon.Common;
-    using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -77,14 +76,14 @@ namespace Poseidon.Winform.Client
                 string oldPass = Hasher.SHA1Encrypt(this.txtOldPassword.Text);
                 string newPass = Hasher.SHA1Encrypt(this.txtNewPassword.Text);
 
-                var result = BusinessFactory<UserBusiness>.Instance.CheckPassword(this.currentUser.UserName, oldPass);
+                var result = CallerFactory<IUserService>.Instance.CheckPassword(this.currentUser.UserName, oldPass);
                 if (!result)
                 {
                     MessageUtil.ShowInfo("原密码错误");
                     return;
                 }
 
-                result = BusinessFactory<UserBusiness>.Instance.ChangePassword(this.currentUser.UserName, oldPass, newPass);
+                result = CallerFactory<IUserService>.Instance.ChangePassword(this.currentUser.UserName, oldPass, newPass);
                 if (result)
                 {
                     MessageUtil.ShowInfo("修改密码成功");

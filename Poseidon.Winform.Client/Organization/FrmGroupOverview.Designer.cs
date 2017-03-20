@@ -436,6 +436,7 @@
             this.groupItemGrid.ShowAddMenu = false;
             this.groupItemGrid.ShowFooter = false;
             this.groupItemGrid.ShowLineNumber = true;
+            this.groupItemGrid.ShowNavigator = false;
             this.groupItemGrid.Size = new System.Drawing.Size(679, 275);
             this.groupItemGrid.TabIndex = 5;
             // 

@@ -12,7 +12,6 @@ namespace Poseidon.Winform.Client
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
     using Poseidon.Caller.Facade;
-    using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -51,7 +50,6 @@ namespace Poseidon.Winform.Client
         private void LoadGroupsTree()
         {
             var groups = CallerFactory<IGroupService>.Instance.FindAll().ToList();
-            //var groups = BusinessFactory<GroupBusiness>.Instance.FindAll().ToList();
             this.trGroup.DataSource = groups;
         }
 
@@ -71,7 +69,7 @@ namespace Poseidon.Winform.Client
         /// </summary>
         private void LoadOrganizations()
         {
-            var data = BusinessFactory<GroupBusiness>.Instance.FindAllItems(this.currentGroup.Id).ToList();
+            var data = CallerFactory<IGroupService>.Instance.FindAllItems(this.currentGroup.Id).ToList();
             this.groupItemGrid.DataSource = data;
         }
         #endregion //Function
@@ -127,7 +125,7 @@ namespace Poseidon.Winform.Client
             {
                 try
                 {
-                    BusinessFactory<GroupBusiness>.Instance.Delete(this.currentGroup);
+                    CallerFactory<IGroupService>.Instance.Delete(this.currentGroup);
                     LoadGroupsTree();
 
                     MessageUtil.ShowInfo("删除成功");

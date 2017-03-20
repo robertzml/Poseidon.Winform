@@ -101,11 +101,12 @@ namespace Poseidon.Winform.Client
                 return;
             }
 
-            SetEntity(this.currentEntity);
-
             try
             {
-                CallerFactory<IModelTypeService>.Instance.Update(this.currentEntity);
+                var entity = CallerFactory<IModelTypeService>.Instance.FindById(this.currentEntity.Id);
+                SetEntity(entity);
+
+                CallerFactory<IModelTypeService>.Instance.Update(entity);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

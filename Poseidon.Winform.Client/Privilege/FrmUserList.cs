@@ -11,7 +11,7 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
-    using Poseidon.Core.BL;
+    using Poseidon.Caller.Facade;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -39,7 +39,7 @@ namespace Poseidon.Winform.Client
         /// </summary>
         private void LoadUsers()
         {
-            var data = BusinessFactory<UserBusiness>.Instance.FindAll().ToList();
+            var data = CallerFactory<IUserService>.Instance.FindAll().ToList();
             this.userGrid.DataSource = data;
         }
         #endregion //Function

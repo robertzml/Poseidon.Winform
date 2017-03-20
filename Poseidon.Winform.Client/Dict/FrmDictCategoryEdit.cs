@@ -93,11 +93,12 @@ namespace Poseidon.Winform.Client
                 return;
             }
 
-            SetEntity(this.currentCategory);
-
             try
             {
-                CallerFactory<IDictCategoryService>.Instance.Update(this.currentCategory);
+                var entity = CallerFactory<IDictCategoryService>.Instance.FindById(this.currentCategory.Id);
+                SetEntity(entity);
+
+                CallerFactory<IDictCategoryService>.Instance.Update(entity);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

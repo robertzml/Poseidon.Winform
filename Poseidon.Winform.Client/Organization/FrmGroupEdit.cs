@@ -109,11 +109,12 @@ namespace Poseidon.Winform.Client
                 return;
             }
 
-            SetEntity(this.currentEntity);
-
             try
             {
-                bool result = CallerFactory<IGroupService>.Instance.Update(this.currentEntity);
+                var entity = CallerFactory<IGroupService>.Instance.FindById(this.currentEntity.Id);
+                SetEntity(entity);
+
+                bool result = CallerFactory<IGroupService>.Instance.Update(entity);
 
                 if (result)
                 {

@@ -11,8 +11,8 @@ namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Caller.Facade;
     using Poseidon.Common;
-    using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -47,7 +47,7 @@ namespace Poseidon.Winform.Client
         /// </summary>
         private void LoadRoles()
         {
-            this.bsRole.DataSource = BusinessFactory<RoleBusiness>.Instance.FindAll().OrderBy(r => r.Sort).ToList();
+            this.bsRole.DataSource = CallerFactory<IRoleService>.Instance.FindAll().OrderBy(r => r.Sort).ToList();
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Poseidon.Winform.Client
         /// <param name="entity">角色对象</param>
         private void LoadUsers(Role entity)
         {
-            var data = BusinessFactory<RoleBusiness>.Instance.FindUsers(entity.Id);
+            var data = CallerFactory<IRoleService>.Instance.FindUsers(entity.Id);
             this.userGrid.DataSource = data.ToList();
         }
         #endregion //Function
