@@ -99,6 +99,12 @@
     <Compile Include="Control\GroupItemGrid.Designer.cs">
       <DependentUpon>GroupItemGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\GroupChildrenTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\GroupChildrenTree.Designer.cs">
+      <DependentUpon>GroupChildrenTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\DictTree.resx">
       <DependentUpon>DictTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\GroupChildrenTree.resx">
+      <DependentUpon>GroupChildrenTree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\GroupItemGrid.resx">
       <DependentUpon>GroupItemGrid.cs</DependentUpon>
