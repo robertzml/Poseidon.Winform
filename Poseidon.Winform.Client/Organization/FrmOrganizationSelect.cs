@@ -78,18 +78,23 @@ namespace Poseidon.Winform.Client
         /// <param name="e"></param>
         private void btnMoveIn_Click(object sender, EventArgs e)
         {
-            var select = this.ogridLeft.GetCurrentSelect();
-            if (select != null && !this.itemGrid.DataSource.Any(r => r.OrganizationId == select.Id))
+            var rows = this.ogridLeft.GetSelectedRows();
+
+            foreach (var row in rows)
             {
-                GroupItem item = new GroupItem
+                if (!this.itemGrid.DataSource.Any(r => r.OrganizationId == row.Id))
                 {
-                    GroupCode = this.currentGroup.Code,
-                    OrganizationId = select.Id,
-                    ModelType = select.ModelType
-                };
-                this.itemGrid.DataSource.Add(item);
-                this.itemGrid.UpdateBindingData();
+                    GroupItem item = new GroupItem
+                    {
+                        GroupCode = this.currentGroup.Code,
+                        OrganizationId = row.Id,
+                        ModelType = row.ModelType
+                    };
+                    this.itemGrid.DataSource.Add(item);
+                }
             }
+
+            this.itemGrid.UpdateBindingData();
         }
 
         /// <summary>
