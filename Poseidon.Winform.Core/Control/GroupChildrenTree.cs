@@ -60,6 +60,19 @@ namespace Poseidon.Winform.Core
             topNode.Expanded = true;
             this.tlGroup.EndUnboundLoad();
         }
+
+        /// <summary>
+        /// 获取当前选中行ID
+        /// </summary>
+        /// <returns></returns>
+        public string GetCurrentSelectId()
+        {
+            var node = this.tlGroup.Selection[0];
+            if (node == null)
+                return null;
+
+            return node["colId"].ToString();
+        }
         #endregion //Method
 
         #region Delegate

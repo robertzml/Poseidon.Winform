@@ -126,6 +126,14 @@ namespace Poseidon.Winform.Base
         {
             this.dgvEntity.CloseEditor();
         }
+
+        /// <summary>
+        /// 重新适配列宽
+        /// </summary>
+        public void BestFitColumns()
+        {
+            this.dgvEntity.BestFitColumns();
+        }
         #endregion //Method
 
         #region Event
