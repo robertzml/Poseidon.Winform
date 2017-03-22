@@ -51,6 +51,7 @@
             this.tlGroup.OptionsBehavior.Editable = false;
             this.tlGroup.OptionsFind.AllowFindPanel = true;
             this.tlGroup.Size = new System.Drawing.Size(239, 344);
+            this.tlGroup.StateImageList = this.imageCollection;
             this.tlGroup.TabIndex = 0;
             this.tlGroup.BeforeExpand += new DevExpress.XtraTreeList.BeforeExpandEventHandler(this.tlGroup_BeforeExpand);
             this.tlGroup.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.tlGroup_FocusedNodeChanged);
@@ -65,6 +66,7 @@
             // 
             this.colName.Caption = "名称";
             this.colName.FieldName = "colName";
+            this.colName.MinWidth = 33;
             this.colName.Name = "colName";
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
