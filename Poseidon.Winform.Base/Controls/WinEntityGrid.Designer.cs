@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgcEntity = new DevExpress.XtraGrid.GridControl();
-            this.contextMenu = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.bsEntity = new System.Windows.Forms.BindingSource();
+            this.bsEntity = new System.Windows.Forms.BindingSource(this.components);
             this.dgvEntity = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dataNavigator = new DevExpress.XtraEditors.DataNavigator();
+            this.menuPrint = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuExportToExcel = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             this.contextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
@@ -56,15 +59,17 @@
             // contextMenu
             // 
             this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuAdd});
+            this.menuAdd,
+            this.menuPrint,
+            this.menuExportToExcel});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(101, 26);
+            this.contextMenu.Size = new System.Drawing.Size(153, 92);
             this.contextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenu_Opening);
             // 
             // menuAdd
             // 
             this.menuAdd.Name = "menuAdd";
-            this.menuAdd.Size = new System.Drawing.Size(100, 22);
+            this.menuAdd.Size = new System.Drawing.Size(152, 22);
             this.menuAdd.Text = "新建";
             // 
             // dgvEntity
@@ -93,6 +98,20 @@
             this.dataNavigator.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
             this.dataNavigator.TextStringFormat = "记录 {0} of {1}";
             // 
+            // menuPrint
+            // 
+            this.menuPrint.Name = "menuPrint";
+            this.menuPrint.Size = new System.Drawing.Size(152, 22);
+            this.menuPrint.Text = "打印";
+            this.menuPrint.Click += new System.EventHandler(this.menuPrint_Click);
+            // 
+            // menuExportToExcel
+            // 
+            this.menuExportToExcel.Name = "menuExportToExcel";
+            this.menuExportToExcel.Size = new System.Drawing.Size(152, 22);
+            this.menuExportToExcel.Text = "导出到Excel";
+            this.menuExportToExcel.Click += new System.EventHandler(this.menuExportToExcel_Click);
+            // 
             // WinEntityGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -117,5 +136,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenu;
         private System.Windows.Forms.ToolStripMenuItem menuAdd;
         protected DevExpress.XtraEditors.DataNavigator dataNavigator;
+        private System.Windows.Forms.ToolStripMenuItem menuPrint;
+        private System.Windows.Forms.ToolStripMenuItem menuExportToExcel;
     }
 }

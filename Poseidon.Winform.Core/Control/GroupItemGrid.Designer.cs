@@ -42,6 +42,10 @@
             // 
             this.bsEntity.DataSource = typeof(Poseidon.Core.DL.GroupItem);
             // 
+            // dgcEntity
+            // 
+            this.dgcEntity.Size = new System.Drawing.Size(568, 378);
+            // 
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -54,6 +58,7 @@
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.Editable = false;
+            this.dgvEntity.OptionsDetail.EnableMasterViewMode = false;
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
@@ -110,6 +115,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "GroupItemGrid";
+            this.ExportToExcelCustomCell += new System.Action<DevExpress.Export.CustomizeCellEventArgs>(this.GroupItemGrid_ExportToExcelCustomCell);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();

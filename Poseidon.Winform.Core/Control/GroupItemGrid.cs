@@ -68,6 +68,26 @@ namespace Poseidon.Winform.Core
             if (e.Column.FieldName == "colRemark" && e.IsGetData)
                 e.Value = org.Remark;
         }
+
+        /// <summary>
+        /// 导出Excel格式化
+        /// </summary>
+        /// <param name="e"></param>
+        private void GroupItemGrid_ExportToExcelCustomCell(DevExpress.Export.CustomizeCellEventArgs e)
+        {
+            int rowIndex = e.DataSourceRowIndex;
+            if (rowIndex < 0 || rowIndex >= this.bsEntity.Count || e.DocumentRow <= 0)
+                return;
+
+            var item = this.bsEntity[rowIndex] as GroupItem;
+            var org = CallerFactory<IOrganizationService>.Instance.FindById(item.OrganizationId);
+
+            if (e.ColumnFieldName == "OrganizationId")
+            {
+                e.Value = org.Name;
+                e.Handled = true;
+            }
+        }
         #endregion //Event
     }
 }

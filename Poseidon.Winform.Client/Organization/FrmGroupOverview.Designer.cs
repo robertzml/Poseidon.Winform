@@ -431,11 +431,13 @@
             this.groupItemGrid.AllowSort = true;
             this.groupItemGrid.DataSource = null;
             this.groupItemGrid.Editable = false;
+            this.groupItemGrid.EnableMasterView = false;
             this.groupItemGrid.Location = new System.Drawing.Point(12, 12);
             this.groupItemGrid.Name = "groupItemGrid";
             this.groupItemGrid.ShowAddMenu = false;
             this.groupItemGrid.ShowFooter = false;
             this.groupItemGrid.ShowLineNumber = true;
+            this.groupItemGrid.ShowMenu = false;
             this.groupItemGrid.ShowNavigator = false;
             this.groupItemGrid.Size = new System.Drawing.Size(679, 275);
             this.groupItemGrid.TabIndex = 5;

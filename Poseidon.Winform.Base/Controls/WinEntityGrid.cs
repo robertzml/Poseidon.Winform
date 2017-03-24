@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Poseidon.Winform.Base
 {
+    using DevExpress.XtraPrinting;
     using Poseidon.Base.Framework;
 
     /// <summary>
@@ -55,6 +56,11 @@ namespace Poseidon.Winform.Base
         /// 是否显示Footer
         /// </summary>
         protected bool showFooter = false;
+
+        /// <summary>
+        /// 是否显示菜单
+        /// </summary>
+        protected bool showMenu = false;
 
         /// <summary>
         /// 是否显示新增菜单
@@ -198,6 +204,43 @@ namespace Poseidon.Winform.Base
         {
             this.menuAdd.Visible = this.showAddMenu;
         }
+
+        /// <summary>
+        /// 打印预览
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuPrint_Click(object sender, EventArgs e)
+        {
+            this.dgcEntity.ShowRibbonPrintPreview();
+        }
+
+        /// <summary>
+        /// 导出到Excel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuExportToExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Excel files (*.xlsx)|*.xlsx";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                XlsxExportOptionsEx op = new XlsxExportOptionsEx();
+                op.ExportType = DevExpress.Export.ExportType.DataAware;
+                op.CustomizeCell += op_CustomizeCell;
+                this.dgvEntity.ExportToXlsx(dialog.FileName, op);
+            }
+        }
+
+        /// <summary>
+        /// 导出Excel格式化事件
+        /// </summary>
+        /// <param name="e"></param>
+        private void op_CustomizeCell(DevExpress.Export.CustomizeCellEventArgs e)
+        {
+            ExportToExcelCustomCell?.Invoke(e);
+        }
         #endregion //Event
 
         #region Delegate
@@ -206,6 +249,12 @@ namespace Poseidon.Winform.Base
         /// </summary>
         [Description("行选择事件")]
         public event Action<object, EventArgs> RowSelected;
+
+        /// <summary>
+        /// 导出Excel格式化事件
+        /// </summary>
+        [Description("导出Excel格式化事件")]
+        public event Action<DevExpress.Export.CustomizeCellEventArgs> ExportToExcelCustomCell;
         #endregion //Delegate
 
         #region Property
@@ -352,6 +401,22 @@ namespace Poseidon.Winform.Base
             set
             {
                 this.showNavigator = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否显示右键菜单
+        /// </summary>
+        [Category("界面"), Description("是否显示右键菜单"), Browsable(true)]
+        public bool ShowMenu
+        {
+            get
+            {
+                return this.showMenu;
+            }
+            set
+            {
+                this.showMenu = value;
             }
         }
 
