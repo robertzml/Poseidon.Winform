@@ -24,6 +24,21 @@ namespace Poseidon.Winform.Core
         /// 是否显示查询框
         /// </summary>
         private bool showFindPanel = false;
+
+        /// <summary>
+        /// 是否层级显示组织
+        /// </summary>
+        private bool cascadeOrganization = false;
+
+        /// <summary>
+        /// 相关分组
+        /// </summary>
+        private List<Group> relateGroups;
+
+        /// <summary>
+        /// 相关组织
+        /// </summary>
+        private List<Organization> relateOrganizations;
         #endregion //Field
 
         #region Constructor
@@ -40,16 +55,23 @@ namespace Poseidon.Winform.Core
         /// <param name="code">分组代码</param>
         public void SetGroupCode(string code)
         {
-            var top = CallerFactory<IGroupService>.Instance.FindByCode(code);
-            if (top == null)
+            this.relateGroups = CallerFactory<IGroupService>.Instance.FindWithChildrenByCode(code).ToList();
+            if (this.relateGroups.Count == 0)
                 throw new PoseidonException(ErrorCode.ObjectNotFound);
 
             this.tlGroup.BeginUnboundLoad();
+
+            var top = relateGroups.Find(r => r.Code == code);
+
+            // get all children organizations
+            var groupItems = CallerFactory<IGroupService>.Instance.FindAllItems(top.Id);
+            this.relateOrganizations = CallerFactory<IOrganizationService>.Instance.FindWithIds(groupItems.Select(r => r.OrganizationId).ToList()).ToList();
+
             var topNode = this.tlGroup.AppendNode(new object[] { top.Id, top.Name, 1 }, null);
             topNode.StateImageIndex = 0;
             topNode.HasChildren = true;
 
-            var children = CallerFactory<IGroupService>.Instance.FindChildren(top.Id);
+            var children = this.relateGroups.Where(r => r.ParentId == top.Id);
             foreach (var item in children)
             {
                 var node = this.tlGroup.AppendNode(new object[] { item.Id, item.Name, 1 }, topNode);
@@ -110,13 +132,14 @@ namespace Poseidon.Winform.Core
             var id = e.Node["colId"].ToString();
             int type = Convert.ToInt32(e.Node["colType"]);
 
+            this.tlGroup.BeginUnboundLoad();
+
             if (type == 1)
             {
-                this.tlGroup.BeginUnboundLoad();
                 e.Node.Nodes.Clear();
 
                 // load children group
-                var children = CallerFactory<IGroupService>.Instance.FindChildren(id);
+                var children = this.relateGroups.Where(r => r.ParentId == id);
                 foreach (var item in children)
                 {
                     var node = this.tlGroup.AppendNode(new object[] { item.Id, item.Name, 1 }, e.Node);
@@ -125,8 +148,8 @@ namespace Poseidon.Winform.Core
                 }
 
                 // load contain organization
-                var group = CallerFactory<IGroupService>.Instance.FindById(id);
-                var orgs = CallerFactory<IOrganizationService>.Instance.FindWithIds(group.Items.Select(r => r.OrganizationId).ToList());
+                var group = this.relateGroups.Find(r => r.Id == id);
+                var orgs = this.relateOrganizations.Where(r => group.Items.Select(s => s.OrganizationId).Contains(r.Id));
 
                 foreach (var item in group.Items.OrderBy(r => r.Sort))
                 {
@@ -134,14 +157,41 @@ namespace Poseidon.Winform.Core
                     if (org == null)
                         continue;
 
+                    if (this.cascadeOrganization && !string.IsNullOrEmpty(org.ParentId))
+                    {
+                        if (orgs.Count(r => r.Id == org.ParentId) > 0)
+                            continue;
+                    }
+
                     var node = this.tlGroup.AppendNode(new object[] { org.Id, org.Name, 2 }, e.Node);
                     node.StateImageIndex = 1;
-                    node.HasChildren = false;
+
+                    if (this.cascadeOrganization && orgs.Count(r => r.ParentId == org.Id) > 0)
+                        node.HasChildren = true;
+                    else
+                        node.HasChildren = false;
                 }
-
-
-                this.tlGroup.EndUnboundLoad();
             }
+            else if (type == 2)
+            {
+                e.Node.Nodes.Clear();
+
+                var org = this.relateOrganizations.Find(r => r.Id == id); //the selected org
+                var children = this.relateOrganizations.Where(r => r.ParentId == org.Id);
+
+                foreach (var item in children)
+                {
+                    var node = this.tlGroup.AppendNode(new object[] { item.Id, item.Name, 2 }, e.Node);
+                    node.StateImageIndex = 1;
+
+                    if (this.cascadeOrganization && this.relateOrganizations.Count(r => r.ParentId == item.Id) > 0)
+                        node.HasChildren = true;
+                    else
+                        node.HasChildren = false;
+                }
+            }
+
+            this.tlGroup.EndUnboundLoad();
         }
 
         /// <summary>
@@ -177,6 +227,22 @@ namespace Poseidon.Winform.Core
             set
             {
                 this.showFindPanel = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否层级显示组织
+        /// </summary>
+        [Description("是否层级显示组织")]
+        public bool CascadeOrganization
+        {
+            get
+            {
+                return this.cascadeOrganization;
+            }
+            set
+            {
+                this.cascadeOrganization = value;
             }
         }
         #endregion //Property
