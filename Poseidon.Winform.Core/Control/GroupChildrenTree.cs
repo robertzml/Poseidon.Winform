@@ -138,6 +138,8 @@ namespace Poseidon.Winform.Core
             {
                 e.Node.Nodes.Clear();
 
+                var group = this.relateGroups.Find(r => r.Id == id); // the seleted group
+
                 // load children group
                 var children = this.relateGroups.Where(r => r.ParentId == id);
                 foreach (var item in children)
@@ -148,9 +150,7 @@ namespace Poseidon.Winform.Core
                 }
 
                 // load contain organization
-                var group = this.relateGroups.Find(r => r.Id == id);
                 var orgs = this.relateOrganizations.Where(r => group.Items.Select(s => s.OrganizationId).Contains(r.Id));
-
                 foreach (var item in group.Items.OrderBy(r => r.Sort))
                 {
                     var org = orgs.Single(r => r.Id == item.OrganizationId);
