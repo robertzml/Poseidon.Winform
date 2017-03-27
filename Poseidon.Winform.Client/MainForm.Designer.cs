@@ -62,6 +62,9 @@
             this.rpgPersonnel = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.bbiMeasureMan = new DevExpress.XtraBars.BarButtonItem();
+            this.rpMeasure = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bbiMeasureOv = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -88,9 +91,11 @@
             this.bbiPopulationOv,
             this.bbtFundOv,
             this.barLoginUser,
-            this.bbiChangePassword});
+            this.bbiChangePassword,
+            this.bbiMeasureMan,
+            this.bbiMeasureOv});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 1;
+            this.ribbonControl.MaxItemId = 3;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpEnergy,
@@ -279,6 +284,7 @@
             // 
             this.rpEnergy.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.rpgTarget,
+            this.rpMeasure,
             this.rpgTargetBase});
             this.rpEnergy.Name = "rpEnergy";
             this.rpEnergy.Text = "用能管理";
@@ -372,6 +378,33 @@
             this.tabMdiManager.MdiParent = this;
             this.tabMdiManager.PinPageButtonShowMode = DevExpress.XtraTab.PinPageButtonShowMode.InActiveTabPageHeader;
             // 
+            // bbiMeasureMan
+            // 
+            this.bbiMeasureMan.Caption = "计量管理";
+            this.bbiMeasureMan.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiMeasureMan.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiMeasureMan.Glyph")));
+            this.bbiMeasureMan.Id = 1;
+            this.bbiMeasureMan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiMeasureMan.LargeGlyph")));
+            this.bbiMeasureMan.Name = "bbiMeasureMan";
+            this.bbiMeasureMan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiMeasureMan_ItemClick);
+            // 
+            // rpMeasure
+            // 
+            this.rpMeasure.ItemLinks.Add(this.bbiMeasureOv);
+            this.rpMeasure.ItemLinks.Add(this.bbiMeasureMan);
+            this.rpMeasure.Name = "rpMeasure";
+            this.rpMeasure.Text = "能源计量管理";
+            // 
+            // bbiMeasureOv
+            // 
+            this.bbiMeasureOv.Caption = "计量总览";
+            this.bbiMeasureOv.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiMeasureOv.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiMeasureOv.Glyph")));
+            this.bbiMeasureOv.Id = 2;
+            this.bbiMeasureOv.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiMeasureOv.LargeGlyph")));
+            this.bbiMeasureOv.Name = "bbiMeasureOv";
+            this.bbiMeasureOv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiMeasureOv_ItemClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -428,6 +461,9 @@
         private DevExpress.XtraBars.BarStaticItem barLoginUser;
         private DevExpress.XtraBars.BarButtonItem bbiChangePassword;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgPersonnel;
+        private DevExpress.XtraBars.BarButtonItem bbiMeasureMan;
+        private DevExpress.XtraBars.BarButtonItem bbiMeasureOv;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpMeasure;
     }
 }
 

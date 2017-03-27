@@ -136,6 +136,32 @@ namespace Poseidon.Winform.Client
         }
 
         /// <summary>
+        /// 计量总览
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiMeasureOv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string assemblyName = "Poseidon.Energy.ClientDx";
+            string typeName = "Poseidon.Energy.ClientDx.FrmMeasureOverview";
+
+            ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
+        }
+
+        /// <summary>
+        /// 计量管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiMeasureMan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string assemblyName = "Poseidon.Energy.ClientDx";
+            string typeName = "Poseidon.Energy.ClientDx.FrmMeasureManage";
+
+            ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
+        }
+
+        /// <summary>
         /// 部门总览
         /// </summary>
         /// <param name="sender"></param>
