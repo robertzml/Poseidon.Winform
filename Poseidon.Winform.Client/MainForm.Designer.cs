@@ -49,8 +49,11 @@
             this.bbtFundOv = new DevExpress.XtraBars.BarButtonItem();
             this.barLoginUser = new DevExpress.XtraBars.BarStaticItem();
             this.bbiChangePassword = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiMeasureMan = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiMeasureOv = new DevExpress.XtraBars.BarButtonItem();
             this.rpEnergy = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgTarget = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rpgMeasure = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgTargetBase = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpExpense = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgExpenseInfo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -62,9 +65,9 @@
             this.rpgPersonnel = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.bbiMeasureMan = new DevExpress.XtraBars.BarButtonItem();
-            this.rpMeasure = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.bbiMeasureOv = new DevExpress.XtraBars.BarButtonItem();
+            this.rpgSettlement = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bbiSettlementMan = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiSettlementOv = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -93,9 +96,11 @@
             this.barLoginUser,
             this.bbiChangePassword,
             this.bbiMeasureMan,
-            this.bbiMeasureOv});
+            this.bbiMeasureOv,
+            this.bbiSettlementMan,
+            this.bbiSettlementOv});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 3;
+            this.ribbonControl.MaxItemId = 5;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpEnergy,
@@ -280,11 +285,32 @@
             this.bbiChangePassword.Name = "bbiChangePassword";
             this.bbiChangePassword.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiChangePassword_ItemClick);
             // 
+            // bbiMeasureMan
+            // 
+            this.bbiMeasureMan.Caption = "计量管理";
+            this.bbiMeasureMan.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiMeasureMan.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiMeasureMan.Glyph")));
+            this.bbiMeasureMan.Id = 1;
+            this.bbiMeasureMan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiMeasureMan.LargeGlyph")));
+            this.bbiMeasureMan.Name = "bbiMeasureMan";
+            this.bbiMeasureMan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiMeasureMan_ItemClick);
+            // 
+            // bbiMeasureOv
+            // 
+            this.bbiMeasureOv.Caption = "计量总览";
+            this.bbiMeasureOv.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiMeasureOv.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiMeasureOv.Glyph")));
+            this.bbiMeasureOv.Id = 2;
+            this.bbiMeasureOv.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiMeasureOv.LargeGlyph")));
+            this.bbiMeasureOv.Name = "bbiMeasureOv";
+            this.bbiMeasureOv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiMeasureOv_ItemClick);
+            // 
             // rpEnergy
             // 
             this.rpEnergy.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.rpgTarget,
-            this.rpMeasure,
+            this.rpgMeasure,
+            this.rpgSettlement,
             this.rpgTargetBase});
             this.rpEnergy.Name = "rpEnergy";
             this.rpEnergy.Text = "用能管理";
@@ -299,6 +325,13 @@
             this.rpgTarget.ItemLinks.Add(this.bbiFundMan);
             this.rpgTarget.Name = "rpgTarget";
             this.rpgTarget.Text = "指标化管理";
+            // 
+            // rpgMeasure
+            // 
+            this.rpgMeasure.ItemLinks.Add(this.bbiMeasureOv);
+            this.rpgMeasure.ItemLinks.Add(this.bbiMeasureMan);
+            this.rpgMeasure.Name = "rpgMeasure";
+            this.rpgMeasure.Text = "能源计量管理";
             // 
             // rpgTargetBase
             // 
@@ -378,32 +411,32 @@
             this.tabMdiManager.MdiParent = this;
             this.tabMdiManager.PinPageButtonShowMode = DevExpress.XtraTab.PinPageButtonShowMode.InActiveTabPageHeader;
             // 
-            // bbiMeasureMan
+            // rpgSettlement
             // 
-            this.bbiMeasureMan.Caption = "计量管理";
-            this.bbiMeasureMan.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.bbiMeasureMan.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiMeasureMan.Glyph")));
-            this.bbiMeasureMan.Id = 1;
-            this.bbiMeasureMan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiMeasureMan.LargeGlyph")));
-            this.bbiMeasureMan.Name = "bbiMeasureMan";
-            this.bbiMeasureMan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiMeasureMan_ItemClick);
+            this.rpgSettlement.ItemLinks.Add(this.bbiSettlementOv);
+            this.rpgSettlement.ItemLinks.Add(this.bbiSettlementMan);
+            this.rpgSettlement.Name = "rpgSettlement";
+            this.rpgSettlement.Text = "能源结算管理";
             // 
-            // rpMeasure
+            // bbiSettlementMan
             // 
-            this.rpMeasure.ItemLinks.Add(this.bbiMeasureOv);
-            this.rpMeasure.ItemLinks.Add(this.bbiMeasureMan);
-            this.rpMeasure.Name = "rpMeasure";
-            this.rpMeasure.Text = "能源计量管理";
+            this.bbiSettlementMan.Caption = "结算管理";
+            this.bbiSettlementMan.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiSettlementMan.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiSettlementMan.Glyph")));
+            this.bbiSettlementMan.Id = 3;
+            this.bbiSettlementMan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiSettlementMan.LargeGlyph")));
+            this.bbiSettlementMan.Name = "bbiSettlementMan";
+            this.bbiSettlementMan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSettlementMan_ItemClick);
             // 
-            // bbiMeasureOv
+            // bbiSettlementOv
             // 
-            this.bbiMeasureOv.Caption = "计量总览";
-            this.bbiMeasureOv.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.bbiMeasureOv.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiMeasureOv.Glyph")));
-            this.bbiMeasureOv.Id = 2;
-            this.bbiMeasureOv.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiMeasureOv.LargeGlyph")));
-            this.bbiMeasureOv.Name = "bbiMeasureOv";
-            this.bbiMeasureOv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiMeasureOv_ItemClick);
+            this.bbiSettlementOv.Caption = "结算总览";
+            this.bbiSettlementOv.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiSettlementOv.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiSettlementOv.Glyph")));
+            this.bbiSettlementOv.Id = 4;
+            this.bbiSettlementOv.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiSettlementOv.LargeGlyph")));
+            this.bbiSettlementOv.Name = "bbiSettlementOv";
+            this.bbiSettlementOv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSettlementOv_ItemClick);
             // 
             // MainForm
             // 
@@ -463,7 +496,10 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgPersonnel;
         private DevExpress.XtraBars.BarButtonItem bbiMeasureMan;
         private DevExpress.XtraBars.BarButtonItem bbiMeasureOv;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpMeasure;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgMeasure;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgSettlement;
+        private DevExpress.XtraBars.BarButtonItem bbiSettlementMan;
+        private DevExpress.XtraBars.BarButtonItem bbiSettlementOv;
     }
 }
 

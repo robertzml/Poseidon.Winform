@@ -162,6 +162,32 @@ namespace Poseidon.Winform.Client
         }
 
         /// <summary>
+        /// 能源结算总览
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiSettlementOv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string assemblyName = "Poseidon.Energy.ClientDx";
+            string typeName = "Poseidon.Energy.ClientDx.FrmSettlementOverview";
+
+            ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
+        }
+
+        /// <summary>
+        /// 能源结算管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiSettlementMan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string assemblyName = "Poseidon.Energy.ClientDx";
+            string typeName = "Poseidon.Energy.ClientDx.FrmSettlementManage";
+
+            ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
+        }
+
+        /// <summary>
         /// 部门总览
         /// </summary>
         /// <param name="sender"></param>
