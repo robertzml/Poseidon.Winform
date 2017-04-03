@@ -124,6 +124,7 @@
             this.cmbParent.Properties.DataSource = this.bsGroup;
             this.cmbParent.Properties.DisplayMember = "Name";
             this.cmbParent.Properties.NullText = "无";
+            this.cmbParent.Properties.ShowFooter = false;
             this.cmbParent.Properties.TreeList = this.treeListLookUpEdit1TreeList;
             this.cmbParent.Properties.ValueMember = "Id";
             this.cmbParent.Size = new System.Drawing.Size(322, 20);

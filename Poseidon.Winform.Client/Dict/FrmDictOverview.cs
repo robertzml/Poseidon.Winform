@@ -110,7 +110,23 @@ namespace Poseidon.Winform.Client
         /// <param name="e"></param>
         private void btnCategoryDelete_Click(object sender, EventArgs e)
         {
+            if (this.currentCategory == null)
+                return;
 
+            if (MessageUtil.ConfirmYesNo("是否确认删除该字典分类") == DialogResult.Yes)
+            {
+                try
+                {
+                    CallerFactory<IDictCategoryService>.Instance.Delete(this.currentCategory);
+                    this.treeDict.Reload();
+
+                    MessageUtil.ShowInfo("删除成功");
+                }
+                catch (PoseidonException pe)
+                {
+                    MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+                }
+            }
         }
 
         /// <summary>
@@ -136,6 +152,32 @@ namespace Poseidon.Winform.Client
 
             ChildFormManage.ShowDialogForm(typeof(FrmDictEdit), new object[] { this.currentDict.Id });
             this.treeDict.Reload();
+        }
+
+        /// <summary>
+        /// 删除字典
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDictDelete_Click(object sender, EventArgs e)
+        {
+            if (this.currentDict == null)
+                return;
+
+            if (MessageUtil.ConfirmYesNo("是否确认删除该字典") == DialogResult.Yes)
+            {
+                try
+                {
+                    CallerFactory<IDictService>.Instance.Delete(this.currentDict);
+                    this.treeDict.Reload();
+
+                    MessageUtil.ShowInfo("删除成功");
+                }
+                catch (PoseidonException pe)
+                {
+                    MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+                }
+            }
         }
         #endregion //Event
     }

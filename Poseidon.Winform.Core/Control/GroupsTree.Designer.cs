@@ -78,6 +78,7 @@
             this.colName.Caption = "名称";
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
+            this.colName.OptionsColumn.AllowSort = false;
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
             this.colName.Width = 228;

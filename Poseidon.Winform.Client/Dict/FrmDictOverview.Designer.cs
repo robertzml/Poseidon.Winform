@@ -161,6 +161,7 @@
             this.btnDictDelete.StyleController = this.layoutControl1;
             this.btnDictDelete.TabIndex = 11;
             this.btnDictDelete.Text = "删除字典";
+            this.btnDictDelete.Click += new System.EventHandler(this.btnDictDelete_Click);
             // 
             // btnDictEdit
             // 
@@ -346,11 +347,13 @@
             this.dictItemGrid.DataSource = null;
             this.dictItemGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dictItemGrid.Editable = false;
+            this.dictItemGrid.EnableMasterView = false;
             this.dictItemGrid.Location = new System.Drawing.Point(2, 21);
             this.dictItemGrid.Name = "dictItemGrid";
             this.dictItemGrid.ShowAddMenu = false;
             this.dictItemGrid.ShowFooter = false;
             this.dictItemGrid.ShowLineNumber = true;
+            this.dictItemGrid.ShowMenu = false;
             this.dictItemGrid.ShowNavigator = false;
             this.dictItemGrid.Size = new System.Drawing.Size(556, 263);
             this.dictItemGrid.TabIndex = 0;

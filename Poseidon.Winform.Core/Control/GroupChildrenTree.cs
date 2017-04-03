@@ -64,8 +64,8 @@ namespace Poseidon.Winform.Core
             var top = relateGroups.Find(r => r.Code == code);
 
             // get all children organizations
-            var groupItems = CallerFactory<IGroupService>.Instance.FindAllItems(top.Id);
-            this.relateOrganizations = CallerFactory<IOrganizationService>.Instance.FindWithIds(groupItems.Select(r => r.OrganizationId).ToList()).ToList();
+            var groupItems = CallerFactory<IGroupService>.Instance.FindAllItems(top.Id).ToList();
+            this.relateOrganizations = CallerFactory<IOrganizationService>.Instance.FindByGroupItem(groupItems).ToList();
 
             var topNode = this.tlGroup.AppendNode(new object[] { top.Id, top.Name, 1 }, null);
             topNode.StateImageIndex = 0;

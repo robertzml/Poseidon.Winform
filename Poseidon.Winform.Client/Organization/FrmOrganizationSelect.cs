@@ -45,7 +45,6 @@ namespace Poseidon.Winform.Client
         private void InitData(string groupId)
         {
             this.currentGroup = CallerFactory<IGroupService>.Instance.FindById(groupId);
-
         }
 
         protected override void InitForm()
