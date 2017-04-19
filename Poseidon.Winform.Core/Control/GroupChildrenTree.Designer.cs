@@ -41,11 +41,14 @@
             // 
             // tlGroup
             // 
+            this.tlGroup.Appearance.FocusedCell.BackColor = System.Drawing.Color.SkyBlue;
+            this.tlGroup.Appearance.FocusedCell.Options.UseBackColor = true;
             this.tlGroup.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.colId,
             this.colName,
             this.colType});
             this.tlGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlGroup.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlGroup.Location = new System.Drawing.Point(0, 0);
             this.tlGroup.Name = "tlGroup";
             this.tlGroup.OptionsBehavior.Editable = false;

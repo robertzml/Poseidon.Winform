@@ -114,7 +114,7 @@ namespace Poseidon.Winform.Client
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void bbtFundOv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void bbiFundOv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string assemblyName = "Poseidon.Energy.ClientDx";
             string typeName = "Poseidon.Energy.ClientDx.FrmFundOverview";
@@ -284,6 +284,19 @@ namespace Poseidon.Winform.Client
         }
 
         /// <summary>
+        /// 退出系统
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageUtil.ConfirmYesNo("是否退出系统") == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        /// <summary>
         /// 角色管理
         /// </summary>
         /// <param name="sender"></param>
@@ -302,19 +315,7 @@ namespace Poseidon.Winform.Client
         {
             ChildFormManage.ShowDialogForm(typeof(FrmChangePassword));
         }
-
-        /// <summary>
-        /// 退出系统
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void barBtnExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.Close();
-        }
-
         #endregion //System
-
         #endregion //Ribbon Event
 
         #endregion //Event
