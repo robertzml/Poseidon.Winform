@@ -86,6 +86,30 @@
     <Compile Include="Dict\FrmDictEdit.Designer.cs">
       <DependentUpon>FrmDictEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Privilege\FrmPrivilegeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeEdit.Designer.cs">
+      <DependentUpon>FrmPrivilegeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeAssign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeAssign.Designer.cs">
+      <DependentUpon>FrmPrivilegeAssign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeAdd.Designer.cs">
+      <DependentUpon>FrmPrivilegeAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeManage.Designer.cs">
+      <DependentUpon>FrmPrivilegeManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Privilege\FrmUserSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,8 +236,20 @@
     <EmbeddedResource Include="Dict\FrmDictEdit.resx">
       <DependentUpon>FrmDictEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmPrivilegeAssign.resx">
+      <DependentUpon>FrmPrivilegeAssign.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmChangePassword.resx">
       <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmPrivilegeAdd.resx">
+      <DependentUpon>FrmPrivilegeAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmPrivilegeEdit.resx">
+      <DependentUpon>FrmPrivilegeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmPrivilegeManage.resx">
+      <DependentUpon>FrmPrivilegeManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmRoleAdd.resx">
       <DependentUpon>FrmRoleAdd.cs</DependentUpon>
@@ -275,6 +311,7 @@
     <EmbeddedResource Include="Privilege\FrmUserList.resx">
       <DependentUpon>FrmUserList.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Privilege.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Role.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.User.datasource" />
     <None Include="Properties\licenses.licx" />

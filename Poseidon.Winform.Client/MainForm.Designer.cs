@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barChildList = new DevExpress.XtraBars.BarMdiChildrenListItem();
@@ -42,7 +43,7 @@
             this.bbiExpenseOv = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDictOv = new DevExpress.XtraBars.BarButtonItem();
             this.bbiExpenseReceipt = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiUserList = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiUserMan = new DevExpress.XtraBars.BarButtonItem();
             this.bbiRoleMan = new DevExpress.XtraBars.BarButtonItem();
             this.bbiPopulationOv = new DevExpress.XtraBars.BarButtonItem();
             this.bbiFundOv = new DevExpress.XtraBars.BarButtonItem();
@@ -53,6 +54,7 @@
             this.bbiSettlementMan = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSettlementOv = new DevExpress.XtraBars.BarButtonItem();
             this.bbiExit = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiPrivilegeMan = new DevExpress.XtraBars.BarButtonItem();
             this.rpEnergy = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgTarget = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgMeasure = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -67,7 +69,7 @@
             this.rpgPrivilege = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgPersonnel = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -89,7 +91,7 @@
             this.bbiExpenseOv,
             this.bbiDictOv,
             this.bbiExpenseReceipt,
-            this.bbiUserList,
+            this.bbiUserMan,
             this.bbiRoleMan,
             this.bbiPopulationOv,
             this.bbiFundOv,
@@ -99,9 +101,10 @@
             this.bbiMeasureOv,
             this.bbiSettlementMan,
             this.bbiSettlementOv,
-            this.bbiExit});
+            this.bbiExit,
+            this.bbiPrivilegeMan});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 6;
+            this.ribbonControl.MaxItemId = 7;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpEnergy,
@@ -230,15 +233,15 @@
             this.bbiExpenseReceipt.Name = "bbiExpenseReceipt";
             this.bbiExpenseReceipt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExpenseReceipt_ItemClick);
             // 
-            // bbiUserList
+            // bbiUserMan
             // 
-            this.bbiUserList.Caption = "用户列表";
-            this.bbiUserList.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.bbiUserList.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiUserList.Glyph")));
-            this.bbiUserList.Id = 30;
-            this.bbiUserList.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiUserList.LargeGlyph")));
-            this.bbiUserList.Name = "bbiUserList";
-            this.bbiUserList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiUserList_ItemClick);
+            this.bbiUserMan.Caption = "用户管理";
+            this.bbiUserMan.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiUserMan.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiUserMan.Glyph")));
+            this.bbiUserMan.Id = 30;
+            this.bbiUserMan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiUserMan.LargeGlyph")));
+            this.bbiUserMan.Name = "bbiUserMan";
+            this.bbiUserMan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiUserMan_ItemClick);
             // 
             // bbiRoleMan
             // 
@@ -338,6 +341,16 @@
             this.bbiExit.Name = "bbiExit";
             this.bbiExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExit_ItemClick);
             // 
+            // bbiPrivilegeMan
+            // 
+            this.bbiPrivilegeMan.Caption = "权限管理";
+            this.bbiPrivilegeMan.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiPrivilegeMan.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiPrivilegeMan.Glyph")));
+            this.bbiPrivilegeMan.Id = 6;
+            this.bbiPrivilegeMan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiPrivilegeMan.LargeGlyph")));
+            this.bbiPrivilegeMan.Name = "bbiPrivilegeMan";
+            this.bbiPrivilegeMan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrivilegeMan_ItemClick);
+            // 
             // rpEnergy
             // 
             this.rpEnergy.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -427,8 +440,9 @@
             // 
             // rpgPrivilege
             // 
-            this.rpgPrivilege.ItemLinks.Add(this.bbiUserList);
+            this.rpgPrivilege.ItemLinks.Add(this.bbiUserMan);
             this.rpgPrivilege.ItemLinks.Add(this.bbiRoleMan);
+            this.rpgPrivilege.ItemLinks.Add(this.bbiPrivilegeMan);
             this.rpgPrivilege.Name = "rpgPrivilege";
             this.rpgPrivilege.Text = "权限管理";
             // 
@@ -501,7 +515,7 @@
         private DevExpress.XtraBars.BarButtonItem bbiExpenseOv;
         private DevExpress.XtraBars.BarButtonItem bbiDictOv;
         private DevExpress.XtraBars.BarButtonItem bbiExpenseReceipt;
-        private DevExpress.XtraBars.BarButtonItem bbiUserList;
+        private DevExpress.XtraBars.BarButtonItem bbiUserMan;
         private DevExpress.XtraBars.BarButtonItem bbiRoleMan;
         private DevExpress.XtraBars.BarButtonItem bbiPopulationOv;
         private DevExpress.XtraBars.BarButtonItem bbiFundOv;
@@ -515,6 +529,7 @@
         private DevExpress.XtraBars.BarButtonItem bbiSettlementMan;
         private DevExpress.XtraBars.BarButtonItem bbiSettlementOv;
         private DevExpress.XtraBars.BarButtonItem bbiExit;
+        private DevExpress.XtraBars.BarButtonItem bbiPrivilegeMan;
     }
 }
 

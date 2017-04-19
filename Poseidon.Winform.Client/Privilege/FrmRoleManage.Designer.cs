@@ -100,7 +100,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(787, 460);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(787, 504);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
@@ -110,7 +110,7 @@
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
             this.tableLayoutPanel1.SetRowSpan(this.groupControl1, 2);
-            this.groupControl1.Size = new System.Drawing.Size(194, 454);
+            this.groupControl1.Size = new System.Drawing.Size(194, 498);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "角色列表";
             // 
@@ -121,7 +121,7 @@
             this.lbRoles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbRoles.Location = new System.Drawing.Point(2, 21);
             this.lbRoles.Name = "lbRoles";
-            this.lbRoles.Size = new System.Drawing.Size(190, 431);
+            this.lbRoles.Size = new System.Drawing.Size(190, 475);
             this.lbRoles.TabIndex = 0;
             this.lbRoles.ValueMember = "Id";
             this.lbRoles.SelectedIndexChanged += new System.EventHandler(this.lbRoles_SelectedIndexChanged);
@@ -367,7 +367,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(203, 203);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(581, 254);
+            this.groupControl3.Size = new System.Drawing.Size(581, 298);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "包含用户";
             // 
@@ -379,23 +379,25 @@
             this.userGrid.DataSource = null;
             this.userGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userGrid.Editable = false;
+            this.userGrid.EnableMasterView = false;
             this.userGrid.Location = new System.Drawing.Point(2, 21);
             this.userGrid.Name = "userGrid";
             this.userGrid.ShowAddMenu = false;
             this.userGrid.ShowFooter = false;
             this.userGrid.ShowLineNumber = true;
+            this.userGrid.ShowMenu = false;
             this.userGrid.ShowNavigator = false;
-            this.userGrid.Size = new System.Drawing.Size(577, 231);
+            this.userGrid.Size = new System.Drawing.Size(577, 275);
             this.userGrid.TabIndex = 0;
             // 
             // FrmRoleManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 460);
+            this.ClientSize = new System.Drawing.Size(787, 504);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmRoleManage";
-            this.Text = "角色总览";
+            this.Text = "角色管理";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);

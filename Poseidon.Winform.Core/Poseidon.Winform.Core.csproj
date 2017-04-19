@@ -105,6 +105,12 @@
     <Compile Include="Control\GroupChildrenTree.Designer.cs">
       <DependentUpon>GroupChildrenTree.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\PrivilegeTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\PrivilegeTree.Designer.cs">
+      <DependentUpon>PrivilegeTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -146,10 +152,14 @@
     <EmbeddedResource Include="Control\OrganizationGrid.resx">
       <DependentUpon>OrganizationGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\PrivilegeTree.resx">
+      <DependentUpon>PrivilegeTree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\UserGrid.resx">
       <DependentUpon>UserGrid.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Core.DL.GroupItem.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Privilege.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

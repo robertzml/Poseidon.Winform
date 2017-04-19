@@ -242,6 +242,7 @@ namespace Poseidon.Winform.Client
         }
         #endregion //Expense
 
+        #region Organization
         /// <summary>
         /// 模型类型总览
         /// </summary>
@@ -261,6 +262,7 @@ namespace Poseidon.Winform.Client
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmGroupOverview));
         }
+        #endregion //Organization
 
         #region System
         /// <summary>
@@ -271,16 +273,6 @@ namespace Poseidon.Winform.Client
         private void bbiDictOv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmDictOverview));
-        }
-
-        /// <summary>
-        /// 用户列表
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void bbiUserList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            ChildFormManage.LoadMdiForm(this, typeof(FrmUserList));
         }
 
         /// <summary>
@@ -297,6 +289,16 @@ namespace Poseidon.Winform.Client
         }
 
         /// <summary>
+        /// 用户管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiUserMan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmUserList));
+        }
+
+        /// <summary>
         /// 角色管理
         /// </summary>
         /// <param name="sender"></param>
@@ -304,6 +306,16 @@ namespace Poseidon.Winform.Client
         private void bbiRoleMan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmRoleManage));
+        }
+
+        /// <summary>
+        /// 权限管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiPrivilegeMan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmPrivilegeManage));
         }
 
         /// <summary>
@@ -316,8 +328,8 @@ namespace Poseidon.Winform.Client
             ChildFormManage.ShowDialogForm(typeof(FrmChangePassword));
         }
         #endregion //System
-        #endregion //Ribbon Event
 
+        #endregion //Ribbon Event
         #endregion //Event
     }
 }
