@@ -57,6 +57,7 @@ namespace Poseidon.Winform.Client
         private void FrmPrivilegeManage_Load(object sender, EventArgs e)
         {
             this.privilegeTree.RefreshData();
+            this.privilegeTree.Expand();
         }
 
         /// <summary>
@@ -68,6 +69,7 @@ namespace Poseidon.Winform.Client
         {
             ChildFormManage.ShowDialogForm(typeof(FrmPrivilegeAdd));
             this.privilegeTree.RefreshData();
+            this.privilegeTree.Expand();
         }
 
         /// <summary>
@@ -83,6 +85,7 @@ namespace Poseidon.Winform.Client
 
             ChildFormManage.ShowDialogForm(typeof(FrmPrivilegeEdit), new object[] { id });
             this.privilegeTree.RefreshData();
+            this.privilegeTree.Expand();
         }
         #endregion //Event
     }

@@ -24,6 +24,12 @@ namespace Poseidon.Winform.Core
         /// 是否显示选择框
         /// </summary>
         private bool showCheckBox = false;
+
+        /// <summary>
+        /// 是否显示排序码
+        /// </summary>
+
+        private bool showSortCode = false;
         #endregion //Field
 
         #region Constructor
@@ -65,6 +71,50 @@ namespace Poseidon.Winform.Core
             var id = node["Id"].ToString();
             return id;
         }
+
+        /// <summary>
+        /// 展开节点
+        /// </summary>
+        public void Expand()
+        {
+            this.tlView.ExpandAll();
+        }
+
+        /// <summary>
+        /// 设置选中行
+        /// </summary>
+        /// <param name="codes"></param>
+        public void CheckRows(List<string> codes)
+        {
+            this.tlView.NodesIterator.DoOperation((r) => {
+                var entity = this.tlView.GetDataRecordByNode(r) as Privilege;
+
+                if (codes.Contains(entity.Code))
+                {
+                    r.Checked = true;
+                }
+                else
+                    r.Checked = false;
+            });
+        }
+
+        /// <summary>
+        /// 获取选中
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetCheckedCodes()
+        {
+            List<string> codes = new List<string>();
+            this.tlView.NodesIterator.DoOperation((r) => {
+                if (r.Checked)
+                {
+                    var entity = this.tlView.GetDataRecordByNode(r) as Privilege;
+                    codes.Add(entity.Code);
+                }              
+            });
+
+            return codes;
+        }
         #endregion //Method
 
         #region Delegate
@@ -84,6 +134,7 @@ namespace Poseidon.Winform.Core
         private void PrivilegeTree_Load(object sender, EventArgs e)
         {
             this.tlView.OptionsView.ShowCheckBoxes = this.showCheckBox;
+            this.colSort.Visible = this.showSortCode;
         }
 
         /// <summary>
@@ -144,6 +195,23 @@ namespace Poseidon.Winform.Core
             set
             {
                 this.showCheckBox = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否显示排序码
+        /// </summary>
+        [Description("是否显示排序码"), Category("界面"), Browsable(true)]
+        public bool ShowSortCode
+        {
+            get
+            {
+                return showSortCode;
+            }
+
+            set
+            {
+                showSortCode = value;
             }
         }
         #endregion //Property

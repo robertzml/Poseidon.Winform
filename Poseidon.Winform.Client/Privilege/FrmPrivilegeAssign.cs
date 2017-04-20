@@ -22,6 +22,23 @@ namespace Poseidon.Winform.Client
     /// </summary>
     public partial class FrmPrivilegeAssign : BaseMdiForm
     {
+        #region Field
+        /// <summary>
+        /// 类型 1:角色 2:用户
+        /// </summary>
+        private int type;
+
+        /// <summary>
+        /// 当前关联用户
+        /// </summary>
+        private User currentUser;
+
+        /// <summary>
+        /// 当前关联角色
+        /// </summary>
+        private Role currentRole;
+        #endregion //Field
+
         #region Constructor
         public FrmPrivilegeAssign()
         {
@@ -37,5 +54,37 @@ namespace Poseidon.Winform.Client
             base.InitForm();
         }
         #endregion //Function
+
+        #region Event
+        /// <summary>
+        /// 选择角色
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lbRoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.lbRoles.SelectedIndex == -1)
+            {
+                this.currentRole = null;
+                return;
+            }
+
+            this.currentRole = this.lbRoles.SelectedItem as Role;
+            this.type = 1;
+        }
+
+        /// <summary>
+        /// 选择权限
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            if (type == 1 && this.currentRole != null)
+            {
+                ChildFormManage.ShowDialogForm(typeof(FrmPrivilegeSelect), new object[] { type, this.currentRole.Id });
+            }
+        }
+        #endregion //Event
     }
 }

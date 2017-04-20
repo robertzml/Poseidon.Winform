@@ -30,27 +30,27 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.privilegeTree = new Poseidon.Winform.Core.PrivilegeTree();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
-            this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -78,36 +78,6 @@
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "操作";
             // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(258, 12);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(276, 22);
-            this.btnEdit.StyleController = this.layoutControl1;
-            this.btnEdit.TabIndex = 12;
-            this.btnEdit.Text = "编辑权限";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 12);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(242, 22);
-            this.btnAdd.StyleController = this.layoutControl1;
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "添加权限";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // groupControl3
-            // 
-            this.groupControl3.Controls.Add(this.privilegeTree);
-            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(3, 143);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(789, 360);
-            this.groupControl3.TabIndex = 2;
-            this.groupControl3.Text = "权限列表";
-            // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.btnDelete);
@@ -120,6 +90,35 @@
             this.layoutControl1.Size = new System.Drawing.Size(785, 111);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(538, 12);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(235, 22);
+            this.btnDelete.StyleController = this.layoutControl1;
+            this.btnDelete.TabIndex = 13;
+            this.btnDelete.Text = "删除权限";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(12, 12);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(242, 22);
+            this.btnAdd.StyleController = this.layoutControl1;
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "添加权限";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(258, 12);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(276, 22);
+            this.btnEdit.StyleController = this.layoutControl1;
+            this.btnEdit.TabIndex = 12;
+            this.btnEdit.Text = "编辑权限";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // layoutControlGroup1
             // 
@@ -152,15 +151,6 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(538, 12);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(235, 22);
-            this.btnDelete.StyleController = this.layoutControl1;
-            this.btnDelete.TabIndex = 13;
-            this.btnDelete.Text = "删除权限";
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnDelete;
@@ -170,11 +160,23 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.privilegeTree);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(3, 143);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(789, 360);
+            this.groupControl3.TabIndex = 2;
+            this.groupControl3.Text = "权限列表";
+            // 
             // privilegeTree
             // 
             this.privilegeTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.privilegeTree.Location = new System.Drawing.Point(2, 21);
             this.privilegeTree.Name = "privilegeTree";
+            this.privilegeTree.ShowCheckBox = false;
+            this.privilegeTree.ShowSortCode = true;
             this.privilegeTree.Size = new System.Drawing.Size(785, 337);
             this.privilegeTree.TabIndex = 0;
             // 
@@ -190,14 +192,14 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
-            this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
