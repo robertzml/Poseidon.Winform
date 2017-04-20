@@ -22,9 +22,20 @@ namespace Poseidon.Winform.Client
     /// </summary>
     public partial class FrmPrivilegeAssign : BaseMdiForm
     {
+        #region Constructor
         public FrmPrivilegeAssign()
         {
             InitializeComponent();
         }
+        #endregion //Constructor
+
+        #region Function
+        protected override void InitForm()
+        {
+            this.bsRole.DataSource = CallerFactory<IRoleService>.Instance.FindAll();
+
+            base.InitForm();
+        }
+        #endregion //Function
     }
 }

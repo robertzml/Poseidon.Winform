@@ -58,6 +58,7 @@
             this.tlView.Name = "tlView";
             this.tlView.OptionsBehavior.Editable = false;
             this.tlView.OptionsBehavior.PopulateServiceColumns = true;
+            this.tlView.OptionsView.ShowCheckBoxes = true;
             this.tlView.ParentFieldName = "ParentId";
             this.tlView.Size = new System.Drawing.Size(512, 272);
             this.tlView.TabIndex = 0;
@@ -73,6 +74,7 @@
             // colSort
             // 
             this.colSort.FieldName = "Sort";
+            this.colSort.MinWidth = 32;
             this.colSort.Name = "colSort";
             this.colSort.Visible = true;
             this.colSort.VisibleIndex = 0;
@@ -127,6 +129,7 @@
             this.Controls.Add(this.tlView);
             this.Name = "PrivilegeTree";
             this.Size = new System.Drawing.Size(512, 272);
+            this.Load += new System.EventHandler(this.PrivilegeTree_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tlView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPrivilege)).EndInit();
             this.ResumeLayout(false);

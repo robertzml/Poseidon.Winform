@@ -70,6 +70,7 @@
             this.rpgPersonnel = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.bbiPrivilegeAssign = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -102,9 +103,10 @@
             this.bbiSettlementMan,
             this.bbiSettlementOv,
             this.bbiExit,
-            this.bbiPrivilegeMan});
+            this.bbiPrivilegeMan,
+            this.bbiPrivilegeAssign});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 7;
+            this.ribbonControl.MaxItemId = 8;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpEnergy,
@@ -443,6 +445,7 @@
             this.rpgPrivilege.ItemLinks.Add(this.bbiUserMan);
             this.rpgPrivilege.ItemLinks.Add(this.bbiRoleMan);
             this.rpgPrivilege.ItemLinks.Add(this.bbiPrivilegeMan);
+            this.rpgPrivilege.ItemLinks.Add(this.bbiPrivilegeAssign);
             this.rpgPrivilege.Name = "rpgPrivilege";
             this.rpgPrivilege.Text = "权限管理";
             // 
@@ -465,6 +468,16 @@
             this.tabMdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.tabMdiManager.MdiParent = this;
             this.tabMdiManager.PinPageButtonShowMode = DevExpress.XtraTab.PinPageButtonShowMode.InActiveTabPageHeader;
+            // 
+            // bbiPrivilegeAssign
+            // 
+            this.bbiPrivilegeAssign.Caption = "权限分配";
+            this.bbiPrivilegeAssign.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiPrivilegeAssign.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiPrivilegeAssign.Glyph")));
+            this.bbiPrivilegeAssign.Id = 7;
+            this.bbiPrivilegeAssign.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiPrivilegeAssign.LargeGlyph")));
+            this.bbiPrivilegeAssign.Name = "bbiPrivilegeAssign";
+            this.bbiPrivilegeAssign.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrivilegeAssign_ItemClick);
             // 
             // MainForm
             // 
@@ -530,6 +543,7 @@
         private DevExpress.XtraBars.BarButtonItem bbiSettlementOv;
         private DevExpress.XtraBars.BarButtonItem bbiExit;
         private DevExpress.XtraBars.BarButtonItem bbiPrivilegeMan;
+        private DevExpress.XtraBars.BarButtonItem bbiPrivilegeAssign;
     }
 }
 

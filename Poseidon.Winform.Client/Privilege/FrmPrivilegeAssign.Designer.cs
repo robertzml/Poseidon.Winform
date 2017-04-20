@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -53,6 +54,14 @@
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.tabPageUser = new DevExpress.XtraTab.XtraTabPage();
+            this.tabPageRole = new DevExpress.XtraTab.XtraTabPage();
+            this.lbRoles = new DevExpress.XtraEditors.ListBoxControl();
+            this.bsRole = new System.Windows.Forms.BindingSource(this.components);
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.privilegeTree1 = new Poseidon.Winform.Core.PrivilegeTree();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -78,6 +87,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.tabPageRole.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lbRoles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRole)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -86,13 +104,15 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.groupControl2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl3, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(766, 442);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(766, 504);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl2
@@ -101,7 +121,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(386, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(377, 215);
+            this.groupControl2.Size = new System.Drawing.Size(377, 246);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "权限信息";
             // 
@@ -121,13 +141,13 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(373, 192);
+            this.layoutControl1.Size = new System.Drawing.Size(373, 223);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(188, 146);
+            this.btnEdit.Location = new System.Drawing.Point(188, 177);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(161, 22);
             this.btnEdit.StyleController = this.layoutControl1;
@@ -136,7 +156,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(24, 146);
+            this.btnAdd.Location = new System.Drawing.Point(24, 177);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(160, 22);
             this.btnAdd.StyleController = this.layoutControl1;
@@ -147,7 +167,7 @@
             // 
             this.txtRemark.Location = new System.Drawing.Point(51, 83);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(310, 28);
+            this.txtRemark.Size = new System.Drawing.Size(310, 59);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 11;
             // 
@@ -227,7 +247,7 @@
             this.layoutControlGroup2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(373, 192);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(373, 223);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -298,7 +318,7 @@
             this.layoutControlItem8.Control = this.txtRemark;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 71);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(353, 32);
+            this.layoutControlItem8.Size = new System.Drawing.Size(353, 63);
             this.layoutControlItem8.Text = "备注";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(36, 14);
             // 
@@ -307,7 +327,7 @@
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem9,
             this.layoutControlItem10});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 103);
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 134);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(353, 69);
             this.layoutControlGroup2.Text = "操作";
@@ -330,14 +350,83 @@
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.xtraTabControl1);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(3, 3);
+            this.groupControl1.Name = "groupControl1";
+            this.tableLayoutPanel1.SetRowSpan(this.groupControl1, 2);
+            this.groupControl1.Size = new System.Drawing.Size(377, 498);
+            this.groupControl1.TabIndex = 3;
+            this.groupControl1.Text = "主体选择";
+            // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl1.Location = new System.Drawing.Point(2, 21);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.tabPageRole;
+            this.xtraTabControl1.Size = new System.Drawing.Size(373, 475);
+            this.xtraTabControl1.TabIndex = 0;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabPageRole,
+            this.tabPageUser});
+            // 
+            // tabPageUser
+            // 
+            this.tabPageUser.Name = "tabPageUser";
+            this.tabPageUser.Size = new System.Drawing.Size(367, 446);
+            this.tabPageUser.Text = "用户列表";
+            // 
+            // tabPageRole
+            // 
+            this.tabPageRole.Controls.Add(this.lbRoles);
+            this.tabPageRole.Name = "tabPageRole";
+            this.tabPageRole.Size = new System.Drawing.Size(367, 446);
+            this.tabPageRole.Text = "角色列表";
+            // 
+            // lbRoles
+            // 
+            this.lbRoles.DataSource = this.bsRole;
+            this.lbRoles.DisplayMember = "Name";
+            this.lbRoles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbRoles.Location = new System.Drawing.Point(0, 0);
+            this.lbRoles.Name = "lbRoles";
+            this.lbRoles.Size = new System.Drawing.Size(367, 446);
+            this.lbRoles.TabIndex = 0;
+            this.lbRoles.ValueMember = "Id";
+            // 
+            // bsRole
+            // 
+            this.bsRole.DataSource = typeof(Poseidon.Core.DL.Role);
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.privilegeTree1);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(386, 255);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(377, 246);
+            this.groupControl3.TabIndex = 4;
+            this.groupControl3.Text = "已有权限";
+            // 
+            // privilegeTree1
+            // 
+            this.privilegeTree1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.privilegeTree1.Location = new System.Drawing.Point(2, 21);
+            this.privilegeTree1.Name = "privilegeTree1";
+            this.privilegeTree1.Size = new System.Drawing.Size(373, 223);
+            this.privilegeTree1.TabIndex = 0;
+            // 
             // FrmPrivilegeAssign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 442);
+            this.ClientSize = new System.Drawing.Size(766, 504);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmPrivilegeAssign";
-            this.Text = "FrmPrivilegeAssign";
+            this.Text = "权限分配";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -363,6 +452,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.tabPageRole.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lbRoles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRole)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -394,5 +492,13 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage tabPageUser;
+        private DevExpress.XtraTab.XtraTabPage tabPageRole;
+        private DevExpress.XtraEditors.ListBoxControl lbRoles;
+        private System.Windows.Forms.BindingSource bsRole;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private Core.PrivilegeTree privilegeTree1;
     }
 }

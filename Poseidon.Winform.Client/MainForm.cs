@@ -319,6 +319,16 @@ namespace Poseidon.Winform.Client
         }
 
         /// <summary>
+        /// 权限分配
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiPrivilegeAssign_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmPrivilegeAssign));
+        }
+
+        /// <summary>
         /// 修改密码
         /// </summary>
         /// <param name="sender"></param>
@@ -328,8 +338,8 @@ namespace Poseidon.Winform.Client
             ChildFormManage.ShowDialogForm(typeof(FrmChangePassword));
         }
         #endregion //System
-
         #endregion //Ribbon Event
+
         #endregion //Event
     }
 }

@@ -19,6 +19,13 @@ namespace Poseidon.Winform.Core
     /// </summary>
     public partial class PrivilegeTree : DevExpress.XtraEditors.XtraUserControl
     {
+        #region Field
+        /// <summary>
+        /// 是否显示选择框
+        /// </summary>
+        private bool showCheckBox = false;
+        #endregion //Field
+
         #region Constructor
         public PrivilegeTree()
         {
@@ -70,6 +77,16 @@ namespace Poseidon.Winform.Core
 
         #region Event
         /// <summary>
+        /// 控件载入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PrivilegeTree_Load(object sender, EventArgs e)
+        {
+            this.tlView.OptionsView.ShowCheckBoxes = this.showCheckBox;
+        }
+
+        /// <summary>
         /// 节点选择事件
         /// </summary>
         /// <param name="sender"></param>
@@ -90,6 +107,8 @@ namespace Poseidon.Winform.Core
         private void tlView_GetNodeDisplayValue(object sender, DevExpress.XtraTreeList.GetNodeDisplayValueEventArgs e)
         {
             var entity = this.tlView.GetDataRecordByNode(e.Node) as Privilege;
+            if (entity == null)
+                return;
 
             if (e.Column.FieldName == "Action")
             {
@@ -110,5 +129,23 @@ namespace Poseidon.Winform.Core
             }
         }
         #endregion //Event
+
+        #region Property
+        /// <summary>
+        /// 是否显示选择框
+        /// </summary>
+        [Description("是否显示选择框"), Category("界面"), Browsable(true)]
+        public bool ShowCheckBox
+        {
+            get
+            {
+                return this.showCheckBox;
+            }
+            set
+            {
+                this.showCheckBox = value;
+            }
+        }
+        #endregion //Property
     }
 }
