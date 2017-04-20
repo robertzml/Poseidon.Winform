@@ -100,10 +100,14 @@ namespace Poseidon.Winform.Client
         {
             try
             {
+                var codes = this.privilegeTree.GetCheckedCodes();
                 if (this.type == 1)
                 {
-                    var codes = this.privilegeTree.GetCheckedCodes();
                     CallerFactory<IRoleService>.Instance.SetPrivileges(this.currentRole.Id, codes);
+                }
+                else if (type == 2)
+                {
+                    CallerFactory<IUserService>.Instance.SetPrivileges(this.currentUser.Id, codes);
                 }
 
                 MessageUtil.ShowInfo("保存成功");

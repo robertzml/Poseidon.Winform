@@ -30,6 +30,11 @@ namespace Poseidon.Winform.Core
         /// </summary>
 
         private bool showSortCode = false;
+
+        /// <summary>
+        /// 是否只读
+        /// </summary>
+        private bool isReadonly = false;
         #endregion //Field
 
         #region Constructor
@@ -86,7 +91,8 @@ namespace Poseidon.Winform.Core
         /// <param name="codes"></param>
         public void CheckRows(List<string> codes)
         {
-            this.tlView.NodesIterator.DoOperation((r) => {
+            this.tlView.NodesIterator.DoOperation((r) =>
+            {
                 var entity = this.tlView.GetDataRecordByNode(r) as Privilege;
 
                 if (codes.Contains(entity.Code))
@@ -105,12 +111,13 @@ namespace Poseidon.Winform.Core
         public List<string> GetCheckedCodes()
         {
             List<string> codes = new List<string>();
-            this.tlView.NodesIterator.DoOperation((r) => {
+            this.tlView.NodesIterator.DoOperation((r) =>
+            {
                 if (r.Checked)
                 {
                     var entity = this.tlView.GetDataRecordByNode(r) as Privilege;
                     codes.Add(entity.Code);
-                }              
+                }
             });
 
             return codes;
@@ -133,6 +140,7 @@ namespace Poseidon.Winform.Core
         /// <param name="e"></param>
         private void PrivilegeTree_Load(object sender, EventArgs e)
         {
+            this.tlView.OptionsBehavior.ReadOnly = this.IsReadonly;
             this.tlView.OptionsView.ShowCheckBoxes = this.showCheckBox;
             this.colSort.Visible = this.showSortCode;
         }
@@ -212,6 +220,23 @@ namespace Poseidon.Winform.Core
             set
             {
                 showSortCode = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否只读
+        /// </summary>
+        [Description("是否只读"), Category("功能"), Browsable(true)]
+        public bool IsReadonly
+        {
+            get
+            {
+                return isReadonly;
+            }
+
+            set
+            {
+                isReadonly = value;
             }
         }
         #endregion //Property

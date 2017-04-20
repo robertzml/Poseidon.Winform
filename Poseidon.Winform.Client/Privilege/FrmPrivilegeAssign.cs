@@ -49,7 +49,11 @@ namespace Poseidon.Winform.Client
         #region Function
         protected override void InitForm()
         {
-            this.bsRole.DataSource = CallerFactory<IRoleService>.Instance.FindAll();
+            this.bsRole.DataSource = CallerFactory<IRoleService>.Instance.FindAll().OrderBy(r => r.Sort);
+            this.bsUser.DataSource = CallerFactory<IUserService>.Instance.FindAll();
+
+            this.privilegeTree.RefreshData();
+            this.privilegeTree.Expand();
 
             base.InitForm();
         }
@@ -71,6 +75,33 @@ namespace Poseidon.Winform.Client
 
             this.currentRole = this.lbRoles.SelectedItem as Role;
             this.type = 1;
+
+            this.txtName.Text = this.currentRole.Name;
+            this.txtCode.Text = this.currentRole.Code;
+            this.txtRemark.Text = this.currentRole.Remark;
+
+            this.privilegeTree.CheckRows(this.currentRole.Privileges);
+        }
+
+        /// <summary>
+        /// 选择用户
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lbUsers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.lbUsers.SelectedIndex == -1)
+            {
+                this.currentUser = null;
+                return;
+            }
+
+            this.currentUser = this.lbUsers.SelectedItem as User;
+            this.type = 2;
+
+            this.txtName.Text = this.currentUser.Name;
+            this.txtCode.Text = this.currentUser.UserName;
+            this.txtRemark.Text = this.currentUser.Remark;
         }
 
         /// <summary>
@@ -83,6 +114,10 @@ namespace Poseidon.Winform.Client
             if (type == 1 && this.currentRole != null)
             {
                 ChildFormManage.ShowDialogForm(typeof(FrmPrivilegeSelect), new object[] { type, this.currentRole.Id });
+            }
+            else if (type == 2 && this.currentUser != null)
+            {
+                ChildFormManage.ShowDialogForm(typeof(FrmPrivilegeSelect), new object[] { type, this.currentUser.Id });
             }
         }
         #endregion //Event

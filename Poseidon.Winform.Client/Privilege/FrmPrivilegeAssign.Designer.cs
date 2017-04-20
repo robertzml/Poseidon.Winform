@@ -34,13 +34,11 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnSelect = new DevExpress.XtraEditors.SimpleButton();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
-            this.txtSort = new DevExpress.XtraEditors.TextEdit();
             this.txtCode = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -50,6 +48,8 @@
             this.lbRoles = new DevExpress.XtraEditors.ListBoxControl();
             this.bsRole = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageUser = new DevExpress.XtraTab.XtraTabPage();
+            this.lbUsers = new DevExpress.XtraEditors.ListBoxControl();
+            this.bsUser = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.privilegeTree = new Poseidon.Winform.Core.PrivilegeTree();
             this.tableLayoutPanel1.SuspendLayout();
@@ -58,13 +58,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSort.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
@@ -75,6 +73,9 @@
             this.tabPageRole.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbRoles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRole)).BeginInit();
+            this.tabPageUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lbUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +92,7 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 240F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(812, 504);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -102,7 +103,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(203, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(606, 234);
+            this.groupControl2.Size = new System.Drawing.Size(606, 194);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "权限信息";
             // 
@@ -110,20 +111,19 @@
             // 
             this.layoutControl1.Controls.Add(this.btnSelect);
             this.layoutControl1.Controls.Add(this.txtRemark);
-            this.layoutControl1.Controls.Add(this.txtSort);
             this.layoutControl1.Controls.Add(this.txtCode);
             this.layoutControl1.Controls.Add(this.txtName);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(602, 211);
+            this.layoutControl1.Size = new System.Drawing.Size(602, 171);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(24, 165);
+            this.btnSelect.Location = new System.Drawing.Point(24, 125);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(554, 22);
             this.btnSelect.StyleController = this.layoutControl1;
@@ -133,33 +133,31 @@
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(51, 60);
+            this.txtRemark.Location = new System.Drawing.Point(39, 36);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(539, 70);
+            this.txtRemark.Size = new System.Drawing.Size(551, 54);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 11;
             // 
-            // txtSort
-            // 
-            this.txtSort.Location = new System.Drawing.Point(51, 36);
-            this.txtSort.Name = "txtSort";
-            this.txtSort.Size = new System.Drawing.Size(539, 20);
-            this.txtSort.StyleController = this.layoutControl1;
-            this.txtSort.TabIndex = 10;
-            // 
             // txtCode
             // 
-            this.txtCode.Location = new System.Drawing.Point(343, 12);
+            this.txtCode.Location = new System.Drawing.Point(331, 12);
             this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(247, 20);
+            this.txtCode.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtCode.Properties.Appearance.Options.UseBackColor = true;
+            this.txtCode.Properties.ReadOnly = true;
+            this.txtCode.Size = new System.Drawing.Size(259, 20);
             this.txtCode.StyleController = this.layoutControl1;
             this.txtCode.TabIndex = 5;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(51, 12);
+            this.txtName.Location = new System.Drawing.Point(39, 12);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(249, 20);
+            this.txtName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtName.Properties.Appearance.Options.UseBackColor = true;
+            this.txtName.Properties.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(261, 20);
             this.txtName.StyleController = this.layoutControl1;
             this.txtName.TabIndex = 4;
             // 
@@ -170,12 +168,11 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem7,
             this.layoutControlItem8,
             this.layoutControlGroup2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(602, 211);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(602, 171);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -185,7 +182,7 @@
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(292, 24);
             this.layoutControlItem1.Text = "名称";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(36, 14);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(24, 14);
             // 
             // layoutControlItem2
             // 
@@ -194,31 +191,22 @@
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(290, 24);
             this.layoutControlItem2.Text = "代码";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(36, 14);
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.txtSort;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(582, 24);
-            this.layoutControlItem7.Text = "排序码";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(36, 14);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(24, 14);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.txtRemark;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(582, 74);
+            this.layoutControlItem8.Size = new System.Drawing.Size(582, 58);
             this.layoutControlItem8.Text = "备注";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(36, 14);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(24, 14);
             // 
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem9});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 122);
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 82);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(582, 69);
             this.layoutControlGroup2.Text = "操作";
@@ -280,28 +268,46 @@
             // 
             // tabPageUser
             // 
+            this.tabPageUser.Controls.Add(this.lbUsers);
             this.tabPageUser.Name = "tabPageUser";
             this.tabPageUser.Size = new System.Drawing.Size(184, 446);
             this.tabPageUser.Text = "用户列表";
+            // 
+            // lbUsers
+            // 
+            this.lbUsers.DataSource = this.bsUser;
+            this.lbUsers.DisplayMember = "UserName";
+            this.lbUsers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbUsers.Location = new System.Drawing.Point(0, 0);
+            this.lbUsers.Name = "lbUsers";
+            this.lbUsers.Size = new System.Drawing.Size(184, 446);
+            this.lbUsers.TabIndex = 0;
+            this.lbUsers.ValueMember = "Id";
+            this.lbUsers.SelectedIndexChanged += new System.EventHandler(this.lbUsers_SelectedIndexChanged);
+            // 
+            // bsUser
+            // 
+            this.bsUser.DataSource = typeof(Poseidon.Core.DL.User);
             // 
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.privilegeTree);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(203, 243);
+            this.groupControl3.Location = new System.Drawing.Point(203, 203);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(606, 258);
+            this.groupControl3.Size = new System.Drawing.Size(606, 298);
             this.groupControl3.TabIndex = 4;
             this.groupControl3.Text = "已有权限";
             // 
             // privilegeTree
             // 
             this.privilegeTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.privilegeTree.IsReadonly = true;
             this.privilegeTree.Location = new System.Drawing.Point(2, 21);
             this.privilegeTree.Name = "privilegeTree";
             this.privilegeTree.ShowCheckBox = true;
             this.privilegeTree.ShowSortCode = false;
-            this.privilegeTree.Size = new System.Drawing.Size(602, 235);
+            this.privilegeTree.Size = new System.Drawing.Size(602, 275);
             this.privilegeTree.TabIndex = 0;
             // 
             // FrmPrivilegeAssign
@@ -318,13 +324,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSort.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
@@ -335,6 +339,9 @@
             this.tabPageRole.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lbRoles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRole)).EndInit();
+            this.tabPageUser.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lbUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -348,13 +355,11 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.SimpleButton btnSelect;
         private DevExpress.XtraEditors.MemoEdit txtRemark;
-        private DevExpress.XtraEditors.TextEdit txtSort;
         private DevExpress.XtraEditors.TextEdit txtCode;
         private DevExpress.XtraEditors.TextEdit txtName;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
@@ -366,5 +371,7 @@
         private System.Windows.Forms.BindingSource bsRole;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private Core.PrivilegeTree privilegeTree;
+        private DevExpress.XtraEditors.ListBoxControl lbUsers;
+        private System.Windows.Forms.BindingSource bsUser;
     }
 }
