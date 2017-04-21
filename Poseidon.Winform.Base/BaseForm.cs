@@ -39,6 +39,15 @@ namespace Poseidon.Winform.Base
         /// </summary>
         protected virtual void InitForm()
         {
+            CheckPrivilege();
+        }
+
+        /// <summary>
+        /// 检查权限
+        /// </summary>
+        protected virtual void CheckPrivilege()
+        {
+
         }
         #endregion //Function
 

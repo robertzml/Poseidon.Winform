@@ -10,7 +10,10 @@ using System.Windows.Forms;
 
 namespace Poseidon.Winform.Client
 {
+    using DevExpress.XtraBars;
     using DevExpress.XtraBars.Ribbon;
+    using Poseidon.Base.Framework;
+    using Poseidon.Caller.Facade;
     using Poseidon.Common;
     using Poseidon.Winform.Base;
 
@@ -33,6 +36,45 @@ namespace Poseidon.Winform.Client
 
         #region Function
         /// <summary>
+        /// 检查权限
+        /// </summary>
+        protected void CheckPrivilege()
+        {
+            if (GlobalAction.CurrentUser.IsRoot)
+                return;
+
+            var privileges = CallerFactory<IUserService>.Instance.GetPrivileges(GlobalAction.CurrentUser.Id);
+
+            foreach (RibbonPage page in this.ribbonControl.Pages)
+            {
+                if (page.Tag == null || privileges.Contains(page.Tag.ToString()))
+                {
+                    page.Visible = true;
+
+                    foreach (RibbonPageGroup group in page.Groups)
+                    {
+                        if (group.Tag == null || privileges.Contains(group.Tag.ToString()))
+                        {
+                            group.Visible = true;
+                        }
+                        else
+                            group.Visible = false;
+                    }
+                }
+                else
+                    page.Visible = false;
+            }
+
+            foreach (BarItem item in this.ribbonControl.Items)
+            {
+                if (item.Tag == null || privileges.Contains(item.Tag.ToString()))
+                    item.Visibility = BarItemVisibility.Always;
+                else
+                    item.Visibility = BarItemVisibility.Never;
+            }
+        }
+
+        /// <summary>
         /// 设置状态栏显示
         /// </summary>
         private void SetStatusBar()
@@ -51,6 +93,7 @@ namespace Poseidon.Winform.Client
         {
             this.Text = AppConfig.ApplicationName;
 
+            CheckPrivilege();
             SetStatusBar();
         }
 

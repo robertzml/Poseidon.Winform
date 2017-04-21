@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Winform.Client
 {
-    partial class FrmRoleAdd
+    partial class FrmRoleEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -88,7 +88,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(334, 202);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "角色信息";
             // 
             // layoutControl1
@@ -196,13 +196,13 @@
             this.layoutControlItem5.Text = "排序码";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(36, 14);
             // 
-            // FrmRoleAdd
+            // FrmRoleEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 262);
-            this.Name = "FrmRoleAdd";
-            this.Text = "添加角色";
+            this.Name = "FrmRoleEdit";
+            this.Text = "编辑角色";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();

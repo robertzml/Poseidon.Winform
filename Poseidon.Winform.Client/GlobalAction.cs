@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Poseidon.Winform.Client
 {
+    using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Caller.Facade;
     using Poseidon.Core.DL;
     using Poseidon.Core.Utility;
     using Poseidon.Common;
@@ -62,13 +64,14 @@ namespace Poseidon.Winform.Client
             {
                 Id = user.Id,
                 UserName = user.UserName,
-                IsRoot = true,
                 Name = user.Name,
                 LastLoginTime = user.LastLoginTime,
                 CurrentLoginTime = user.CurrentLoginTime,
                 Remark = user.Remark,
                 Status = user.Status
             };
+
+            lu.IsRoot = CallerFactory<IUserService>.Instance.IsRoot(user.Id);
 
             return lu;
         }

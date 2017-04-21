@@ -177,6 +177,7 @@
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 6;
             this.btnEdit.Text = "编辑角色";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
