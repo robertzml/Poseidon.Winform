@@ -31,7 +31,7 @@ namespace Poseidon.Winform.Client
         /// <summary>
         /// 当前关联用户
         /// </summary>
-        private User currentUser;
+        private User selectUser;
 
         /// <summary>
         /// 当前关联角色
@@ -62,7 +62,7 @@ namespace Poseidon.Winform.Client
             }
             else
             {
-                this.currentUser = CallerFactory<IUserService>.Instance.FindById(id);
+                this.selectUser = CallerFactory<IUserService>.Instance.FindById(id);
             }
         }
 
@@ -80,10 +80,10 @@ namespace Poseidon.Winform.Client
             }
             else if (type == 2)
             {
-                this.txtName.Text = this.currentUser.Name;
-                this.txtCode.Text = this.currentUser.UserName;
+                this.txtName.Text = this.selectUser.Name;
+                this.txtCode.Text = this.selectUser.UserName;
 
-                this.privilegeTree.CheckRows(this.currentUser.Privileges);
+                this.privilegeTree.CheckRows(this.selectUser.Privileges);
             }
 
             base.InitForm();
@@ -107,7 +107,7 @@ namespace Poseidon.Winform.Client
                 }
                 else if (type == 2)
                 {
-                    CallerFactory<IUserService>.Instance.SetPrivileges(this.currentUser.Id, codes);
+                    CallerFactory<IUserService>.Instance.SetPrivileges(this.selectUser.Id, codes);
                 }
 
                 MessageUtil.ShowInfo("保存成功");

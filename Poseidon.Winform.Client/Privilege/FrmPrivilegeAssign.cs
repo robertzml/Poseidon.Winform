@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +9,7 @@ using System.Windows.Forms;
 
 namespace Poseidon.Winform.Client
 {
+    using DevExpress.XtraEditors.Controls;
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
     using Poseidon.Caller.Facade;
@@ -31,7 +31,7 @@ namespace Poseidon.Winform.Client
         /// <summary>
         /// 当前关联用户
         /// </summary>
-        private User currentUser;
+        private User selectUser;
 
         /// <summary>
         /// 当前关联角色
@@ -49,13 +49,57 @@ namespace Poseidon.Winform.Client
         #region Function
         protected override void InitForm()
         {
-            this.bsRole.DataSource = CallerFactory<IRoleService>.Instance.FindAll().OrderBy(r => r.Sort);
-            this.bsUser.DataSource = CallerFactory<IUserService>.Instance.FindAll();
+            LoadRoles();
+            LoadUsers();
 
             this.privilegeTree.RefreshData();
             this.privilegeTree.Expand();
 
+            this.userPrivilegeTree.RefreshData();
+            this.userPrivilegeTree.Expand();
+
             base.InitForm();
+        }
+
+        /// <summary>
+        /// 初始化角色
+        /// </summary>
+        private void LoadRoles()
+        {
+            this.bsRole.DataSource = CallerFactory<IRoleService>.Instance.FindAll(false).OrderBy(r => r.Sort);
+        }
+
+        /// <summary>
+        /// 初始化用户
+        /// </summary>
+        private void LoadUsers()
+        {
+            this.bsUser.DataSource = CallerFactory<IUserService>.Instance.FindAll();
+        }
+
+        /// <summary>
+        /// 初始化用户角色
+        /// </summary>
+        /// <param name="user"></param>
+        private void InitUserRoles(User user)
+        {
+            var roles = CallerFactory<IRoleService>.Instance.FindUserRoles(user.Id);
+
+            this.cmbUserRoles.Properties.Items.Clear();
+
+            var first = new ImageComboBoxItem();
+            first.Description = "用户额外权限";
+            first.Value = "";
+            this.cmbUserRoles.Properties.Items.Add(first);
+
+            foreach (var item in roles)
+            {
+                this.cmbUserRoles.Properties.Items.Add(new ImageComboBoxItem
+                {
+                    Description = item.Name,
+                    Value = item.Id
+                });
+            }
         }
         #endregion //Function
 
@@ -92,20 +136,24 @@ namespace Poseidon.Winform.Client
         {
             if (this.lbUsers.SelectedIndex == -1)
             {
-                this.currentUser = null;
+                this.selectUser = null;
                 return;
             }
 
-            this.currentUser = this.lbUsers.SelectedItem as User;
+            this.selectUser = this.lbUsers.SelectedItem as User;
             this.type = 2;
 
-            this.txtName.Text = this.currentUser.Name;
-            this.txtCode.Text = this.currentUser.UserName;
-            this.txtRemark.Text = this.currentUser.Remark;
+            this.txtName.Text = this.selectUser.Name;
+            this.txtCode.Text = this.selectUser.UserName;
+            this.txtRemark.Text = this.selectUser.Remark;
+
+            InitUserRoles(this.selectUser);
+
+            this.privilegeTree.CheckRows(CallerFactory<IUserService>.Instance.GetPrivileges(this.selectUser.Id).ToList());
         }
 
         /// <summary>
-        /// 选择权限
+        /// 配置权限
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -114,10 +162,36 @@ namespace Poseidon.Winform.Client
             if (type == 1 && this.currentRole != null)
             {
                 ChildFormManage.ShowDialogForm(typeof(FrmPrivilegeSelect), new object[] { type, this.currentRole.Id });
+                LoadRoles();
             }
-            else if (type == 2 && this.currentUser != null)
+            else if (type == 2 && this.selectUser != null)
             {
-                ChildFormManage.ShowDialogForm(typeof(FrmPrivilegeSelect), new object[] { type, this.currentUser.Id });
+                ChildFormManage.ShowDialogForm(typeof(FrmPrivilegeSelect), new object[] { type, this.selectUser.Id });
+                LoadUsers();
+            }
+        }
+
+        /// <summary>
+        /// 用户角色选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmbUserRoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.cmbUserRoles.SelectedIndex == -1 || this.selectUser == null)
+            {
+                return;
+            }
+
+            var item = this.cmbUserRoles.SelectedItem as ImageComboBoxItem;
+            if (string.IsNullOrEmpty(item.Value.ToString()))
+            {
+                this.userPrivilegeTree.CheckRows(this.selectUser.Privileges);
+            }
+            else
+            {
+                var role = CallerFactory<IRoleService>.Instance.FindById(item.Value.ToString());
+                this.userPrivilegeTree.CheckRows(role.Privileges);
             }
         }
         #endregion //Event

@@ -69,7 +69,7 @@ namespace Poseidon.Winform.Client
         /// <param name="entity">角色对象</param>
         private void LoadUsers(Role entity)
         {
-            var data = CallerFactory<IRoleService>.Instance.FindUsers(entity.Id);
+            var data = CallerFactory<IRoleService>.Instance.GetUsers(entity.Id);
             this.userGrid.DataSource = data.ToList();
         }
         #endregion //Function

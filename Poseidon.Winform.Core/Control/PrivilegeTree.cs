@@ -32,9 +32,9 @@ namespace Poseidon.Winform.Core
         private bool showSortCode = false;
 
         /// <summary>
-        /// 是否只读
+        /// 选择框是否只读
         /// </summary>
-        private bool isReadonly = false;
+        private bool checkBoxReadonly = false;
         #endregion //Field
 
         #region Constructor
@@ -140,7 +140,6 @@ namespace Poseidon.Winform.Core
         /// <param name="e"></param>
         private void PrivilegeTree_Load(object sender, EventArgs e)
         {
-            this.tlView.OptionsBehavior.ReadOnly = this.IsReadonly;
             this.tlView.OptionsView.ShowCheckBoxes = this.showCheckBox;
             this.colSort.Visible = this.showSortCode;
         }
@@ -224,19 +223,19 @@ namespace Poseidon.Winform.Core
         }
 
         /// <summary>
-        /// 是否只读
+        /// 选择框是否只读
         /// </summary>
-        [Description("是否只读"), Category("功能"), Browsable(true)]
-        public bool IsReadonly
+        [Description("选择框是否只读"), Category("功能"), Browsable(true)]
+        public bool CheckBoxReadonly
         {
             get
             {
-                return isReadonly;
+                return checkBoxReadonly;
             }
 
             set
             {
-                isReadonly = value;
+                checkBoxReadonly = value;
             }
         }
         #endregion //Property
