@@ -252,8 +252,8 @@ namespace Poseidon.Winform.Client
         /// <param name="e"></param>
         private void bbiExpenseOv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string assemblyName = "Poseidon.Energy.ClientDx";
-            string typeName = "Poseidon.Energy.ClientDx.FrmExpenseOverview";
+            string assemblyName = "Poseidon.Expense.ClientDx";
+            string typeName = "Poseidon.Expense.ClientDx.FrmExpenseOverview";
 
             ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
         }
@@ -265,8 +265,8 @@ namespace Poseidon.Winform.Client
         /// <param name="e"></param>
         private void bbiExpenseReceipt_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string assemblyName = "Poseidon.Energy.ClientDx";
-            string typeName = "Poseidon.Energy.ClientDx.FrmExpenseReceipt";
+            string assemblyName = "Poseidon.Expense.ClientDx";
+            string typeName = "Poseidon.Expense.ClientDx.FrmExpenseReceipt";
 
             ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
         }
@@ -278,8 +278,8 @@ namespace Poseidon.Winform.Client
         /// <param name="e"></param>
         private void bbiExpenseAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string assemblyName = "Poseidon.Energy.ClientDx";
-            string typeName = "Poseidon.Energy.ClientDx.FrmExpenseAccount";
+            string assemblyName = "Poseidon.Expense.ClientDx";
+            string typeName = "Poseidon.Expense.ClientDx.FrmExpenseAccount";
 
             ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
         }

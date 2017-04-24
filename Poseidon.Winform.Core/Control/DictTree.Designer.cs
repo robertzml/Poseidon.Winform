@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DictTree));
             this.tlData = new DevExpress.XtraTreeList.TreeList();
             this.colId = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colType = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.imgCollection = new DevExpress.Utils.ImageCollection();
+            this.imgCollection = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCollection)).BeginInit();
             this.SuspendLayout();
@@ -90,7 +91,6 @@
             this.Controls.Add(this.tlData);
             this.Name = "DictTree";
             this.Size = new System.Drawing.Size(190, 340);
-            this.Load += new System.EventHandler(this.DictTree_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tlData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCollection)).EndInit();
             this.ResumeLayout(false);

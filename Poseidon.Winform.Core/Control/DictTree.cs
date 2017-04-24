@@ -57,6 +57,14 @@ namespace Poseidon.Winform.Core
 
         #region Method
         /// <summary>
+        /// 初始化根节点
+        /// </summary>
+        public void InitRoot()
+        {
+            this.LoadRootNode();
+        }
+
+        /// <summary>
         /// 获取当前选中字典ID
         /// </summary>
         /// <returns></returns>
@@ -114,19 +122,6 @@ namespace Poseidon.Winform.Core
         #endregion //Delegate
 
         #region Event
-        /// <summary>
-        /// 控件载入
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DictTree_Load(object sender, EventArgs e)
-        {
-            if (!this.DesignMode)
-            {
-                LoadRootNode();
-            }
-        }
-
         /// <summary>
         /// 节点展开
         /// </summary>

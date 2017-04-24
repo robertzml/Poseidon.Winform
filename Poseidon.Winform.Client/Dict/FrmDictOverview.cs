@@ -39,6 +39,14 @@ namespace Poseidon.Winform.Client
         }
         #endregion //Constructor
 
+        #region Function
+        protected override void InitForm()
+        {
+            this.treeDict.InitRoot();
+            base.InitForm();
+        }
+        #endregion //Function
+
         #region Event
         /// <summary>
         /// 选择分类
