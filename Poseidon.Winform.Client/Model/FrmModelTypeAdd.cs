@@ -16,46 +16,35 @@ namespace Poseidon.Winform.Client
     using Poseidon.Winform.Base;
 
     /// <summary>
-    /// 编辑模型类型窗体
+    /// 注册模型类型
     /// </summary>
-    public partial class FrmModelTypeEdit : BaseSingleForm
+    public partial class FrmModelTypeAdd : BaseSingleForm
     {
-        #region Field
-        /// <summary>
-        /// 当前关联实体
-        /// </summary>
-        private ModelType currentEntity;
-        #endregion //Field
-
         #region Constructor
-        /// <summary>
-        /// 编辑模型类型窗体
-        /// </summary>
-        /// <param name="id">模型类型ID</param>
-        public FrmModelTypeEdit(string id)
+        public FrmModelTypeAdd()
         {
             InitializeComponent();
-
-            InitData(id);
         }
         #endregion //Constructor
 
         #region Function
-        private void InitData(string id)
+        protected override void InitForm()
         {
-            this.currentEntity = CallerFactory<IModelTypeService>.Instance.FindById(id);
+            this.cmbCategory.Properties.Items.AddEnum(typeof(ModelCategory));
+
+            base.InitForm();
         }
 
         /// <summary>
-        /// 初始化窗体
+        /// 设置实体
         /// </summary>
-        protected override void InitForm()
+        /// <param name="model"></param>
+        private void SetEntity(ModelType model)
         {
-            this.txtName.Text = this.currentEntity.Name;
-            this.txtCode.Text = this.currentEntity.Code;
-            this.txtRemark.Text = this.currentEntity.Remark;
-
-            base.InitForm();
+            model.Name = this.txtName.Text;
+            model.Code = this.txtCode.Text;
+            model.Category = (int)this.cmbCategory.EditValue;
+            model.Remark = this.txtRemark.Text;
         }
 
         /// <summary>
@@ -72,17 +61,13 @@ namespace Poseidon.Winform.Client
                 return new Tuple<bool, string>(false, errorMessage);
             }
 
-            return new Tuple<bool, string>(true, "");
-        }
+            if (string.IsNullOrEmpty(this.txtCode.Text.Trim()))
+            {
+                errorMessage = "代码不能为空";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
 
-        /// <summary>
-        /// 设置实体
-        /// </summary>
-        /// <param name="model"></param>
-        private void SetEntity(ModelType model)
-        {
-            model.Name = this.txtName.Text;
-            model.Remark = this.txtRemark.Text;
+            return new Tuple<bool, string>(true, "");
         }
         #endregion //Function
 
@@ -101,12 +86,12 @@ namespace Poseidon.Winform.Client
                 return;
             }
 
+            ModelType entity = new ModelType();
+            SetEntity(entity);
+
             try
             {
-                var entity = CallerFactory<IModelTypeService>.Instance.FindById(this.currentEntity.Id);
-                SetEntity(entity);
-
-                CallerFactory<IModelTypeService>.Instance.Update(entity);
+                CallerFactory<IModelTypeService>.Instance.Create(entity);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

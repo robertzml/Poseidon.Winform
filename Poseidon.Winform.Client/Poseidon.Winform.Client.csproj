@@ -188,46 +188,46 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Organization\FrmModelTypeEdit.cs">
+    <Compile Include="Model\FrmModelTypeEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Organization\FrmModelTypeEdit.Designer.cs">
+    <Compile Include="Model\FrmModelTypeEdit.Designer.cs">
       <DependentUpon>FrmModelTypeEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Organization\FrmOrganizationSelect.cs">
+    <Compile Include="Model\FrmOrganizationSelect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Organization\FrmOrganizationSelect.Designer.cs">
+    <Compile Include="Model\FrmOrganizationSelect.Designer.cs">
       <DependentUpon>FrmOrganizationSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="Organization\FrmGroupEdit.cs">
+    <Compile Include="Model\FrmGroupEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Organization\FrmGroupEdit.Designer.cs">
+    <Compile Include="Model\FrmGroupEdit.Designer.cs">
       <DependentUpon>FrmGroupEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Organization\FrmModelTypeBind.cs">
+    <Compile Include="Model\FrmModelTypeBind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Organization\FrmModelTypeBind.Designer.cs">
+    <Compile Include="Model\FrmModelTypeBind.Designer.cs">
       <DependentUpon>FrmModelTypeBind.cs</DependentUpon>
     </Compile>
-    <Compile Include="Organization\FrmGroupAdd.cs">
+    <Compile Include="Model\FrmGroupAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Organization\FrmGroupAdd.Designer.cs">
+    <Compile Include="Model\FrmGroupAdd.Designer.cs">
       <DependentUpon>FrmGroupAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Organization\FrmGroupOverview.cs">
+    <Compile Include="Model\FrmGroupOverview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Organization\FrmGroupOverview.Designer.cs">
+    <Compile Include="Model\FrmGroupOverview.Designer.cs">
       <DependentUpon>FrmGroupOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Organization\FrmModelTypeAdd.cs">
+    <Compile Include="Model\FrmModelTypeAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Organization\FrmModelTypeAdd.Designer.cs">
+    <Compile Include="Model\FrmModelTypeAdd.Designer.cs">
       <DependentUpon>FrmModelTypeAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalAction.cs" />
@@ -237,11 +237,11 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Organization\FrmModelTypeOverview.cs">
+    <Compile Include="Model\FrmModelTypeManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Organization\FrmModelTypeOverview.Designer.cs">
-      <DependentUpon>FrmModelTypeOverview.cs</DependentUpon>
+    <Compile Include="Model\FrmModelTypeManage.Designer.cs">
+      <DependentUpon>FrmModelTypeManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -293,10 +293,10 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Organization\FrmGroupEdit.resx">
+    <EmbeddedResource Include="Model\FrmGroupEdit.resx">
       <DependentUpon>FrmGroupEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Organization\FrmModelTypeBind.resx">
+    <EmbeddedResource Include="Model\FrmModelTypeBind.resx">
       <DependentUpon>FrmModelTypeBind.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
@@ -308,22 +308,22 @@
     <None Include="Properties\DataSources\Poseidon.Core.DL.DictCategory.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Group.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
-    <EmbeddedResource Include="Organization\FrmGroupAdd.resx">
+    <EmbeddedResource Include="Model\FrmGroupAdd.resx">
       <DependentUpon>FrmGroupAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Organization\FrmGroupOverview.resx">
+    <EmbeddedResource Include="Model\FrmGroupOverview.resx">
       <DependentUpon>FrmGroupOverview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Organization\FrmModelTypeAdd.resx">
+    <EmbeddedResource Include="Model\FrmModelTypeAdd.resx">
       <DependentUpon>FrmModelTypeAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Organization\FrmModelTypeEdit.resx">
+    <EmbeddedResource Include="Model\FrmModelTypeEdit.resx">
       <DependentUpon>FrmModelTypeEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Organization\FrmModelTypeOverview.resx">
-      <DependentUpon>FrmModelTypeOverview.cs</DependentUpon>
+    <EmbeddedResource Include="Model\FrmModelTypeManage.resx">
+      <DependentUpon>FrmModelTypeManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Organization\FrmOrganizationSelect.resx">
+    <EmbeddedResource Include="Model\FrmOrganizationSelect.resx">
       <DependentUpon>FrmOrganizationSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmUserList.resx">

@@ -15,12 +15,12 @@ namespace Poseidon.Winform.Client
     using Poseidon.Winform.Base;
 
     /// <summary>
-    /// 模型类型总览窗体
+    /// 模型类型管理窗体
     /// </summary>
-    public partial class FrmModelTypeOverview : BaseMdiForm
+    public partial class FrmModelTypeManage : BaseMdiForm
     {
         #region Constructor
-        public FrmModelTypeOverview()
+        public FrmModelTypeManage()
         {
             InitializeComponent();
         }

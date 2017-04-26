@@ -47,6 +47,10 @@
     <Reference Include="Poseidon.Caller">
       <HintPath>..\..\Assembly\Poseidon.Caller.dll</HintPath>
     </Reference>
+    <Reference Include="Poseidon.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assembly\Poseidon.Common.dll</HintPath>
+    </Reference>
     <Reference Include="Poseidon.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Assembly\Poseidon.Core.dll</HintPath>
@@ -161,6 +165,7 @@
       <DependentUpon>UserGrid.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Core.DL.GroupItem.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Privilege.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

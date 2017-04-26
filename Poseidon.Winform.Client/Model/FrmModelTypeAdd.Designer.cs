@@ -37,6 +37,8 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cmbCategory = new DevExpress.XtraEditors.ImageComboBoxEdit();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -52,15 +54,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCategory.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(184, 17);
+            this.btnCancel.Location = new System.Drawing.Point(190, 14);
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(87, 17);
+            this.btnConfirm.Location = new System.Drawing.Point(93, 14);
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // plFill
@@ -68,14 +72,14 @@
             this.plFill.Appearance.BackColor = System.Drawing.Color.White;
             this.plFill.Appearance.Options.UseBackColor = true;
             this.plFill.Controls.Add(this.groupControl1);
-            this.plFill.Size = new System.Drawing.Size(278, 174);
+            this.plFill.Size = new System.Drawing.Size(284, 183);
             // 
             // plBottom
             // 
             this.plBottom.Appearance.BackColor = System.Drawing.Color.White;
             this.plBottom.Appearance.Options.UseBackColor = true;
-            this.plBottom.Location = new System.Drawing.Point(0, 174);
-            this.plBottom.Size = new System.Drawing.Size(278, 59);
+            this.plBottom.Location = new System.Drawing.Point(0, 183);
+            this.plBottom.Size = new System.Drawing.Size(284, 59);
             // 
             // groupControl1
             // 
@@ -83,12 +87,13 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(278, 174);
+            this.groupControl1.Size = new System.Drawing.Size(284, 183);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "模型类型信息";
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.cmbCategory);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.txtCode);
             this.layoutControl1.Controls.Add(this.txtName);
@@ -96,33 +101,33 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(274, 151);
+            this.layoutControl1.Size = new System.Drawing.Size(280, 160);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(39, 60);
+            this.txtRemark.Location = new System.Drawing.Point(39, 84);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(223, 79);
+            this.txtRemark.Size = new System.Drawing.Size(229, 64);
             this.txtRemark.StyleController = this.layoutControl1;
-            this.txtRemark.TabIndex = 6;
+            this.txtRemark.TabIndex = 3;
             // 
             // txtCode
             // 
             this.txtCode.Location = new System.Drawing.Point(39, 36);
             this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(223, 20);
+            this.txtCode.Size = new System.Drawing.Size(229, 20);
             this.txtCode.StyleController = this.layoutControl1;
-            this.txtCode.TabIndex = 5;
+            this.txtCode.TabIndex = 1;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(39, 12);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(223, 20);
+            this.txtName.Size = new System.Drawing.Size(229, 20);
             this.txtName.StyleController = this.layoutControl1;
-            this.txtName.TabIndex = 4;
+            this.txtName.TabIndex = 0;
             // 
             // layoutControlGroup1
             // 
@@ -131,10 +136,11 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(274, 151);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(280, 160);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -142,7 +148,7 @@
             this.layoutControlItem1.Control = this.txtName;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(254, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(260, 24);
             this.layoutControlItem1.Text = "名称";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(24, 14);
             // 
@@ -151,24 +157,43 @@
             this.layoutControlItem2.Control = this.txtCode;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(254, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(260, 24);
             this.layoutControlItem2.Text = "代码";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(24, 14);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtRemark;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(254, 83);
+            this.layoutControlItem3.Size = new System.Drawing.Size(260, 68);
             this.layoutControlItem3.Text = "备注";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(24, 14);
+            // 
+            // cmbCategory
+            // 
+            this.cmbCategory.Location = new System.Drawing.Point(39, 60);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbCategory.Size = new System.Drawing.Size(229, 20);
+            this.cmbCategory.StyleController = this.layoutControl1;
+            this.cmbCategory.TabIndex = 2;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.cmbCategory;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(260, 24);
+            this.layoutControlItem4.Text = "分类";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(24, 14);
             // 
             // FrmModelTypeAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(278, 233);
+            this.ClientSize = new System.Drawing.Size(284, 242);
             this.Name = "FrmModelTypeAdd";
             this.Text = "注册模型类型";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
@@ -186,6 +211,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCategory.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,5 +228,7 @@
         private DevExpress.XtraEditors.TextEdit txtCode;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraEditors.ImageComboBoxEdit cmbCategory;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Winform.Client
 {
-    partial class FrmModelTypeOverview
+    partial class FrmModelTypeManage
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnRegister = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.mtGrid = new Poseidon.Winform.Core.ModelTypeGrid();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -51,6 +51,15 @@
             this.groupControl1.Size = new System.Drawing.Size(777, 94);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "操作";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(160, 39);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(86, 30);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "编辑模型";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnRegister
             // 
@@ -88,23 +97,22 @@
             // 
             // mtGrid
             // 
+            this.mtGrid.AllowFilter = true;
+            this.mtGrid.AllowGroup = true;
+            this.mtGrid.AllowSort = true;
             this.mtGrid.DataSource = null;
             this.mtGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mtGrid.Editable = false;
+            this.mtGrid.EnableMasterView = false;
             this.mtGrid.Location = new System.Drawing.Point(2, 21);
             this.mtGrid.Name = "mtGrid";
+            this.mtGrid.ShowAddMenu = false;
             this.mtGrid.ShowFooter = false;
             this.mtGrid.ShowLineNumber = false;
+            this.mtGrid.ShowMenu = false;
+            this.mtGrid.ShowNavigator = false;
             this.mtGrid.Size = new System.Drawing.Size(773, 370);
             this.mtGrid.TabIndex = 0;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(160, 39);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(86, 30);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "编辑模型";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // FrmModelTypeOverview
             // 
@@ -113,7 +121,7 @@
             this.ClientSize = new System.Drawing.Size(783, 499);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmModelTypeOverview";
-            this.Text = "模型类型总览";
+            this.Text = "模型类型管理";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

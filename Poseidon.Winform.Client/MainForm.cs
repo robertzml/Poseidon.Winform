@@ -285,27 +285,27 @@ namespace Poseidon.Winform.Client
         }
         #endregion //Expense
 
-        #region Organization
+        #region Model
         /// <summary>
-        /// 模型类型总览
+        /// 模型类型管理
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void bbiModelTypeOv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void bbiModelTypeMan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ChildFormManage.LoadMdiForm(this, typeof(FrmModelTypeOverview));
+            ChildFormManage.LoadMdiForm(this, typeof(FrmModelTypeManage));
         }
 
         /// <summary>
-        /// 分组总览
+        /// 分组管理
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void bbiGroupOv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void bbiGroupMan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmGroupOverview));
         }
-        #endregion //Organization
+        #endregion //Model
 
         #region System
         /// <summary>
