@@ -285,6 +285,21 @@ namespace Poseidon.Winform.Client
         }
         #endregion //Expense
 
+        #region Recovery
+        /// <summary>
+        /// 计费建筑管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiChargeBuildingMan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string assemblyName = "Poseidon.Recovery.ClientDx";
+            string typeName = "Poseidon.Recovery.ClientDx.FrmChargeBuildingManage";
+
+            ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
+        }
+        #endregion //Recovery
+
         #region Model
         /// <summary>
         /// 模型类型管理

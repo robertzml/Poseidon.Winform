@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barChildList = new DevExpress.XtraBars.BarMdiChildrenListItem();
@@ -55,6 +56,8 @@
             this.bbiExit = new DevExpress.XtraBars.BarButtonItem();
             this.bbiPrivilegeMan = new DevExpress.XtraBars.BarButtonItem();
             this.bbiPrivilegeAssign = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiGroupTree = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiChargeBuildingMan = new DevExpress.XtraBars.BarButtonItem();
             this.rpEnergy = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgTarget = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgMeasure = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -62,6 +65,8 @@
             this.rpgTargetBase = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpExpense = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgExpenseInfo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rpRecovery = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rpgRecoveryInfo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpModel = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpSystem = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -71,8 +76,7 @@
             this.rpgPersonnel = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgBase = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
-            this.bbiGroupTree = new DevExpress.XtraBars.BarButtonItem();
+            this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -107,13 +111,15 @@
             this.bbiExit,
             this.bbiPrivilegeMan,
             this.bbiPrivilegeAssign,
-            this.bbiGroupTree});
+            this.bbiGroupTree,
+            this.bbiChargeBuildingMan});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 9;
+            this.ribbonControl.MaxItemId = 10;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpEnergy,
             this.rpExpense,
+            this.rpRecovery,
             this.rpModel,
             this.rpSystem,
             this.rpBase});
@@ -388,6 +394,26 @@
             this.bbiPrivilegeAssign.Tag = "System.Privilege";
             this.bbiPrivilegeAssign.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrivilegeAssign_ItemClick);
             // 
+            // bbiGroupTree
+            // 
+            this.bbiGroupTree.Caption = "分组树查看";
+            this.bbiGroupTree.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiGroupTree.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiGroupTree.Glyph")));
+            this.bbiGroupTree.Id = 8;
+            this.bbiGroupTree.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiGroupTree.LargeGlyph")));
+            this.bbiGroupTree.Name = "bbiGroupTree";
+            this.bbiGroupTree.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiGroupTree_ItemClick);
+            // 
+            // bbiChargeBuildingMan
+            // 
+            this.bbiChargeBuildingMan.Caption = "计费建筑管理";
+            this.bbiChargeBuildingMan.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiChargeBuildingMan.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiChargeBuildingMan.Glyph")));
+            this.bbiChargeBuildingMan.Id = 9;
+            this.bbiChargeBuildingMan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiChargeBuildingMan.LargeGlyph")));
+            this.bbiChargeBuildingMan.Name = "bbiChargeBuildingMan";
+            this.bbiChargeBuildingMan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiChargeBuildingMan_ItemClick);
+            // 
             // rpEnergy
             // 
             this.rpEnergy.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -450,6 +476,21 @@
             this.rpgExpenseInfo.Name = "rpgExpenseInfo";
             this.rpgExpenseInfo.Tag = "Expense";
             this.rpgExpenseInfo.Text = "基本信息";
+            // 
+            // rpRecovery
+            // 
+            this.rpRecovery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rpgRecoveryInfo});
+            this.rpRecovery.Name = "rpRecovery";
+            this.rpRecovery.Tag = "Recovery";
+            this.rpRecovery.Text = "费用回收";
+            // 
+            // rpgRecoveryInfo
+            // 
+            this.rpgRecoveryInfo.ItemLinks.Add(this.bbiChargeBuildingMan);
+            this.rpgRecoveryInfo.Name = "rpgRecoveryInfo";
+            this.rpgRecoveryInfo.Tag = "Recovery.Info";
+            this.rpgRecoveryInfo.Text = "基本信息";
             // 
             // rpModel
             // 
@@ -526,16 +567,6 @@
             this.tabMdiManager.MdiParent = this;
             this.tabMdiManager.PinPageButtonShowMode = DevExpress.XtraTab.PinPageButtonShowMode.InActiveTabPageHeader;
             // 
-            // bbiGroupTree
-            // 
-            this.bbiGroupTree.Caption = "分组树查看";
-            this.bbiGroupTree.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.bbiGroupTree.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiGroupTree.Glyph")));
-            this.bbiGroupTree.Id = 8;
-            this.bbiGroupTree.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiGroupTree.LargeGlyph")));
-            this.bbiGroupTree.Name = "bbiGroupTree";
-            this.bbiGroupTree.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiGroupTree_ItemClick);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -604,6 +635,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage rpBase;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgBase;
         private DevExpress.XtraBars.BarButtonItem bbiGroupTree;
+        private DevExpress.XtraBars.BarButtonItem bbiChargeBuildingMan;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rpRecovery;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgRecoveryInfo;
     }
 }
 

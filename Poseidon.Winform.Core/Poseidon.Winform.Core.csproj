@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\BuildingGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\BuildingGrid.Designer.cs">
+      <DependentUpon>BuildingGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\GroupsTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Control\BuildingGrid.resx">
+      <DependentUpon>BuildingGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\DictItemGrid.resx">
       <DependentUpon>DictItemGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +173,7 @@
     <EmbeddedResource Include="Control\UserGrid.resx">
       <DependentUpon>UserGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Building.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.GroupItem.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Privilege.datasource" />

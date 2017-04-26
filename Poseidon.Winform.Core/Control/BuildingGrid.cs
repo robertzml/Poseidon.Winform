@@ -13,9 +13,9 @@ namespace Poseidon.Winform.Core
     using Poseidon.Winform.Base;
 
     /// <summary>
-    /// 组织表格控件
+    /// 建筑表格控件
     /// </summary>
-    public partial class OrganizationGrid : WinEntityGrid<Organization>
+    public partial class BuildingGrid : WinEntityGrid<Building>
     {
         #region Field
         /// <summary>
@@ -25,7 +25,7 @@ namespace Poseidon.Winform.Core
         #endregion //Field
 
         #region Constructor
-        public OrganizationGrid()
+        public BuildingGrid()
         {
             InitializeComponent();
         }
@@ -36,15 +36,15 @@ namespace Poseidon.Winform.Core
         /// 获取选中行
         /// </summary>
         /// <returns></returns>
-        public List<Organization> GetSelectedRows()
+        public List<Building> GetSelectedRows()
         {
-            List<Organization> data = new List<Organization>();
+            List<Building> data = new List<Building>();
 
             int[] rowIndex = this.dgvEntity.GetSelectedRows();
 
             for (int i = 0; i < rowIndex.Length; i++)
             {
-                var row = this.dgvEntity.GetRow(rowIndex[i]) as Organization;
+                var row = this.dgvEntity.GetRow(rowIndex[i]) as Building;
                 data.Add(row);
             }
 
@@ -58,7 +58,7 @@ namespace Poseidon.Winform.Core
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OrganizationGrid_Load(object sender, EventArgs e)
+        private void BuildingGrid_Load(object sender, EventArgs e)
         {
             this.dgvEntity.OptionsSelection.MultiSelect = this.enableMultiSelect;
             if (this.enableMultiSelect)
