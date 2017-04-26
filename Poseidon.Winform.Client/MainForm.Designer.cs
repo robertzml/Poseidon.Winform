@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barChildList = new DevExpress.XtraBars.BarMdiChildrenListItem();
@@ -72,7 +71,8 @@
             this.rpgPersonnel = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgBase = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.bbiGroupTree = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -106,9 +106,10 @@
             this.bbiSettlementOv,
             this.bbiExit,
             this.bbiPrivilegeMan,
-            this.bbiPrivilegeAssign});
+            this.bbiPrivilegeAssign,
+            this.bbiGroupTree});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 8;
+            this.ribbonControl.MaxItemId = 9;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpEnergy,
@@ -462,6 +463,7 @@
             // 
             this.rpgGroup.ItemLinks.Add(this.bbiModelTypeMan);
             this.rpgGroup.ItemLinks.Add(this.bbiGroupMan);
+            this.rpgGroup.ItemLinks.Add(this.bbiGroupTree);
             this.rpgGroup.Name = "rpgGroup";
             this.rpgGroup.Text = "模型类型";
             // 
@@ -523,6 +525,16 @@
             this.tabMdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.tabMdiManager.MdiParent = this;
             this.tabMdiManager.PinPageButtonShowMode = DevExpress.XtraTab.PinPageButtonShowMode.InActiveTabPageHeader;
+            // 
+            // bbiGroupTree
+            // 
+            this.bbiGroupTree.Caption = "分组树查看";
+            this.bbiGroupTree.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiGroupTree.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiGroupTree.Glyph")));
+            this.bbiGroupTree.Id = 8;
+            this.bbiGroupTree.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiGroupTree.LargeGlyph")));
+            this.bbiGroupTree.Name = "bbiGroupTree";
+            this.bbiGroupTree.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiGroupTree_ItemClick);
             // 
             // MainForm
             // 
@@ -591,6 +603,7 @@
         private DevExpress.XtraBars.BarButtonItem bbiPrivilegeAssign;
         private DevExpress.XtraBars.Ribbon.RibbonPage rpBase;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgBase;
+        private DevExpress.XtraBars.BarButtonItem bbiGroupTree;
     }
 }
 

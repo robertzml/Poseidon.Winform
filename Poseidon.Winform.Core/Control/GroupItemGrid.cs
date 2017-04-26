@@ -43,11 +43,11 @@ namespace Poseidon.Winform.Core
                 return;
 
             var item = this.bsEntity[rowIndex] as GroupItem;
-            var org = CallerFactory<IOrganizationService>.Instance.FindById(item.OrganizationId);
+            var entity = CallerFactory<IGroupService>.Instance.GetItemEntity(item);
 
-            if (e.Column.FieldName == "OrganizationId")
+            if (e.Column.FieldName == "EntityId")
             {
-                e.DisplayText = org.Name;
+                e.DisplayText = entity.Name;
             }
         }
 
@@ -63,10 +63,10 @@ namespace Poseidon.Winform.Core
                 return;
 
             var item = this.bsEntity[rowIndex] as GroupItem;
-            var org = CallerFactory<IOrganizationService>.Instance.FindById(item.OrganizationId);
+            var entity = CallerFactory<IGroupService>.Instance.GetItemEntity(item);
 
             if (e.Column.FieldName == "colRemark" && e.IsGetData)
-                e.Value = org.Remark;
+                e.Value = entity.Remark;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace Poseidon.Winform.Core
                 return;
 
             var item = this.bsEntity[rowIndex] as GroupItem;
-            var org = CallerFactory<IOrganizationService>.Instance.FindById(item.OrganizationId);
+            var entity = CallerFactory<IGroupService>.Instance.GetItemEntity(item);
 
-            if (e.ColumnFieldName == "OrganizationId")
+            if (e.ColumnFieldName == "EntityId")
             {
-                e.Value = org.Name;
+                e.Value = entity.Name;
                 e.Handled = true;
             }
         }

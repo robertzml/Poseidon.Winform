@@ -305,6 +305,16 @@ namespace Poseidon.Winform.Client
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmGroupOverview));
         }
+
+        /// <summary>
+        /// 分组树查看
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiGroupTree_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmGroupTree));
+        }
         #endregion //Model
 
         #region System
@@ -381,6 +391,7 @@ namespace Poseidon.Winform.Client
             ChildFormManage.ShowDialogForm(typeof(FrmChangePassword));
         }
         #endregion //System
+
         #endregion //Ribbon Event
 
         #endregion //Event

@@ -81,12 +81,12 @@ namespace Poseidon.Winform.Client
 
             foreach (var row in rows)
             {
-                if (!this.itemGrid.DataSource.Any(r => r.OrganizationId == row.Id))
+                if (!this.itemGrid.DataSource.Any(r => r.EntityId == row.Id))
                 {
                     GroupItem item = new GroupItem
                     {
                         GroupCode = this.currentGroup.Code,
-                        OrganizationId = row.Id,
+                        EntityId = row.Id,
                         ModelType = row.ModelType
                     };
                     this.itemGrid.DataSource.Add(item);
@@ -122,7 +122,7 @@ namespace Poseidon.Winform.Client
 
             try
             {
-                CallerFactory<IGroupService>.Instance.SetOrganizations(this.currentGroup.Id, this.itemGrid.DataSource);
+                CallerFactory<IGroupService>.Instance.SetGroupItems(this.currentGroup.Id, this.itemGrid.DataSource);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

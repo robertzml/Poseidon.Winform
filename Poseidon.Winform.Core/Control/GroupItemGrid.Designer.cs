@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.colOrganizationId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEntityId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModelType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSort = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,7 +51,7 @@
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colSort,
             this.colGroupCode,
-            this.colOrganizationId,
+            this.colEntityId,
             this.colModelType,
             this.colRemark});
             this.dgvEntity.IndicatorWidth = 40;
@@ -65,18 +65,18 @@
             this.dgvEntity.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.dgvEntity_CustomUnboundColumnData);
             this.dgvEntity.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dgvEntity_CustomColumnDisplayText);
             // 
-            // colOrganizationId
+            // colEntityId
             // 
-            this.colOrganizationId.Caption = "组织名称";
-            this.colOrganizationId.FieldName = "OrganizationId";
-            this.colOrganizationId.Name = "colOrganizationId";
-            this.colOrganizationId.OptionsColumn.AllowEdit = false;
-            this.colOrganizationId.Visible = true;
-            this.colOrganizationId.VisibleIndex = 2;
+            this.colEntityId.Caption = "对象名称";
+            this.colEntityId.FieldName = "EntityId";
+            this.colEntityId.Name = "colEntityId";
+            this.colEntityId.OptionsColumn.AllowEdit = false;
+            this.colEntityId.Visible = true;
+            this.colEntityId.VisibleIndex = 2;
             // 
             // colModelType
             // 
-            this.colModelType.Caption = "组织模型类型";
+            this.colModelType.Caption = "模型类型";
             this.colModelType.FieldName = "ModelType";
             this.colModelType.Name = "colModelType";
             this.colModelType.OptionsColumn.AllowEdit = false;
@@ -125,7 +125,7 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn colOrganizationId;
+        private DevExpress.XtraGrid.Columns.GridColumn colEntityId;
         private DevExpress.XtraGrid.Columns.GridColumn colModelType;
         private DevExpress.XtraGrid.Columns.GridColumn colSort;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;

@@ -86,6 +86,12 @@
     <Compile Include="Dict\FrmDictEdit.Designer.cs">
       <DependentUpon>FrmDictEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\FrmGroupTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmGroupTree.Designer.cs">
+      <DependentUpon>FrmGroupTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Privilege\FrmRoleEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +253,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Dict\FrmDictEdit.resx">
       <DependentUpon>FrmDictEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmGroupTree.resx">
+      <DependentUpon>FrmGroupTree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmPrivilegeAssign.resx">
       <DependentUpon>FrmPrivilegeAssign.cs</DependentUpon>
