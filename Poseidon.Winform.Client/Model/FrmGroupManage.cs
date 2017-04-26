@@ -18,7 +18,7 @@ namespace Poseidon.Winform.Client
     /// <summary>
     /// 分组总览窗体
     /// </summary>
-    public partial class FrmGroupOverview : BaseMdiForm
+    public partial class FrmGroupManage : BaseMdiForm
     {
         #region Field
         /// <summary>
@@ -28,7 +28,7 @@ namespace Poseidon.Winform.Client
         #endregion //Field
 
         #region Constructor
-        public FrmGroupOverview()
+        public FrmGroupManage()
         {
             InitializeComponent();
         }

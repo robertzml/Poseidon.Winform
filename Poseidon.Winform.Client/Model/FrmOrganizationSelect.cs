@@ -37,7 +37,6 @@ namespace Poseidon.Winform.Client
         #endregion //Constructor
 
         #region Function
-
         /// <summary>
         /// 初始化数据
         /// </summary>

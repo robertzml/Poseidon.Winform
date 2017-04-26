@@ -303,7 +303,7 @@ namespace Poseidon.Winform.Client
         /// <param name="e"></param>
         private void bbiGroupMan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ChildFormManage.LoadMdiForm(this, typeof(FrmGroupOverview));
+            ChildFormManage.LoadMdiForm(this, typeof(FrmGroupManage));
         }
 
         /// <summary>
