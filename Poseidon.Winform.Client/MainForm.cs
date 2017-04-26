@@ -10,7 +10,10 @@ using System.Windows.Forms;
 
 namespace Poseidon.Winform.Client
 {
+    using DevExpress.XtraBars;
     using DevExpress.XtraBars.Ribbon;
+    using Poseidon.Base.Framework;
+    using Poseidon.Caller.Facade;
     using Poseidon.Common;
     using Poseidon.Winform.Base;
 
@@ -33,6 +36,45 @@ namespace Poseidon.Winform.Client
 
         #region Function
         /// <summary>
+        /// 检查权限
+        /// </summary>
+        protected void CheckPrivilege()
+        {
+            if (GlobalAction.CurrentUser.IsRoot)
+                return;
+
+            var privileges = CallerFactory<IUserService>.Instance.GetPrivileges(GlobalAction.CurrentUser.Id);
+
+            foreach (RibbonPage page in this.ribbonControl.Pages)
+            {
+                if (page.Tag == null || privileges.Contains(page.Tag.ToString()))
+                {
+                    page.Visible = true;
+
+                    foreach (RibbonPageGroup group in page.Groups)
+                    {
+                        if (group.Tag == null || privileges.Contains(group.Tag.ToString()))
+                        {
+                            group.Visible = true;
+                        }
+                        else
+                            group.Visible = false;
+                    }
+                }
+                else
+                    page.Visible = false;
+            }
+
+            foreach (BarItem item in this.ribbonControl.Items)
+            {
+                if (item.Tag == null || privileges.Contains(item.Tag.ToString()))
+                    item.Visibility = BarItemVisibility.Always;
+                else
+                    item.Visibility = BarItemVisibility.Never;
+            }
+        }
+
+        /// <summary>
         /// 设置状态栏显示
         /// </summary>
         private void SetStatusBar()
@@ -51,6 +93,7 @@ namespace Poseidon.Winform.Client
         {
             this.Text = AppConfig.ApplicationName;
 
+            CheckPrivilege();
             SetStatusBar();
         }
 
@@ -114,7 +157,7 @@ namespace Poseidon.Winform.Client
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void bbtFundOv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void bbiFundOv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string assemblyName = "Poseidon.Energy.ClientDx";
             string typeName = "Poseidon.Energy.ClientDx.FrmFundOverview";
@@ -209,8 +252,8 @@ namespace Poseidon.Winform.Client
         /// <param name="e"></param>
         private void bbiExpenseOv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string assemblyName = "Poseidon.Energy.ClientDx";
-            string typeName = "Poseidon.Energy.ClientDx.FrmExpenseOverview";
+            string assemblyName = "Poseidon.Expense.ClientDx";
+            string typeName = "Poseidon.Expense.ClientDx.FrmExpenseOverview";
 
             ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
         }
@@ -222,8 +265,8 @@ namespace Poseidon.Winform.Client
         /// <param name="e"></param>
         private void bbiExpenseReceipt_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string assemblyName = "Poseidon.Energy.ClientDx";
-            string typeName = "Poseidon.Energy.ClientDx.FrmExpenseReceipt";
+            string assemblyName = "Poseidon.Expense.ClientDx";
+            string typeName = "Poseidon.Expense.ClientDx.FrmExpenseReceipt";
 
             ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
         }
@@ -235,13 +278,14 @@ namespace Poseidon.Winform.Client
         /// <param name="e"></param>
         private void bbiExpenseAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string assemblyName = "Poseidon.Energy.ClientDx";
-            string typeName = "Poseidon.Energy.ClientDx.FrmExpenseAccount";
+            string assemblyName = "Poseidon.Expense.ClientDx";
+            string typeName = "Poseidon.Expense.ClientDx.FrmExpenseAccount";
 
             ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
         }
         #endregion //Expense
 
+        #region Organization
         /// <summary>
         /// 模型类型总览
         /// </summary>
@@ -261,6 +305,7 @@ namespace Poseidon.Winform.Client
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmGroupOverview));
         }
+        #endregion //Organization
 
         #region System
         /// <summary>
@@ -274,11 +319,24 @@ namespace Poseidon.Winform.Client
         }
 
         /// <summary>
-        /// 用户列表
+        /// 退出系统
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void bbiUserList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void bbiExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageUtil.ConfirmYesNo("是否退出系统") == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        /// <summary>
+        /// 用户管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiUserMan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmUserList));
         }
@@ -294,6 +352,26 @@ namespace Poseidon.Winform.Client
         }
 
         /// <summary>
+        /// 权限管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiPrivilegeMan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmPrivilegeManage));
+        }
+
+        /// <summary>
+        /// 权限分配
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiPrivilegeAssign_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmPrivilegeAssign));
+        }
+
+        /// <summary>
         /// 修改密码
         /// </summary>
         /// <param name="sender"></param>
@@ -302,19 +380,7 @@ namespace Poseidon.Winform.Client
         {
             ChildFormManage.ShowDialogForm(typeof(FrmChangePassword));
         }
-
-        /// <summary>
-        /// 退出系统
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void barBtnExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.Close();
-        }
-
         #endregion //System
-
         #endregion //Ribbon Event
 
         #endregion //Event

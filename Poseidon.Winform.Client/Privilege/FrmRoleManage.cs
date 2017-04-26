@@ -69,7 +69,7 @@ namespace Poseidon.Winform.Client
         /// <param name="entity">角色对象</param>
         private void LoadUsers(Role entity)
         {
-            var data = CallerFactory<IRoleService>.Instance.FindUsers(entity.Id);
+            var data = CallerFactory<IRoleService>.Instance.GetUsers(entity.Id);
             this.userGrid.DataSource = data.ToList();
         }
         #endregion //Function
@@ -102,12 +102,29 @@ namespace Poseidon.Winform.Client
         }
 
         /// <summary>
+        /// 编辑角色
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (this.lbRoles.SelectedIndex == -1)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmRoleEdit), new object[] { this.currentRole.Id });
+            LoadRoles();
+        }
+
+        /// <summary>
         /// 选择用户
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnSelectUser_Click(object sender, EventArgs e)
         {
+            if (this.lbRoles.SelectedIndex == -1)
+                return;
+
             ChildFormManage.ShowDialogForm(typeof(FrmUserSelect), new object[] { this.currentRole.Id });
             LoadUsers(this.currentRole);
         }
