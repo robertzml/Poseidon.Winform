@@ -158,6 +158,17 @@ namespace Poseidon.Winform.Client
             ChildFormManage.ShowDialogForm(typeof(FrmOrganizationSelect), new object[] { this.currentGroup.Id });
             LoadGroupsTree();
         }
+        
+        /// <summary>
+        /// 选择建筑
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnBuildingSelect_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.ShowDialogForm(typeof(FrmBuildingSelect), new object[] { this.currentGroup.Id });
+            LoadGroupsTree();
+        }
         #endregion //Event
     }
 }
