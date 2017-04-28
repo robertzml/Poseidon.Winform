@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.luModelType = new DevExpress.XtraEditors.LookUpEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bsModelType = new System.Windows.Forms.BindingSource(this.components);
             this.bulGridLeft = new Poseidon.Winform.Core.BuildingGrid();
+            this.luModelType = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsModelType = new System.Windows.Forms.BindingSource(this.components);
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btnMoveIn = new DevExpress.XtraEditors.SimpleButton();
             this.btnMoveOut = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMoveIn = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.itemGrid = new Poseidon.Winform.Core.GroupItemGrid();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
@@ -49,14 +49,14 @@
             this.plBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luModelType.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsModelType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -96,6 +96,91 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "建筑列表";
             // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.bulGridLeft);
+            this.layoutControl1.Controls.Add(this.luModelType);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(2, 21);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(407, 412);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // bulGridLeft
+            // 
+            this.bulGridLeft.AllowFilter = false;
+            this.bulGridLeft.AllowGroup = false;
+            this.bulGridLeft.AllowSort = true;
+            this.bulGridLeft.DataSource = null;
+            this.bulGridLeft.Editable = false;
+            this.bulGridLeft.EnableMasterView = false;
+            this.bulGridLeft.EnableMultiSelect = true;
+            this.bulGridLeft.Location = new System.Drawing.Point(12, 36);
+            this.bulGridLeft.Name = "bulGridLeft";
+            this.bulGridLeft.ShowAddMenu = false;
+            this.bulGridLeft.ShowFooter = false;
+            this.bulGridLeft.ShowLineNumber = true;
+            this.bulGridLeft.ShowMenu = false;
+            this.bulGridLeft.ShowNavigator = false;
+            this.bulGridLeft.Size = new System.Drawing.Size(383, 364);
+            this.bulGridLeft.TabIndex = 5;
+            // 
+            // luModelType
+            // 
+            this.luModelType.Location = new System.Drawing.Point(63, 12);
+            this.luModelType.Name = "luModelType";
+            this.luModelType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.luModelType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 21, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Code", "代码", 51, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "名称", 41, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Remark", "备注", 51, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.luModelType.Properties.DataSource = this.bsModelType;
+            this.luModelType.Properties.DisplayMember = "Name";
+            this.luModelType.Properties.NullText = "请选择";
+            this.luModelType.Properties.ValueMember = "Code";
+            this.luModelType.Size = new System.Drawing.Size(332, 20);
+            this.luModelType.StyleController = this.layoutControl1;
+            this.luModelType.TabIndex = 4;
+            this.luModelType.EditValueChanged += new System.EventHandler(this.luModelType_EditValueChanged);
+            // 
+            // bsModelType
+            // 
+            this.bsModelType.DataSource = typeof(Poseidon.Core.DL.ModelType);
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(407, 412);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.luModelType;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(387, 24);
+            this.layoutControlItem1.Text = "模型类型";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.bulGridLeft;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(387, 368);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
@@ -113,91 +198,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 441);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // layoutControl1
-            // 
-            this.layoutControl1.Controls.Add(this.bulGridLeft);
-            this.layoutControl1.Controls.Add(this.luModelType);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(2, 21);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(407, 412);
-            this.layoutControl1.TabIndex = 0;
-            this.layoutControl1.Text = "layoutControl1";
-            // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(407, 412);
-            this.layoutControlGroup1.TextVisible = false;
-            // 
-            // luModelType
-            // 
-            this.luModelType.Location = new System.Drawing.Point(64, 12);
-            this.luModelType.Name = "luModelType";
-            this.luModelType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luModelType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 21, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Code", "代码", 51, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "名称", 41, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Remark", "备注", 51, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.luModelType.Properties.DataSource = this.bsModelType;
-            this.luModelType.Properties.DisplayMember = "Name";
-            this.luModelType.Properties.NullText = "请选择";
-            this.luModelType.Properties.ValueMember = "Id";
-            this.luModelType.Size = new System.Drawing.Size(331, 20);
-            this.luModelType.StyleController = this.layoutControl1;
-            this.luModelType.TabIndex = 4;
-            this.luModelType.EditValueChanged += new System.EventHandler(this.luModelType_EditValueChanged);
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.luModelType;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(387, 24);
-            this.layoutControlItem1.Text = "模型类型";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // bsModelType
-            // 
-            this.bsModelType.DataSource = typeof(Poseidon.Core.DL.ModelType);
-            // 
-            // bulGridLeft
-            // 
-            this.bulGridLeft.AllowFilter = false;
-            this.bulGridLeft.AllowGroup = false;
-            this.bulGridLeft.AllowSort = true;
-            this.bulGridLeft.DataSource = null;
-            this.bulGridLeft.Editable = false;
-            this.bulGridLeft.EnableMasterView = false;
-            this.bulGridLeft.EnableMultiSelect = false;
-            this.bulGridLeft.Location = new System.Drawing.Point(12, 36);
-            this.bulGridLeft.Name = "bulGridLeft";
-            this.bulGridLeft.ShowAddMenu = false;
-            this.bulGridLeft.ShowFooter = false;
-            this.bulGridLeft.ShowLineNumber = true;
-            this.bulGridLeft.ShowMenu = false;
-            this.bulGridLeft.ShowNavigator = false;
-            this.bulGridLeft.Size = new System.Drawing.Size(383, 364);
-            this.bulGridLeft.TabIndex = 5;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.bulGridLeft;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(387, 368);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
-            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.btnMoveOut);
@@ -208,15 +208,6 @@
             this.panelControl1.Size = new System.Drawing.Size(44, 435);
             this.panelControl1.TabIndex = 1;
             // 
-            // btnMoveIn
-            // 
-            this.btnMoveIn.Location = new System.Drawing.Point(0, 177);
-            this.btnMoveIn.Name = "btnMoveIn";
-            this.btnMoveIn.Size = new System.Drawing.Size(44, 23);
-            this.btnMoveIn.TabIndex = 0;
-            this.btnMoveIn.Text = ">";
-            this.btnMoveIn.Click += new System.EventHandler(this.btnMoveIn_Click);
-            // 
             // btnMoveOut
             // 
             this.btnMoveOut.Location = new System.Drawing.Point(0, 206);
@@ -225,6 +216,15 @@
             this.btnMoveOut.TabIndex = 1;
             this.btnMoveOut.Text = "<";
             this.btnMoveOut.Click += new System.EventHandler(this.btnMoveOut_Click);
+            // 
+            // btnMoveIn
+            // 
+            this.btnMoveIn.Location = new System.Drawing.Point(0, 177);
+            this.btnMoveIn.Name = "btnMoveIn";
+            this.btnMoveIn.Size = new System.Drawing.Size(44, 23);
+            this.btnMoveIn.TabIndex = 0;
+            this.btnMoveIn.Text = ">";
+            this.btnMoveIn.Click += new System.EventHandler(this.btnMoveIn_Click);
             // 
             // groupControl2
             // 
@@ -243,7 +243,7 @@
             this.itemGrid.AllowSort = true;
             this.itemGrid.DataSource = null;
             this.itemGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.itemGrid.Editable = false;
+            this.itemGrid.Editable = true;
             this.itemGrid.EnableMasterView = false;
             this.itemGrid.Location = new System.Drawing.Point(2, 21);
             this.itemGrid.Name = "itemGrid";
@@ -268,14 +268,14 @@
             this.plBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luModelType.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsModelType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
