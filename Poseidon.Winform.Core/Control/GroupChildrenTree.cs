@@ -214,6 +214,65 @@ namespace Poseidon.Winform.Core
         }
 
         /// <summary>
+        /// 设置多个分组
+        /// </summary>
+        /// <param name="codes">分组代码</param>
+        /// <param name="cascadeEntity">是否级联显示</param>
+        public void SetGroupCodes(string[] codes, bool cascadeEntity = false)
+        {
+            // load all groups include children
+            this.relateGroups = new List<Group>();
+            for (int i = 0; i < codes.Length; i++)
+            {
+                var subgroup = CallerFactory<IGroupService>.Instance.FindWithChildrenByCode(codes[i]);
+                this.relateGroups.AddRange(subgroup);
+            }
+            if (this.relateGroups.Count == 0)
+                throw new PoseidonException(ErrorCode.ObjectNotFound);
+
+            var tops = relateGroups.Where(r => codes.Contains(r.Code));
+
+            this.modelCategory = CallerFactory<IGroupService>.Instance.GetCategory(tops.First());
+
+            List<GroupItem> groupItems = new List<GroupItem>();
+            foreach (var top in tops)
+            {
+                var items = CallerFactory<IGroupService>.Instance.FindAllItems(top.Id);
+                groupItems.AddRange(items);
+            }
+
+            var ids = groupItems.Select(r => r.EntityId).ToList();
+            switch (modelCategory)
+            {
+                case ModelCategory.Organization:
+                    this.relateOrganizations = CallerFactory<IOrganizationService>.Instance.FindWithIds(ids).ToList();
+                    break;
+                case ModelCategory.Building:
+                    this.relateBuildings = CallerFactory<IBuildingService>.Instance.FindWithIds(ids).ToList();
+                    break;
+            }
+
+            this.cascadeEntity = cascadeEntity;
+
+            this.tlGroup.BeginUnboundLoad();
+            this.tlGroup.ClearNodes();
+
+            foreach (var top in tops)
+            {
+                var topNode = this.tlGroup.AppendNode(new object[] { top.Id, top.Name, 1 }, null);
+                topNode.StateImageIndex = 0;
+                topNode.HasChildren = true;
+
+                var children = this.relateGroups.Where(r => r.ParentId == top.Id).ToList();
+                AppendGroupNodes(children, topNode);
+
+                topNode.Expanded = true;
+            }
+
+            this.tlGroup.EndUnboundLoad();
+        }
+
+        /// <summary>
         /// 获取当前选中行ID
         /// </summary>
         /// <returns></returns>

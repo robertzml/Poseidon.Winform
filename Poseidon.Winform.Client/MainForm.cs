@@ -287,6 +287,45 @@ namespace Poseidon.Winform.Client
 
         #region Recovery
         /// <summary>
+        /// 回收总览
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiRecoveryOv_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string assemblyName = "Poseidon.Recovery.ClientDx";
+            string typeName = "Poseidon.Recovery.ClientDx.FrmRecoveryOverview";
+
+            ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
+        }
+
+        /// <summary>
+        /// 回收单据
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiRecoveryReceipt_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string assemblyName = "Poseidon.Recovery.ClientDx";
+            string typeName = "Poseidon.Recovery.ClientDx.FrmRecoveryReceipt";
+
+            ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
+        }
+
+        /// <summary>
+        /// 回收账户管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiRecoveryAccount_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string assemblyName = "Poseidon.Recovery.ClientDx";
+            string typeName = "Poseidon.Recovery.ClientDx.FrmAccountManage";
+
+            ChildFormManage.LoadMdiForm(this, assemblyName, typeName);
+        }
+
+        /// <summary>
         /// 计费建筑管理
         /// </summary>
         /// <param name="sender"></param>
@@ -408,7 +447,6 @@ namespace Poseidon.Winform.Client
         #endregion //System
 
         #endregion //Ribbon Event
-
         #endregion //Event
     }
 }

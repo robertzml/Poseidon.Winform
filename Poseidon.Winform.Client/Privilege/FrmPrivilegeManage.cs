@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +10,6 @@ using System.Windows.Forms;
 namespace Poseidon.Winform.Client
 {
     using Poseidon.Base.Framework;
-    using Poseidon.Base.System;
-    using Poseidon.Caller.Facade;
     using Poseidon.Common;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
@@ -30,22 +27,6 @@ namespace Poseidon.Winform.Client
         #endregion //Constructor
 
         #region Function
-        /// <summary>
-        /// 显示权限信息
-        /// </summary>
-        /// <param name="entity"></param>
-        private void DisplayInfo(Privilege entity)
-        {
-            //this.txtName.Text = entity.Name;
-            //this.txtCode.Text = entity.Code;
-            //this.txtSort.Text = entity.Sort.ToString();
-            //this.txtRemark.Text = entity.Remark;
-
-            //this.chkCreate.Checked = Convert.ToBoolean(entity.Action & (int)DataAction.Create);
-            //this.chkRead.Checked = Convert.ToBoolean(entity.Action & (int)DataAction.Read);
-            //this.chkUpdate.Checked = Convert.ToBoolean(entity.Action & (int)DataAction.Update);
-            //this.chkDelete.Checked = Convert.ToBoolean(entity.Action & (int)DataAction.Delete);
-        }
         #endregion //Function
 
         #region Event
@@ -69,7 +50,6 @@ namespace Poseidon.Winform.Client
         {
             ChildFormManage.ShowDialogForm(typeof(FrmPrivilegeAdd));
             this.privilegeTree.RefreshData();
-            this.privilegeTree.Expand();
         }
 
         /// <summary>
@@ -85,7 +65,6 @@ namespace Poseidon.Winform.Client
 
             ChildFormManage.ShowDialogForm(typeof(FrmPrivilegeEdit), new object[] { id });
             this.privilegeTree.RefreshData();
-            this.privilegeTree.Expand();
         }
         #endregion //Event
     }

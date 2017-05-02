@@ -91,6 +91,10 @@ namespace Poseidon.Winform.Client
             entity.Name = this.txtName.Text;
             entity.Code = this.txtCode.Text;
             entity.Remark = this.txtRemark.Text;
+            if (this.cmbParent.EditValue == null)
+                entity.ParentId = null;
+            else
+                entity.ParentId = this.cmbParent.EditValue.ToString();
         }
         #endregion //Function
 

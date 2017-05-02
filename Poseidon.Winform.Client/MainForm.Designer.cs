@@ -64,9 +64,7 @@
             this.rpgSettlement = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgTargetBase = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpExpense = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.rpgExpenseInfo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpRecovery = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.rpgRecoveryInfo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpModel = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpSystem = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -77,6 +75,11 @@
             this.rpgBase = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.bbiRecoveryAccount = new DevExpress.XtraBars.BarButtonItem();
+            this.rpgRecoveryMan = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bbiRecoveryOv = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiRecoveryReceipt = new DevExpress.XtraBars.BarButtonItem();
+            this.rogExpenseManage = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -112,9 +115,12 @@
             this.bbiPrivilegeMan,
             this.bbiPrivilegeAssign,
             this.bbiGroupTree,
-            this.bbiChargeBuildingMan});
+            this.bbiChargeBuildingMan,
+            this.bbiRecoveryAccount,
+            this.bbiRecoveryOv,
+            this.bbiRecoveryReceipt});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 10;
+            this.ribbonControl.MaxItemId = 13;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpEnergy,
@@ -406,12 +412,13 @@
             // 
             // bbiChargeBuildingMan
             // 
-            this.bbiChargeBuildingMan.Caption = "计费建筑管理";
+            this.bbiChargeBuildingMan.Caption = "计费建筑";
             this.bbiChargeBuildingMan.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
             this.bbiChargeBuildingMan.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiChargeBuildingMan.Glyph")));
             this.bbiChargeBuildingMan.Id = 9;
             this.bbiChargeBuildingMan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiChargeBuildingMan.LargeGlyph")));
             this.bbiChargeBuildingMan.Name = "bbiChargeBuildingMan";
+            this.bbiChargeBuildingMan.Tag = "Recovery.ChargeBuilding";
             this.bbiChargeBuildingMan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiChargeBuildingMan_ItemClick);
             // 
             // rpEnergy
@@ -463,34 +470,18 @@
             // rpExpense
             // 
             this.rpExpense.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgExpenseInfo});
+            this.rogExpenseManage});
             this.rpExpense.Name = "rpExpense";
             this.rpExpense.Tag = "Expense";
             this.rpExpense.Text = "费用支出";
             // 
-            // rpgExpenseInfo
-            // 
-            this.rpgExpenseInfo.ItemLinks.Add(this.bbiExpenseOv);
-            this.rpgExpenseInfo.ItemLinks.Add(this.bbiExpenseReceipt);
-            this.rpgExpenseInfo.ItemLinks.Add(this.bbiExpenseAccount);
-            this.rpgExpenseInfo.Name = "rpgExpenseInfo";
-            this.rpgExpenseInfo.Tag = "Expense";
-            this.rpgExpenseInfo.Text = "基本信息";
-            // 
             // rpRecovery
             // 
             this.rpRecovery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgRecoveryInfo});
+            this.rpgRecoveryMan});
             this.rpRecovery.Name = "rpRecovery";
             this.rpRecovery.Tag = "Recovery";
             this.rpRecovery.Text = "费用回收";
-            // 
-            // rpgRecoveryInfo
-            // 
-            this.rpgRecoveryInfo.ItemLinks.Add(this.bbiChargeBuildingMan);
-            this.rpgRecoveryInfo.Name = "rpgRecoveryInfo";
-            this.rpgRecoveryInfo.Tag = "Recovery.Info";
-            this.rpgRecoveryInfo.Text = "基本信息";
             // 
             // rpModel
             // 
@@ -567,6 +558,57 @@
             this.tabMdiManager.MdiParent = this;
             this.tabMdiManager.PinPageButtonShowMode = DevExpress.XtraTab.PinPageButtonShowMode.InActiveTabPageHeader;
             // 
+            // bbiRecoveryAccount
+            // 
+            this.bbiRecoveryAccount.Caption = "回收账户";
+            this.bbiRecoveryAccount.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiRecoveryAccount.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiRecoveryAccount.Glyph")));
+            this.bbiRecoveryAccount.Id = 10;
+            this.bbiRecoveryAccount.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiRecoveryAccount.LargeGlyph")));
+            this.bbiRecoveryAccount.Name = "bbiRecoveryAccount";
+            this.bbiRecoveryAccount.Tag = "Recovery.Account";
+            this.bbiRecoveryAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRecoveryAccount_ItemClick);
+            // 
+            // rpgRecoveryMan
+            // 
+            this.rpgRecoveryMan.ItemLinks.Add(this.bbiRecoveryOv);
+            this.rpgRecoveryMan.ItemLinks.Add(this.bbiRecoveryReceipt);
+            this.rpgRecoveryMan.ItemLinks.Add(this.bbiRecoveryAccount);
+            this.rpgRecoveryMan.ItemLinks.Add(this.bbiChargeBuildingMan);
+            this.rpgRecoveryMan.Name = "rpgRecoveryMan";
+            this.rpgRecoveryMan.Tag = "Recovery";
+            this.rpgRecoveryMan.Text = "回收管理";
+            // 
+            // bbiRecoveryOv
+            // 
+            this.bbiRecoveryOv.Caption = "回收总览";
+            this.bbiRecoveryOv.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiRecoveryOv.Id = 11;
+            this.bbiRecoveryOv.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiRecoveryOv.LargeGlyph")));
+            this.bbiRecoveryOv.Name = "bbiRecoveryOv";
+            this.bbiRecoveryOv.Tag = "Recovery.Overivew";
+            this.bbiRecoveryOv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRecoveryOv_ItemClick);
+            // 
+            // bbiRecoveryReceipt
+            // 
+            this.bbiRecoveryReceipt.Caption = "回收单据";
+            this.bbiRecoveryReceipt.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiRecoveryReceipt.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiRecoveryReceipt.Glyph")));
+            this.bbiRecoveryReceipt.Id = 12;
+            this.bbiRecoveryReceipt.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiRecoveryReceipt.LargeGlyph")));
+            this.bbiRecoveryReceipt.Name = "bbiRecoveryReceipt";
+            this.bbiRecoveryReceipt.Tag = "Recovery.Receipt";
+            this.bbiRecoveryReceipt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRecoveryReceipt_ItemClick);
+            // 
+            // rogExpenseManage
+            // 
+            this.rogExpenseManage.ItemLinks.Add(this.bbiExpenseOv);
+            this.rogExpenseManage.ItemLinks.Add(this.bbiExpenseReceipt);
+            this.rogExpenseManage.ItemLinks.Add(this.bbiExpenseAccount);
+            this.rogExpenseManage.Name = "rogExpenseManage";
+            this.rogExpenseManage.Tag = "Expense";
+            this.rogExpenseManage.Text = "支出管理";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -602,7 +644,6 @@
         private DevExpress.XtraBars.BarButtonItem bbiModelTypeMan;
         private DevExpress.XtraBars.BarButtonItem bbiExpenseAccount;
         private DevExpress.XtraBars.Ribbon.RibbonPage rpExpense;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgExpenseInfo;
         private DevExpress.XtraBars.BarButtonItem bbiGroupMan;
         private DevExpress.XtraBars.BarButtonItem bbiDepartmentOv;
         private DevExpress.XtraBars.BarButtonItem bbiPopulationMan;
@@ -637,7 +678,11 @@
         private DevExpress.XtraBars.BarButtonItem bbiGroupTree;
         private DevExpress.XtraBars.BarButtonItem bbiChargeBuildingMan;
         private DevExpress.XtraBars.Ribbon.RibbonPage rpRecovery;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgRecoveryInfo;
+        private DevExpress.XtraBars.BarButtonItem bbiRecoveryAccount;
+        private DevExpress.XtraBars.BarButtonItem bbiRecoveryOv;
+        private DevExpress.XtraBars.BarButtonItem bbiRecoveryReceipt;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rogExpenseManage;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgRecoveryMan;
     }
 }
 

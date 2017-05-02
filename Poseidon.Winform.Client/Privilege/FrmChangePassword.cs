@@ -16,6 +16,9 @@ namespace Poseidon.Winform.Client
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
+    /// <summary>
+    /// 修改密码窗体
+    /// </summary>
     public partial class FrmChangePassword : BaseSingleForm
     {
         #region Constructor
