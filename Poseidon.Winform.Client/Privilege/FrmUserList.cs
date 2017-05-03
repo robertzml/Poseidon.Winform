@@ -55,6 +55,21 @@ namespace Poseidon.Winform.Client
             ChildFormManage.ShowDialogForm(typeof(FrmUserAdd));
             LoadUsers();
         }
+
+        /// <summary>
+        /// 编辑用户
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (this.userGrid.GetCurrentSelect() == null)
+                return;
+
+            var user = this.userGrid.GetCurrentSelect();
+            ChildFormManage.ShowDialogForm(typeof(FrmUserEdit), new object[] { user.Id });
+            LoadUsers();
+        }
         #endregion //Event
     }
 }

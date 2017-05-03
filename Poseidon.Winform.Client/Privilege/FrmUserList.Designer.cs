@@ -108,6 +108,7 @@
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "编辑用户";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 

@@ -19,6 +19,9 @@ namespace Poseidon.Winform.Client
     public static class GlobalAction
     {
         #region Field
+        /// <summary>
+        /// 当前登录用户
+        /// </summary>
         public static LoginUser CurrentUser = null;
         #endregion //Field
 

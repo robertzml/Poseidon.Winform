@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -35,7 +36,7 @@
             this.txtGroupRemark = new DevExpress.XtraEditors.TextEdit();
             this.txtGroupCode = new DevExpress.XtraEditors.TextEdit();
             this.tluGroup = new DevExpress.XtraEditors.TreeListLookUpEdit();
-            this.bsGroups = new System.Windows.Forms.BindingSource();
+            this.bsGroups = new System.Windows.Forms.BindingSource(this.components);
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();

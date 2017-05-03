@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Winform.Client
 {
-    partial class FrmUserAdd
+    partial class FrmUserEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -92,7 +92,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(324, 261);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "用户信息";
             // 
             // layoutControl1
@@ -148,6 +148,9 @@
             // 
             this.txtUserName.Location = new System.Drawing.Point(63, 12);
             this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtUserName.Properties.Appearance.Options.UseBackColor = true;
+            this.txtUserName.Properties.ReadOnly = true;
             this.txtUserName.Size = new System.Drawing.Size(245, 20);
             this.txtUserName.StyleController = this.layoutControl1;
             this.txtUserName.TabIndex = 4;
@@ -212,13 +215,13 @@
             this.layoutControlItem5.Text = "备注";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // FrmUserAdd
+            // FrmUserEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(324, 321);
-            this.Name = "FrmUserAdd";
-            this.Text = "添加用户";
+            this.Name = "FrmUserEdit";
+            this.Text = "编辑用户";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();

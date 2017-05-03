@@ -103,6 +103,12 @@
     <Compile Include="Dict\FrmDictEdit.Designer.cs">
       <DependentUpon>FrmDictEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Privilege\FrmUserEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmUserEdit.Designer.cs">
+      <DependentUpon>FrmUserEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\FrmBuildingSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Model\FrmOrganizationSelect.resx">
       <DependentUpon>FrmOrganizationSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmUserEdit.resx">
+      <DependentUpon>FrmUserEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmUserList.resx">
       <DependentUpon>FrmUserList.cs</DependentUpon>
