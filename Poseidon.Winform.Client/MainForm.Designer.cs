@@ -439,7 +439,7 @@
             this.bbiRecoveryOv.Id = 11;
             this.bbiRecoveryOv.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiRecoveryOv.LargeGlyph")));
             this.bbiRecoveryOv.Name = "bbiRecoveryOv";
-            this.bbiRecoveryOv.Tag = "Recovery.Overivew";
+            this.bbiRecoveryOv.Tag = "Recovery.Overview";
             this.bbiRecoveryOv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRecoveryOv_ItemClick);
             // 
             // bbiRecoveryReceipt
