@@ -43,6 +43,11 @@ namespace Poseidon.Winform.Base
         protected bool allowSort = true;
 
         /// <summary>
+        /// 是否启用多选
+        /// </summary>
+        protected bool enableMultiSelect = false;
+
+        /// <summary>
         /// 是否启用Master View
         /// </summary>
         protected bool enableMasterView = false;
@@ -161,6 +166,7 @@ namespace Poseidon.Winform.Base
             this.dgvEntity.OptionsCustomization.AllowGroup = this.allowGroup;
             this.dgvEntity.OptionsCustomization.AllowSort = this.allowSort;
             this.dgvEntity.OptionsDetail.EnableMasterViewMode = this.enableMasterView;
+            this.dgvEntity.OptionsSelection.MultiSelect = this.enableMultiSelect;
 
             this.dataNavigator.Visible = this.showNavigator;
         }
@@ -353,6 +359,23 @@ namespace Poseidon.Winform.Base
             set
             {
                 this.enableMasterView = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否启用多选
+        /// </summary>
+        [Category("功能"), Description("是否启用多选"), Browsable(true)]
+        public bool EnableMultiSelect
+        {
+            get
+            {
+                return enableMultiSelect;
+            }
+
+            set
+            {
+                enableMultiSelect = value;
             }
         }
 
