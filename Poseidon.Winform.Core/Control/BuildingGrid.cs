@@ -21,7 +21,7 @@ namespace Poseidon.Winform.Core
         /// <summary>
         /// 是否显示复选框
         /// </summary>
-        private bool enableMultiSelect = false;
+        private bool enableMultiCheckSelect = false;
         #endregion //Field
 
         #region Constructor
@@ -60,8 +60,8 @@ namespace Poseidon.Winform.Core
         /// <param name="e"></param>
         private void BuildingGrid_Load(object sender, EventArgs e)
         {
-            this.dgvEntity.OptionsSelection.MultiSelect = this.enableMultiSelect;
-            if (this.enableMultiSelect)
+            this.dgvEntity.OptionsSelection.MultiSelect = this.enableMultiCheckSelect;
+            if (this.enableMultiCheckSelect)
                 this.dgvEntity.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
         }
         #endregion //Event
@@ -71,15 +71,15 @@ namespace Poseidon.Winform.Core
         /// 是否能多选
         /// </summary>
         [Category("功能"), Description("是否能多选"), Browsable(true)]
-        public bool EnableMultiSelect
+        public bool EnableMultiCheckSelect
         {
             get
             {
-                return this.enableMultiSelect;
+                return this.enableMultiCheckSelect;
             }
             set
             {
-                this.enableMultiSelect = value;
+                this.enableMultiCheckSelect = value;
             }
         }
         #endregion //Property

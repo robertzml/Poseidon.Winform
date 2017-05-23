@@ -116,6 +116,7 @@
             this.bulGridLeft.DataSource = null;
             this.bulGridLeft.Editable = false;
             this.bulGridLeft.EnableMasterView = false;
+            this.bulGridLeft.EnableMultiCheckSelect = true;
             this.bulGridLeft.EnableMultiSelect = true;
             this.bulGridLeft.Location = new System.Drawing.Point(12, 36);
             this.bulGridLeft.Name = "bulGridLeft";
@@ -245,6 +246,7 @@
             this.itemGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemGrid.Editable = true;
             this.itemGrid.EnableMasterView = false;
+            this.itemGrid.EnableMultiSelect = false;
             this.itemGrid.Location = new System.Drawing.Point(2, 21);
             this.itemGrid.Name = "itemGrid";
             this.itemGrid.ShowAddMenu = false;
