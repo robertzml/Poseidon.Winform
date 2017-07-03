@@ -59,6 +59,10 @@ namespace Poseidon.Winform.Client
             // 设置数据库类型
             string dalPrefix = AppConfig.GetAppSetting("DALPrefix");
             Cache.Instance.Add("DALPrefix", dalPrefix);
+
+            // 设置服务访问类型
+            string callerType = AppConfig.GetAppSetting("CallerType");
+            Cache.Instance.Add("CallerType", callerType);
         }
 
         /// <summary>
