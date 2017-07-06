@@ -10,13 +10,24 @@ using System.Windows.Forms;
 
 namespace Poseidon.Winform.Core.Control
 {
+    using Poseidon.Base.Framework;
     using Poseidon.Winform.Base;
+    using Poseidon.Attachment.Caller.Facade;
+    using Poseidon.Attachment.Core.DL;
+    using Poseidon.Attachment.Core.Utility;
 
     /// <summary>
     /// 上传工具
     /// </summary>
     public partial class UploadTool : DevExpress.XtraEditors.XtraUserControl
     {
+        #region Field
+        /// <summary>
+        /// 上传附件
+        /// </summary>
+        private Attachment attachment;
+        #endregion //Field
+
         #region Constructor
         public UploadTool()
         {
@@ -61,9 +72,10 @@ namespace Poseidon.Winform.Core.Control
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 this.txtFile.Text = dialog.FileName;
+                this.txtName.Text = dialog.FileName;
             }
         }
-        
+
         /// <summary>
         /// 上传文件
         /// </summary>
@@ -78,8 +90,42 @@ namespace Poseidon.Winform.Core.Control
                 return;
             }
 
+            try
+            {
+                UploadInfo info = new UploadInfo();
+                info.Name = this.txtName.Text;
+                info.LocalPath = this.txtFile.Text;
+                info.Remark = this.txtRemark.Text;
 
+                var task = CallerFactory<IAttachmentService>.GetInstance(CallerType.WebApi).Upload(info);
+
+                this.attachment = task.Result;
+
+                MessageUtil.ShowInfo("上传文件成功");
+            }
+            catch (Exception ex)
+            {
+                MessageUtil.ShowError(ex.Message);
+            }
         }
         #endregion //Event
+
+        #region Property
+        /// <summary>
+        /// 上传附件
+        /// </summary>
+        public Attachment Attachment
+        {
+            get
+            {
+                return attachment;
+            }
+
+            set
+            {
+                attachment = value;
+            }
+        }
+        #endregion //Property
     }
 }

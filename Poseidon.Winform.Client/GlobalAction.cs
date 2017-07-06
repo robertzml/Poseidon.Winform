@@ -63,6 +63,10 @@ namespace Poseidon.Winform.Client
             // 设置服务访问类型
             string callerType = AppConfig.GetAppSetting("CallerType");
             Cache.Instance.Add("CallerType", callerType);
+
+            // 设置远程API地址
+            string apiHost = AppConfig.GetAppSetting("ApiHost");
+            Cache.Instance.Add("ApiHost", apiHost);
         }
 
         /// <summary>

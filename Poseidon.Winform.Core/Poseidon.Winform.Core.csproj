@@ -40,6 +40,12 @@
     <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Poseidon.Attachment.Caller">
+      <HintPath>..\..\Assembly\Poseidon.Attachment.Caller.dll</HintPath>
+    </Reference>
+    <Reference Include="Poseidon.Attachment.Core">
+      <HintPath>..\..\Assembly\Poseidon.Attachment.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Poseidon.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Assembly\Poseidon.Base.dll</HintPath>
