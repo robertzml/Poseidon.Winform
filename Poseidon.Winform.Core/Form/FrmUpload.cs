@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Poseidon.Winform.Core.Control
+namespace Poseidon.Winform.Core
 {
     using Poseidon.Base.Framework;
     using Poseidon.Winform.Base;
@@ -17,9 +17,9 @@ namespace Poseidon.Winform.Core.Control
     using Poseidon.Attachment.Core.Utility;
 
     /// <summary>
-    /// 上传工具
+    /// 附件上传窗体
     /// </summary>
-    public partial class UploadTool : DevExpress.XtraEditors.XtraUserControl
+    public partial class FrmUpload : BaseSingleForm
     {
         #region Field
         /// <summary>
@@ -29,7 +29,7 @@ namespace Poseidon.Winform.Core.Control
         #endregion //Field
 
         #region Constructor
-        public UploadTool()
+        public FrmUpload()
         {
             InitializeComponent();
         }
@@ -81,7 +81,7 @@ namespace Poseidon.Winform.Core.Control
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnUpload_Click(object sender, EventArgs e)
+        private void btnConfirm_Click(object sender, EventArgs e)
         {
             var input = CheckInput();
             if (!input.Item1)
@@ -102,6 +102,9 @@ namespace Poseidon.Winform.Core.Control
                 this.attachment = task.Result;
 
                 MessageUtil.ShowInfo("上传文件成功");
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ex)
             {
