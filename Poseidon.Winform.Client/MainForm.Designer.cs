@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barChildList = new DevExpress.XtraBars.BarMdiChildrenListItem();
@@ -60,6 +61,7 @@
             this.bbiRecoveryAccount = new DevExpress.XtraBars.BarButtonItem();
             this.bbiRecoveryOv = new DevExpress.XtraBars.BarButtonItem();
             this.bbiRecoveryReceipt = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiTest = new DevExpress.XtraBars.BarButtonItem();
             this.rpEnergy = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgTarget = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgMeasure = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -78,7 +80,7 @@
             this.rpgPersonnel = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgBase = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -117,9 +119,10 @@
             this.bbiChargeBuildingMan,
             this.bbiRecoveryAccount,
             this.bbiRecoveryOv,
-            this.bbiRecoveryReceipt});
+            this.bbiRecoveryReceipt,
+            this.bbiTest});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 14;
+            this.ribbonControl.MaxItemId = 15;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpEnergy,
@@ -452,6 +455,17 @@
             this.bbiRecoveryReceipt.Tag = "Recovery.Receipt";
             this.bbiRecoveryReceipt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRecoveryReceipt_ItemClick);
             // 
+            // bbiTest
+            // 
+            this.bbiTest.Caption = "测试";
+            this.bbiTest.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiTest.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiTest.Glyph")));
+            this.bbiTest.Id = 14;
+            this.bbiTest.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiTest.LargeGlyph")));
+            this.bbiTest.Name = "bbiTest";
+            this.bbiTest.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.bbiTest.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiTest_ItemClick);
+            // 
             // rpEnergy
             // 
             this.rpEnergy.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -589,6 +603,7 @@
             // 
             // rpgBase
             // 
+            this.rpgBase.ItemLinks.Add(this.bbiTest);
             this.rpgBase.ItemLinks.Add(this.barChildList);
             this.rpgBase.ItemLinks.Add(this.bbiExit);
             this.rpgBase.Name = "rpgBase";
@@ -682,6 +697,7 @@
         private DevExpress.XtraBars.BarButtonItem bbiRecoveryReceipt;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rogExpenseManage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgRecoveryMan;
+        private DevExpress.XtraBars.BarButtonItem bbiTest;
     }
 }
 

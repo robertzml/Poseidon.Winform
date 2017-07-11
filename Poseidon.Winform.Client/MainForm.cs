@@ -443,9 +443,20 @@ namespace Poseidon.Winform.Client
         {
             ChildFormManage.ShowDialogForm(typeof(FrmChangePassword));
         }
+
+        /// <summary>
+        /// 测试窗体
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiTest_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ChildFormManage.ShowDialogForm(typeof(TestForm));
+        }
         #endregion //System
 
         #endregion //Ribbon Event
+
         #endregion //Event
     }
 }

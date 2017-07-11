@@ -81,7 +81,7 @@ namespace Poseidon.Winform.Core
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnConfirm_Click(object sender, EventArgs e)
+        private async void btnConfirm_Click(object sender, EventArgs e)
         {
             var input = CheckInput();
             if (!input.Item1)
@@ -92,17 +92,20 @@ namespace Poseidon.Winform.Core
 
             try
             {
-                UploadInfo info = new UploadInfo();
-                info.Name = this.txtName.Text;
-                info.LocalPath = this.txtFile.Text;
-                info.Remark = this.txtRemark.Text;
+                var task = Task.Run(() =>
+                {
+                    UploadInfo info = new UploadInfo();
+                    info.Name = this.txtName.Text;
+                    info.LocalPath = this.txtFile.Text;
+                    info.Remark = this.txtRemark.Text;
 
-                var task = CallerFactory<IAttachmentService>.GetInstance(CallerType.WebApi).Upload(info);
+                    var result = CallerFactory<IAttachmentService>.GetInstance(CallerType.WebApi).UploadAsync(info);
+                    return result;
+                });
 
-                this.attachment = task.Result;
+                this.attachment = await task;
 
-                MessageUtil.ShowInfo("上传文件成功");
-
+                MessageUtil.ShowInfo(string.Format("上传文件:{0} 成功", attachment.Name));
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

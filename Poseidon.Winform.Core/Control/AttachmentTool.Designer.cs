@@ -28,24 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.lbAttachments = new DevExpress.XtraEditors.ListBoxControl();
+            this.bsAttachment = new System.Windows.Forms.BindingSource();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bsAttachment = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbAttachments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAttachment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsAttachment)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -90,6 +89,10 @@
             this.lbAttachments.TabIndex = 4;
             this.lbAttachments.ValueMember = "Id";
             // 
+            // bsAttachment
+            // 
+            this.bsAttachment.DataSource = typeof(Poseidon.Attachment.Core.DL.Attachment);
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -120,10 +123,6 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // bsAttachment
-            // 
-            this.bsAttachment.DataSource = typeof(Poseidon.Attachment.Core.DL.Attachment);
-            // 
             // AttachmentTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -137,10 +136,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lbAttachments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAttachment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsAttachment)).EndInit();
             this.ResumeLayout(false);
 
         }

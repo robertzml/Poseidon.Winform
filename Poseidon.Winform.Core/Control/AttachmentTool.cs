@@ -9,7 +9,9 @@ using System.Windows.Forms;
 
 namespace Poseidon.Winform.Core
 {
+    using Poseidon.Base.Framework;
     using Poseidon.Winform.Base;
+    using Poseidon.Attachment.Caller.Facade;
     using Poseidon.Attachment.Core.DL;
 
     /// <summary>
@@ -19,9 +21,9 @@ namespace Poseidon.Winform.Core
     {
         #region Field
         /// <summary>
-        /// 附件列表
+        /// 相关附件
         /// </summary>
-        private List<Attachment> attachments = new List<Attachment>();
+        private List<Attachment> attachments;
         #endregion //Field
 
         #region Constructor
@@ -32,10 +34,6 @@ namespace Poseidon.Winform.Core
         #endregion //Constructor
 
         #region Function
-        private void InitControl()
-        {
-            this.bsAttachment.DataSource = attachments;
-        }
         #endregion //Function
 
         #region Method
@@ -45,7 +43,20 @@ namespace Poseidon.Winform.Core
         /// <param name="ids"></param>
         public void Init(List<string> ids)
         {
+            if (ids != null && ids.Count > 0)
+                this.attachments = CallerFactory<IAttachmentService>.GetInstance(CallerType.Win).FindListInIds(ids).ToList();
+            else
+                this.attachments = new List<Attachment>();
+            this.bsAttachment.DataSource = attachments;
+        }
 
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        public void Init()
+        {
+            this.attachments = new List<Attachment>();
+            this.bsAttachment.DataSource = attachments;
         }
         #endregion //Method
 
@@ -57,7 +68,6 @@ namespace Poseidon.Winform.Core
         /// <param name="e"></param>
         private void AttachmentTool_Load(object sender, EventArgs e)
         {
-            InitControl();
         }
 
         /// <summary>
@@ -74,5 +84,29 @@ namespace Poseidon.Winform.Core
             }
         }
         #endregion //Event
+
+        #region Property
+        /// <summary>
+        /// 相关附件
+        /// </summary>
+        public List<Attachment> Attachments
+        {
+            get
+            {
+                return this.attachments;
+            }
+        }
+
+        /// <summary>
+        /// 相关附件ID
+        /// </summary>
+        public List<string> AttachmentIds
+        {
+            get
+            {
+                return this.attachments.Select(r => r.Id).ToList();
+            }
+        }
+        #endregion //Property
     }
 }
