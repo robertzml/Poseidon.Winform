@@ -55,5 +55,12 @@ namespace Poseidon.Winform.Client
                 MessageUtil.ShowInfo(a.Name);
             }
         }
+
+        private void btnSet_Click(object sender, EventArgs e)
+        {
+            List<string> ids = new List<string>();
+            ids.Add("59648851672e2239b85b00d3");
+            this.imgAttachTool.Init(ids);
+        }
     }
 }

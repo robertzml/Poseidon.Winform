@@ -463,7 +463,6 @@
             this.bbiTest.Id = 14;
             this.bbiTest.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiTest.LargeGlyph")));
             this.bbiTest.Name = "bbiTest";
-            this.bbiTest.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.bbiTest.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiTest_ItemClick);
             // 
             // rpEnergy

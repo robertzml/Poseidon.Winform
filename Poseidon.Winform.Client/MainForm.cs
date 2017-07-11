@@ -94,6 +94,12 @@ namespace Poseidon.Winform.Client
 
             CheckPrivilege();
             SetStatusBar();
+
+#if DEBUG
+            this.bbiTest.Visibility = BarItemVisibility.Always;
+#else
+            this.bbiTest.Visibility = BarItemVisibility.Never;
+#endif
         }
 
         #region Ribbon Event
