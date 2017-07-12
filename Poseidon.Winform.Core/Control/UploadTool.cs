@@ -83,6 +83,23 @@ namespace Poseidon.Winform.Core
                 this.attachments.Add(upload.Attachment);
             }
         }
+
+        /// <summary>
+        /// 删除附件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.lbAttachments.SelectedIndex == -1 || this.lbAttachments.SelectedItem == null)
+                return;
+
+            var attach = this.lbAttachments.SelectedItem as Attachment;
+            if (MessageUtil.ConfirmYesNo("是否删除选定附件:" + attach.Name) == DialogResult.Yes)
+            {
+                this.attachments.Remove(attach);
+            }
+        }
         #endregion //Event
 
         #region Property

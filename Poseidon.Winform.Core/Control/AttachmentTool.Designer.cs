@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttachmentTool));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.dgcAttachment = new DevExpress.XtraGrid.GridControl();
-            this.bsAttachment = new System.Windows.Forms.BindingSource(this.components);
+            this.bsAttachment = new System.Windows.Forms.BindingSource();
             this.attachmentGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,25 +49,48 @@
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAction = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repActionButton = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.repoCardButton = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.attachmentCardView = new DevExpress.XtraGrid.Views.Card.CardView();
+            this.colName2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOriginName2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colExtension2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContentType2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSize2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUploadTime2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMd5Hash2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRemark2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnCardView = new DevExpress.XtraEditors.CheckButton();
+            this.btnGridView = new DevExpress.XtraEditors.CheckButton();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgcAttachment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsAttachment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attachmentGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repActionButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoCardButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attachmentCardView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgcAttachment
             // 
             this.dgcAttachment.DataSource = this.bsAttachment;
             this.dgcAttachment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgcAttachment.Location = new System.Drawing.Point(0, 0);
+            this.dgcAttachment.Location = new System.Drawing.Point(3, 3);
             this.dgcAttachment.MainView = this.attachmentGridView;
             this.dgcAttachment.Name = "dgcAttachment";
             this.dgcAttachment.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repActionButton});
-            this.dgcAttachment.Size = new System.Drawing.Size(699, 440);
+            this.repActionButton,
+            this.repoCardButton});
+            this.dgcAttachment.Size = new System.Drawing.Size(693, 394);
             this.dgcAttachment.TabIndex = 0;
             this.dgcAttachment.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.attachmentGridView});
+            this.attachmentGridView,
+            this.attachmentCardView});
             // 
             // bsAttachment
             // 
@@ -204,28 +228,202 @@
             // repActionButton
             // 
             this.repActionButton.AutoHeight = false;
-            serializableAppearanceObject3.Options.UseTextOptions = true;
-            serializableAppearanceObject3.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            serializableAppearanceObject4.Options.UseTextOptions = true;
-            serializableAppearanceObject4.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            serializableAppearanceObject1.Options.UseTextOptions = true;
+            serializableAppearanceObject1.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            serializableAppearanceObject2.Options.UseTextOptions = true;
+            serializableAppearanceObject2.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.repActionButton.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "预览", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repActionButton.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", "Preview", null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "下载", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repActionButton.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", "Download", null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "预览", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repActionButton.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", "Preview", null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "下载", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repActionButton.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", "Download", null, true)});
             this.repActionButton.Name = "repActionButton";
             this.repActionButton.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repActionButton.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repActionButton_ButtonClick);
+            // 
+            // repoCardButton
+            // 
+            this.repoCardButton.AutoHeight = false;
+            this.repoCardButton.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "预览", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repoCardButton.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", "Preview", null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repoCardButton.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", "Download", null, true)});
+            this.repoCardButton.Name = "repoCardButton";
+            this.repoCardButton.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repoCardButton.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repoCardButton_ButtonClick);
+            // 
+            // attachmentCardView
+            // 
+            this.attachmentCardView.CardCaptionFormat = "附件";
+            this.attachmentCardView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colName2,
+            this.colOriginName2,
+            this.colExtension2,
+            this.colContentType2,
+            this.gridColumn1,
+            this.colSize2,
+            this.colUploadTime2,
+            this.colMd5Hash2,
+            this.colRemark2,
+            this.gridColumn2});
+            this.attachmentCardView.FocusedCardTopFieldIndex = 0;
+            this.attachmentCardView.GridControl = this.dgcAttachment;
+            this.attachmentCardView.Name = "attachmentCardView";
+            this.attachmentCardView.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.attachmentCardView.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.attachmentCardView.OptionsView.ShowCardExpandButton = false;
+            // 
+            // colName2
+            // 
+            this.colName2.Caption = "名称";
+            this.colName2.FieldName = "Name";
+            this.colName2.Name = "colName2";
+            this.colName2.OptionsColumn.AllowEdit = false;
+            this.colName2.Visible = true;
+            this.colName2.VisibleIndex = 0;
+            // 
+            // colOriginName2
+            // 
+            this.colOriginName2.Caption = "原始文件名";
+            this.colOriginName2.FieldName = "OriginName";
+            this.colOriginName2.Name = "colOriginName2";
+            this.colOriginName2.OptionsColumn.AllowEdit = false;
+            this.colOriginName2.Visible = true;
+            this.colOriginName2.VisibleIndex = 2;
+            // 
+            // colExtension2
+            // 
+            this.colExtension2.Caption = "扩展名";
+            this.colExtension2.FieldName = "Extension";
+            this.colExtension2.Name = "colExtension2";
+            this.colExtension2.OptionsColumn.AllowEdit = false;
+            this.colExtension2.Visible = true;
+            this.colExtension2.VisibleIndex = 1;
+            // 
+            // colContentType2
+            // 
+            this.colContentType2.Caption = "文件类型";
+            this.colContentType2.FieldName = "ContentType";
+            this.colContentType2.Name = "colContentType2";
+            this.colContentType2.OptionsColumn.AllowEdit = false;
+            this.colContentType2.Visible = true;
+            this.colContentType2.VisibleIndex = 3;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "文件大小(MB)";
+            this.gridColumn1.FieldName = "gridColumn1";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.UnboundExpression = "Round(ToDecimal([Size]) / 1024 / 1024, 2)";
+            this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 4;
+            // 
+            // colSize2
+            // 
+            this.colSize2.Caption = "文件大小";
+            this.colSize2.FieldName = "Size";
+            this.colSize2.Name = "colSize2";
+            this.colSize2.OptionsColumn.AllowEdit = false;
+            // 
+            // colUploadTime2
+            // 
+            this.colUploadTime2.Caption = "上传时间";
+            this.colUploadTime2.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.colUploadTime2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colUploadTime2.FieldName = "UploadTime";
+            this.colUploadTime2.Name = "colUploadTime2";
+            this.colUploadTime2.OptionsColumn.AllowEdit = false;
+            this.colUploadTime2.Visible = true;
+            this.colUploadTime2.VisibleIndex = 5;
+            // 
+            // colMd5Hash2
+            // 
+            this.colMd5Hash2.Caption = "文件Hash";
+            this.colMd5Hash2.FieldName = "MD5Hash";
+            this.colMd5Hash2.Name = "colMd5Hash2";
+            this.colMd5Hash2.OptionsColumn.AllowEdit = false;
+            this.colMd5Hash2.Visible = true;
+            this.colMd5Hash2.VisibleIndex = 6;
+            // 
+            // colRemark2
+            // 
+            this.colRemark2.Caption = "备注";
+            this.colRemark2.FieldName = "Remark";
+            this.colRemark2.Name = "colRemark2";
+            this.colRemark2.OptionsColumn.AllowEdit = false;
+            this.colRemark2.OptionsFilter.AllowFilter = false;
+            this.colRemark2.Visible = true;
+            this.colRemark2.VisibleIndex = 7;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "操作";
+            this.gridColumn2.ColumnEdit = this.repoCardButton;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 8;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.btnCardView);
+            this.panelControl1.Controls.Add(this.btnGridView);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(3, 403);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(693, 34);
+            this.panelControl1.TabIndex = 1;
+            // 
+            // btnCardView
+            // 
+            this.btnCardView.Location = new System.Drawing.Point(154, 2);
+            this.btnCardView.Name = "btnCardView";
+            this.btnCardView.Size = new System.Drawing.Size(132, 30);
+            this.btnCardView.TabIndex = 1;
+            this.btnCardView.Tag = "CardView";
+            this.btnCardView.Text = "卡牌视图";
+            this.btnCardView.CheckedChanged += new System.EventHandler(this.btnSelectView_CheckedChanged);
+            // 
+            // btnGridView
+            // 
+            this.btnGridView.Checked = true;
+            this.btnGridView.Location = new System.Drawing.Point(5, 2);
+            this.btnGridView.Name = "btnGridView";
+            this.btnGridView.Size = new System.Drawing.Size(132, 30);
+            this.btnGridView.TabIndex = 0;
+            this.btnGridView.Tag = "GridView";
+            this.btnGridView.Text = "表格视图";
+            this.btnGridView.CheckedChanged += new System.EventHandler(this.btnSelectView_CheckedChanged);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.dgcAttachment, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(699, 440);
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // AttachmentTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dgcAttachment);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AttachmentTool";
             this.Size = new System.Drawing.Size(699, 440);
             ((System.ComponentModel.ISupportInitialize)(this.dgcAttachment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsAttachment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attachmentGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repActionButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoCardButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attachmentCardView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -248,5 +446,21 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMBSize;
         private DevExpress.XtraGrid.Columns.GridColumn colAction;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repActionButton;
+        private DevExpress.XtraGrid.Views.Card.CardView attachmentCardView;
+        private DevExpress.XtraGrid.Columns.GridColumn colName2;
+        private DevExpress.XtraGrid.Columns.GridColumn colExtension2;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.CheckButton btnCardView;
+        private DevExpress.XtraEditors.CheckButton btnGridView;
+        private DevExpress.XtraGrid.Columns.GridColumn colOriginName2;
+        private DevExpress.XtraGrid.Columns.GridColumn colContentType2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSize2;
+        private DevExpress.XtraGrid.Columns.GridColumn colUploadTime2;
+        private DevExpress.XtraGrid.Columns.GridColumn colMd5Hash2;
+        private DevExpress.XtraGrid.Columns.GridColumn colRemark2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repoCardButton;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

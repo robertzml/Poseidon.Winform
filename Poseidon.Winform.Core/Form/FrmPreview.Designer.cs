@@ -113,9 +113,8 @@
             this.imgZoom.Name = "imgZoom";
             this.imgZoom.Properties.LabelAppearance.Options.UseTextOptions = true;
             this.imgZoom.Properties.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.imgZoom.Properties.Maximum = 100;
-            this.imgZoom.Properties.Minimum = 1;
-            this.imgZoom.Properties.TickFrequency = 5;
+            this.imgZoom.Properties.Maximum = 200;
+            this.imgZoom.Properties.TickFrequency = 10;
             this.imgZoom.Size = new System.Drawing.Size(156, 30);
             this.imgZoom.TabIndex = 0;
             this.imgZoom.Value = 50;

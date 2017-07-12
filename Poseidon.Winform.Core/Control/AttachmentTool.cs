@@ -28,6 +28,16 @@ namespace Poseidon.Winform.Core
         /// 相关附件
         /// </summary>
         private List<Attachment> attachments;
+
+        /// <summary>
+        /// 更新视图标志
+        /// </summary>
+        private bool updateView = false;
+
+        /// <summary>
+        /// 当前视图
+        /// </summary>
+        private string currentView = "GridView";
         #endregion //Field
 
         #region Constructor
@@ -96,6 +106,76 @@ namespace Poseidon.Winform.Core
                 fs.Close();
             }
         }
+
+        /// <summary>
+        /// 表格动作
+        /// </summary>
+        /// <param name="action"></param>
+        private void GridAction(string action)
+        {
+            Attachment attach = null;
+            if (currentView == "GridView")
+            {
+                var selected = this.attachmentGridView.GetSelectedRows();
+                if (selected.Length == 0)
+                    return;
+
+                var dsIndex = this.attachmentGridView.GetDataSourceRowIndex(selected[0]);
+                attach = this.bsAttachment[dsIndex] as Attachment;
+            }
+            else if (currentView == "CardView")
+            {
+                var selected = this.attachmentCardView.GetSelectedRows();
+                if (selected.Length == 0)
+                    return;
+
+                var dsIndex = this.attachmentCardView.GetDataSourceRowIndex(selected[0]);
+                attach = this.bsAttachment[dsIndex] as Attachment;
+            }
+
+            try
+            {
+                if (action == "Preview")
+                {
+                    PreviewFile(attach);
+                }
+                else if (action == "Download")
+                {
+                    DownloadFile(attach);
+                }
+            }
+            catch (PoseidonException pe)
+            {
+                this.Cursor = Cursors.Default;
+                MessageUtil.ShowError(string.Format("错误类型:{0}, 网络状态:{1}", pe.ErrorCode.DisplayName(), pe.HttpStatusCode.ToString()));
+            }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+                MessageUtil.ShowError(string.Format("远程访问错误，{0}", ex.InnerException.Message));
+            }
+        }
+
+        /// <summary>
+        /// 切换视图
+        /// </summary>
+        /// <param name="viewType"></param>
+        private void ChangeView(string viewType)
+        {
+            btnGridView.Checked = btnCardView.Checked = false;
+            switch (viewType)
+            {
+                case "GridView":
+                    btnGridView.Checked = true;
+                    this.dgcAttachment.MainView = this.attachmentGridView;
+                    break;
+                case "CardView":
+                    btnCardView.Checked = true;
+                    this.dgcAttachment.MainView = this.attachmentCardView;
+                    break;
+            }
+            this.currentView = viewType;
+        }
         #endregion //Function
 
         #region Method
@@ -121,34 +201,40 @@ namespace Poseidon.Winform.Core
         /// <param name="e"></param>
         private void repActionButton_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            var selected = this.attachmentGridView.GetSelectedRows();
-            if (selected.Length == 0)
+            GridAction(e.Button.Tag.ToString());
+        }
+
+        /// <summary>
+        /// 操作按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void repoCardButton_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            GridAction(e.Button.Tag.ToString());
+        }
+
+        /// <summary>
+        /// 选择视图
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSelectView_CheckedChanged(object sender, EventArgs e)
+        {
+            if (updateView)
                 return;
 
-            var dsIndex = this.attachmentGridView.GetDataSourceRowIndex(selected[0]);
-            var attach = this.bsAttachment[dsIndex] as Attachment;
+            updateView = true;
 
-            try
+            var button = sender as DevExpress.XtraEditors.CheckButton;
+
+            if (button.Checked)
             {
-                if (e.Button.Tag.ToString() == "Preview")
-                {
-                    PreviewFile(attach);
-                }
-                else if (e.Button.Tag.ToString() == "Download")
-                {
-                    DownloadFile(attach);
-                }
+                string viewType = button.Tag.ToString();
+                ChangeView(viewType);
             }
-            catch (PoseidonException pe)
-            {
-                this.Cursor = Cursors.Default;
-                MessageUtil.ShowError(string.Format("错误类型:{0}, 网络状态:{1}", pe.ErrorCode.DisplayName(), pe.HttpStatusCode.ToString()));
-            }
-            catch (Exception ex)
-            {
-                this.Cursor = Cursors.Default;
-                MessageUtil.ShowError(string.Format("远程访问错误，{0}", ex.InnerException.Message));
-            }
+
+            updateView = false;
         }
         #endregion //Event
 
