@@ -32,6 +32,8 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.imgZoom = new DevExpress.XtraEditors.TrackBarControl();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDownload = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -68,8 +70,14 @@
             // 
             this.plBottom.Appearance.BackColor = System.Drawing.Color.White;
             this.plBottom.Appearance.Options.UseBackColor = true;
+            this.plBottom.Controls.Add(this.btnDownload);
+            this.plBottom.Controls.Add(this.btnPrint);
             this.plBottom.Location = new System.Drawing.Point(0, 502);
             this.plBottom.Size = new System.Drawing.Size(784, 60);
+            this.plBottom.Controls.SetChildIndex(this.btnCancel, 0);
+            this.plBottom.Controls.SetChildIndex(this.btnConfirm, 0);
+            this.plBottom.Controls.SetChildIndex(this.btnPrint, 0);
+            this.plBottom.Controls.SetChildIndex(this.btnDownload, 0);
             // 
             // picView
             // 
@@ -120,6 +128,24 @@
             this.imgZoom.Value = 50;
             this.imgZoom.EditValueChanged += new System.EventHandler(this.imgZoom_EditValueChanged);
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(592, 18);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(80, 30);
+            this.btnPrint.TabIndex = 2;
+            this.btnPrint.Text = "打印";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnDownload
+            // 
+            this.btnDownload.Location = new System.Drawing.Point(491, 18);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(80, 30);
+            this.btnDownload.TabIndex = 3;
+            this.btnDownload.Text = "下载";
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
+            // 
             // FrmPreview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -149,5 +175,7 @@
         private DevExpress.XtraEditors.PictureEdit picView;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.TrackBarControl imgZoom;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
+        private DevExpress.XtraEditors.SimpleButton btnDownload;
     }
 }

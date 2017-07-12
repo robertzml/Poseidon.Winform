@@ -30,11 +30,6 @@ namespace Poseidon.Winform.Core
         private List<Attachment> attachments;
 
         /// <summary>
-        /// 更新视图标志
-        /// </summary>
-        private bool updateView = false;
-
-        /// <summary>
         /// 当前视图
         /// </summary>
         private string currentView = "GridView";
@@ -162,15 +157,12 @@ namespace Poseidon.Winform.Core
         /// <param name="viewType"></param>
         private void ChangeView(string viewType)
         {
-            btnGridView.Checked = btnCardView.Checked = false;
             switch (viewType)
             {
                 case "GridView":
-                    btnGridView.Checked = true;
                     this.dgcAttachment.MainView = this.attachmentGridView;
                     break;
                 case "CardView":
-                    btnCardView.Checked = true;
                     this.dgcAttachment.MainView = this.attachmentCardView;
                     break;
             }
@@ -219,22 +211,9 @@ namespace Poseidon.Winform.Core
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnSelectView_CheckedChanged(object sender, EventArgs e)
+        private void rgType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (updateView)
-                return;
-
-            updateView = true;
-
-            var button = sender as DevExpress.XtraEditors.CheckButton;
-
-            if (button.Checked)
-            {
-                string viewType = button.Tag.ToString();
-                ChangeView(viewType);
-            }
-
-            updateView = false;
+            ChangeView(this.rgType.EditValue.ToString());
         }
         #endregion //Event
 

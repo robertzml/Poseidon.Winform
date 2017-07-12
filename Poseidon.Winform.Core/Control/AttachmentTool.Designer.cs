@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttachmentTool));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.dgcAttachment = new DevExpress.XtraGrid.GridControl();
-            this.bsAttachment = new System.Windows.Forms.BindingSource();
+            this.bsAttachment = new System.Windows.Forms.BindingSource(this.components);
             this.attachmentGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,9 +63,11 @@
             this.colRemark2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btnCardView = new DevExpress.XtraEditors.CheckButton();
-            this.btnGridView = new DevExpress.XtraEditors.CheckButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.rgType = new DevExpress.XtraEditors.RadioGroup();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgcAttachment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsAttachment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attachmentGridView)).BeginInit();
@@ -73,20 +76,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.attachmentCardView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rgType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgcAttachment
             // 
             this.dgcAttachment.DataSource = this.bsAttachment;
-            this.dgcAttachment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgcAttachment.Location = new System.Drawing.Point(3, 3);
+            this.dgcAttachment.Location = new System.Drawing.Point(2, 2);
             this.dgcAttachment.MainView = this.attachmentGridView;
             this.dgcAttachment.Name = "dgcAttachment";
             this.dgcAttachment.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repActionButton,
             this.repoCardButton});
-            this.dgcAttachment.Size = new System.Drawing.Size(693, 394);
+            this.dgcAttachment.Size = new System.Drawing.Size(691, 396);
             this.dgcAttachment.TabIndex = 0;
             this.dgcAttachment.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.attachmentGridView,
@@ -213,6 +220,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.OptionsColumn.AllowEdit = false;
+            this.colRemark.OptionsFilter.AllowFilter = false;
             this.colRemark.Visible = true;
             this.colRemark.VisibleIndex = 7;
             this.colRemark.Width = 80;
@@ -222,6 +230,7 @@
             this.colAction.Caption = "操作";
             this.colAction.ColumnEdit = this.repActionButton;
             this.colAction.Name = "colAction";
+            this.colAction.OptionsFilter.AllowFilter = false;
             this.colAction.Visible = true;
             this.colAction.VisibleIndex = 8;
             // 
@@ -359,60 +368,81 @@
             this.gridColumn2.Caption = "操作";
             this.gridColumn2.ColumnEdit = this.repoCardButton;
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsFilter.AllowFilter = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 8;
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.btnCardView);
-            this.panelControl1.Controls.Add(this.btnGridView);
+            this.panelControl1.Controls.Add(this.layoutControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(3, 403);
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(693, 34);
+            this.panelControl1.Size = new System.Drawing.Size(699, 440);
             this.panelControl1.TabIndex = 1;
             // 
-            // btnCardView
+            // layoutControl1
             // 
-            this.btnCardView.Location = new System.Drawing.Point(154, 2);
-            this.btnCardView.Name = "btnCardView";
-            this.btnCardView.Size = new System.Drawing.Size(132, 30);
-            this.btnCardView.TabIndex = 1;
-            this.btnCardView.Tag = "CardView";
-            this.btnCardView.Text = "卡牌视图";
-            this.btnCardView.CheckedChanged += new System.EventHandler(this.btnSelectView_CheckedChanged);
+            this.layoutControl1.Controls.Add(this.rgType);
+            this.layoutControl1.Controls.Add(this.dgcAttachment);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(2, 2);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(695, 436);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
             // 
-            // btnGridView
+            // rgType
             // 
-            this.btnGridView.Checked = true;
-            this.btnGridView.Location = new System.Drawing.Point(5, 2);
-            this.btnGridView.Name = "btnGridView";
-            this.btnGridView.Size = new System.Drawing.Size(132, 30);
-            this.btnGridView.TabIndex = 0;
-            this.btnGridView.Tag = "GridView";
-            this.btnGridView.Text = "表格视图";
-            this.btnGridView.CheckedChanged += new System.EventHandler(this.btnSelectView_CheckedChanged);
+            this.rgType.EditValue = "GridView";
+            this.rgType.Location = new System.Drawing.Point(2, 402);
+            this.rgType.Name = "rgType";
+            this.rgType.Properties.Columns = 2;
+            this.rgType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("GridView", "表格视图"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("CardView", "卡牌视图")});
+            this.rgType.Size = new System.Drawing.Size(691, 32);
+            this.rgType.StyleController = this.layoutControl1;
+            this.rgType.TabIndex = 4;
+            this.rgType.SelectedIndexChanged += new System.EventHandler(this.rgType_SelectedIndexChanged);
             // 
-            // tableLayoutPanel1
+            // layoutControlGroup1
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.dgcAttachment, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(699, 440);
-            this.tableLayoutPanel1.TabIndex = 2;
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(695, 436);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.dgcAttachment;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(695, 400);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.rgType;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 400);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(695, 36);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
             // 
             // AttachmentTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.panelControl1);
             this.Name = "AttachmentTool";
             this.Size = new System.Drawing.Size(699, 440);
             ((System.ComponentModel.ISupportInitialize)(this.dgcAttachment)).EndInit();
@@ -423,7 +453,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.attachmentCardView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.rgType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -450,8 +485,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colName2;
         private DevExpress.XtraGrid.Columns.GridColumn colExtension2;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.CheckButton btnCardView;
-        private DevExpress.XtraEditors.CheckButton btnGridView;
         private DevExpress.XtraGrid.Columns.GridColumn colOriginName2;
         private DevExpress.XtraGrid.Columns.GridColumn colContentType2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
@@ -461,6 +494,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRemark2;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repoCardButton;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraEditors.RadioGroup rgType;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }
