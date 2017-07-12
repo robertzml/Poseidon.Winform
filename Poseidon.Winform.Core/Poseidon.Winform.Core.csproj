@@ -81,6 +81,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\AttachmentTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\AttachmentTool.Designer.cs">
+      <DependentUpon>AttachmentTool.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\UploadTool.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +159,12 @@
     <Compile Include="Control\ImageAttachmentTool.Designer.cs">
       <DependentUpon>ImageAttachmentTool.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\FrmPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmPreview.Designer.cs">
+      <DependentUpon>FrmPreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -175,6 +187,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Control\AttachmentTool.resx">
+      <DependentUpon>AttachmentTool.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\UploadTool.resx">
       <DependentUpon>UploadTool.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +234,9 @@
     <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Privilege.datasource" />
     <None Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Form\FrmPreview.resx">
+      <DependentUpon>FrmPreview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmUpload.resx">
       <DependentUpon>FrmUpload.cs</DependentUpon>
     </EmbeddedResource>

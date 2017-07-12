@@ -60,7 +60,13 @@ namespace Poseidon.Winform.Client
         {
             List<string> ids = new List<string>();
             ids.Add("59648851672e2239b85b00d3");
-            this.imgAttachTool.Init(ids);
+            ids.Add("59657cf7672e2114d4978c0c");
+            this.attachmentTool.Init(ids);
+        }
+
+        private void TestForm_Load(object sender, EventArgs e)
+        {
+            this.upTool.Init();
         }
     }
 }

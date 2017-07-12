@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.lbAttachments = new DevExpress.XtraEditors.ListBoxControl();
-            this.bsAttachment = new System.Windows.Forms.BindingSource();
+            this.bsAttachment = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -123,12 +124,12 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // AttachmentTool
+            // UploadTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelControl1);
-            this.Name = "AttachmentTool";
+            this.Name = "UploadTool";
             this.Size = new System.Drawing.Size(315, 355);
             this.Load += new System.EventHandler(this.AttachmentTool_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

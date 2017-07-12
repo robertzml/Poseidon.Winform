@@ -18,7 +18,7 @@ namespace Poseidon.Winform.Core
     /// <summary>
     /// 图片附件工具
     /// </summary>
-    public partial class ImageAttachmentTool : UserControl
+    public partial class ImageAttachmentTool : DevExpress.XtraEditors.XtraUserControl
     {
         #region Field
         /// <summary>
