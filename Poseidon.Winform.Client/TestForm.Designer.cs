@@ -30,7 +30,7 @@
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnUpload = new DevExpress.XtraEditors.SimpleButton();
-            this.attachmentTool1 = new Poseidon.Winform.Core.AttachmentTool();
+            this.attachmentTool1 = new Poseidon.Winform.Core.UploadTool();
             this.imgAttachTool = new Poseidon.Winform.Core.ImageAttachmentTool();
             this.btnSet = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
@@ -128,7 +128,7 @@
         #endregion
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private Core.AttachmentTool attachmentTool1;
+        private Core.UploadTool attachmentTool1;
         private DevExpress.XtraEditors.SimpleButton btnUpload;
         private Core.ImageAttachmentTool imgAttachTool;
         private DevExpress.XtraEditors.SimpleButton btnSet;

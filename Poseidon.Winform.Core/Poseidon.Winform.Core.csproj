@@ -81,11 +81,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Control\AttachmentTool.cs">
+    <Compile Include="Control\UploadTool.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\AttachmentTool.Designer.cs">
-      <DependentUpon>AttachmentTool.cs</DependentUpon>
+    <Compile Include="Control\UploadTool.Designer.cs">
+      <DependentUpon>UploadTool.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\BuildingGrid.cs">
       <SubType>UserControl</SubType>
@@ -175,8 +175,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Control\AttachmentTool.resx">
-      <DependentUpon>AttachmentTool.cs</DependentUpon>
+    <EmbeddedResource Include="Control\UploadTool.resx">
+      <DependentUpon>UploadTool.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\BuildingGrid.resx">
       <DependentUpon>BuildingGrid.cs</DependentUpon>

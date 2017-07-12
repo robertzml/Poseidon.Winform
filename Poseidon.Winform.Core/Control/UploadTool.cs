@@ -17,7 +17,7 @@ namespace Poseidon.Winform.Core
     /// <summary>
     /// 附件管理工具
     /// </summary>
-    public partial class AttachmentTool : DevExpress.XtraEditors.XtraUserControl
+    public partial class UploadTool : DevExpress.XtraEditors.XtraUserControl
     {
         #region Field
         /// <summary>
@@ -27,7 +27,7 @@ namespace Poseidon.Winform.Core
         #endregion //Field
 
         #region Constructor
-        public AttachmentTool()
+        public UploadTool()
         {
             InitializeComponent();
         }

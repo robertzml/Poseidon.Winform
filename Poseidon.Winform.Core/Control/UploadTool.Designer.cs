@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Winform.Core
 {
-    partial class AttachmentTool
+    partial class UploadTool
     {
         /// <summary> 
         /// 必需的设计器变量。
