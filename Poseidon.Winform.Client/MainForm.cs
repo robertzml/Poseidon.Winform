@@ -388,6 +388,16 @@ namespace Poseidon.Winform.Client
         }
 
         /// <summary>
+        /// 附件管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiAttachmentMan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmAttachmentManage));
+        }
+
+        /// <summary>
         /// 退出系统
         /// </summary>
         /// <param name="sender"></param>

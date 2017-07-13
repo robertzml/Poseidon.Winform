@@ -183,6 +183,24 @@ namespace Poseidon.Winform.Core
                 this.attachments = new List<Attachment>();
             this.bsAttachment.DataSource = attachments;
         }
+
+        /// <summary>
+        /// 获取制定文件夹下附件
+        /// </summary>
+        /// <param name="folder"></param>
+        public void Init(string folder)
+        {
+            this.attachments = CallerFactory<IAttachmentService>.GetInstance(CallerType.Win).FindByFolder(folder).ToList();
+            this.bsAttachment.DataSource = attachments;
+        }
+
+        /// <summary>
+        /// 清空
+        /// </summary>
+        public void Clear()
+        {
+            this.attachments = null;
+        }
         #endregion //Method
 
         #region Event

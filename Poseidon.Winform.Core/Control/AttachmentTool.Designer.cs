@@ -137,6 +137,7 @@
             // 
             // colName
             // 
+            this.colName.Caption = "名称";
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
             this.colName.OptionsColumn.AllowEdit = false;
@@ -152,6 +153,7 @@
             // 
             // colOriginName
             // 
+            this.colOriginName.Caption = "原始文件名";
             this.colOriginName.FieldName = "OriginName";
             this.colOriginName.Name = "colOriginName";
             this.colOriginName.OptionsColumn.AllowEdit = false;
@@ -161,6 +163,7 @@
             // 
             // colExtension
             // 
+            this.colExtension.Caption = "扩展名";
             this.colExtension.FieldName = "Extension";
             this.colExtension.Name = "colExtension";
             this.colExtension.OptionsColumn.AllowEdit = false;
@@ -170,6 +173,7 @@
             // 
             // colContentType
             // 
+            this.colContentType.Caption = "文件类型";
             this.colContentType.FieldName = "ContentType";
             this.colContentType.Name = "colContentType";
             this.colContentType.OptionsColumn.AllowEdit = false;
@@ -197,6 +201,7 @@
             // 
             // colUploadTime
             // 
+            this.colUploadTime.Caption = "上传时间";
             this.colUploadTime.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.colUploadTime.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colUploadTime.FieldName = "UploadTime";
@@ -208,6 +213,7 @@
             // 
             // colMD5Hash
             // 
+            this.colMD5Hash.Caption = "文件Hash";
             this.colMD5Hash.FieldName = "MD5Hash";
             this.colMD5Hash.Name = "colMD5Hash";
             this.colMD5Hash.OptionsColumn.AllowEdit = false;
@@ -217,6 +223,7 @@
             // 
             // colRemark
             // 
+            this.colRemark.Caption = "备注";
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.OptionsColumn.AllowEdit = false;

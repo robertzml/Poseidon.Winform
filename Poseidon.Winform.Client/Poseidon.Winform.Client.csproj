@@ -123,6 +123,12 @@
     <Compile Include="Dict\FrmDictEdit.Designer.cs">
       <DependentUpon>FrmDictEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Attachment\FrmAttachmentManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Attachment\FrmAttachmentManage.Designer.cs">
+      <DependentUpon>FrmAttachmentManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Privilege\FrmUserEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,6 +312,9 @@
     <Compile Include="TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Attachment\FrmAttachmentManage.resx">
+      <DependentUpon>FrmAttachmentManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dict\FrmDictEdit.resx">
       <DependentUpon>FrmDictEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -460,6 +469,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

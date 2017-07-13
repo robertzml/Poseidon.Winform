@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barChildList = new DevExpress.XtraBars.BarMdiChildrenListItem();
@@ -62,6 +61,7 @@
             this.bbiRecoveryOv = new DevExpress.XtraBars.BarButtonItem();
             this.bbiRecoveryReceipt = new DevExpress.XtraBars.BarButtonItem();
             this.bbiTest = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiAttachmentMan = new DevExpress.XtraBars.BarButtonItem();
             this.rpEnergy = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgTarget = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgMeasure = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -80,7 +80,7 @@
             this.rpgPersonnel = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgBase = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -120,9 +120,10 @@
             this.bbiRecoveryAccount,
             this.bbiRecoveryOv,
             this.bbiRecoveryReceipt,
-            this.bbiTest});
+            this.bbiTest,
+            this.bbiAttachmentMan});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 15;
+            this.ribbonControl.MaxItemId = 16;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpEnergy,
@@ -465,6 +466,16 @@
             this.bbiTest.Name = "bbiTest";
             this.bbiTest.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiTest_ItemClick);
             // 
+            // bbiAttachmentMan
+            // 
+            this.bbiAttachmentMan.Caption = "附件管理";
+            this.bbiAttachmentMan.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiAttachmentMan.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiAttachmentMan.Glyph")));
+            this.bbiAttachmentMan.Id = 15;
+            this.bbiAttachmentMan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiAttachmentMan.LargeGlyph")));
+            this.bbiAttachmentMan.Name = "bbiAttachmentMan";
+            this.bbiAttachmentMan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiAttachmentMan_ItemClick);
+            // 
             // rpEnergy
             // 
             this.rpEnergy.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -574,6 +585,7 @@
             // rpgSystemFunction
             // 
             this.rpgSystemFunction.ItemLinks.Add(this.bbiDictOv);
+            this.rpgSystemFunction.ItemLinks.Add(this.bbiAttachmentMan);
             this.rpgSystemFunction.Name = "rpgSystemFunction";
             this.rpgSystemFunction.Text = "系统功能";
             // 
@@ -697,6 +709,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rogExpenseManage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgRecoveryMan;
         private DevExpress.XtraBars.BarButtonItem bbiTest;
+        private DevExpress.XtraBars.BarButtonItem bbiAttachmentMan;
     }
 }
 
