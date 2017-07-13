@@ -123,10 +123,16 @@
     <Compile Include="Dict\FrmDictEdit.Designer.cs">
       <DependentUpon>FrmDictEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Attachment\FrmAttachmentManage.cs">
+    <Compile Include="System\FrmCacheManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Attachment\FrmAttachmentManage.Designer.cs">
+    <Compile Include="System\FrmCacheManage.Designer.cs">
+      <DependentUpon>FrmCacheManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\FrmAttachmentManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\FrmAttachmentManage.Designer.cs">
       <DependentUpon>FrmAttachmentManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Privilege\FrmUserEdit.cs">
@@ -312,7 +318,7 @@
     <Compile Include="TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Attachment\FrmAttachmentManage.resx">
+    <EmbeddedResource Include="System\FrmAttachmentManage.resx">
       <DependentUpon>FrmAttachmentManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dict\FrmDictEdit.resx">
@@ -377,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\FrmCacheManage.resx">
+      <DependentUpon>FrmCacheManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>

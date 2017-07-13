@@ -388,6 +388,16 @@ namespace Poseidon.Winform.Client
         }
 
         /// <summary>
+        /// 缓存管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bbiCacheManage_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmCacheManage));
+        }
+
+        /// <summary>
         /// 附件管理
         /// </summary>
         /// <param name="sender"></param>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barChildList = new DevExpress.XtraBars.BarMdiChildrenListItem();
@@ -62,6 +63,7 @@
             this.bbiRecoveryReceipt = new DevExpress.XtraBars.BarButtonItem();
             this.bbiTest = new DevExpress.XtraBars.BarButtonItem();
             this.bbiAttachmentMan = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiCacheManage = new DevExpress.XtraBars.BarButtonItem();
             this.rpEnergy = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgTarget = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgMeasure = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -80,7 +82,7 @@
             this.rpgPersonnel = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgBase = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -121,9 +123,10 @@
             this.bbiRecoveryOv,
             this.bbiRecoveryReceipt,
             this.bbiTest,
-            this.bbiAttachmentMan});
+            this.bbiAttachmentMan,
+            this.bbiCacheManage});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 16;
+            this.ribbonControl.MaxItemId = 17;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpEnergy,
@@ -474,7 +477,19 @@
             this.bbiAttachmentMan.Id = 15;
             this.bbiAttachmentMan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiAttachmentMan.LargeGlyph")));
             this.bbiAttachmentMan.Name = "bbiAttachmentMan";
+            this.bbiAttachmentMan.Tag = "System.Attachment";
             this.bbiAttachmentMan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiAttachmentMan_ItemClick);
+            // 
+            // bbiCacheManage
+            // 
+            this.bbiCacheManage.Caption = "缓存管理";
+            this.bbiCacheManage.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiCacheManage.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiCacheManage.Glyph")));
+            this.bbiCacheManage.Id = 16;
+            this.bbiCacheManage.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiCacheManage.LargeGlyph")));
+            this.bbiCacheManage.Name = "bbiCacheManage";
+            this.bbiCacheManage.Tag = "System.Cache";
+            this.bbiCacheManage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiCacheManage_ItemClick);
             // 
             // rpEnergy
             // 
@@ -585,6 +600,7 @@
             // rpgSystemFunction
             // 
             this.rpgSystemFunction.ItemLinks.Add(this.bbiDictOv);
+            this.rpgSystemFunction.ItemLinks.Add(this.bbiCacheManage);
             this.rpgSystemFunction.ItemLinks.Add(this.bbiAttachmentMan);
             this.rpgSystemFunction.Name = "rpgSystemFunction";
             this.rpgSystemFunction.Text = "系统功能";
@@ -710,6 +726,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgRecoveryMan;
         private DevExpress.XtraBars.BarButtonItem bbiTest;
         private DevExpress.XtraBars.BarButtonItem bbiAttachmentMan;
+        private DevExpress.XtraBars.BarButtonItem bbiCacheManage;
     }
 }
 
