@@ -33,7 +33,7 @@ namespace Poseidon.Winform.Client
         {
             var folders = CallerFactory<IAttachmentService>.GetInstance(CallerType.Win).GetFolders();
 
-            this.lbFolders.DataSource = folders;
+            this.lbFolders.DataSource = folders.OrderBy(r => r);
             base.InitForm();
         }
         #endregion //Function

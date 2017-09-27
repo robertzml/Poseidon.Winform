@@ -81,6 +81,8 @@ namespace Poseidon.Winform.Core
             if (upload.ShowDialog() == DialogResult.OK)
             {
                 this.attachments.Add(upload.Attachment);
+
+                this.lbAttachments.Update();
             }
         }
 
