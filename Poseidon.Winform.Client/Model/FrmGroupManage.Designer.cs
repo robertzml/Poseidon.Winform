@@ -458,6 +458,7 @@
             this.groupItemGrid.DataSource = null;
             this.groupItemGrid.Editable = false;
             this.groupItemGrid.EnableMasterView = false;
+            this.groupItemGrid.EnableMultiSelect = false;
             this.groupItemGrid.Location = new System.Drawing.Point(12, 12);
             this.groupItemGrid.Name = "groupItemGrid";
             this.groupItemGrid.ShowAddMenu = false;
