@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.tlMenu = new DevExpress.XtraTreeList.TreeList();
-            this.bsMenu = new System.Windows.Forms.BindingSource();
+            this.colId = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colAssemblyName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colTypeName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colPrivilegeCode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colGlyph = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colLargeGlyph = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colPrivilegeCode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colType = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colSort = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colParentId = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colRemark = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colId = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.bsMenu = new System.Windows.Forms.BindingSource();
             ((System.ComponentModel.ISupportInitialize)(this.tlMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMenu)).BeginInit();
             this.SuspendLayout();
@@ -70,12 +70,24 @@
             this.tlMenu.Size = new System.Drawing.Size(495, 388);
             this.tlMenu.TabIndex = 0;
             // 
-            // bsMenu
+            // colId
             // 
-            this.bsMenu.DataSource = typeof(Poseidon.Core.DL.Menu);
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Width = 40;
+            // 
+            // colName
+            // 
+            this.colName.Caption = "名称";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            this.colName.Width = 86;
             // 
             // colAssemblyName
             // 
+            this.colAssemblyName.Caption = "程序集名称";
             this.colAssemblyName.FieldName = "AssemblyName";
             this.colAssemblyName.Name = "colAssemblyName";
             this.colAssemblyName.Visible = true;
@@ -84,14 +96,25 @@
             // 
             // colTypeName
             // 
+            this.colTypeName.Caption = "类型名称";
             this.colTypeName.FieldName = "TypeName";
             this.colTypeName.Name = "colTypeName";
             this.colTypeName.Visible = true;
             this.colTypeName.VisibleIndex = 3;
             this.colTypeName.Width = 85;
             // 
+            // colPrivilegeCode
+            // 
+            this.colPrivilegeCode.Caption = "权限代码";
+            this.colPrivilegeCode.FieldName = "PrivilegeCode";
+            this.colPrivilegeCode.Name = "colPrivilegeCode";
+            this.colPrivilegeCode.Visible = true;
+            this.colPrivilegeCode.VisibleIndex = 4;
+            this.colPrivilegeCode.Width = 86;
+            // 
             // colGlyph
             // 
+            this.colGlyph.Caption = "图标";
             this.colGlyph.FieldName = "Glyph";
             this.colGlyph.Name = "colGlyph";
             this.colGlyph.Visible = true;
@@ -100,22 +123,16 @@
             // 
             // colLargeGlyph
             // 
+            this.colLargeGlyph.Caption = "大图标";
             this.colLargeGlyph.FieldName = "LargeGlyph";
             this.colLargeGlyph.Name = "colLargeGlyph";
             this.colLargeGlyph.Visible = true;
             this.colLargeGlyph.VisibleIndex = 6;
             this.colLargeGlyph.Width = 86;
             // 
-            // colPrivilegeCode
-            // 
-            this.colPrivilegeCode.FieldName = "PrivilegeCode";
-            this.colPrivilegeCode.Name = "colPrivilegeCode";
-            this.colPrivilegeCode.Visible = true;
-            this.colPrivilegeCode.VisibleIndex = 4;
-            this.colPrivilegeCode.Width = 86;
-            // 
             // colType
             // 
+            this.colType.Caption = "菜单类型";
             this.colType.FieldName = "Type";
             this.colType.Name = "colType";
             this.colType.Visible = true;
@@ -124,6 +141,7 @@
             // 
             // colSort
             // 
+            this.colSort.Caption = "排序";
             this.colSort.FieldName = "Sort";
             this.colSort.Name = "colSort";
             this.colSort.Width = 40;
@@ -134,27 +152,18 @@
             this.colParentId.Name = "colParentId";
             this.colParentId.Width = 40;
             // 
-            // colName
-            // 
-            this.colName.FieldName = "Name";
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 0;
-            this.colName.Width = 86;
-            // 
             // colRemark
             // 
+            this.colRemark.Caption = "备注";
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
             this.colRemark.VisibleIndex = 7;
             this.colRemark.Width = 86;
             // 
-            // colId
+            // bsMenu
             // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
-            this.colId.Width = 40;
+            this.bsMenu.DataSource = typeof(Poseidon.Core.DL.Menu);
             // 
             // MenuTree
             // 

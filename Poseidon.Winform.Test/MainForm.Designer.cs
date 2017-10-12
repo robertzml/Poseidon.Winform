@@ -70,8 +70,9 @@
             // menuPrivilegeMan
             // 
             this.menuPrivilegeMan.Name = "menuPrivilegeMan";
-            this.menuPrivilegeMan.Size = new System.Drawing.Size(124, 22);
+            this.menuPrivilegeMan.Size = new System.Drawing.Size(152, 22);
             this.menuPrivilegeMan.Text = "权限管理";
+            this.menuPrivilegeMan.Click += new System.EventHandler(this.menuPrivilegeMan_Click);
             // 
             // menuPrivilegeAssign
             // 

@@ -32,8 +32,10 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.menuTree = new Poseidon.Winform.Core.MenuTree();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             this.SuspendLayout();
@@ -55,12 +57,13 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.simpleButton1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(725, 114);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "groupControl1";
+            this.groupControl1.Text = "操作";
             // 
             // groupControl2
             // 
@@ -80,6 +83,14 @@
             this.menuTree.Size = new System.Drawing.Size(721, 278);
             this.menuTree.TabIndex = 0;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(37, 40);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(89, 23);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Text = "增加菜单";
+            // 
             // FrmMenuManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -90,6 +101,7 @@
             this.Text = "菜单管理";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -102,5 +114,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private Core.MenuTree menuTree;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
