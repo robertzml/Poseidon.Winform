@@ -172,6 +172,7 @@
             // 
             // privilegeTree
             // 
+            this.privilegeTree.CheckBoxReadonly = false;
             this.privilegeTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.privilegeTree.Location = new System.Drawing.Point(2, 21);
             this.privilegeTree.Name = "privilegeTree";

@@ -165,6 +165,12 @@
     <Compile Include="Form\FrmPreview.Designer.cs">
       <DependentUpon>FrmPreview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\MenuTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\MenuTree.Designer.cs">
+      <DependentUpon>MenuTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -189,6 +195,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Control\AttachmentTool.resx">
       <DependentUpon>AttachmentTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\MenuTree.resx">
+      <DependentUpon>MenuTree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UploadTool.resx">
       <DependentUpon>UploadTool.cs</DependentUpon>
@@ -231,6 +240,7 @@
     <None Include="Properties\DataSources\Poseidon.Attachment.Core.DL.Attachment.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Building.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.GroupItem.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Menu.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Privilege.datasource" />
     <None Include="Properties\licenses.licx" />
