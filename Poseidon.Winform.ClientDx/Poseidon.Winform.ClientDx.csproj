@@ -71,11 +71,11 @@
     <Reference Include="UIAutomationClient" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Privilege\FrmMenuEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Privilege\FrmMenuEdit.Designer.cs">
+      <DependentUpon>FrmMenuEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Privilege\FrmMenuAdd.cs">
       <SubType>Form</SubType>
@@ -88,12 +88,6 @@
     </Compile>
     <Compile Include="Privilege\FrmMenuManage.Designer.cs">
       <DependentUpon>FrmMenuManage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="System\FrmResourceManage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="System\FrmResourceManage.Designer.cs">
-      <DependentUpon>FrmResourceManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Privilege\FrmChangePassword.cs">
       <SubType>Form</SubType>
@@ -188,17 +182,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmMenuAdd.resx">
       <DependentUpon>FrmMenuAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmMenuEdit.resx">
+      <DependentUpon>FrmMenuEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmMenuManage.resx">
       <DependentUpon>FrmMenuManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="System\FrmResourceManage.resx">
-      <DependentUpon>FrmResourceManage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Core.DL.Menu.datasource" />
     <None Include="Properties\licenses.licx" />

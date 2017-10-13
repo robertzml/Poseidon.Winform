@@ -31,8 +31,38 @@ namespace Poseidon.Winform.ClientDx
         protected override void InitForm()
         {
             this.menuTree.Init();
+            this.menuTree.Expand();
+
             base.InitForm();
         }
         #endregion //Function
+
+        #region Event
+        /// <summary>
+        /// 添加菜单
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.ShowDialogForm(typeof(FrmMenuAdd));
+            this.menuTree.RefreshData();
+        }
+
+        /// <summary>
+        /// 编辑菜单
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var id = this.menuTree.GetCurrentSelectedId();
+            if (string.IsNullOrEmpty(id))
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmMenuEdit), new object[] { id });
+            this.menuTree.RefreshData();
+        }
+        #endregion //Event
     }
 }

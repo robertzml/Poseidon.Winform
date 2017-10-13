@@ -69,6 +69,7 @@
             this.tlMenu.ParentFieldName = "ParentId";
             this.tlMenu.Size = new System.Drawing.Size(495, 388);
             this.tlMenu.TabIndex = 0;
+            this.tlMenu.GetNodeDisplayValue += new DevExpress.XtraTreeList.GetNodeDisplayValueEventHandler(this.tlMenu_GetNodeDisplayValue);
             // 
             // colId
             // 
@@ -118,7 +119,7 @@
             this.colGlyph.FieldName = "Glyph";
             this.colGlyph.Name = "colGlyph";
             this.colGlyph.Visible = true;
-            this.colGlyph.VisibleIndex = 5;
+            this.colGlyph.VisibleIndex = 6;
             this.colGlyph.Width = 85;
             // 
             // colLargeGlyph
@@ -127,7 +128,7 @@
             this.colLargeGlyph.FieldName = "LargeGlyph";
             this.colLargeGlyph.Name = "colLargeGlyph";
             this.colLargeGlyph.Visible = true;
-            this.colLargeGlyph.VisibleIndex = 6;
+            this.colLargeGlyph.VisibleIndex = 7;
             this.colLargeGlyph.Width = 86;
             // 
             // colType
@@ -144,6 +145,8 @@
             this.colSort.Caption = "排序";
             this.colSort.FieldName = "Sort";
             this.colSort.Name = "colSort";
+            this.colSort.Visible = true;
+            this.colSort.VisibleIndex = 5;
             this.colSort.Width = 40;
             // 
             // colParentId
@@ -158,7 +161,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 7;
+            this.colRemark.VisibleIndex = 8;
             this.colRemark.Width = 86;
             // 
             // bsMenu

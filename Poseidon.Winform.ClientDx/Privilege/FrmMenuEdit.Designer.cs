@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Winform.ClientDx
 {
-    partial class FrmMenuAdd
+    partial class FrmMenuEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -37,8 +37,10 @@
             this.bteGlyph = new DevExpress.XtraEditors.ButtonEdit();
             this.txtPrivilegeCode = new DevExpress.XtraEditors.TextEdit();
             this.tluParent = new DevExpress.XtraEditors.TreeListLookUpEdit();
-            this.bsMenu = new System.Windows.Forms.BindingSource(this.components);
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
+            this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colPrivilegeCode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colRemark = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.cmbType = new DevExpress.XtraEditors.ImageComboBoxEdit();
             this.txtTypeName = new DevExpress.XtraEditors.TextEdit();
             this.txtAssemblyName = new DevExpress.XtraEditors.TextEdit();
@@ -54,9 +56,7 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colPrivilegeCode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colRemark = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.bsMenu = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -71,7 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bteGlyph.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrivilegeCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tluParent.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTypeName.Properties)).BeginInit();
@@ -88,6 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -120,7 +120,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(384, 332);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "菜单信息";
             // 
             // layoutControl1
@@ -211,10 +211,6 @@
             this.tluParent.StyleController = this.layoutControl1;
             this.tluParent.TabIndex = 5;
             // 
-            // bsMenu
-            // 
-            this.bsMenu.DataSource = typeof(Poseidon.Core.DL.Menu);
-            // 
             // treeListLookUpEdit1TreeList
             // 
             this.treeListLookUpEdit1TreeList.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
@@ -230,6 +226,33 @@
             this.treeListLookUpEdit1TreeList.ParentFieldName = "ParentId";
             this.treeListLookUpEdit1TreeList.Size = new System.Drawing.Size(400, 200);
             this.treeListLookUpEdit1TreeList.TabIndex = 0;
+            // 
+            // colName
+            // 
+            this.colName.Caption = "名称";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 1;
+            this.colName.Width = 39;
+            // 
+            // colPrivilegeCode
+            // 
+            this.colPrivilegeCode.Caption = "权限代码";
+            this.colPrivilegeCode.FieldName = "PrivilegeCode";
+            this.colPrivilegeCode.Name = "colPrivilegeCode";
+            this.colPrivilegeCode.Visible = true;
+            this.colPrivilegeCode.VisibleIndex = 0;
+            this.colPrivilegeCode.Width = 38;
+            // 
+            // colRemark
+            // 
+            this.colRemark.Caption = "备注";
+            this.colRemark.FieldName = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.Visible = true;
+            this.colRemark.VisibleIndex = 2;
+            this.colRemark.Width = 39;
             // 
             // cmbType
             // 
@@ -375,40 +398,17 @@
             this.layoutControlItem10.Text = "备注";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // colPrivilegeCode
+            // bsMenu
             // 
-            this.colPrivilegeCode.Caption = "权限代码";
-            this.colPrivilegeCode.FieldName = "PrivilegeCode";
-            this.colPrivilegeCode.Name = "colPrivilegeCode";
-            this.colPrivilegeCode.Visible = true;
-            this.colPrivilegeCode.VisibleIndex = 0;
-            this.colPrivilegeCode.Width = 38;
+            this.bsMenu.DataSource = typeof(Poseidon.Core.DL.Menu);
             // 
-            // colName
-            // 
-            this.colName.Caption = "名称";
-            this.colName.FieldName = "Name";
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 1;
-            this.colName.Width = 39;
-            // 
-            // colRemark
-            // 
-            this.colRemark.Caption = "备注";
-            this.colRemark.FieldName = "Remark";
-            this.colRemark.Name = "colRemark";
-            this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 2;
-            this.colRemark.Width = 39;
-            // 
-            // FrmMenuAdd
+            // FrmMenuEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 392);
-            this.Name = "FrmMenuAdd";
-            this.Text = "添加菜单";
+            this.Name = "FrmMenuEdit";
+            this.Text = "编辑菜单";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
@@ -423,7 +423,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bteGlyph.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrivilegeCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tluParent.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTypeName.Properties)).EndInit();
@@ -440,6 +439,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -448,31 +448,31 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.TextEdit txtName;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraEditors.TextEdit txtTypeName;
-        private DevExpress.XtraEditors.TextEdit txtAssemblyName;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraEditors.ImageComboBoxEdit cmbType;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraEditors.MemoEdit txtRemark;
+        private DevExpress.XtraEditors.SpinEdit spSort;
         private DevExpress.XtraEditors.ButtonEdit bteLargeGlyph;
         private DevExpress.XtraEditors.ButtonEdit bteGlyph;
         private DevExpress.XtraEditors.TextEdit txtPrivilegeCode;
         private DevExpress.XtraEditors.TreeListLookUpEdit tluParent;
         private DevExpress.XtraTreeList.TreeList treeListLookUpEdit1TreeList;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colName;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colPrivilegeCode;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colRemark;
+        private DevExpress.XtraEditors.ImageComboBoxEdit cmbType;
+        private DevExpress.XtraEditors.TextEdit txtTypeName;
+        private DevExpress.XtraEditors.TextEdit txtAssemblyName;
+        private DevExpress.XtraEditors.TextEdit txtName;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraEditors.MemoEdit txtRemark;
-        private DevExpress.XtraEditors.SpinEdit spSort;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private System.Windows.Forms.BindingSource bsMenu;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colName;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colPrivilegeCode;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colRemark;
     }
 }

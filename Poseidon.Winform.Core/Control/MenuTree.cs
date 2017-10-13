@@ -11,9 +11,10 @@ using System.Windows.Forms;
 namespace Poseidon.Winform.Core
 {
     using Poseidon.Base.Framework;
-    using Poseidon.Base.System;
     using Poseidon.Caller.Facade;
+    using Poseidon.Common;
     using Poseidon.Core.DL;
+    using Poseidon.Core.Utility;
 
     /// <summary>
     /// 菜单树形控件
@@ -55,6 +56,21 @@ namespace Poseidon.Winform.Core
         }
 
         /// <summary>
+        /// 获取当前选中权限ID
+        /// </summary>
+        /// <returns></returns>
+        public string GetCurrentSelectedId()
+        {
+            var node = this.tlMenu.Selection[0];
+            if (node == null)
+                return null;
+
+            var id = node["Id"].ToString();
+            return id;
+        }
+
+
+        /// <summary>
         /// 展开节点
         /// </summary>
         public void Expand()
@@ -62,5 +78,24 @@ namespace Poseidon.Winform.Core
             this.tlMenu.ExpandAll();
         }
         #endregion //Method
+
+        #region Event
+        /// <summary>
+        /// 格式化数据显示
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tlMenu_GetNodeDisplayValue(object sender, DevExpress.XtraTreeList.GetNodeDisplayValueEventArgs e)
+        {
+            var entity = this.tlMenu.GetDataRecordByNode(e.Node) as Menu;
+            if (entity == null)
+                return;
+
+            if (e.Column.FieldName == "Type")
+            {
+                e.Value = ((MenuType)entity.Type).DisplayName();
+            }
+        }
+        #endregion //Event
     }
 }

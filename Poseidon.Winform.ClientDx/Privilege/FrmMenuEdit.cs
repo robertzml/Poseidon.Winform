@@ -17,26 +17,50 @@ namespace Poseidon.Winform.ClientDx
     using Poseidon.Core.DL;
     using Poseidon.Core.Utility;
     using Poseidon.Winform.Base;
-    using Poseidon.Winform.Core;
-
+ 
     /// <summary>
-    /// 添加菜单窗体
+    /// 编辑菜单窗体
     /// </summary>
-    public partial class FrmMenuAdd : BaseSingleForm
+    public partial class FrmMenuEdit : BaseSingleForm
     {
+        #region Field
+        /// <summary>
+        /// 当前菜单
+        /// </summary>
+        private Menu currentMenu;
+        #endregion //Field
+
         #region Constructor
-        public FrmMenuAdd()
+        public FrmMenuEdit(string id)
         {
             InitializeComponent();
+            InitData(id);
         }
         #endregion //Constructor
 
         #region Function
+        private void InitData(string id)
+        {
+            this.currentMenu = CallerFactory<IMenuService>.Instance.FindById(id);
+        }
+
         protected override void InitForm()
         {
             LoadMenus();
 
             this.cmbType.Properties.Items.AddEnum(typeof(MenuType));
+
+            this.txtName.Text = this.currentMenu.Name;
+            this.txtAssemblyName.Text = this.currentMenu.AssemblyName;
+            this.txtTypeName.Text = this.currentMenu.TypeName;
+            this.txtPrivilegeCode.Text = this.currentMenu.PrivilegeCode;
+            this.cmbType.EditValue = (MenuType)this.currentMenu.Type;
+            this.tluParent.EditValue = this.currentMenu.ParentId;
+
+            this.bteGlyph.Text = this.currentMenu.Glyph;
+            this.bteLargeGlyph.Text = this.currentMenu.LargeGlyph;
+            this.spSort.Value = this.currentMenu.Sort;
+            this.txtRemark.Text = this.currentMenu.Remark;
 
             base.InitForm();
         }
@@ -89,7 +113,7 @@ namespace Poseidon.Winform.ClientDx
             entity.TypeName = this.txtTypeName.Text;
             entity.PrivilegeCode = this.txtPrivilegeCode.Text;
             entity.Type = Convert.ToInt32(this.cmbType.EditValue);
-            
+
             if (this.tluParent.EditValue == null)
                 entity.ParentId = null;
             else
@@ -120,10 +144,10 @@ namespace Poseidon.Winform.ClientDx
                     return;
                 }
 
-                Menu entity = new Menu();
+                var entity = CallerFactory<IMenuService>.Instance.FindById(this.currentMenu.Id);
                 SetEntity(entity);
 
-                CallerFactory<IMenuService>.Instance.Create(entity);
+                CallerFactory<IMenuService>.Instance.Update(entity);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();
