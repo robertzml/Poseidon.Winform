@@ -71,6 +71,36 @@
     <Reference Include="UIAutomationClient" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dict\FrmDictAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dict\FrmDictAdd.Designer.cs">
+      <DependentUpon>FrmDictAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dict\FrmDictCategoryAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dict\FrmDictCategoryAdd.Designer.cs">
+      <DependentUpon>FrmDictCategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dict\FrmDictCategoryEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dict\FrmDictCategoryEdit.Designer.cs">
+      <DependentUpon>FrmDictCategoryEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dict\FrmDictEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dict\FrmDictEdit.Designer.cs">
+      <DependentUpon>FrmDictEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dict\FrmDictOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dict\FrmDictOverview.Designer.cs">
+      <DependentUpon>FrmDictOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Privilege\FrmMenuEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +212,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Dict\FrmDictAdd.resx">
+      <DependentUpon>FrmDictAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dict\FrmDictCategoryAdd.resx">
+      <DependentUpon>FrmDictCategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dict\FrmDictCategoryEdit.resx">
+      <DependentUpon>FrmDictCategoryEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dict\FrmDictEdit.resx">
+      <DependentUpon>FrmDictEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dict\FrmDictOverview.resx">
+      <DependentUpon>FrmDictOverview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmMenuAdd.resx">
       <DependentUpon>FrmMenuAdd.cs</DependentUpon>
     </EmbeddedResource>
