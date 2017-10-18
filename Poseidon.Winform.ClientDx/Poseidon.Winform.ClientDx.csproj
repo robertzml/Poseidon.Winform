@@ -101,6 +101,66 @@
     <Compile Include="Dict\FrmDictOverview.Designer.cs">
       <DependentUpon>FrmDictOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\FrmBuildingSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmBuildingSelect.Designer.cs">
+      <DependentUpon>FrmBuildingSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmGroupAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmGroupAdd.Designer.cs">
+      <DependentUpon>FrmGroupAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmGroupEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmGroupEdit.Designer.cs">
+      <DependentUpon>FrmGroupEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmGroupManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmGroupManage.Designer.cs">
+      <DependentUpon>FrmGroupManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmGroupTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmGroupTree.Designer.cs">
+      <DependentUpon>FrmGroupTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeAdd.Designer.cs">
+      <DependentUpon>FrmModelTypeAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeBind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeBind.Designer.cs">
+      <DependentUpon>FrmModelTypeBind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeEdit.Designer.cs">
+      <DependentUpon>FrmModelTypeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeManage.Designer.cs">
+      <DependentUpon>FrmModelTypeManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmOrganizationSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmOrganizationSelect.Designer.cs">
+      <DependentUpon>FrmOrganizationSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Privilege\FrmMenuEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,12 +178,6 @@
     </Compile>
     <Compile Include="Privilege\FrmMenuManage.Designer.cs">
       <DependentUpon>FrmMenuManage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Privilege\FrmChangePassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Privilege\FrmChangePassword.Designer.cs">
-      <DependentUpon>FrmChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Privilege\FrmPrivilegeAdd.cs">
       <SubType>Form</SubType>
@@ -227,6 +281,36 @@
     <EmbeddedResource Include="Dict\FrmDictOverview.resx">
       <DependentUpon>FrmDictOverview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmBuildingSelect.resx">
+      <DependentUpon>FrmBuildingSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmGroupAdd.resx">
+      <DependentUpon>FrmGroupAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmGroupEdit.resx">
+      <DependentUpon>FrmGroupEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmGroupManage.resx">
+      <DependentUpon>FrmGroupManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmGroupTree.resx">
+      <DependentUpon>FrmGroupTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmModelTypeAdd.resx">
+      <DependentUpon>FrmModelTypeAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmModelTypeBind.resx">
+      <DependentUpon>FrmModelTypeBind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmModelTypeEdit.resx">
+      <DependentUpon>FrmModelTypeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmModelTypeManage.resx">
+      <DependentUpon>FrmModelTypeManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmOrganizationSelect.resx">
+      <DependentUpon>FrmOrganizationSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmMenuAdd.resx">
       <DependentUpon>FrmMenuAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,9 +322,6 @@
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Core.DL.Menu.datasource" />
     <None Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="Privilege\FrmChangePassword.resx">
-      <DependentUpon>FrmChangePassword.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmPrivilegeAdd.resx">
       <DependentUpon>FrmPrivilegeAdd.cs</DependentUpon>
     </EmbeddedResource>

@@ -59,6 +59,7 @@ namespace Poseidon.Winform.ClientDx
 
             this.bteGlyph.Text = this.currentMenu.Glyph;
             this.bteLargeGlyph.Text = this.currentMenu.LargeGlyph;
+            this.chkVisible.Checked = this.currentMenu.Visible;
             this.spSort.Value = this.currentMenu.Sort;
             this.txtRemark.Text = this.currentMenu.Remark;
 
@@ -122,6 +123,7 @@ namespace Poseidon.Winform.ClientDx
             entity.Glyph = this.bteGlyph.Text;
             entity.LargeGlyph = this.bteLargeGlyph.Text;
 
+            entity.Visible = this.chkVisible.Checked;
             entity.Sort = Convert.ToInt32(this.spSort.Value);
             entity.Remark = this.txtRemark.Text;
         }

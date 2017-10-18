@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
@@ -37,6 +36,7 @@
             this.bteGlyph = new DevExpress.XtraEditors.ButtonEdit();
             this.txtPrivilegeCode = new DevExpress.XtraEditors.TextEdit();
             this.tluParent = new DevExpress.XtraEditors.TreeListLookUpEdit();
+            this.bsMenu = new System.Windows.Forms.BindingSource();
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colPrivilegeCode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -56,7 +56,8 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bsMenu = new System.Windows.Forms.BindingSource(this.components);
+            this.chkVisible = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -71,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bteGlyph.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrivilegeCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tluParent.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTypeName.Properties)).BeginInit();
@@ -87,7 +89,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkVisible.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -125,6 +128,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.chkVisible);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.spSort);
             this.layoutControl1.Controls.Add(this.bteLargeGlyph);
@@ -164,7 +168,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spSort.Properties.IsFloatValue = false;
             this.spSort.Properties.Mask.EditMask = "N00";
-            this.spSort.Size = new System.Drawing.Size(293, 20);
+            this.spSort.Size = new System.Drawing.Size(113, 20);
             this.spSort.StyleController = this.layoutControl1;
             this.spSort.TabIndex = 8;
             // 
@@ -210,6 +214,10 @@
             this.tluParent.Size = new System.Drawing.Size(293, 20);
             this.tluParent.StyleController = this.layoutControl1;
             this.tluParent.TabIndex = 5;
+            // 
+            // bsMenu
+            // 
+            this.bsMenu.DataSource = typeof(Poseidon.Core.DL.Menu);
             // 
             // treeListLookUpEdit1TreeList
             // 
@@ -302,7 +310,8 @@
             this.layoutControlItem7,
             this.layoutControlItem8,
             this.layoutControlItem9,
-            this.layoutControlItem10});
+            this.layoutControlItem10,
+            this.layoutControlItem11});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(380, 309);
@@ -385,7 +394,7 @@
             this.layoutControlItem9.Control = this.spSort;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 192);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(360, 24);
+            this.layoutControlItem9.Size = new System.Drawing.Size(180, 24);
             this.layoutControlItem9.Text = "排序";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(60, 14);
             // 
@@ -398,9 +407,23 @@
             this.layoutControlItem10.Text = "备注";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // bsMenu
+            // chkVisible
             // 
-            this.bsMenu.DataSource = typeof(Poseidon.Core.DL.Menu);
+            this.chkVisible.Location = new System.Drawing.Point(192, 204);
+            this.chkVisible.Name = "chkVisible";
+            this.chkVisible.Properties.Caption = "是否显示";
+            this.chkVisible.Size = new System.Drawing.Size(176, 19);
+            this.chkVisible.StyleController = this.layoutControl1;
+            this.chkVisible.TabIndex = 10;
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.chkVisible;
+            this.layoutControlItem11.Location = new System.Drawing.Point(180, 192);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(180, 24);
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem11.TextVisible = false;
             // 
             // FrmMenuEdit
             // 
@@ -423,6 +446,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bteGlyph.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrivilegeCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tluParent.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTypeName.Properties)).EndInit();
@@ -439,7 +463,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkVisible.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -474,5 +499,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private System.Windows.Forms.BindingSource bsMenu;
+        private DevExpress.XtraEditors.CheckEdit chkVisible;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }
 }

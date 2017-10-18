@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
@@ -37,8 +36,11 @@
             this.bteGlyph = new DevExpress.XtraEditors.ButtonEdit();
             this.txtPrivilegeCode = new DevExpress.XtraEditors.TextEdit();
             this.tluParent = new DevExpress.XtraEditors.TreeListLookUpEdit();
-            this.bsMenu = new System.Windows.Forms.BindingSource(this.components);
+            this.bsMenu = new System.Windows.Forms.BindingSource();
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
+            this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colPrivilegeCode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colRemark = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.cmbType = new DevExpress.XtraEditors.ImageComboBoxEdit();
             this.txtTypeName = new DevExpress.XtraEditors.TextEdit();
             this.txtAssemblyName = new DevExpress.XtraEditors.TextEdit();
@@ -54,9 +56,8 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colPrivilegeCode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colRemark = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.chkVisible = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -88,6 +89,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkVisible.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -125,6 +128,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.chkVisible);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.spSort);
             this.layoutControl1.Controls.Add(this.bteLargeGlyph);
@@ -164,7 +168,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spSort.Properties.IsFloatValue = false;
             this.spSort.Properties.Mask.EditMask = "N00";
-            this.spSort.Size = new System.Drawing.Size(293, 20);
+            this.spSort.Size = new System.Drawing.Size(113, 20);
             this.spSort.StyleController = this.layoutControl1;
             this.spSort.TabIndex = 8;
             // 
@@ -231,6 +235,33 @@
             this.treeListLookUpEdit1TreeList.Size = new System.Drawing.Size(400, 200);
             this.treeListLookUpEdit1TreeList.TabIndex = 0;
             // 
+            // colName
+            // 
+            this.colName.Caption = "名称";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 1;
+            this.colName.Width = 39;
+            // 
+            // colPrivilegeCode
+            // 
+            this.colPrivilegeCode.Caption = "权限代码";
+            this.colPrivilegeCode.FieldName = "PrivilegeCode";
+            this.colPrivilegeCode.Name = "colPrivilegeCode";
+            this.colPrivilegeCode.Visible = true;
+            this.colPrivilegeCode.VisibleIndex = 0;
+            this.colPrivilegeCode.Width = 38;
+            // 
+            // colRemark
+            // 
+            this.colRemark.Caption = "备注";
+            this.colRemark.FieldName = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.Visible = true;
+            this.colRemark.VisibleIndex = 2;
+            this.colRemark.Width = 39;
+            // 
             // cmbType
             // 
             this.cmbType.Location = new System.Drawing.Point(75, 108);
@@ -279,7 +310,8 @@
             this.layoutControlItem7,
             this.layoutControlItem8,
             this.layoutControlItem9,
-            this.layoutControlItem10});
+            this.layoutControlItem10,
+            this.layoutControlItem11});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(380, 309);
@@ -362,7 +394,7 @@
             this.layoutControlItem9.Control = this.spSort;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 192);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(360, 24);
+            this.layoutControlItem9.Size = new System.Drawing.Size(180, 24);
             this.layoutControlItem9.Text = "排序";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(60, 14);
             // 
@@ -375,32 +407,24 @@
             this.layoutControlItem10.Text = "备注";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // colPrivilegeCode
+            // chkVisible
             // 
-            this.colPrivilegeCode.Caption = "权限代码";
-            this.colPrivilegeCode.FieldName = "PrivilegeCode";
-            this.colPrivilegeCode.Name = "colPrivilegeCode";
-            this.colPrivilegeCode.Visible = true;
-            this.colPrivilegeCode.VisibleIndex = 0;
-            this.colPrivilegeCode.Width = 38;
+            this.chkVisible.Location = new System.Drawing.Point(192, 204);
+            this.chkVisible.Name = "chkVisible";
+            this.chkVisible.Properties.Caption = "是否显示";
+            this.chkVisible.Size = new System.Drawing.Size(176, 19);
+            this.chkVisible.StyleController = this.layoutControl1;
+            this.chkVisible.TabIndex = 10;
             // 
-            // colName
+            // layoutControlItem11
             // 
-            this.colName.Caption = "名称";
-            this.colName.FieldName = "Name";
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 1;
-            this.colName.Width = 39;
-            // 
-            // colRemark
-            // 
-            this.colRemark.Caption = "备注";
-            this.colRemark.FieldName = "Remark";
-            this.colRemark.Name = "colRemark";
-            this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 2;
-            this.colRemark.Width = 39;
+            this.layoutControlItem11.Control = this.chkVisible;
+            this.layoutControlItem11.Location = new System.Drawing.Point(180, 192);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(180, 24);
+            this.layoutControlItem11.Text = "是否显示";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem11.TextVisible = false;
             // 
             // FrmMenuAdd
             // 
@@ -440,6 +464,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkVisible.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -474,5 +500,7 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn colName;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colPrivilegeCode;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colRemark;
+        private DevExpress.XtraEditors.CheckEdit chkVisible;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }
 }

@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Poseidon.Winform.ClientDx
@@ -15,20 +14,46 @@ namespace Poseidon.Winform.ClientDx
     using Poseidon.Common;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
+    using Poseidon.Winform.Core;
 
     /// <summary>
-    /// 修改密码窗体
+    /// 分组添加窗体
     /// </summary>
-    public partial class FrmChangePassword : BaseSingleForm
+    public partial class FrmGroupAdd : BaseSingleForm
     {
         #region Constructor
-        public FrmChangePassword()
+        public FrmGroupAdd()
         {
             InitializeComponent();
         }
         #endregion //Constructor
 
         #region Function
+        /// <summary>
+        /// 初始化窗体
+        /// </summary>
+        protected override void InitForm()
+        {
+            var groups = CallerFactory<IGroupService>.Instance.FindAll();
+            this.bsGroup.DataSource = groups.ToList();
+            base.InitForm();
+        }
+
+        /// <summary>
+        /// 设置实体
+        /// </summary>
+        /// <param name="entity"></param>
+        private void SetEntity(Group entity)
+        {
+            entity.Name = this.txtName.Text;
+            entity.Code = this.txtCode.Text;
+            entity.Remark = this.txtRemark.Text;
+            if (this.cmbParent.EditValue == null)
+                entity.ParentId = null;
+            else
+                entity.ParentId = this.cmbParent.EditValue.ToString();
+        }
+
         /// <summary>
         /// 输入检查
         /// </summary>
@@ -37,21 +62,15 @@ namespace Poseidon.Winform.ClientDx
         {
             string errorMessage = "";
 
-            if (string.IsNullOrEmpty(this.txtOldPassword.Text))
+            if (string.IsNullOrEmpty(this.txtName.Text.Trim()))
             {
-                errorMessage = "原密码不能为空";
+                errorMessage = "名称不能为空";
                 return new Tuple<bool, string>(false, errorMessage);
             }
 
-            if (string.IsNullOrEmpty(this.txtNewPassword.Text))
+            if (string.IsNullOrEmpty(this.txtCode.Text.Trim()))
             {
-                errorMessage = "新密码不能为空";
-                return new Tuple<bool, string>(false, errorMessage);
-            }
-
-            if (this.txtNewPassword.Text != this.txtConfirmPassword.Text)
-            {
-                errorMessage = "两次输入密码不一致";
+                errorMessage = "代码不能为空";
                 return new Tuple<bool, string>(false, errorMessage);
             }
 
@@ -74,28 +93,15 @@ namespace Poseidon.Winform.ClientDx
                 return;
             }
 
+            Group entity = new Group();
+            SetEntity(entity);
+
             try
             {
-                string oldPass = Hasher.SHA1Encrypt(this.txtOldPassword.Text);
-                string newPass = Hasher.SHA1Encrypt(this.txtNewPassword.Text);
+                CallerFactory<IGroupService>.Instance.Create(entity);
 
-                var result = CallerFactory<IUserService>.Instance.CheckPassword(this.currentUser.UserName, oldPass);
-                if (!result)
-                {
-                    MessageUtil.ShowInfo("原密码错误");
-                    return;
-                }
-
-                result = CallerFactory<IUserService>.Instance.ChangePassword(this.currentUser.UserName, oldPass, newPass);
-                if (result)
-                {
-                    MessageUtil.ShowInfo("修改密码成功");
-                    this.Close();
-                }
-                else
-                {
-                    MessageUtil.ShowInfo("修改密码失败");
-                }
+                MessageUtil.ShowInfo("保存成功");
+                this.Close();
             }
             catch (PoseidonException pe)
             {

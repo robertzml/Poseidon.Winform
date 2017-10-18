@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,38 +14,49 @@ namespace Poseidon.Winform.ClientDx
     using Poseidon.Caller.Facade;
     using Poseidon.Common;
     using Poseidon.Core.DL;
-    using Poseidon.Core.Utility;
     using Poseidon.Winform.Base;
-    using Poseidon.Winform.Core;
 
     /// <summary>
-    /// 添加菜单窗体
+    /// 编辑分组窗体
     /// </summary>
-    public partial class FrmMenuAdd : BaseSingleForm
+    public partial class FrmGroupEdit : BaseSingleForm
     {
+        #region Field
+        /// <summary>
+        /// 当前关联分组
+        /// </summary>
+        private Group currentEntity;
+        #endregion //Field
+
         #region Constructor
-        public FrmMenuAdd()
+        public FrmGroupEdit(string id)
         {
             InitializeComponent();
+
+            InitData(id);
         }
         #endregion //Constructor
 
         #region Function
-        protected override void InitForm()
+        private void InitData(string id)
         {
-            LoadMenus();
-
-            this.cmbType.Properties.Items.AddEnum(typeof(MenuType));
-
-            base.InitForm();
+            this.currentEntity = CallerFactory<IGroupService>.Instance.FindById(id);
         }
 
         /// <summary>
-        /// 载入菜单
+        /// 初始化窗体
         /// </summary>
-        private void LoadMenus()
+        protected override void InitForm()
         {
-            this.bsMenu.DataSource = CallerFactory<IMenuService>.Instance.FindAll().OrderBy(r => r.Sort);
+            this.txtName.Text = this.currentEntity.Name;
+            this.txtCode.Text = this.currentEntity.Code;
+            this.txtRemark.Text = this.currentEntity.Remark;
+
+            this.bsGroup.DataSource = CallerFactory<IGroupService>.Instance.FindAll().ToList();
+
+            this.cmbParent.EditValue = this.currentEntity.ParentId;
+
+            base.InitForm();
         }
 
         /// <summary>
@@ -63,15 +73,9 @@ namespace Poseidon.Winform.ClientDx
                 return new Tuple<bool, string>(false, errorMessage);
             }
 
-            if (string.IsNullOrEmpty(this.txtPrivilegeCode.Text))
+            if (string.IsNullOrEmpty(this.txtCode.Text.Trim()))
             {
-                errorMessage = "权限代码不能为空";
-                return new Tuple<bool, string>(false, errorMessage);
-            }
-
-            if (this.cmbType.EditValue == null)
-            {
-                errorMessage = "类型不能为空";
+                errorMessage = "代码不能为空";
                 return new Tuple<bool, string>(false, errorMessage);
             }
 
@@ -82,25 +86,15 @@ namespace Poseidon.Winform.ClientDx
         /// 设置实体
         /// </summary>
         /// <param name="entity"></param>
-        private void SetEntity(Menu entity)
+        private void SetEntity(Group entity)
         {
             entity.Name = this.txtName.Text;
-            entity.AssemblyName = this.txtAssemblyName.Text;
-            entity.TypeName = this.txtTypeName.Text;
-            entity.PrivilegeCode = this.txtPrivilegeCode.Text;
-            entity.Type = Convert.ToInt32(this.cmbType.EditValue);
-            
-            if (this.tluParent.EditValue == null)
+            entity.Code = this.txtCode.Text;
+            entity.Remark = this.txtRemark.Text;
+            if (this.cmbParent.EditValue == null)
                 entity.ParentId = null;
             else
-                entity.ParentId = this.tluParent.EditValue.ToString();
-
-            entity.Glyph = this.bteGlyph.Text;
-            entity.LargeGlyph = this.bteLargeGlyph.Text;
-
-            entity.Visible = this.chkVisible.Checked;
-            entity.Sort = Convert.ToInt32(this.spSort.Value);
-            entity.Remark = this.txtRemark.Text;
+                entity.ParentId = this.cmbParent.EditValue.ToString();
         }
         #endregion //Function
 
@@ -112,22 +106,29 @@ namespace Poseidon.Winform.ClientDx
         /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            var input = CheckInput();
+            if (!input.Item1)
+            {
+                MessageUtil.ShowError(input.Item2);
+                return;
+            }
+
             try
             {
-                var input = CheckInput();
-                if (!input.Item1)
-                {
-                    MessageUtil.ShowError(input.Item2);
-                    return;
-                }
-
-                Menu entity = new Menu();
+                var entity = CallerFactory<IGroupService>.Instance.FindById(this.currentEntity.Id);
                 SetEntity(entity);
 
-                CallerFactory<IMenuService>.Instance.Create(entity);
+                bool result = CallerFactory<IGroupService>.Instance.Update(entity);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowInfo("保存失败");
+                }
             }
             catch (PoseidonException pe)
             {

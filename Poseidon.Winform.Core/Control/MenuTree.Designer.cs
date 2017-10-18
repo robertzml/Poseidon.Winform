@@ -38,6 +38,7 @@
             this.colLargeGlyph = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colType = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colSort = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colVisible = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colParentId = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colRemark = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.bsMenu = new System.Windows.Forms.BindingSource();
@@ -57,6 +58,7 @@
             this.colLargeGlyph,
             this.colType,
             this.colSort,
+            this.colVisible,
             this.colParentId,
             this.colRemark});
             this.tlMenu.DataSource = this.bsMenu;
@@ -67,7 +69,7 @@
             this.tlMenu.OptionsBehavior.Editable = false;
             this.tlMenu.OptionsBehavior.PopulateServiceColumns = true;
             this.tlMenu.ParentFieldName = "ParentId";
-            this.tlMenu.Size = new System.Drawing.Size(495, 388);
+            this.tlMenu.Size = new System.Drawing.Size(618, 388);
             this.tlMenu.TabIndex = 0;
             this.tlMenu.GetNodeDisplayValue += new DevExpress.XtraTreeList.GetNodeDisplayValueEventHandler(this.tlMenu_GetNodeDisplayValue);
             // 
@@ -84,7 +86,7 @@
             this.colName.Name = "colName";
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
-            this.colName.Width = 86;
+            this.colName.Width = 73;
             // 
             // colAssemblyName
             // 
@@ -93,7 +95,7 @@
             this.colAssemblyName.Name = "colAssemblyName";
             this.colAssemblyName.Visible = true;
             this.colAssemblyName.VisibleIndex = 2;
-            this.colAssemblyName.Width = 85;
+            this.colAssemblyName.Width = 73;
             // 
             // colTypeName
             // 
@@ -102,7 +104,7 @@
             this.colTypeName.Name = "colTypeName";
             this.colTypeName.Visible = true;
             this.colTypeName.VisibleIndex = 3;
-            this.colTypeName.Width = 85;
+            this.colTypeName.Width = 73;
             // 
             // colPrivilegeCode
             // 
@@ -111,7 +113,7 @@
             this.colPrivilegeCode.Name = "colPrivilegeCode";
             this.colPrivilegeCode.Visible = true;
             this.colPrivilegeCode.VisibleIndex = 4;
-            this.colPrivilegeCode.Width = 86;
+            this.colPrivilegeCode.Width = 74;
             // 
             // colGlyph
             // 
@@ -119,8 +121,8 @@
             this.colGlyph.FieldName = "Glyph";
             this.colGlyph.Name = "colGlyph";
             this.colGlyph.Visible = true;
-            this.colGlyph.VisibleIndex = 6;
-            this.colGlyph.Width = 85;
+            this.colGlyph.VisibleIndex = 7;
+            this.colGlyph.Width = 67;
             // 
             // colLargeGlyph
             // 
@@ -128,8 +130,8 @@
             this.colLargeGlyph.FieldName = "LargeGlyph";
             this.colLargeGlyph.Name = "colLargeGlyph";
             this.colLargeGlyph.Visible = true;
-            this.colLargeGlyph.VisibleIndex = 7;
-            this.colLargeGlyph.Width = 86;
+            this.colLargeGlyph.VisibleIndex = 8;
+            this.colLargeGlyph.Width = 68;
             // 
             // colType
             // 
@@ -138,7 +140,7 @@
             this.colType.Name = "colType";
             this.colType.Visible = true;
             this.colType.VisibleIndex = 1;
-            this.colType.Width = 86;
+            this.colType.Width = 73;
             // 
             // colSort
             // 
@@ -147,7 +149,16 @@
             this.colSort.Name = "colSort";
             this.colSort.Visible = true;
             this.colSort.VisibleIndex = 5;
-            this.colSort.Width = 40;
+            this.colSort.Width = 59;
+            // 
+            // colVisible
+            // 
+            this.colVisible.Caption = "是否显示";
+            this.colVisible.FieldName = "Visible";
+            this.colVisible.Name = "colVisible";
+            this.colVisible.Visible = true;
+            this.colVisible.VisibleIndex = 6;
+            this.colVisible.Width = 57;
             // 
             // colParentId
             // 
@@ -161,8 +172,8 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 8;
-            this.colRemark.Width = 86;
+            this.colRemark.VisibleIndex = 9;
+            this.colRemark.Width = 68;
             // 
             // bsMenu
             // 
@@ -174,7 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tlMenu);
             this.Name = "MenuTree";
-            this.Size = new System.Drawing.Size(495, 388);
+            this.Size = new System.Drawing.Size(618, 388);
             ((System.ComponentModel.ISupportInitialize)(this.tlMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMenu)).EndInit();
             this.ResumeLayout(false);
@@ -196,5 +207,6 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn colParentId;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colRemark;
         private System.Windows.Forms.BindingSource bsMenu;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colVisible;
     }
 }
