@@ -35,6 +35,7 @@
             this.menuPrivilegeAssign = new System.Windows.Forms.ToolStripMenuItem();
             this.menuUser = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRole = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDatasetMan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,8 @@
             this.menuPrivilegeMan,
             this.menuPrivilegeAssign,
             this.menuUser,
-            this.menuRole});
+            this.menuRole,
+            this.menuDatasetMan});
             this.权限管理ToolStripMenuItem.Name = "权限管理ToolStripMenuItem";
             this.权限管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.权限管理ToolStripMenuItem.Text = "权限管理";
@@ -77,21 +79,28 @@
             // menuPrivilegeAssign
             // 
             this.menuPrivilegeAssign.Name = "menuPrivilegeAssign";
-            this.menuPrivilegeAssign.Size = new System.Drawing.Size(124, 22);
+            this.menuPrivilegeAssign.Size = new System.Drawing.Size(152, 22);
             this.menuPrivilegeAssign.Text = "权限分配";
             // 
             // menuUser
             // 
             this.menuUser.Name = "menuUser";
-            this.menuUser.Size = new System.Drawing.Size(124, 22);
+            this.menuUser.Size = new System.Drawing.Size(152, 22);
             this.menuUser.Text = "用户管理";
             // 
             // menuRole
             // 
             this.menuRole.Name = "menuRole";
-            this.menuRole.Size = new System.Drawing.Size(124, 22);
+            this.menuRole.Size = new System.Drawing.Size(152, 22);
             this.menuRole.Text = "角色管理";
             this.menuRole.Click += new System.EventHandler(this.menuRole_Click);
+            // 
+            // menuDatasetMan
+            // 
+            this.menuDatasetMan.Name = "menuDatasetMan";
+            this.menuDatasetMan.Size = new System.Drawing.Size(152, 22);
+            this.menuDatasetMan.Text = "数据集管理";
+            this.menuDatasetMan.Click += new System.EventHandler(this.menuDatasetMan_Click);
             // 
             // MainForm
             // 
@@ -119,6 +128,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuPrivilegeAssign;
         private System.Windows.Forms.ToolStripMenuItem menuUser;
         private System.Windows.Forms.ToolStripMenuItem menuRole;
+        private System.Windows.Forms.ToolStripMenuItem menuDatasetMan;
     }
 }
 

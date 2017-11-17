@@ -63,7 +63,7 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(795, 506);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -74,7 +74,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(789, 134);
+            this.groupControl2.Size = new System.Drawing.Size(789, 94);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "操作";
             // 
@@ -87,7 +87,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(785, 111);
+            this.layoutControl1.Size = new System.Drawing.Size(785, 71);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -130,7 +130,7 @@
             this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(785, 111);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(785, 71);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -138,7 +138,7 @@
             this.layoutControlItem1.Control = this.btnAdd;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(246, 91);
+            this.layoutControlItem1.Size = new System.Drawing.Size(246, 51);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -147,7 +147,7 @@
             this.layoutControlItem2.Control = this.btnEdit;
             this.layoutControlItem2.Location = new System.Drawing.Point(246, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(280, 91);
+            this.layoutControlItem2.Size = new System.Drawing.Size(280, 51);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -156,7 +156,7 @@
             this.layoutControlItem3.Control = this.btnDelete;
             this.layoutControlItem3.Location = new System.Drawing.Point(526, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(239, 91);
+            this.layoutControlItem3.Size = new System.Drawing.Size(239, 51);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -164,9 +164,9 @@
             // 
             this.groupControl3.Controls.Add(this.privilegeTree);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(3, 143);
+            this.groupControl3.Location = new System.Drawing.Point(3, 103);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(789, 360);
+            this.groupControl3.Size = new System.Drawing.Size(789, 400);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "权限列表";
             // 
@@ -178,7 +178,7 @@
             this.privilegeTree.Name = "privilegeTree";
             this.privilegeTree.ShowCheckBox = false;
             this.privilegeTree.ShowSortCode = true;
-            this.privilegeTree.Size = new System.Drawing.Size(785, 337);
+            this.privilegeTree.Size = new System.Drawing.Size(785, 377);
             this.privilegeTree.TabIndex = 0;
             // 
             // FrmPrivilegeManage

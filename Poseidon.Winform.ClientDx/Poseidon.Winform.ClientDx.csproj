@@ -71,6 +71,12 @@
     <Reference Include="UIAutomationClient" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Component\DatasetTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\DatasetTree.Designer.cs">
+      <DependentUpon>DatasetTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dict\FrmDictAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,18 @@
     </Compile>
     <Compile Include="Dict\FrmDictOverview.Designer.cs">
       <DependentUpon>FrmDictOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmDatasetAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmDatasetAdd.Designer.cs">
+      <DependentUpon>FrmDatasetAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmDatasetManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmDatasetManage.Designer.cs">
+      <DependentUpon>FrmDatasetManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\FrmBuildingSelect.cs">
       <SubType>Form</SubType>
@@ -266,6 +284,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Component\DatasetTree.resx">
+      <DependentUpon>DatasetTree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dict\FrmDictAdd.resx">
       <DependentUpon>FrmDictAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +332,12 @@
     <EmbeddedResource Include="Model\FrmOrganizationSelect.resx">
       <DependentUpon>FrmOrganizationSelect.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmDatasetAdd.resx">
+      <DependentUpon>FrmDatasetAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmDatasetManage.resx">
+      <DependentUpon>FrmDatasetManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmMenuAdd.resx">
       <DependentUpon>FrmMenuAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -320,6 +347,7 @@
     <EmbeddedResource Include="Privilege\FrmMenuManage.resx">
       <DependentUpon>FrmMenuManage.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Dataset.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Menu.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Privilege\FrmPrivilegeAdd.resx">

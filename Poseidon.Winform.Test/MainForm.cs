@@ -36,5 +36,10 @@ namespace Poseidon.Winform.Test
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmPrivilegeManage));
         }
+
+        private void menuDatasetMan_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmDatasetManage));
+        }
     }
 }
