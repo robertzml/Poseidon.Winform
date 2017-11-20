@@ -56,9 +56,42 @@ namespace Poseidon.Winform.ClientDx
         #endregion //Function
 
         #region Method
+        /// <summary>
+        /// 初始化
+        /// </summary>
         public void Init()
         {
             LoadData();
+        }
+
+        /// <summary>
+        /// 刷新数据
+        /// </summary>
+        public void RefreshData()
+        {
+            LoadData();
+        }
+
+        /// <summary>
+        /// 获取当前选中权限ID
+        /// </summary>
+        /// <returns></returns>
+        public string GetCurrentSelectedId()
+        {
+            var node = this.tlDataset.Selection[0];
+            if (node == null)
+                return null;
+
+            var id = node["Id"].ToString();
+            return id;
+        }
+
+        /// <summary>
+        /// 展开节点
+        /// </summary>
+        public void Expand()
+        {
+            this.tlDataset.ExpandAll();
         }
         #endregion //Method
 

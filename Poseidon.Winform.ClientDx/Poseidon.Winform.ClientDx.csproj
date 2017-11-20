@@ -107,6 +107,12 @@
     <Compile Include="Dict\FrmDictOverview.Designer.cs">
       <DependentUpon>FrmDictOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Privilege\FrmDatasetEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmDatasetEdit.Designer.cs">
+      <DependentUpon>FrmDatasetEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Privilege\FrmDatasetAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmDatasetAdd.resx">
       <DependentUpon>FrmDatasetAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmDatasetEdit.resx">
+      <DependentUpon>FrmDatasetEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmDatasetManage.resx">
       <DependentUpon>FrmDatasetManage.cs</DependentUpon>

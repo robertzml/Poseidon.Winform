@@ -99,6 +99,7 @@
             this.btnDelete.StyleController = this.layoutControl1;
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "删除权限";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -189,7 +190,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmPrivilegeManage";
             this.Text = "权限管理";
-            this.Load += new System.EventHandler(this.FrmPrivilegeManage_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);

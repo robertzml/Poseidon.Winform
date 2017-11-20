@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Winform.ClientDx
 {
-    partial class FrmDatasetAdd
+    partial class FrmDatasetEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -87,11 +87,11 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(290, 15);
+            this.btnCancel.Location = new System.Drawing.Point(289, 15);
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(181, 15);
+            this.btnConfirm.Location = new System.Drawing.Point(180, 15);
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // plFill
@@ -115,7 +115,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(384, 252);
-            this.groupControl1.TabIndex = 1;
+            this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "数据集信息";
             // 
             // layoutControl1
@@ -367,13 +367,13 @@
             this.layoutControlItem3.Text = "排序";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // FrmDatasetAdd
+            // FrmDatasetEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 312);
-            this.Name = "FrmDatasetAdd";
-            this.Text = "添加数据集";
+            this.Name = "FrmDatasetEdit";
+            this.Text = "编辑数据集";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();

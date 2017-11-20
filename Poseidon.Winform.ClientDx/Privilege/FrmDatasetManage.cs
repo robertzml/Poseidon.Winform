@@ -27,6 +27,16 @@ namespace Poseidon.Winform.ClientDx
         }
         #endregion //Constructor
 
+        #region Function
+        protected override void InitForm()
+        {
+            this.dsTree.Init();
+            this.dsTree.Expand();
+
+            base.InitForm();
+        }
+        #endregion //Function
+
         #region Event
         /// <summary>
         /// 添加数据集
@@ -36,7 +46,22 @@ namespace Poseidon.Winform.ClientDx
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ChildFormManage.ShowDialogForm(typeof(FrmDatasetAdd));
-            //this.privilegeTree.RefreshData();
+            this.dsTree.RefreshData();
+        }
+        
+        /// <summary>
+        /// 编辑数据集
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var id = this.dsTree.GetCurrentSelectedId();
+            if (string.IsNullOrEmpty(id))
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmDatasetEdit), new object[] { id });
+            this.dsTree.RefreshData();
         }
         #endregion //Event
     }

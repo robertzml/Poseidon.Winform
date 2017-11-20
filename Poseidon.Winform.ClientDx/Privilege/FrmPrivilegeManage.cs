@@ -27,20 +27,16 @@ namespace Poseidon.Winform.ClientDx
         #endregion //Constructor
 
         #region Function
-        #endregion //Function
-
-        #region Event
-        /// <summary>
-        /// 窗体载入
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void FrmPrivilegeManage_Load(object sender, EventArgs e)
+        protected override void InitForm()
         {
             this.privilegeTree.RefreshData();
             this.privilegeTree.Expand();
-        }
 
+            base.InitForm();
+        }
+        #endregion //Function
+
+        #region Event
         /// <summary>
         /// 添加权限
         /// </summary>
@@ -65,6 +61,16 @@ namespace Poseidon.Winform.ClientDx
 
             ChildFormManage.ShowDialogForm(typeof(FrmPrivilegeEdit), new object[] { id });
             this.privilegeTree.RefreshData();
+        }
+
+        /// <summary>
+        /// 删除权限
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
         #endregion //Event
     }

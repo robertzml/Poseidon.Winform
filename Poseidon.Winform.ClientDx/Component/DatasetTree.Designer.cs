@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tlDataset = new DevExpress.XtraTreeList.TreeList();
-            this.bsDataset = new System.Windows.Forms.BindingSource();
+            this.colId = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colCode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colParentId = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colAction = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colSort = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colRemark = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colStatus = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colId = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.bsDataset = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tlDataset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDataset)).BeginInit();
             this.SuspendLayout();
@@ -55,15 +56,28 @@
             this.colStatus});
             this.tlDataset.DataSource = this.bsDataset;
             this.tlDataset.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlDataset.KeyFieldName = "Id";
             this.tlDataset.Location = new System.Drawing.Point(0, 0);
             this.tlDataset.Name = "tlDataset";
+            this.tlDataset.OptionsBehavior.Editable = false;
             this.tlDataset.OptionsBehavior.PopulateServiceColumns = true;
+            this.tlDataset.ParentFieldName = "ParentId";
             this.tlDataset.Size = new System.Drawing.Size(561, 419);
             this.tlDataset.TabIndex = 0;
             // 
-            // bsDataset
+            // colId
             // 
-            this.bsDataset.DataSource = typeof(Poseidon.Core.DL.Dataset);
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Width = 68;
+            // 
+            // colName
+            // 
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            this.colName.Width = 137;
             // 
             // colCode
             // 
@@ -95,14 +109,6 @@
             this.colSort.VisibleIndex = 3;
             this.colSort.Width = 137;
             // 
-            // colName
-            // 
-            this.colName.FieldName = "Name";
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 0;
-            this.colName.Width = 137;
-            // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
@@ -117,11 +123,9 @@
             this.colStatus.Name = "colStatus";
             this.colStatus.Width = 68;
             // 
-            // colId
+            // bsDataset
             // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
-            this.colId.Width = 68;
+            this.bsDataset.DataSource = typeof(Poseidon.Core.DL.Dataset);
             // 
             // DatasetTree
             // 
