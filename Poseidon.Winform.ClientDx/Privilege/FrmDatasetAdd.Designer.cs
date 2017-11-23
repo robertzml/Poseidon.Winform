@@ -38,19 +38,11 @@
             this.colCode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
-            this.chkDelete = new DevExpress.XtraEditors.CheckEdit();
-            this.chkUpdate = new DevExpress.XtraEditors.CheckEdit();
-            this.chkRead = new DevExpress.XtraEditors.CheckEdit();
-            this.chkCreate = new DevExpress.XtraEditors.CheckEdit();
             this.txtCode = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -67,19 +59,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsDataset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkDelete.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkUpdate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkRead.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkCreate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
@@ -99,13 +83,13 @@
             this.plFill.Appearance.BackColor = System.Drawing.Color.White;
             this.plFill.Appearance.Options.UseBackColor = true;
             this.plFill.Controls.Add(this.groupControl1);
-            this.plFill.Size = new System.Drawing.Size(384, 252);
+            this.plFill.Size = new System.Drawing.Size(384, 232);
             // 
             // plBottom
             // 
             this.plBottom.Appearance.BackColor = System.Drawing.Color.White;
             this.plBottom.Appearance.Options.UseBackColor = true;
-            this.plBottom.Location = new System.Drawing.Point(0, 252);
+            this.plBottom.Location = new System.Drawing.Point(0, 232);
             this.plBottom.Size = new System.Drawing.Size(384, 60);
             // 
             // groupControl1
@@ -114,7 +98,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(384, 252);
+            this.groupControl1.Size = new System.Drawing.Size(384, 232);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "数据集信息";
             // 
@@ -123,17 +107,13 @@
             this.layoutControl1.Controls.Add(this.spSort);
             this.layoutControl1.Controls.Add(this.luParent);
             this.layoutControl1.Controls.Add(this.txtRemark);
-            this.layoutControl1.Controls.Add(this.chkDelete);
-            this.layoutControl1.Controls.Add(this.chkUpdate);
-            this.layoutControl1.Controls.Add(this.chkRead);
-            this.layoutControl1.Controls.Add(this.chkCreate);
             this.layoutControl1.Controls.Add(this.txtCode);
             this.layoutControl1.Controls.Add(this.txtName);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(380, 229);
+            this.layoutControl1.Size = new System.Drawing.Size(380, 209);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -144,7 +124,7 @@
             0,
             0,
             0});
-            this.spSort.Location = new System.Drawing.Point(75, 107);
+            this.spSort.Location = new System.Drawing.Point(75, 84);
             this.spSort.Name = "spSort";
             this.spSort.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -209,47 +189,11 @@
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(75, 131);
+            this.txtRemark.Location = new System.Drawing.Point(75, 108);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(293, 86);
+            this.txtRemark.Size = new System.Drawing.Size(293, 89);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 8;
-            // 
-            // chkDelete
-            // 
-            this.chkDelete.Location = new System.Drawing.Point(287, 84);
-            this.chkDelete.Name = "chkDelete";
-            this.chkDelete.Properties.Caption = "Delete";
-            this.chkDelete.Size = new System.Drawing.Size(81, 19);
-            this.chkDelete.StyleController = this.layoutControl1;
-            this.chkDelete.TabIndex = 6;
-            // 
-            // chkUpdate
-            // 
-            this.chkUpdate.Location = new System.Drawing.Point(197, 84);
-            this.chkUpdate.Name = "chkUpdate";
-            this.chkUpdate.Properties.Caption = "Update";
-            this.chkUpdate.Size = new System.Drawing.Size(86, 19);
-            this.chkUpdate.StyleController = this.layoutControl1;
-            this.chkUpdate.TabIndex = 5;
-            // 
-            // chkRead
-            // 
-            this.chkRead.Location = new System.Drawing.Point(106, 84);
-            this.chkRead.Name = "chkRead";
-            this.chkRead.Properties.Caption = "Read";
-            this.chkRead.Size = new System.Drawing.Size(87, 19);
-            this.chkRead.StyleController = this.layoutControl1;
-            this.chkRead.TabIndex = 4;
-            // 
-            // chkCreate
-            // 
-            this.chkCreate.Location = new System.Drawing.Point(12, 84);
-            this.chkCreate.Name = "chkCreate";
-            this.chkCreate.Properties.Caption = "Create";
-            this.chkCreate.Size = new System.Drawing.Size(90, 19);
-            this.chkCreate.StyleController = this.layoutControl1;
-            this.chkCreate.TabIndex = 3;
             // 
             // txtCode
             // 
@@ -274,16 +218,12 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem4,
-            this.layoutControlItem5,
-            this.layoutControlItem6,
-            this.layoutControlItem7,
             this.layoutControlItem8,
             this.layoutControlItem9,
             this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(380, 229);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(380, 209);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -304,48 +244,12 @@
             this.layoutControlItem2.Text = "代码";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.chkCreate;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(94, 23);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.chkRead;
-            this.layoutControlItem5.Location = new System.Drawing.Point(94, 72);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(91, 23);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.chkUpdate;
-            this.layoutControlItem6.Location = new System.Drawing.Point(185, 72);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(90, 23);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.chkDelete;
-            this.layoutControlItem7.Location = new System.Drawing.Point(275, 72);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(85, 23);
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem7.TextVisible = false;
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.txtRemark;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 119);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(360, 90);
+            this.layoutControlItem8.Size = new System.Drawing.Size(360, 93);
             this.layoutControlItem8.Text = "备注";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(60, 14);
             // 
@@ -361,7 +265,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.spSort;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 95);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(360, 24);
             this.layoutControlItem3.Text = "排序";
@@ -371,7 +275,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 312);
+            this.ClientSize = new System.Drawing.Size(384, 292);
             this.Name = "FrmDatasetAdd";
             this.Text = "添加数据集";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
@@ -387,19 +291,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsDataset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkDelete.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkUpdate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkRead.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkCreate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
@@ -417,19 +313,11 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn colCode;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colName;
         private DevExpress.XtraEditors.MemoEdit txtRemark;
-        private DevExpress.XtraEditors.CheckEdit chkDelete;
-        private DevExpress.XtraEditors.CheckEdit chkUpdate;
-        private DevExpress.XtraEditors.CheckEdit chkRead;
-        private DevExpress.XtraEditors.CheckEdit chkCreate;
         private DevExpress.XtraEditors.TextEdit txtCode;
         private DevExpress.XtraEditors.TextEdit txtName;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;

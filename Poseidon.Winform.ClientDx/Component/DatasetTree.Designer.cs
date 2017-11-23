@@ -34,7 +34,6 @@
             this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colCode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colParentId = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colAction = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colSort = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colRemark = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colStatus = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -50,7 +49,6 @@
             this.colName,
             this.colCode,
             this.colParentId,
-            this.colAction,
             this.colSort,
             this.colRemark,
             this.colStatus});
@@ -61,6 +59,8 @@
             this.tlDataset.Name = "tlDataset";
             this.tlDataset.OptionsBehavior.Editable = false;
             this.tlDataset.OptionsBehavior.PopulateServiceColumns = true;
+            this.tlDataset.OptionsCustomization.AllowQuickHideColumns = false;
+            this.tlDataset.OptionsFilter.AllowFilterEditor = false;
             this.tlDataset.ParentFieldName = "ParentId";
             this.tlDataset.Size = new System.Drawing.Size(561, 419);
             this.tlDataset.TabIndex = 0;
@@ -75,6 +75,7 @@
             // 
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
+            this.colName.OptionsColumn.AllowSort = false;
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
             this.colName.Width = 137;
@@ -83,6 +84,7 @@
             // 
             this.colCode.FieldName = "Code";
             this.colCode.Name = "colCode";
+            this.colCode.OptionsColumn.AllowSort = false;
             this.colCode.Visible = true;
             this.colCode.VisibleIndex = 1;
             this.colCode.Width = 137;
@@ -93,28 +95,21 @@
             this.colParentId.Name = "colParentId";
             this.colParentId.Width = 68;
             // 
-            // colAction
-            // 
-            this.colAction.FieldName = "Action";
-            this.colAction.Name = "colAction";
-            this.colAction.Visible = true;
-            this.colAction.VisibleIndex = 2;
-            this.colAction.Width = 137;
-            // 
             // colSort
             // 
             this.colSort.FieldName = "Sort";
             this.colSort.Name = "colSort";
             this.colSort.Visible = true;
-            this.colSort.VisibleIndex = 3;
+            this.colSort.VisibleIndex = 2;
             this.colSort.Width = 137;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
+            this.colRemark.OptionsColumn.AllowSort = false;
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 4;
+            this.colRemark.VisibleIndex = 3;
             this.colRemark.Width = 137;
             // 
             // colStatus
@@ -147,7 +142,6 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn colId;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colCode;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colParentId;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colAction;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colSort;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colName;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colRemark;

@@ -51,11 +51,6 @@ namespace Poseidon.Winform.ClientDx
             this.spSort.Value = this.currentDataset.Sort;
             this.txtRemark.Text = this.currentDataset.Remark;
 
-            this.chkCreate.Checked = Convert.ToBoolean(currentDataset.Action & (int)DataAction.Create);
-            this.chkRead.Checked = Convert.ToBoolean(currentDataset.Action & (int)DataAction.Read);
-            this.chkUpdate.Checked = Convert.ToBoolean(currentDataset.Action & (int)DataAction.Update);
-            this.chkDelete.Checked = Convert.ToBoolean(currentDataset.Action & (int)DataAction.Delete);
-
             base.InitForm();
         }
 
@@ -103,8 +98,6 @@ namespace Poseidon.Winform.ClientDx
             else
                 entity.ParentId = this.luParent.EditValue.ToString();
 
-            entity.Action = Convert.ToInt32(chkCreate.Checked) << 3 | Convert.ToInt32(chkRead.Checked) << 2 |
-                Convert.ToInt32(chkUpdate.Checked) << 1 | Convert.ToInt32(chkDelete.Checked);
             entity.Sort = Convert.ToInt32(this.spSort.Value);
             entity.Remark = this.txtRemark.Text;
         }

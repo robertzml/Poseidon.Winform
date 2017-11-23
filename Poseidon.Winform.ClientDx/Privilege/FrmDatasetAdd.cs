@@ -80,9 +80,7 @@ namespace Poseidon.Winform.ClientDx
                 entity.ParentId = null;
             else
                 entity.ParentId = this.luParent.EditValue.ToString();
-
-            entity.Action = Convert.ToInt32(chkCreate.Checked) << 3 | Convert.ToInt32(chkRead.Checked) << 2 |
-                Convert.ToInt32(chkUpdate.Checked) << 1 | Convert.ToInt32(chkDelete.Checked);
+           
             entity.Sort = Convert.ToInt32(this.spSort.Value);
             entity.Remark = this.txtRemark.Text;
         }
