@@ -81,12 +81,14 @@
             this.menuPrivilegeAssign.Name = "menuPrivilegeAssign";
             this.menuPrivilegeAssign.Size = new System.Drawing.Size(152, 22);
             this.menuPrivilegeAssign.Text = "权限分配";
+            this.menuPrivilegeAssign.Click += new System.EventHandler(this.menuPrivilegeAssign_Click);
             // 
             // menuUser
             // 
             this.menuUser.Name = "menuUser";
             this.menuUser.Size = new System.Drawing.Size(152, 22);
             this.menuUser.Text = "用户管理";
+            this.menuUser.Click += new System.EventHandler(this.menuUser_Click);
             // 
             // menuRole
             // 

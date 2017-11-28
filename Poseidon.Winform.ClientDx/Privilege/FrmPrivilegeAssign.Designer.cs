@@ -53,10 +53,10 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.xtraTabControl2 = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageWhole = new DevExpress.XtraTab.XtraTabPage();
-            this.privilegeTree = new Poseidon.Winform.Core.PrivilegeTree();
+            this.privilegeTree = new Poseidon.Winform.ClientDx.PrivilegeTree();
             this.tabPageUsersPrivilege = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.userPrivilegeTree = new Poseidon.Winform.Core.PrivilegeTree();
+            this.userPrivilegeTree = new Poseidon.Winform.ClientDx.PrivilegeTree();
             this.cmbUserRoles = new DevExpress.XtraEditors.ImageComboBoxEdit();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -491,17 +491,17 @@
         private DevExpress.XtraEditors.ListBoxControl lbRoles;
         private System.Windows.Forms.BindingSource bsRole;
         private DevExpress.XtraEditors.GroupControl groupControl3;
-        private Core.PrivilegeTree privilegeTree;
         private DevExpress.XtraEditors.ListBoxControl lbUsers;
         private System.Windows.Forms.BindingSource bsUser;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl2;
         private DevExpress.XtraTab.XtraTabPage tabPageWhole;
         private DevExpress.XtraTab.XtraTabPage tabPageUsersPrivilege;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
-        private Core.PrivilegeTree userPrivilegeTree;
         private DevExpress.XtraEditors.ImageComboBoxEdit cmbUserRoles;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private PrivilegeTree privilegeTree;
+        private PrivilegeTree userPrivilegeTree;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

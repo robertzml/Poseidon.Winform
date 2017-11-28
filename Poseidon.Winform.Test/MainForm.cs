@@ -25,7 +25,7 @@ namespace Poseidon.Winform.Test
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmRoleManage));
         }
-        #endregion //Event
+        
 
         private void menuMenu_Click(object sender, EventArgs e)
         {
@@ -41,5 +41,17 @@ namespace Poseidon.Winform.Test
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmDatasetManage));
         }
+
+        private void menuPrivilegeAssign_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmPrivilegeAssign));
+        }
+        
+
+        private void menuUser_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmUserList));
+        }
+        #endregion //Event
     }
 }

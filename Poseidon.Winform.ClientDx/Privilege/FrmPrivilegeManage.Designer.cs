@@ -39,7 +39,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.privilegeTree = new Poseidon.Winform.Core.PrivilegeTree();
+            this.privilegeTree = new Poseidon.Winform.ClientDx.PrivilegeTree();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -211,7 +211,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
-        private Core.PrivilegeTree privilegeTree;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
@@ -219,5 +218,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private PrivilegeTree privilegeTree;
     }
 }

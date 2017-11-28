@@ -15,7 +15,6 @@ namespace Poseidon.Winform.ClientDx
     using Poseidon.Common;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
-    using Poseidon.Winform.Core;
 
     /// <summary>
     /// 选择权限窗体

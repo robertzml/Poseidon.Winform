@@ -30,12 +30,12 @@
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.txtName = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtCode = new DevExpress.XtraEditors.TextEdit();
+            this.txtName = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.privilegeTree = new Poseidon.Winform.Core.PrivilegeTree();
+            this.privilegeTree = new Poseidon.Winform.ClientDx.PrivilegeTree();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
@@ -45,10 +45,10 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
@@ -99,6 +99,28 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(39, 36);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtCode.Properties.Appearance.Options.UseBackColor = true;
+            this.txtCode.Properties.ReadOnly = true;
+            this.txtCode.Size = new System.Drawing.Size(589, 20);
+            this.txtCode.StyleController = this.layoutControl1;
+            this.txtCode.TabIndex = 5;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(39, 12);
+            this.txtName.Name = "txtName";
+            this.txtName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtName.Properties.Appearance.Options.UseBackColor = true;
+            this.txtName.Properties.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(589, 20);
+            this.txtName.StyleController = this.layoutControl1;
+            this.txtName.TabIndex = 4;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -112,17 +134,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(640, 359);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(40, 12);
-            this.txtName.Name = "txtName";
-            this.txtName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtName.Properties.Appearance.Options.UseBackColor = true;
-            this.txtName.Properties.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(588, 20);
-            this.txtName.StyleController = this.layoutControl1;
-            this.txtName.TabIndex = 4;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtName;
@@ -131,17 +142,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(620, 24);
             this.layoutControlItem1.Text = "名称";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(24, 14);
-            // 
-            // txtCode
-            // 
-            this.txtCode.Location = new System.Drawing.Point(40, 36);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtCode.Properties.Appearance.Options.UseBackColor = true;
-            this.txtCode.Properties.ReadOnly = true;
-            this.txtCode.Size = new System.Drawing.Size(588, 20);
-            this.txtCode.StyleController = this.layoutControl1;
-            this.txtCode.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
@@ -154,6 +154,7 @@
             // 
             // privilegeTree
             // 
+            this.privilegeTree.CheckBoxReadonly = false;
             this.privilegeTree.Location = new System.Drawing.Point(12, 60);
             this.privilegeTree.Name = "privilegeTree";
             this.privilegeTree.ShowCheckBox = true;
@@ -185,10 +186,10 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
@@ -199,12 +200,12 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private Core.PrivilegeTree privilegeTree;
         private DevExpress.XtraEditors.TextEdit txtCode;
         private DevExpress.XtraEditors.TextEdit txtName;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private PrivilegeTree privilegeTree;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
     }
 }

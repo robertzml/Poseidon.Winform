@@ -87,6 +87,12 @@
     <Compile Include="Control\AttachmentTool.Designer.cs">
       <DependentUpon>AttachmentTool.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\PrivilegeTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\PrivilegeTree.Designer.cs">
+      <DependentUpon>PrivilegeTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\UploadTool.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -141,12 +147,6 @@
     <Compile Include="Control\GroupChildrenTree.Designer.cs">
       <DependentUpon>GroupChildrenTree.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\PrivilegeTree.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\PrivilegeTree.Designer.cs">
-      <DependentUpon>PrivilegeTree.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\FrmUpload.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +199,9 @@
     <EmbeddedResource Include="Control\MenuTree.resx">
       <DependentUpon>MenuTree.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\PrivilegeTree.resx">
+      <DependentUpon>PrivilegeTree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\UploadTool.resx">
       <DependentUpon>UploadTool.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,9 +231,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\OrganizationGrid.resx">
       <DependentUpon>OrganizationGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\PrivilegeTree.resx">
-      <DependentUpon>PrivilegeTree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UserGrid.resx">
       <DependentUpon>UserGrid.cs</DependentUpon>

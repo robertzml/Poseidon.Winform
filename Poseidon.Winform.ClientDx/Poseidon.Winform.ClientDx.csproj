@@ -77,6 +77,12 @@
     <Compile Include="Component\DatasetTree.Designer.cs">
       <DependentUpon>DatasetTree.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\PrivilegeTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\PrivilegeTree.Designer.cs">
+      <DependentUpon>PrivilegeTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dict\FrmDictAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +299,9 @@
     <EmbeddedResource Include="Component\DatasetTree.resx">
       <DependentUpon>DatasetTree.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Component\PrivilegeTree.resx">
+      <DependentUpon>PrivilegeTree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dict\FrmDictAdd.resx">
       <DependentUpon>FrmDictAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -358,6 +367,7 @@
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Core.DL.Dataset.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Menu.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Privilege.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Privilege\FrmPrivilegeAdd.resx">
       <DependentUpon>FrmPrivilegeAdd.cs</DependentUpon>
