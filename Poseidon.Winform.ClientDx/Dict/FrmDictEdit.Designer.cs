@@ -31,9 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.itemGrid = new Poseidon.Winform.Core.DictItemGrid();
+            this.itemGrid = new Poseidon.Winform.ClientDx.DictItemGrid();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.luCategory = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsCategory = new System.Windows.Forms.BindingSource(this.components);
             this.txtCode = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -42,7 +43,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bsCategory = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -53,6 +53,7 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luCategory.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -61,7 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -119,20 +119,23 @@
             this.itemGrid.AllowSort = false;
             this.itemGrid.DataSource = null;
             this.itemGrid.Editable = true;
+            this.itemGrid.EnableMasterView = false;
+            this.itemGrid.EnableMultiSelect = false;
             this.itemGrid.Location = new System.Drawing.Point(51, 84);
             this.itemGrid.Name = "itemGrid";
             this.itemGrid.ShowAddMenu = false;
             this.itemGrid.ShowFooter = false;
             this.itemGrid.ShowLineNumber = true;
+            this.itemGrid.ShowMenu = false;
             this.itemGrid.ShowNavigator = true;
-            this.itemGrid.Size = new System.Drawing.Size(357, 217);
+            this.itemGrid.Size = new System.Drawing.Size(357, 196);
             this.itemGrid.TabIndex = 9;
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(51, 305);
+            this.txtRemark.Location = new System.Drawing.Point(51, 284);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(357, 62);
+            this.txtRemark.Size = new System.Drawing.Size(357, 83);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 8;
             // 
@@ -153,6 +156,10 @@
             this.luCategory.Size = new System.Drawing.Size(357, 20);
             this.luCategory.StyleController = this.layoutControl1;
             this.luCategory.TabIndex = 6;
+            // 
+            // bsCategory
+            // 
+            this.bsCategory.DataSource = typeof(Poseidon.Core.DL.DictCategory);
             // 
             // txtCode
             // 
@@ -215,9 +222,9 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtRemark;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 293);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 272);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(400, 66);
+            this.layoutControlItem5.Size = new System.Drawing.Size(400, 87);
             this.layoutControlItem5.Text = "备注";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(36, 14);
             // 
@@ -226,13 +233,9 @@
             this.layoutControlItem4.Control = this.itemGrid;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(400, 221);
+            this.layoutControlItem4.Size = new System.Drawing.Size(400, 200);
             this.layoutControlItem4.Text = "字典项";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(36, 14);
-            // 
-            // bsCategory
-            // 
-            this.bsCategory.DataSource = typeof(Poseidon.Core.DL.DictCategory);
             // 
             // FrmDictEdit
             // 
@@ -251,6 +254,7 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luCategory.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -259,7 +263,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCategory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -268,7 +271,6 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private Core.DictItemGrid itemGrid;
         private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraEditors.LookUpEdit luCategory;
         private DevExpress.XtraEditors.TextEdit txtCode;
@@ -278,7 +280,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private System.Windows.Forms.BindingSource bsCategory;
+        private DictItemGrid itemGrid;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

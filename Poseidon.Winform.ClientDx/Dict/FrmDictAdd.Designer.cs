@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.itemGrid = new Poseidon.Winform.Core.DictItemGrid();
+            this.itemGrid = new Poseidon.Winform.ClientDx.DictItemGrid();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.luCategory = new DevExpress.XtraEditors.LookUpEdit();
             this.bsCategory = new System.Windows.Forms.BindingSource(this.components);
@@ -107,6 +107,7 @@
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(764, 206, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
             this.layoutControl1.Size = new System.Drawing.Size(420, 379);
             this.layoutControl1.TabIndex = 0;
@@ -119,20 +120,23 @@
             this.itemGrid.AllowSort = false;
             this.itemGrid.DataSource = null;
             this.itemGrid.Editable = true;
+            this.itemGrid.EnableMasterView = false;
+            this.itemGrid.EnableMultiSelect = false;
             this.itemGrid.Location = new System.Drawing.Point(51, 84);
             this.itemGrid.Name = "itemGrid";
             this.itemGrid.ShowAddMenu = false;
             this.itemGrid.ShowFooter = false;
             this.itemGrid.ShowLineNumber = true;
+            this.itemGrid.ShowMenu = false;
             this.itemGrid.ShowNavigator = true;
-            this.itemGrid.Size = new System.Drawing.Size(357, 217);
+            this.itemGrid.Size = new System.Drawing.Size(357, 198);
             this.itemGrid.TabIndex = 9;
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(51, 305);
+            this.txtRemark.Location = new System.Drawing.Point(51, 286);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(357, 62);
+            this.txtRemark.Size = new System.Drawing.Size(357, 81);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 8;
             // 
@@ -185,7 +189,7 @@
             this.layoutControlItem5,
             this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(420, 379);
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -219,9 +223,9 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtRemark;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 293);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 274);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(400, 66);
+            this.layoutControlItem5.Size = new System.Drawing.Size(400, 85);
             this.layoutControlItem5.Text = "备注";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(36, 14);
             // 
@@ -230,7 +234,7 @@
             this.layoutControlItem4.Control = this.itemGrid;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(400, 221);
+            this.layoutControlItem4.Size = new System.Drawing.Size(400, 202);
             this.layoutControlItem4.Text = "字典项";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(36, 14);
             // 
@@ -278,7 +282,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private Core.DictItemGrid itemGrid;
+        private DictItemGrid itemGrid;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

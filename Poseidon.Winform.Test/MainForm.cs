@@ -62,5 +62,10 @@ namespace Poseidon.Winform.Test
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmCacheManage));
         }
+
+        private void menuDict_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmDictOverview));
+        }
     }
 }

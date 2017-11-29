@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -76,6 +77,18 @@
     </Compile>
     <Compile Include="Component\DatasetTree.Designer.cs">
       <DependentUpon>DatasetTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\DictItemGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\DictItemGrid.Designer.cs">
+      <DependentUpon>DictItemGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\DictTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\DictTree.Designer.cs">
+      <DependentUpon>DictTree.cs</DependentUpon>
     </Compile>
     <Compile Include="Component\PrivilegeTree.cs">
       <SubType>UserControl</SubType>
@@ -282,6 +295,11 @@
       <DependentUpon>FrmUserSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="System\FrmAttachmentManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +316,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Component\DatasetTree.resx">
       <DependentUpon>DatasetTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\DictItemGrid.resx">
+      <DependentUpon>DictItemGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\DictTree.resx">
+      <DependentUpon>DictTree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\PrivilegeTree.resx">
       <DependentUpon>PrivilegeTree.cs</DependentUpon>
@@ -366,6 +390,7 @@
       <DependentUpon>FrmMenuManage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Core.DL.Dataset.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.DictItem.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Menu.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Privilege.datasource" />
     <None Include="Properties\licenses.licx" />
@@ -404,6 +429,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Privilege\FrmUserSelect.resx">
       <DependentUpon>FrmUserSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="System\FrmAttachmentManage.resx">
       <DependentUpon>FrmAttachmentManage.cs</DependentUpon>

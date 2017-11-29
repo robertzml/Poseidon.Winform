@@ -87,12 +87,6 @@
     <Compile Include="Control\AttachmentTool.Designer.cs">
       <DependentUpon>AttachmentTool.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\PrivilegeTree.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\PrivilegeTree.Designer.cs">
-      <DependentUpon>PrivilegeTree.cs</DependentUpon>
-    </Compile>
     <Compile Include="Control\UploadTool.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,18 +116,6 @@
     </Compile>
     <Compile Include="Control\ModelTypeGrid.Designer.cs">
       <DependentUpon>ModelTypeGrid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\DictTree.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\DictTree.Designer.cs">
-      <DependentUpon>DictTree.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\DictItemGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\DictItemGrid.Designer.cs">
-      <DependentUpon>DictItemGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\GroupItemGrid.cs">
       <SubType>UserControl</SubType>
@@ -199,20 +181,11 @@
     <EmbeddedResource Include="Control\MenuTree.resx">
       <DependentUpon>MenuTree.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\PrivilegeTree.resx">
-      <DependentUpon>PrivilegeTree.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Control\UploadTool.resx">
       <DependentUpon>UploadTool.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\BuildingGrid.resx">
       <DependentUpon>BuildingGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\DictItemGrid.resx">
-      <DependentUpon>DictItemGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\DictTree.resx">
-      <DependentUpon>DictTree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\GroupChildrenTree.resx">
       <DependentUpon>GroupChildrenTree.cs</DependentUpon>
@@ -239,10 +212,8 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Poseidon.Attachment.Core.DL.Attachment.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Building.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Core.DL.GroupItem.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Menu.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Core.DL.Privilege.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Form\FrmPreview.resx">
       <DependentUpon>FrmPreview.cs</DependentUpon>

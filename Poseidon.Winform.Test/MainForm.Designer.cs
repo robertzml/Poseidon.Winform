@@ -39,12 +39,15 @@
             this.系统管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAttachment = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCache = new System.Windows.Forms.ToolStripMenuItem();
+            this.字典管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDict = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.字典管理ToolStripMenuItem,
             this.权限管理ToolStripMenuItem,
             this.系统管理ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -69,42 +72,42 @@
             // menuMenu
             // 
             this.menuMenu.Name = "menuMenu";
-            this.menuMenu.Size = new System.Drawing.Size(152, 22);
+            this.menuMenu.Size = new System.Drawing.Size(136, 22);
             this.menuMenu.Text = "菜单管理";
             this.menuMenu.Click += new System.EventHandler(this.menuMenu_Click);
             // 
             // menuPrivilegeMan
             // 
             this.menuPrivilegeMan.Name = "menuPrivilegeMan";
-            this.menuPrivilegeMan.Size = new System.Drawing.Size(152, 22);
+            this.menuPrivilegeMan.Size = new System.Drawing.Size(136, 22);
             this.menuPrivilegeMan.Text = "权限管理";
             this.menuPrivilegeMan.Click += new System.EventHandler(this.menuPrivilegeMan_Click);
             // 
             // menuPrivilegeAssign
             // 
             this.menuPrivilegeAssign.Name = "menuPrivilegeAssign";
-            this.menuPrivilegeAssign.Size = new System.Drawing.Size(152, 22);
+            this.menuPrivilegeAssign.Size = new System.Drawing.Size(136, 22);
             this.menuPrivilegeAssign.Text = "权限分配";
             this.menuPrivilegeAssign.Click += new System.EventHandler(this.menuPrivilegeAssign_Click);
             // 
             // menuUser
             // 
             this.menuUser.Name = "menuUser";
-            this.menuUser.Size = new System.Drawing.Size(152, 22);
+            this.menuUser.Size = new System.Drawing.Size(136, 22);
             this.menuUser.Text = "用户管理";
             this.menuUser.Click += new System.EventHandler(this.menuUser_Click);
             // 
             // menuRole
             // 
             this.menuRole.Name = "menuRole";
-            this.menuRole.Size = new System.Drawing.Size(152, 22);
+            this.menuRole.Size = new System.Drawing.Size(136, 22);
             this.menuRole.Text = "角色管理";
             this.menuRole.Click += new System.EventHandler(this.menuRole_Click);
             // 
             // menuDatasetMan
             // 
             this.menuDatasetMan.Name = "menuDatasetMan";
-            this.menuDatasetMan.Size = new System.Drawing.Size(152, 22);
+            this.menuDatasetMan.Size = new System.Drawing.Size(136, 22);
             this.menuDatasetMan.Text = "数据集管理";
             this.menuDatasetMan.Click += new System.EventHandler(this.menuDatasetMan_Click);
             // 
@@ -120,16 +123,31 @@
             // menuAttachment
             // 
             this.menuAttachment.Name = "menuAttachment";
-            this.menuAttachment.Size = new System.Drawing.Size(152, 22);
+            this.menuAttachment.Size = new System.Drawing.Size(124, 22);
             this.menuAttachment.Text = "附件管理";
             this.menuAttachment.Click += new System.EventHandler(this.menuAttachment_Click);
             // 
             // menuCache
             // 
             this.menuCache.Name = "menuCache";
-            this.menuCache.Size = new System.Drawing.Size(152, 22);
+            this.menuCache.Size = new System.Drawing.Size(124, 22);
             this.menuCache.Text = "缓存管理";
             this.menuCache.Click += new System.EventHandler(this.menuCache_Click);
+            // 
+            // 字典管理ToolStripMenuItem
+            // 
+            this.字典管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuDict});
+            this.字典管理ToolStripMenuItem.Name = "字典管理ToolStripMenuItem";
+            this.字典管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.字典管理ToolStripMenuItem.Text = "字典管理";
+            // 
+            // menuDict
+            // 
+            this.menuDict.Name = "menuDict";
+            this.menuDict.Size = new System.Drawing.Size(152, 22);
+            this.menuDict.Text = "字典总览";
+            this.menuDict.Click += new System.EventHandler(this.menuDict_Click);
             // 
             // MainForm
             // 
@@ -161,6 +179,8 @@
         private System.Windows.Forms.ToolStripMenuItem 系统管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuAttachment;
         private System.Windows.Forms.ToolStripMenuItem menuCache;
+        private System.Windows.Forms.ToolStripMenuItem 字典管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuDict;
     }
 }
 

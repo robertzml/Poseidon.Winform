@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Poseidon.Winform.Core
+namespace Poseidon.Winform.ClientDx
 {
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;

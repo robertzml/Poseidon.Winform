@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Poseidon.Winform.Core
+namespace Poseidon.Winform.ClientDx
 {
     using Poseidon.Base.Framework;
     using Poseidon.Caller.Facade;
@@ -137,7 +137,7 @@ namespace Poseidon.Winform.Core
                 this.tlData.BeginUnboundLoad();
                 e.Node.Nodes.Clear();
 
-                // load contain dict                
+                // load contain dict
                 var dicts = CallerFactory<IDictService>.Instance.FindByCategory(id);
 
                 foreach (var item in dicts)
