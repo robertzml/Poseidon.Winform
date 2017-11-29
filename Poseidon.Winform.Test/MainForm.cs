@@ -45,13 +45,22 @@ namespace Poseidon.Winform.Test
         private void menuPrivilegeAssign_Click(object sender, EventArgs e)
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmPrivilegeAssign));
-        }
-        
+        }        
 
         private void menuUser_Click(object sender, EventArgs e)
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmUserList));
         }
         #endregion //Event
+
+        private void menuAttachment_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmAttachmentManage));
+        }
+
+        private void menuCache_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmCacheManage));
+        }
     }
 }

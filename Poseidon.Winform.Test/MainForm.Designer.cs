@@ -36,13 +36,17 @@
             this.menuUser = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRole = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDatasetMan = new System.Windows.Forms.ToolStripMenuItem();
+            this.系统管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAttachment = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCache = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.权限管理ToolStripMenuItem});
+            this.权限管理ToolStripMenuItem,
+            this.系统管理ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(882, 25);
@@ -104,6 +108,29 @@
             this.menuDatasetMan.Text = "数据集管理";
             this.menuDatasetMan.Click += new System.EventHandler(this.menuDatasetMan_Click);
             // 
+            // 系统管理ToolStripMenuItem
+            // 
+            this.系统管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuAttachment,
+            this.menuCache});
+            this.系统管理ToolStripMenuItem.Name = "系统管理ToolStripMenuItem";
+            this.系统管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.系统管理ToolStripMenuItem.Text = "系统管理";
+            // 
+            // menuAttachment
+            // 
+            this.menuAttachment.Name = "menuAttachment";
+            this.menuAttachment.Size = new System.Drawing.Size(152, 22);
+            this.menuAttachment.Text = "附件管理";
+            this.menuAttachment.Click += new System.EventHandler(this.menuAttachment_Click);
+            // 
+            // menuCache
+            // 
+            this.menuCache.Name = "menuCache";
+            this.menuCache.Size = new System.Drawing.Size(152, 22);
+            this.menuCache.Text = "缓存管理";
+            this.menuCache.Click += new System.EventHandler(this.menuCache_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -131,6 +158,9 @@
         private System.Windows.Forms.ToolStripMenuItem menuUser;
         private System.Windows.Forms.ToolStripMenuItem menuRole;
         private System.Windows.Forms.ToolStripMenuItem menuDatasetMan;
+        private System.Windows.Forms.ToolStripMenuItem 系统管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuAttachment;
+        private System.Windows.Forms.ToolStripMenuItem menuCache;
     }
 }
 
