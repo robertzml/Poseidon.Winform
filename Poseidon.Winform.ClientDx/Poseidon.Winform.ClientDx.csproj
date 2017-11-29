@@ -90,11 +90,23 @@
     <Compile Include="Component\DictTree.Designer.cs">
       <DependentUpon>DictTree.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\MenuTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\MenuTree.Designer.cs">
+      <DependentUpon>MenuTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\PrivilegeTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Component\PrivilegeTree.Designer.cs">
       <DependentUpon>PrivilegeTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\UserGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\UserGrid.Designer.cs">
+      <DependentUpon>UserGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Dict\FrmDictAdd.cs">
       <SubType>Form</SubType>
@@ -323,8 +335,14 @@
     <EmbeddedResource Include="Component\DictTree.resx">
       <DependentUpon>DictTree.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Component\MenuTree.resx">
+      <DependentUpon>MenuTree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component\PrivilegeTree.resx">
       <DependentUpon>PrivilegeTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\UserGrid.resx">
+      <DependentUpon>UserGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dict\FrmDictAdd.resx">
       <DependentUpon>FrmDictAdd.cs</DependentUpon>
@@ -393,6 +411,7 @@
     <None Include="Properties\DataSources\Poseidon.Core.DL.DictItem.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Menu.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Privilege.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.User.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Privilege\FrmPrivilegeAdd.resx">
       <DependentUpon>FrmPrivilegeAdd.cs</DependentUpon>

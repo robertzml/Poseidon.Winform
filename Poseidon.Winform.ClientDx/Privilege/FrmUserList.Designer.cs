@@ -39,7 +39,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.userGrid = new Poseidon.Winform.Core.UserGrid();
+            this.userGrid = new Poseidon.Winform.ClientDx.UserGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -173,12 +173,13 @@
             // userGrid
             // 
             this.userGrid.AllowFilter = true;
-            this.userGrid.AllowGroup = true;
+            this.userGrid.AllowGroup = false;
             this.userGrid.AllowSort = true;
             this.userGrid.DataSource = null;
             this.userGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userGrid.Editable = false;
             this.userGrid.EnableMasterView = false;
+            this.userGrid.EnableMultiSelect = false;
             this.userGrid.Location = new System.Drawing.Point(2, 21);
             this.userGrid.Name = "userGrid";
             this.userGrid.ShowAddMenu = false;
@@ -225,6 +226,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private Core.UserGrid userGrid;
+        private UserGrid userGrid;
     }
 }

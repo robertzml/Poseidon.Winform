@@ -147,23 +147,11 @@
     <Compile Include="Form\FrmPreview.Designer.cs">
       <DependentUpon>FrmPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\MenuTree.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\MenuTree.Designer.cs">
-      <DependentUpon>MenuTree.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Control\UserGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\UserGrid.Designer.cs">
-      <DependentUpon>UserGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility\ControlUtil.cs" />
     <Compile Include="Utility\EventUtil.cs" />
@@ -177,9 +165,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Control\AttachmentTool.resx">
       <DependentUpon>AttachmentTool.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\MenuTree.resx">
-      <DependentUpon>MenuTree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UploadTool.resx">
       <DependentUpon>UploadTool.cs</DependentUpon>
@@ -205,14 +190,10 @@
     <EmbeddedResource Include="Control\OrganizationGrid.resx">
       <DependentUpon>OrganizationGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\UserGrid.resx">
-      <DependentUpon>UserGrid.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Poseidon.Attachment.Core.DL.Attachment.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Building.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Core.DL.Menu.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Form\FrmPreview.resx">
@@ -225,10 +206,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Properties\DataSources\Poseidon.Core.DL.DictItem.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Group.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Organization.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Core.DL.User.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
