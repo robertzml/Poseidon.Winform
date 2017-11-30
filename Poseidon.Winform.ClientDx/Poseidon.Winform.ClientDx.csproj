@@ -102,12 +102,6 @@
     <Compile Include="Component\GroupItemGrid.Designer.cs">
       <DependentUpon>GroupItemGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component\GroupsTree.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Component\GroupsTree.Designer.cs">
-      <DependentUpon>GroupsTree.cs</DependentUpon>
-    </Compile>
     <Compile Include="Component\MenuTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -370,9 +364,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Component\GroupItemGrid.resx">
       <DependentUpon>GroupItemGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Component\GroupsTree.resx">
-      <DependentUpon>GroupsTree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\MenuTree.resx">
       <DependentUpon>MenuTree.cs</DependentUpon>

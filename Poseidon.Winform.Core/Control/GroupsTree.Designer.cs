@@ -1,4 +1,4 @@
-﻿namespace Poseidon.Winform.ClientDx
+﻿namespace Poseidon.Winform.Core
 {
     partial class GroupsTree
     {

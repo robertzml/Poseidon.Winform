@@ -87,6 +87,12 @@
     <Compile Include="Control\AttachmentTool.Designer.cs">
       <DependentUpon>AttachmentTool.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\GroupsTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\GroupsTree.Designer.cs">
+      <DependentUpon>GroupsTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\UploadTool.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     <EmbeddedResource Include="Control\AttachmentTool.resx">
       <DependentUpon>AttachmentTool.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\GroupsTree.resx">
+      <DependentUpon>GroupsTree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\UploadTool.resx">
       <DependentUpon>UploadTool.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +157,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Poseidon.Attachment.Core.DL.Attachment.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Group.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Form\FrmPreview.resx">
       <DependentUpon>FrmPreview.cs</DependentUpon>

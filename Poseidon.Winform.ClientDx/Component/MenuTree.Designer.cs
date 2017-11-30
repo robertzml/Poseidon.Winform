@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tlMenu = new DevExpress.XtraTreeList.TreeList();
             this.colId = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -41,7 +42,7 @@
             this.colVisible = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colParentId = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colRemark = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.bsMenu = new System.Windows.Forms.BindingSource();
+            this.bsMenu = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tlMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMenu)).BeginInit();
             this.SuspendLayout();
@@ -135,6 +136,8 @@
             // 
             // colType
             // 
+            this.colType.AppearanceCell.Options.UseTextOptions = true;
+            this.colType.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.colType.Caption = "菜单类型";
             this.colType.FieldName = "Type";
             this.colType.Name = "colType";
