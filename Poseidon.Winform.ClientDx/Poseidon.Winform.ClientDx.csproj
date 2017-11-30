@@ -72,6 +72,12 @@
     <Reference Include="UIAutomationClient" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Component\BuildingGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\BuildingGrid.Designer.cs">
+      <DependentUpon>BuildingGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\DatasetTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,6 +102,12 @@
     <Compile Include="Component\GroupItemGrid.Designer.cs">
       <DependentUpon>GroupItemGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\GroupsTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\GroupsTree.Designer.cs">
+      <DependentUpon>GroupsTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\MenuTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -107,6 +119,12 @@
     </Compile>
     <Compile Include="Component\ModelTypeGrid.Designer.cs">
       <DependentUpon>ModelTypeGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\OrganizationGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\OrganizationGrid.Designer.cs">
+      <DependentUpon>OrganizationGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Component\PrivilegeTree.cs">
       <SubType>UserControl</SubType>
@@ -338,6 +356,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Component\BuildingGrid.resx">
+      <DependentUpon>BuildingGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component\DatasetTree.resx">
       <DependentUpon>DatasetTree.cs</DependentUpon>
     </EmbeddedResource>
@@ -350,11 +371,17 @@
     <EmbeddedResource Include="Component\GroupItemGrid.resx">
       <DependentUpon>GroupItemGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Component\GroupsTree.resx">
+      <DependentUpon>GroupsTree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component\MenuTree.resx">
       <DependentUpon>MenuTree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\ModelTypeGrid.resx">
       <DependentUpon>ModelTypeGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\OrganizationGrid.resx">
+      <DependentUpon>OrganizationGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\PrivilegeTree.resx">
       <DependentUpon>PrivilegeTree.cs</DependentUpon>
@@ -425,11 +452,14 @@
     <EmbeddedResource Include="Privilege\FrmMenuManage.resx">
       <DependentUpon>FrmMenuManage.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Building.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Dataset.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.DictItem.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Group.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.GroupItem.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Menu.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Organization.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Privilege.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.User.datasource" />
     <None Include="Properties\licenses.licx" />

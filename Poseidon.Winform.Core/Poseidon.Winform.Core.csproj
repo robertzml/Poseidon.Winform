@@ -93,30 +93,6 @@
     <Compile Include="Control\UploadTool.Designer.cs">
       <DependentUpon>UploadTool.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\BuildingGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\BuildingGrid.Designer.cs">
-      <DependentUpon>BuildingGrid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\GroupsTree.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\GroupsTree.Designer.cs">
-      <DependentUpon>GroupsTree.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\OrganizationGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\OrganizationGrid.Designer.cs">
-      <DependentUpon>OrganizationGrid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\GroupItemGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\GroupItemGrid.Designer.cs">
-      <DependentUpon>GroupItemGrid.cs</DependentUpon>
-    </Compile>
     <Compile Include="Control\GroupChildrenTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -163,29 +139,15 @@
     <EmbeddedResource Include="Control\UploadTool.resx">
       <DependentUpon>UploadTool.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\BuildingGrid.resx">
-      <DependentUpon>BuildingGrid.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Control\GroupChildrenTree.resx">
       <DependentUpon>GroupChildrenTree.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\GroupItemGrid.resx">
-      <DependentUpon>GroupItemGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\GroupsTree.resx">
-      <DependentUpon>GroupsTree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\ImageAttachmentTool.resx">
       <DependentUpon>ImageAttachmentTool.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\OrganizationGrid.resx">
-      <DependentUpon>OrganizationGrid.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Poseidon.Attachment.Core.DL.Attachment.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Core.DL.Building.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Form\FrmPreview.resx">
       <DependentUpon>FrmPreview.cs</DependentUpon>
@@ -197,8 +159,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Properties\DataSources\Poseidon.Core.DL.Group.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Core.DL.Organization.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

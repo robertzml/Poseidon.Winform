@@ -48,7 +48,7 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.itemGrid = new Poseidon.Winform.ClientDx.GroupItemGrid();
-            this.ogridLeft = new Poseidon.Winform.Core.OrganizationGrid();
+            this.ogridLeft = new Poseidon.Winform.ClientDx.OrganizationGrid();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
@@ -335,7 +335,7 @@
         private System.Windows.Forms.BindingSource bsModelType;
         private DevExpress.XtraEditors.SimpleButton btnMoveOut;
         private DevExpress.XtraEditors.SimpleButton btnMoveIn;
-        private Core.OrganizationGrid ogridLeft;
+        private OrganizationGrid ogridLeft;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;

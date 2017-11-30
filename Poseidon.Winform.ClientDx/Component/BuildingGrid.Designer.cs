@@ -1,6 +1,6 @@
-﻿namespace Poseidon.Winform.Core
+﻿namespace Poseidon.Winform.ClientDx
 {
-    partial class OrganizationGrid
+    partial class BuildingGrid
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.colParentId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colModelType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -39,16 +41,18 @@
             // 
             // bsEntity
             // 
-            this.bsEntity.DataSource = typeof(Poseidon.Core.DL.Organization);
+            this.bsEntity.DataSource = typeof(Poseidon.Core.DL.Building);
             // 
             // dgcEntity
             // 
-            this.dgcEntity.Size = new System.Drawing.Size(631, 335);
+            this.dgcEntity.Size = new System.Drawing.Size(568, 378);
             // 
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
+            this.colParentId,
+            this.colModelType,
             this.colName,
             this.colRemark,
             this.colStatus});
@@ -61,8 +65,17 @@
             this.dgvEntity.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
-            this.dgvEntity.OptionsView.ShowFooter = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
+            // 
+            // colParentId
+            // 
+            this.colParentId.FieldName = "ParentId";
+            this.colParentId.Name = "colParentId";
+            // 
+            // colModelType
+            // 
+            this.colModelType.FieldName = "ModelType";
+            this.colModelType.Name = "colModelType";
             // 
             // colName
             // 
@@ -93,13 +106,12 @@
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             // 
-            // OrganizationGrid
+            // BuildingGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "OrganizationGrid";
-            this.Size = new System.Drawing.Size(631, 335);
-            this.Load += new System.EventHandler(this.OrganizationGrid_Load);
+            this.Name = "BuildingGrid";
+            this.Load += new System.EventHandler(this.BuildingGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -109,6 +121,8 @@
 
         #endregion
 
+        private DevExpress.XtraGrid.Columns.GridColumn colParentId;
+        private DevExpress.XtraGrid.Columns.GridColumn colModelType;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;

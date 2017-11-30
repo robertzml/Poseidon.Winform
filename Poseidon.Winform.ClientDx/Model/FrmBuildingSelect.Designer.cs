@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.bulGridLeft = new Poseidon.Winform.Core.BuildingGrid();
+            this.bulGridLeft = new Poseidon.Winform.ClientDx.BuildingGrid();
             this.luModelType = new DevExpress.XtraEditors.LookUpEdit();
             this.bsModelType = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -295,7 +295,7 @@
         private DevExpress.XtraEditors.LookUpEdit luModelType;
         private System.Windows.Forms.BindingSource bsModelType;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private Core.BuildingGrid bulGridLeft;
+        private BuildingGrid bulGridLeft;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton btnMoveIn;
