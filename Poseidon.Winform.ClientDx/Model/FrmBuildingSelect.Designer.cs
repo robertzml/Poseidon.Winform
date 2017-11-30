@@ -42,7 +42,7 @@
             this.btnMoveOut = new DevExpress.XtraEditors.SimpleButton();
             this.btnMoveIn = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.itemGrid = new Poseidon.Winform.Core.GroupItemGrid();
+            this.itemGrid = new Poseidon.Winform.ClientDx.GroupItemGrid();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -301,6 +301,6 @@
         private DevExpress.XtraEditors.SimpleButton btnMoveIn;
         private DevExpress.XtraEditors.SimpleButton btnMoveOut;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private Core.GroupItemGrid itemGrid;
+        private GroupItemGrid itemGrid;
     }
 }

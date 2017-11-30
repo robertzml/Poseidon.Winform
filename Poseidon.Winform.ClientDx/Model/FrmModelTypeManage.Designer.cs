@@ -33,7 +33,7 @@
             this.btnRegister = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.mtGrid = new Poseidon.Winform.Core.ModelTypeGrid();
+            this.mtGrid = new Poseidon.Winform.ClientDx.ModelTypeGrid();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -137,7 +137,7 @@
         private DevExpress.XtraEditors.SimpleButton btnRegister;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private Core.ModelTypeGrid mtGrid;
+        private ModelTypeGrid mtGrid;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
     }
 }

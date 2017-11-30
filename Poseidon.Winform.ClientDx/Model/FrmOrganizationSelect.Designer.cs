@@ -47,7 +47,7 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.itemGrid = new Poseidon.Winform.Core.GroupItemGrid();
+            this.itemGrid = new Poseidon.Winform.ClientDx.GroupItemGrid();
             this.ogridLeft = new Poseidon.Winform.Core.OrganizationGrid();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -340,7 +340,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private Core.GroupItemGrid itemGrid;
+        private GroupItemGrid itemGrid;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }

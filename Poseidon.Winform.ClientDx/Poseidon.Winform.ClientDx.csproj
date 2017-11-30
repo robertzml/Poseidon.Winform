@@ -90,11 +90,23 @@
     <Compile Include="Component\DictTree.Designer.cs">
       <DependentUpon>DictTree.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\GroupItemGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\GroupItemGrid.Designer.cs">
+      <DependentUpon>GroupItemGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\MenuTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Component\MenuTree.Designer.cs">
       <DependentUpon>MenuTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\ModelTypeGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\ModelTypeGrid.Designer.cs">
+      <DependentUpon>ModelTypeGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Component\PrivilegeTree.cs">
       <SubType>UserControl</SubType>
@@ -335,8 +347,14 @@
     <EmbeddedResource Include="Component\DictTree.resx">
       <DependentUpon>DictTree.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Component\GroupItemGrid.resx">
+      <DependentUpon>GroupItemGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component\MenuTree.resx">
       <DependentUpon>MenuTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\ModelTypeGrid.resx">
+      <DependentUpon>ModelTypeGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\PrivilegeTree.resx">
       <DependentUpon>PrivilegeTree.cs</DependentUpon>
@@ -409,7 +427,9 @@
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Core.DL.Dataset.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.DictItem.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.GroupItem.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Menu.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Privilege.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.User.datasource" />
     <None Include="Properties\licenses.licx" />

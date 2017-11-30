@@ -1,4 +1,4 @@
-﻿namespace Poseidon.Winform.Core
+﻿namespace Poseidon.Winform.ClientDx
 {
     partial class GroupItemGrid
     {

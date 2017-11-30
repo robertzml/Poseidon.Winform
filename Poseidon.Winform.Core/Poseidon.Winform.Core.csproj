@@ -111,12 +111,6 @@
     <Compile Include="Control\OrganizationGrid.Designer.cs">
       <DependentUpon>OrganizationGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\ModelTypeGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\ModelTypeGrid.Designer.cs">
-      <DependentUpon>ModelTypeGrid.cs</DependentUpon>
-    </Compile>
     <Compile Include="Control\GroupItemGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -183,9 +177,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\ImageAttachmentTool.resx">
       <DependentUpon>ImageAttachmentTool.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\ModelTypeGrid.resx">
-      <DependentUpon>ModelTypeGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\OrganizationGrid.resx">
       <DependentUpon>OrganizationGrid.cs</DependentUpon>

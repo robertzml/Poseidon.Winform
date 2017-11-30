@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Poseidon.Winform.Core
+namespace Poseidon.Winform.ClientDx
 {
     using Poseidon.Base.System;
     using Poseidon.Core.DL;

@@ -70,6 +70,46 @@ namespace Poseidon.Winform.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmUserEdit), new object[] { user.Id });
             LoadUsers();
         }
+
+        /// <summary>
+        /// 启用用户
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEnable_Click(object sender, EventArgs e)
+        {
+            if (this.userGrid.GetCurrentSelect() == null)
+                return;
+
+            var user = this.userGrid.GetCurrentSelect();
+            CallerFactory<IUserService>.Instance.Enable(user.Id);
+            LoadUsers();
+        }
+
+        /// <summary>
+        /// 禁用用户
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDisable_Click(object sender, EventArgs e)
+        {
+            if (this.userGrid.GetCurrentSelect() == null)
+                return;
+
+            if (MessageUtil.ConfirmYesNo("是否禁用选定用户") == DialogResult.Yes)
+            {
+                try
+                {
+                    var user = this.userGrid.GetCurrentSelect();
+                    CallerFactory<IUserService>.Instance.Disable(user.Id);
+                    LoadUsers();
+                }
+                catch (Exception pe)
+                {
+                    MessageUtil.ShowError(string.Format("禁用失败，错误消息:{0}", pe.Message));
+                }
+            }
+        }
         #endregion //Event
     }
 }
