@@ -44,12 +44,6 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Poseidon.Attachment.Caller">
-      <HintPath>..\..\Assembly\Poseidon.Attachment.Caller.dll</HintPath>
-    </Reference>
-    <Reference Include="Poseidon.Attachment.Core">
-      <HintPath>..\..\Assembly\Poseidon.Attachment.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Poseidon.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Assembly\Poseidon.Base.dll</HintPath>
@@ -68,60 +62,25 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Control\AttachmentTool.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\AttachmentTool.Designer.cs">
-      <DependentUpon>AttachmentTool.cs</DependentUpon>
-    </Compile>
     <Compile Include="Control\GroupsTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Control\GroupsTree.Designer.cs">
       <DependentUpon>GroupsTree.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\UploadTool.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\UploadTool.Designer.cs">
-      <DependentUpon>UploadTool.cs</DependentUpon>
-    </Compile>
     <Compile Include="Control\GroupChildrenTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Control\GroupChildrenTree.Designer.cs">
       <DependentUpon>GroupChildrenTree.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\FrmUpload.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmUpload.Designer.cs">
-      <DependentUpon>FrmUpload.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\ImageAttachmentTool.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\ImageAttachmentTool.Designer.cs">
-      <DependentUpon>ImageAttachmentTool.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\FrmPreview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmPreview.Designer.cs">
-      <DependentUpon>FrmPreview.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -139,36 +98,24 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Control\AttachmentTool.resx">
-      <DependentUpon>AttachmentTool.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Control\GroupsTree.resx">
       <DependentUpon>GroupsTree.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\UploadTool.resx">
-      <DependentUpon>UploadTool.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Control\GroupChildrenTree.resx">
       <DependentUpon>GroupChildrenTree.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\ImageAttachmentTool.resx">
-      <DependentUpon>ImageAttachmentTool.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Poseidon.Attachment.Core.DL.Attachment.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Group.datasource" />
     <None Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="Form\FrmPreview.resx">
-      <DependentUpon>FrmPreview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmUpload.resx">
-      <DependentUpon>FrmUpload.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Form\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

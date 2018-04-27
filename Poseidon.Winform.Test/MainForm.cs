@@ -55,7 +55,7 @@ namespace Poseidon.Winform.Test
 
         private void menuAttachment_Click(object sender, EventArgs e)
         {
-            ChildFormManage.LoadMdiForm(this, typeof(FrmAttachmentManage));
+          
         }
 
         private void menuCache_Click(object sender, EventArgs e)

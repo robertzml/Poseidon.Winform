@@ -39,12 +39,6 @@
     <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="Poseidon.Attachment.Caller">
-      <HintPath>..\..\Assembly\Poseidon.Attachment.Caller.dll</HintPath>
-    </Reference>
-    <Reference Include="Poseidon.Attachment.Core">
-      <HintPath>..\..\Assembly\Poseidon.Attachment.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Poseidon.Base">
       <HintPath>..\..\Assembly\Poseidon.Base.dll</HintPath>
     </Reference>
@@ -67,7 +61,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UIAutomationClient" />
   </ItemGroup>
@@ -336,12 +329,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="System\FrmAttachmentManage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="System\FrmAttachmentManage.Designer.cs">
-      <DependentUpon>FrmAttachmentManage.cs</DependentUpon>
-    </Compile>
     <Compile Include="System\FrmCacheManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -493,9 +480,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="System\FrmAttachmentManage.resx">
-      <DependentUpon>FrmAttachmentManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="System\FrmCacheManage.resx">
       <DependentUpon>FrmCacheManage.cs</DependentUpon>
