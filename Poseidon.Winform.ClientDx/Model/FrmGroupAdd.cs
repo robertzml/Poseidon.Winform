@@ -47,6 +47,7 @@ namespace Poseidon.Winform.ClientDx
         {
             entity.Name = this.txtName.Text;
             entity.Code = this.txtCode.Text;
+            entity.Module = this.txtModule.Text;
             entity.Remark = this.txtRemark.Text;
             if (this.cmbParent.EditValue == null)
                 entity.ParentId = null;

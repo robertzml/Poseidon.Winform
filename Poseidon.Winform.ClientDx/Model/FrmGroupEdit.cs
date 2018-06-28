@@ -50,6 +50,7 @@ namespace Poseidon.Winform.ClientDx
         {
             this.txtName.Text = this.currentEntity.Name;
             this.txtCode.Text = this.currentEntity.Code;
+            this.txtModule.Text = this.currentEntity.Module;
             this.txtRemark.Text = this.currentEntity.Remark;
 
             this.bsGroup.DataSource = CallerFactory<IGroupService>.Instance.FindAll().ToList();
@@ -90,6 +91,7 @@ namespace Poseidon.Winform.ClientDx
         {
             entity.Name = this.txtName.Text;
             entity.Code = this.txtCode.Text;
+            entity.Module = this.txtModule.Text;
             entity.Remark = this.txtRemark.Text;
             if (this.cmbParent.EditValue == null)
                 entity.ParentId = null;

@@ -64,9 +64,11 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.groupItemGrid = new Poseidon.Winform.ClientDx.GroupItemGrid();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.groupItemGrid = new Poseidon.Winform.ClientDx.GroupItemGrid();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtModule = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
@@ -97,6 +99,8 @@
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModule.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -111,6 +115,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.txtModule);
             this.layoutControl1.Controls.Add(this.btnBuildingSelect);
             this.layoutControl1.Controls.Add(this.btnOrganizationSelect);
             this.layoutControl1.Controls.Add(this.btnModelTypeBind);
@@ -192,12 +197,12 @@
             // 
             // txtStatus
             // 
-            this.txtStatus.Location = new System.Drawing.Point(493, 38);
+            this.txtStatus.Location = new System.Drawing.Point(604, 38);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtStatus.Properties.Appearance.Options.UseBackColor = true;
             this.txtStatus.Properties.ReadOnly = true;
-            this.txtStatus.Size = new System.Drawing.Size(191, 20);
+            this.txtStatus.Size = new System.Drawing.Size(80, 20);
             this.txtStatus.StyleController = this.layoutControl1;
             this.txtStatus.TabIndex = 6;
             // 
@@ -208,7 +213,7 @@
             this.txtCode.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtCode.Properties.Appearance.Options.UseBackColor = true;
             this.txtCode.Properties.ReadOnly = true;
-            this.txtCode.Size = new System.Drawing.Size(185, 20);
+            this.txtCode.Size = new System.Drawing.Size(136, 20);
             this.txtCode.StyleController = this.layoutControl1;
             this.txtCode.TabIndex = 5;
             // 
@@ -242,7 +247,8 @@
             this.layoutControlItem1,
             this.layoutControlItem3,
             this.layoutControlItem4,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem12});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(693, 91);
@@ -262,16 +268,16 @@
             this.layoutControlItem3.Control = this.txtCode;
             this.layoutControlItem3.Location = new System.Drawing.Point(231, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(216, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(167, 24);
             this.layoutControlItem3.Text = "代码";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(24, 14);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtStatus;
-            this.layoutControlItem4.Location = new System.Drawing.Point(447, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(558, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(222, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(111, 24);
             this.layoutControlItem4.Text = "状态";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(24, 14);
             // 
@@ -450,6 +456,17 @@
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
+            // layoutControlGroup4
+            // 
+            this.layoutControlGroup4.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup4.GroupBordersVisible = false;
+            this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem8});
+            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup4.Name = "layoutControlGroup4";
+            this.layoutControlGroup4.Size = new System.Drawing.Size(703, 259);
+            this.layoutControlGroup4.TextVisible = false;
+            // 
             // groupItemGrid
             // 
             this.groupItemGrid.AllowFilter = true;
@@ -469,17 +486,6 @@
             this.groupItemGrid.Size = new System.Drawing.Size(679, 235);
             this.groupItemGrid.TabIndex = 5;
             // 
-            // layoutControlGroup4
-            // 
-            this.layoutControlGroup4.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup4.GroupBordersVisible = false;
-            this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem8});
-            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup4.Name = "layoutControlGroup4";
-            this.layoutControlGroup4.Size = new System.Drawing.Size(703, 259);
-            this.layoutControlGroup4.TextVisible = false;
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.groupItemGrid;
@@ -488,6 +494,26 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(683, 239);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
+            // 
+            // txtModule
+            // 
+            this.txtModule.Location = new System.Drawing.Point(444, 38);
+            this.txtModule.Name = "txtModule";
+            this.txtModule.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtModule.Properties.Appearance.Options.UseBackColor = true;
+            this.txtModule.Properties.ReadOnly = true;
+            this.txtModule.Size = new System.Drawing.Size(129, 20);
+            this.txtModule.StyleController = this.layoutControl1;
+            this.txtModule.TabIndex = 14;
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.txtModule;
+            this.layoutControlItem12.Location = new System.Drawing.Point(398, 0);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(160, 24);
+            this.layoutControlItem12.Text = "模块";
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(24, 14);
             // 
             // FrmGroupManage
             // 
@@ -527,6 +553,8 @@
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModule.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -566,5 +594,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraEditors.SimpleButton btnBuildingSelect;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraEditors.TextEdit txtModule;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
     }
 }

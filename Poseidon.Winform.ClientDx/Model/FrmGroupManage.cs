@@ -60,6 +60,7 @@ namespace Poseidon.Winform.ClientDx
         {
             this.txtName.Text = this.currentGroup.Name;
             this.txtCode.Text = this.currentGroup.Code;
+            this.txtModule.Text = this.currentGroup.Module;
             this.txtStatus.Text = this.currentGroup.Status.ToString();
             this.txtRemark.Text = this.currentGroup.Remark;
         }

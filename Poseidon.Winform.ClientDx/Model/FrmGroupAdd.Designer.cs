@@ -46,6 +46,8 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtModule = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -65,6 +67,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModule.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -102,6 +106,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.txtModule);
             this.layoutControl1.Controls.Add(this.cmbParent);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.txtCode);
@@ -116,7 +121,7 @@
             // 
             // cmbParent
             // 
-            this.cmbParent.Location = new System.Drawing.Point(63, 60);
+            this.cmbParent.Location = new System.Drawing.Point(63, 84);
             this.cmbParent.Name = "cmbParent";
             this.cmbParent.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.cmbParent.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -188,9 +193,9 @@
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(63, 84);
+            this.txtRemark.Location = new System.Drawing.Point(63, 108);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(322, 152);
+            this.txtRemark.Size = new System.Drawing.Size(322, 128);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 3;
             // 
@@ -218,7 +223,8 @@
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItem4,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(397, 248);
@@ -245,20 +251,37 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtRemark;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(377, 156);
+            this.layoutControlItem4.Size = new System.Drawing.Size(377, 132);
             this.layoutControlItem4.Text = "备注";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.cmbParent;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(377, 24);
             this.layoutControlItem3.Text = "上级分组";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // txtModule
+            // 
+            this.txtModule.Location = new System.Drawing.Point(63, 60);
+            this.txtModule.Name = "txtModule";
+            this.txtModule.Size = new System.Drawing.Size(322, 20);
+            this.txtModule.StyleController = this.layoutControl1;
+            this.txtModule.TabIndex = 5;
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.txtModule;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(377, 24);
+            this.layoutControlItem5.Text = "模块";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
             // 
             // FrmGroupAdd
             // 
@@ -286,6 +309,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModule.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -309,5 +334,7 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn colRemark;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colStatus;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraEditors.TextEdit txtModule;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }
