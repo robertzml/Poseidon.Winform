@@ -49,7 +49,7 @@ namespace Poseidon.Winform.ClientDx
         protected override void InitForm()
         {
             this.itemGrid.DataSource = this.currentGroup.Items;
-            this.bsModelType.DataSource = CallerFactory<IModelTypeService>.Instance.FindWithCodes(this.currentGroup.ModelTypes);
+            this.bsModelType.DataSource = CallerFactory<IModelTypeService>.Instance.FindWithCodes(this.currentGroup.ModelTypes).Where(r => r.Category == (int)ModelCategory.Organization);
 
             base.InitForm();
         }

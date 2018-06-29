@@ -5,6 +5,6 @@
     Renaming the file extension or editing the content of this file may   
     cause the file to be unrecognizable by the program.
 -->
-<GenericObjectDataSource DisplayName="Attachment" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>Poseidon.Attachment.Core.DL.Attachment, Poseidon.Attachment.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+<GenericObjectDataSource DisplayName="Facility" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+   <TypeInfo>Poseidon.Core.DL.Facility, Poseidon.Core, Version=1.1.6754.16767, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

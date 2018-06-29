@@ -1,6 +1,6 @@
-﻿namespace Poseidon.Winform.ClientDx
+﻿namespace Poseidon.Winform.Core
 {
-    partial class GroupItemGrid
+    partial class FacilityGrid
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.colEntityId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModelType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSort = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDatasetCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGroupCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -40,7 +41,7 @@
             // 
             // bsEntity
             // 
-            this.bsEntity.DataSource = typeof(Poseidon.Core.DL.GroupItem);
+            this.bsEntity.DataSource = typeof(Poseidon.Core.DL.Facility);
             // 
             // dgcEntity
             // 
@@ -49,73 +50,70 @@
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colSort,
-            this.colGroupCode,
-            this.colEntityId,
             this.colModelType,
-            this.colRemark});
+            this.colDatasetCode,
+            this.colName,
+            this.colRemark,
+            this.colStatus,
+            this.colId});
             this.dgvEntity.IndicatorWidth = 40;
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.Editable = false;
             this.dgvEntity.OptionsDetail.EnableMasterViewMode = false;
+            this.dgvEntity.OptionsSelection.MultiSelect = true;
+            this.dgvEntity.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
-            this.dgvEntity.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.dgvEntity_CustomUnboundColumnData);
-            this.dgvEntity.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dgvEntity_CustomColumnDisplayText);
-            // 
-            // colEntityId
-            // 
-            this.colEntityId.Caption = "对象名称";
-            this.colEntityId.FieldName = "EntityId";
-            this.colEntityId.Name = "colEntityId";
-            this.colEntityId.OptionsColumn.AllowEdit = false;
-            this.colEntityId.Visible = true;
-            this.colEntityId.VisibleIndex = 2;
             // 
             // colModelType
             // 
             this.colModelType.Caption = "模型类型";
             this.colModelType.FieldName = "ModelType";
             this.colModelType.Name = "colModelType";
-            this.colModelType.OptionsColumn.AllowEdit = false;
-            this.colModelType.Visible = true;
-            this.colModelType.VisibleIndex = 3;
             // 
-            // colSort
+            // colDatasetCode
             // 
-            this.colSort.Caption = "排序码";
-            this.colSort.FieldName = "Sort";
-            this.colSort.Name = "colSort";
-            this.colSort.Visible = true;
-            this.colSort.VisibleIndex = 0;
+            this.colDatasetCode.Caption = "数据集代码";
+            this.colDatasetCode.FieldName = "DatasetCode";
+            this.colDatasetCode.Name = "colDatasetCode";
+            // 
+            // colName
+            // 
+            this.colName.Caption = "名称";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
             // 
             // colRemark
             // 
             this.colRemark.Caption = "备注";
-            this.colRemark.FieldName = "colRemark";
+            this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
-            this.colRemark.OptionsColumn.AllowEdit = false;
-            this.colRemark.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 4;
+            this.colRemark.VisibleIndex = 1;
             // 
-            // colGroupCode
+            // colStatus
             // 
-            this.colGroupCode.Caption = "分组代码";
-            this.colGroupCode.FieldName = "GroupCode";
-            this.colGroupCode.Name = "colGroupCode";
-            this.colGroupCode.OptionsColumn.AllowEdit = false;
-            this.colGroupCode.Visible = true;
-            this.colGroupCode.VisibleIndex = 1;
+            this.colStatus.Caption = "状态";
+            this.colStatus.FieldName = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.Visible = true;
+            this.colStatus.VisibleIndex = 2;
             // 
-            // GroupItemGrid
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            // 
+            // FacilityGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "GroupItemGrid";
-            this.ExportToExcelCustomCell += new System.Action<DevExpress.Export.CustomizeCellEventArgs>(this.GroupItemGrid_ExportToExcelCustomCell);
+            this.Name = "FacilityGrid";
+            this.Load += new System.EventHandler(this.FacilityGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -125,10 +123,11 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn colEntityId;
         private DevExpress.XtraGrid.Columns.GridColumn colModelType;
-        private DevExpress.XtraGrid.Columns.GridColumn colSort;
+        private DevExpress.XtraGrid.Columns.GridColumn colDatasetCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
-        private DevExpress.XtraGrid.Columns.GridColumn colGroupCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colStatus;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
     }
 }

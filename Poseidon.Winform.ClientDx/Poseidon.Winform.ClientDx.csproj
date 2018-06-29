@@ -89,12 +89,6 @@
     <Compile Include="Component\DictTree.Designer.cs">
       <DependentUpon>DictTree.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component\GroupItemGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Component\GroupItemGrid.Designer.cs">
-      <DependentUpon>GroupItemGrid.cs</DependentUpon>
-    </Compile>
     <Compile Include="Component\MenuTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -348,9 +342,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Component\DictTree.resx">
       <DependentUpon>DictTree.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Component\GroupItemGrid.resx">
-      <DependentUpon>GroupItemGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\MenuTree.resx">
       <DependentUpon>MenuTree.cs</DependentUpon>

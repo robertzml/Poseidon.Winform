@@ -77,5 +77,10 @@ namespace Poseidon.Winform.Test
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmGroupManage));
         }
+
+        private void menuTest_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

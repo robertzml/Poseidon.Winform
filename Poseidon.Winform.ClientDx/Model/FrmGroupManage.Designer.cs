@@ -66,9 +66,9 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.groupItemGrid = new Poseidon.Winform.ClientDx.GroupItemGrid();
+            this.groupItemGrid = new Poseidon.Winform.Core.GroupItemGrid();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtModule.Properties)).BeginInit();
@@ -100,7 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -463,7 +463,7 @@
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(707, 282);
             this.groupControl3.TabIndex = 3;
-            this.groupControl3.Text = "包含组织";
+            this.groupControl3.Text = "分组项";
             // 
             // layoutControl2
             // 
@@ -493,27 +493,27 @@
             this.groupItemGrid.ShowMenu = false;
             this.groupItemGrid.ShowNavigator = false;
             this.groupItemGrid.Size = new System.Drawing.Size(679, 235);
-            this.groupItemGrid.TabIndex = 5;
+            this.groupItemGrid.TabIndex = 6;
             // 
             // layoutControlGroup4
             // 
             this.layoutControlGroup4.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup4.GroupBordersVisible = false;
             this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem8});
+            this.layoutControlItem13});
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.Size = new System.Drawing.Size(703, 259);
             this.layoutControlGroup4.TextVisible = false;
             // 
-            // layoutControlItem8
+            // layoutControlItem13
             // 
-            this.layoutControlItem8.Control = this.groupItemGrid;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(683, 239);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextVisible = false;
+            this.layoutControlItem13.Control = this.groupItemGrid;
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(683, 239);
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem13.TextVisible = false;
             // 
             // FrmGroupManage
             // 
@@ -554,7 +554,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -590,11 +590,11 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraEditors.SimpleButton btnOrganizationSelect;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private GroupItemGrid groupItemGrid;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraEditors.SimpleButton btnBuildingSelect;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraEditors.TextEdit txtModule;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        private Core.GroupItemGrid groupItemGrid;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
     }
 }

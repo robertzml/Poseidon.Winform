@@ -67,9 +67,9 @@ namespace Poseidon.Winform.ClientDx
         }
 
         /// <summary>
-        /// 载入包含组织
+        /// 载入分组项
         /// </summary>
-        private void LoadOrganizations()
+        private void LoadGroupItems()
         {
             var data = CallerFactory<IGroupService>.Instance.FindAllItems(this.currentGroup.Id).ToList();
             this.groupItemGrid.DataSource = data;
@@ -89,7 +89,7 @@ namespace Poseidon.Winform.ClientDx
                 return;
 
             SetGroupInfo();
-            LoadOrganizations();
+            LoadGroupItems();
         }
 
         /// <summary>
