@@ -12,6 +12,7 @@ namespace Poseidon.Winform.ClientDx
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
     using Poseidon.Caller.Facade;
+    using Poseidon.Common;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -61,7 +62,7 @@ namespace Poseidon.Winform.ClientDx
             this.txtName.Text = this.currentGroup.Name;
             this.txtCode.Text = this.currentGroup.Code;
             this.txtModule.Text = this.currentGroup.Module;
-            this.txtStatus.Text = this.currentGroup.Status.ToString();
+            this.txtStatus.Text = ((EntityStatus)this.currentGroup.Status).DisplayName();
             this.txtRemark.Text = this.currentGroup.Remark;
         }
 
@@ -133,7 +134,7 @@ namespace Poseidon.Winform.ClientDx
                 }
                 catch (PoseidonException pe)
                 {
-                    MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+                    MessageUtil.ShowError(string.Format("删除失败，错误消息:{0}", pe.Message));
                 }
             }
         }
@@ -159,7 +160,7 @@ namespace Poseidon.Winform.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmOrganizationSelect), new object[] { this.currentGroup.Id });
             LoadGroupsTree();
         }
-        
+
         /// <summary>
         /// 选择建筑
         /// </summary>

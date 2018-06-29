@@ -34,6 +34,7 @@
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCategory = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colModule = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -54,6 +55,7 @@
             this.colName,
             this.colCode,
             this.colCategory,
+            this.colModule,
             this.colRemark,
             this.colStatus});
             this.dgvEntity.IndicatorWidth = 40;
@@ -89,7 +91,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 3;
+            this.colRemark.VisibleIndex = 4;
             // 
             // colStatus
             // 
@@ -97,7 +99,7 @@
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 4;
+            this.colStatus.VisibleIndex = 5;
             // 
             // colId
             // 
@@ -113,6 +115,14 @@
             this.colCategory.Name = "colCategory";
             this.colCategory.Visible = true;
             this.colCategory.VisibleIndex = 2;
+            // 
+            // colModule
+            // 
+            this.colModule.Caption = "模块";
+            this.colModule.FieldName = "Module";
+            this.colModule.Name = "colModule";
+            this.colModule.Visible = true;
+            this.colModule.VisibleIndex = 3;
             // 
             // ModelTypeGrid
             // 
@@ -134,5 +144,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colCategory;
+        private DevExpress.XtraGrid.Columns.GridColumn colModule;
     }
 }

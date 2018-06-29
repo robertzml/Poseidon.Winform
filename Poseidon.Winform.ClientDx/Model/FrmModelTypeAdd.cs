@@ -44,6 +44,7 @@ namespace Poseidon.Winform.ClientDx
             model.Name = this.txtName.Text;
             model.Code = this.txtCode.Text;
             model.Category = (int)this.cmbCategory.EditValue;
+            model.Module = this.txtModule.Text;
             model.Remark = this.txtRemark.Text;
         }
 

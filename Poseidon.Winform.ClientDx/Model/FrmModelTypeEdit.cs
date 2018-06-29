@@ -56,6 +56,7 @@ namespace Poseidon.Winform.ClientDx
             this.txtName.Text = this.currentEntity.Name;
             this.txtCode.Text = this.currentEntity.Code;
             this.cmbCategory.EditValue = (ModelCategory)this.currentEntity.Category;
+            this.txtModule.Text = this.currentEntity.Module;
             this.txtRemark.Text = this.currentEntity.Remark;
 
             base.InitForm();
@@ -86,6 +87,7 @@ namespace Poseidon.Winform.ClientDx
         {
             model.Name = this.txtName.Text;
             model.Category = (int)this.cmbCategory.EditValue;
+            model.Module = this.txtModule.Text;
             model.Remark = this.txtRemark.Text;
         }
         #endregion //Function
