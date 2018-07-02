@@ -47,6 +47,16 @@ namespace Poseidon.Winform.Core
         private List<Building> relateBuildings;
 
         /// <summary>
+        /// 相关文件对象
+        /// </summary>
+        private List<File> relateFiles;
+
+        /// <summary>
+        /// 相关设施对象
+        /// </summary>
+        private List<Facility> relateFacilities;
+
+        /// <summary>
         /// 关联对象类型
         /// </summary>
         private ModelCategory modelCategory;
@@ -124,6 +134,26 @@ namespace Poseidon.Winform.Core
                     else
                         node.HasChildren = false;
                 }
+                else if (this.modelCategory == ModelCategory.File)
+                {
+                    var fil = this.relateFiles.Single(r => r.Id == item.EntityId);
+                    if (fil == null)
+                        continue;
+
+                    var node = this.tlGroup.AppendNode(new object[] { fil.Id, fil.Name, 2 }, parentNode);
+                    node.StateImageIndex = 1;
+                    node.HasChildren = false;
+                }
+                else if (this.modelCategory == ModelCategory.Facility)
+                {
+                    var fac = this.relateFacilities.Single(r => r.Id == item.EntityId);
+                    if (fac == null)
+                        continue;
+
+                    var node = this.tlGroup.AppendNode(new object[] { fac.Id, fac.Name, 2 }, parentNode);
+                    node.StateImageIndex = 1;
+                    node.HasChildren = false;
+                }
             }
         }
 
@@ -195,6 +225,12 @@ namespace Poseidon.Winform.Core
                 case ModelCategory.Building:
                     this.relateBuildings = CallerFactory<IBuildingService>.Instance.FindWithIds(ids).ToList();
                     break;
+                case ModelCategory.File:
+                    this.relateFiles = CallerFactory<IFileService>.Instance.FindWithIds(ids).ToList();
+                    break;
+                case ModelCategory.Facility:
+                    this.relateFacilities = CallerFactory<IFacilityService>.Instance.FindWithIds(ids).ToList();
+                    break;
             }
 
             this.cascadeEntity = cascadeEntity;
@@ -249,6 +285,12 @@ namespace Poseidon.Winform.Core
                     break;
                 case ModelCategory.Building:
                     this.relateBuildings = CallerFactory<IBuildingService>.Instance.FindWithIds(ids).ToList();
+                    break;
+                case ModelCategory.File:
+                    this.relateFiles = CallerFactory<IFileService>.Instance.FindWithIds(ids).ToList();
+                    break;
+                case ModelCategory.Facility:
+                    this.relateFacilities = CallerFactory<IFacilityService>.Instance.FindWithIds(ids).ToList();
                     break;
             }
 
