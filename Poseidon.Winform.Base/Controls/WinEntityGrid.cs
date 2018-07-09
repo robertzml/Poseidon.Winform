@@ -76,6 +76,11 @@ namespace Poseidon.Winform.Base
         /// 是否显示导航
         /// </summary>
         protected bool showNavigator = false;
+
+        /// <summary>
+        /// 增加右键菜单
+        /// </summary>
+        private ContextMenuStrip appendedMenu;
         #endregion //Field
 
         #region Constructor
@@ -144,6 +149,21 @@ namespace Poseidon.Winform.Base
         public void BestFitColumns()
         {
             this.dgvEntity.BestFitColumns();
+        }
+
+        /// <summary>
+        /// 追加菜单项
+        /// </summary>
+        /// <param name="menu">菜单</param>
+        public void AppendMenu(ContextMenuStrip menu)
+        {
+            appendedMenu = menu;
+            int i = 0;
+            for (i = 0; appendedMenu.Items.Count > 0; i++)
+            {
+                this.contextMenu.Items.Insert(i, appendedMenu.Items[0]);
+            }
+            this.contextMenu.Items.Insert(i, new ToolStripSeparator());
         }
         #endregion //Method
 
