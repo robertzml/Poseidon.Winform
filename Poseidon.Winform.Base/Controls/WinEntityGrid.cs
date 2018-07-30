@@ -73,6 +73,16 @@ namespace Poseidon.Winform.Base
         protected bool showAddMenu = false;
 
         /// <summary>
+        /// 是否显示编辑菜单
+        /// </summary>
+        protected bool showEditMenu = false;
+
+        /// <summary>
+        /// 是否显示删除菜单
+        /// </summary>
+        protected bool showDeleteMenu = false;
+
+        /// <summary>
         /// 是否显示导航
         /// </summary>
         protected bool showNavigator = false;
@@ -229,6 +239,10 @@ namespace Poseidon.Winform.Base
         private void contextMenu_Opening(object sender, CancelEventArgs e)
         {
             this.menuAdd.Visible = this.showAddMenu;
+            this.menuEdit.Visible = this.showEditMenu;
+            this.menuDelete.Visible = this.showDeleteMenu;
+
+            this.menuSep1.Visible = this.ShowAddMenu || this.showEditMenu || this.showDeleteMenu;
         }
 
         /// <summary>
@@ -267,6 +281,36 @@ namespace Poseidon.Winform.Base
         {
             ExportToExcelCustomCell?.Invoke(e);
         }
+
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuAdd_Click(object sender, EventArgs e)
+        {
+            MenuAdd?.Invoke(sender, e);
+        }
+
+        /// <summary>
+        /// 编辑
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuEdit_Click(object sender, EventArgs e)
+        {
+            MenuEdit?.Invoke(sender, e);
+        }
+
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuDelete_Click(object sender, EventArgs e)
+        {
+            MenuDelete?.Invoke(sender, e);
+        }
         #endregion //Event
 
         #region Delegate
@@ -279,8 +323,26 @@ namespace Poseidon.Winform.Base
         /// <summary>
         /// 导出Excel格式化事件
         /// </summary>
-        [Description("导出Excel格式化事件")]
+        [Description("导出Excel格式化事件"), Category("菜单")]
         public event Action<DevExpress.Export.CustomizeCellEventArgs> ExportToExcelCustomCell;
+
+        /// <summary>
+        /// 新增项
+        /// </summary>
+        [Description("新增项"), Category("菜单")]
+        public event Action<object, EventArgs> MenuAdd;
+
+        /// <summary>
+        /// 编辑项
+        /// </summary>
+        [Description("编辑项"), Category("菜单")]
+        public event Action<object, EventArgs> MenuEdit;
+
+        /// <summary>
+        /// 删除项
+        /// </summary>
+        [Description("删除项"), Category("菜单")]
+        public event Action<object, EventArgs> MenuDelete;
         #endregion //Delegate
 
         #region Property
@@ -476,6 +538,40 @@ namespace Poseidon.Winform.Base
             set
             {
                 this.showAddMenu = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否显示编辑菜单
+        /// </summary>
+        [Category("菜单"), Description("是否显示编辑菜单"), Browsable(true)]
+        public bool ShowEditMenu
+        {
+            get
+            {
+                return showEditMenu;
+            }
+
+            set
+            {
+                showEditMenu = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否显示删除菜单
+        /// </summary>
+        [Category("菜单"), Description("是否显示删除菜单"), Browsable(true)]
+        public bool ShowDeleteMenu
+        {
+            get
+            {
+                return showDeleteMenu;
+            }
+
+            set
+            {
+                showDeleteMenu = value;
             }
         }
         #endregion //Property
