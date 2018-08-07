@@ -20,7 +20,7 @@ namespace Poseidon.Winform.Base
         /// <summary>
         /// 当前用户
         /// </summary>
-        protected LoginUser currentUser;
+        protected ILoginUser currentUser;
         #endregion //Field
 
         #region Constructor
@@ -28,7 +28,7 @@ namespace Poseidon.Winform.Base
         {
             InitializeComponent();
 
-            this.currentUser = Cache.Instance["CurrentUser"] as LoginUser;
+            this.currentUser = Cache.Instance["CurrentUser"] as ILoginUser;
         }
         #endregion //Constructor
 

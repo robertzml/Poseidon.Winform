@@ -53,6 +53,11 @@ namespace Poseidon.Winform.Base
         protected bool enableMasterView = false;
 
         /// <summary>
+        /// 是否显示查找面板
+        /// </summary>
+        protected bool showFindPanel = false;
+
+        /// <summary>
         /// 是否显示行号
         /// </summary>
         protected bool showLineNumber = true;
@@ -197,6 +202,7 @@ namespace Poseidon.Winform.Base
             this.dgvEntity.OptionsCustomization.AllowSort = this.allowSort;
             this.dgvEntity.OptionsDetail.EnableMasterViewMode = this.enableMasterView;
             this.dgvEntity.OptionsSelection.MultiSelect = this.enableMultiSelect;
+            this.dgvEntity.OptionsFind.AlwaysVisible = this.showFindPanel;
 
             this.dataNavigator.Visible = this.showNavigator;
         }
@@ -474,6 +480,23 @@ namespace Poseidon.Winform.Base
             set
             {
                 this.showLineNumber = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否显示查找面板
+        /// </summary>
+        [Category("界面"), Description("是否显示查找面板"), Browsable(true)]
+        public bool ShowFindPanel
+        {
+            get
+            {
+                return showFindPanel;
+            }
+
+            set
+            {
+                showFindPanel = value;
             }
         }
 
