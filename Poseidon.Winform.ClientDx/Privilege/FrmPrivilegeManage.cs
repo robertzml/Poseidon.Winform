@@ -10,7 +10,9 @@ using System.Windows.Forms;
 namespace Poseidon.Winform.ClientDx
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.System;
     using Poseidon.Common;
+    using Poseidon.Caller.Facade;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
 
@@ -70,7 +72,25 @@ namespace Poseidon.Winform.ClientDx
         /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            var id = this.privilegeTree.GetCurrentSelectedId();
+            if (string.IsNullOrEmpty(id))
+                return;
 
+            if (MessageUtil.ConfirmYesNo("是否确认删除该权限") == DialogResult.Yes)
+            {
+                try
+                {
+                    CallerFactory<IPrivilegeService>.Instance.Delete(id);
+                    this.privilegeTree.RefreshData();
+
+                    MessageUtil.ShowInfo("删除成功");
+                }
+                catch (PoseidonException pe)
+                {
+                    Logger.Instance.Exception("删除权限失败", pe);
+                    MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+                }
+            }
         }
         #endregion //Event
     }
