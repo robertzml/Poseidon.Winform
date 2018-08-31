@@ -421,6 +421,7 @@
     <EmbeddedResource Include="Privilege\FrmMenuManage.resx">
       <DependentUpon>FrmMenuManage.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Building.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Dataset.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.DictItem.datasource" />
