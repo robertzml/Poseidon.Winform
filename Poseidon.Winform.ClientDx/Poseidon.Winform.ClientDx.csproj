@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FEAF9317-AD56-48DA-B58C-610DA2CB82CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Poseidon.Winform.ClientDx</RootNamespace>
+    <AssemblyName>Poseidon.Winform.ClientDx</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Poseidon.Base">
+      <HintPath>..\..\Assembly\Poseidon.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Poseidon.Caller">
+      <HintPath>..\..\Assembly\Poseidon.Caller.dll</HintPath>
+    </Reference>
+    <Reference Include="Poseidon.Common">
+      <HintPath>..\..\Assembly\Poseidon.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Poseidon.Core">
+      <HintPath>..\..\Assembly\Poseidon.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Component\BuildingGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\BuildingGrid.Designer.cs">
+      <DependentUpon>BuildingGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\DatasetTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\DatasetTree.Designer.cs">
+      <DependentUpon>DatasetTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\DictItemGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\DictItemGrid.Designer.cs">
+      <DependentUpon>DictItemGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\DictTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\DictTree.Designer.cs">
+      <DependentUpon>DictTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\MenuTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\MenuTree.Designer.cs">
+      <DependentUpon>MenuTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\ModelTypeGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\ModelTypeGrid.Designer.cs">
+      <DependentUpon>ModelTypeGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\OrganizationGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\OrganizationGrid.Designer.cs">
+      <DependentUpon>OrganizationGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\PrivilegeTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\PrivilegeTree.Designer.cs">
+      <DependentUpon>PrivilegeTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\UserGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\UserGrid.Designer.cs">
+      <DependentUpon>UserGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dict\FrmDictAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dict\FrmDictAdd.Designer.cs">
+      <DependentUpon>FrmDictAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dict\FrmDictCategoryAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dict\FrmDictCategoryAdd.Designer.cs">
+      <DependentUpon>FrmDictCategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dict\FrmDictCategoryEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dict\FrmDictCategoryEdit.Designer.cs">
+      <DependentUpon>FrmDictCategoryEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dict\FrmDictEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dict\FrmDictEdit.Designer.cs">
+      <DependentUpon>FrmDictEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dict\FrmDictOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dict\FrmDictOverview.Designer.cs">
+      <DependentUpon>FrmDictOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmDatasetEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmDatasetEdit.Designer.cs">
+      <DependentUpon>FrmDatasetEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmDatasetAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmDatasetAdd.Designer.cs">
+      <DependentUpon>FrmDatasetAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmDatasetManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmDatasetManage.Designer.cs">
+      <DependentUpon>FrmDatasetManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmBuildingSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmBuildingSelect.Designer.cs">
+      <DependentUpon>FrmBuildingSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmGroupAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmGroupAdd.Designer.cs">
+      <DependentUpon>FrmGroupAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmGroupEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmGroupEdit.Designer.cs">
+      <DependentUpon>FrmGroupEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmGroupManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmGroupManage.Designer.cs">
+      <DependentUpon>FrmGroupManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmGroupTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmGroupTree.Designer.cs">
+      <DependentUpon>FrmGroupTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeAdd.Designer.cs">
+      <DependentUpon>FrmModelTypeAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeBind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeBind.Designer.cs">
+      <DependentUpon>FrmModelTypeBind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeEdit.Designer.cs">
+      <DependentUpon>FrmModelTypeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeManage.Designer.cs">
+      <DependentUpon>FrmModelTypeManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmOrganizationSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmOrganizationSelect.Designer.cs">
+      <DependentUpon>FrmOrganizationSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmMenuEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmMenuEdit.Designer.cs">
+      <DependentUpon>FrmMenuEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmMenuAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmMenuAdd.Designer.cs">
+      <DependentUpon>FrmMenuAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmMenuManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmMenuManage.Designer.cs">
+      <DependentUpon>FrmMenuManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeAdd.Designer.cs">
+      <DependentUpon>FrmPrivilegeAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeAssign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeAssign.Designer.cs">
+      <DependentUpon>FrmPrivilegeAssign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeEdit.Designer.cs">
+      <DependentUpon>FrmPrivilegeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeManage.Designer.cs">
+      <DependentUpon>FrmPrivilegeManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmPrivilegeSelect.Designer.cs">
+      <DependentUpon>FrmPrivilegeSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmRoleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmRoleAdd.Designer.cs">
+      <DependentUpon>FrmRoleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmRoleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmRoleEdit.Designer.cs">
+      <DependentUpon>FrmRoleEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmRoleManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmRoleManage.Designer.cs">
+      <DependentUpon>FrmRoleManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmUserAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmUserAdd.Designer.cs">
+      <DependentUpon>FrmUserAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmUserEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmUserEdit.Designer.cs">
+      <DependentUpon>FrmUserEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmUserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmUserList.Designer.cs">
+      <DependentUpon>FrmUserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege\FrmUserSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege\FrmUserSelect.Designer.cs">
+      <DependentUpon>FrmUserSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="System\FrmCacheManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\FrmCacheManage.Designer.cs">
+      <DependentUpon>FrmCacheManage.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Component\BuildingGrid.resx">
+      <DependentUpon>BuildingGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\DatasetTree.resx">
+      <DependentUpon>DatasetTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\DictItemGrid.resx">
+      <DependentUpon>DictItemGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\DictTree.resx">
+      <DependentUpon>DictTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\MenuTree.resx">
+      <DependentUpon>MenuTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\ModelTypeGrid.resx">
+      <DependentUpon>ModelTypeGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\OrganizationGrid.resx">
+      <DependentUpon>OrganizationGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\PrivilegeTree.resx">
+      <DependentUpon>PrivilegeTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\UserGrid.resx">
+      <DependentUpon>UserGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dict\FrmDictAdd.resx">
+      <DependentUpon>FrmDictAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dict\FrmDictCategoryAdd.resx">
+      <DependentUpon>FrmDictCategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dict\FrmDictCategoryEdit.resx">
+      <DependentUpon>FrmDictCategoryEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dict\FrmDictEdit.resx">
+      <DependentUpon>FrmDictEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dict\FrmDictOverview.resx">
+      <DependentUpon>FrmDictOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmBuildingSelect.resx">
+      <DependentUpon>FrmBuildingSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmGroupAdd.resx">
+      <DependentUpon>FrmGroupAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmGroupEdit.resx">
+      <DependentUpon>FrmGroupEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmGroupManage.resx">
+      <DependentUpon>FrmGroupManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmGroupTree.resx">
+      <DependentUpon>FrmGroupTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmModelTypeAdd.resx">
+      <DependentUpon>FrmModelTypeAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmModelTypeBind.resx">
+      <DependentUpon>FrmModelTypeBind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmModelTypeEdit.resx">
+      <DependentUpon>FrmModelTypeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmModelTypeManage.resx">
+      <DependentUpon>FrmModelTypeManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmOrganizationSelect.resx">
+      <DependentUpon>FrmOrganizationSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmDatasetAdd.resx">
+      <DependentUpon>FrmDatasetAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmDatasetEdit.resx">
+      <DependentUpon>FrmDatasetEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmDatasetManage.resx">
+      <DependentUpon>FrmDatasetManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmMenuAdd.resx">
+      <DependentUpon>FrmMenuAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmMenuEdit.resx">
+      <DependentUpon>FrmMenuEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmMenuManage.resx">
+      <DependentUpon>FrmMenuManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Building.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Dataset.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.DictItem.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Group.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.GroupItem.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Menu.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Organization.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Privilege.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.User.datasource" />
+    <None Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Privilege\FrmPrivilegeAdd.resx">
+      <DependentUpon>FrmPrivilegeAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmPrivilegeAssign.resx">
+      <DependentUpon>FrmPrivilegeAssign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmPrivilegeEdit.resx">
+      <DependentUpon>FrmPrivilegeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmPrivilegeManage.resx">
+      <DependentUpon>FrmPrivilegeManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmPrivilegeSelect.resx">
+      <DependentUpon>FrmPrivilegeSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmRoleAdd.resx">
+      <DependentUpon>FrmRoleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmRoleEdit.resx">
+      <DependentUpon>FrmRoleEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmRoleManage.resx">
+      <DependentUpon>FrmRoleManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmUserAdd.resx">
+      <DependentUpon>FrmUserAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmUserEdit.resx">
+      <DependentUpon>FrmUserEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmUserList.resx">
+      <DependentUpon>FrmUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege\FrmUserSelect.resx">
+      <DependentUpon>FrmUserSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\FrmCacheManage.resx">
+      <DependentUpon>FrmCacheManage.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Poseidon.Winform.Base\Poseidon.Winform.Base.csproj">
+      <Project>{7650e6f8-d821-4281-949c-1f9005f4fb32}</Project>
+      <Name>Poseidon.Winform.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Poseidon.Winform.Core\Poseidon.Winform.Core.csproj">
+      <Project>{a8f51891-8a7c-4881-9c66-8d0a7229cc11}</Project>
+      <Name>Poseidon.Winform.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\poseidon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace Poseidon.Winform.Core
 {
+    using DevExpress.XtraTreeList.Nodes;
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
     using Poseidon.Caller.Facade;
@@ -26,9 +27,9 @@ namespace Poseidon.Winform.Core
         private bool showFindPanel = false;
 
         /// <summary>
-        /// 是否层级显示组织
+        /// 是否层级显示对象
         /// </summary>
-        private bool cascadeOrganization = false;
+        private bool cascadeEntity = false;
 
         /// <summary>
         /// 相关分组
@@ -36,9 +37,29 @@ namespace Poseidon.Winform.Core
         private List<Group> relateGroups;
 
         /// <summary>
-        /// 相关组织
+        /// 相关组织对象
         /// </summary>
         private List<Organization> relateOrganizations;
+
+        /// <summary>
+        /// 相关建筑对象
+        /// </summary>
+        private List<Building> relateBuildings;
+
+        /// <summary>
+        /// 相关文件对象
+        /// </summary>
+        private List<File> relateFiles;
+
+        /// <summary>
+        /// 相关设施对象
+        /// </summary>
+        private List<Facility> relateFacilities;
+
+        /// <summary>
+        /// 关联对象类型
+        /// </summary>
+        private ModelCategory modelCategory;
         #endregion //Field
 
         #region Constructor
@@ -48,38 +69,248 @@ namespace Poseidon.Winform.Core
         }
         #endregion //Constructor
 
+        #region Function
+        /// <summary>
+        /// 增加分组节点
+        /// </summary>
+        /// <param name="nodes"></param>
+        /// <param name="parentNode"></param>
+        private void AppendGroupNodes(List<Group> nodes, TreeListNode parentNode)
+        {
+            foreach (var item in nodes)
+            {
+                var node = this.tlGroup.AppendNode(new object[] { item.Id, item.Name, 1 }, parentNode);
+                node.StateImageIndex = 0;
+                node.HasChildren = true;
+            }
+        }
+
+        /// <summary>
+        /// 增加分组下对象节点
+        /// </summary>
+        /// <param name="group"></param>
+        /// <param name="parentNode"></param>
+        private void AppendEntityNodes(Group group, TreeListNode parentNode)
+        {
+            foreach (var item in group.Items.OrderBy(r => r.Sort))
+            {
+                if (this.modelCategory == ModelCategory.Organization)
+                {
+                    var org = this.relateOrganizations.Single(r => r.Id == item.EntityId);
+                    if (org == null)
+                        continue;
+
+                    if (this.cascadeEntity && !string.IsNullOrEmpty(org.ParentId))
+                    {
+                        if (relateOrganizations.Count(r => r.Id == org.ParentId) > 0)
+                            continue;
+                    }
+
+                    var node = this.tlGroup.AppendNode(new object[] { org.Id, org.Name, 2 }, parentNode);
+                    node.StateImageIndex = 1;
+
+                    if (this.cascadeEntity && relateOrganizations.Count(r => r.ParentId == org.Id) > 0)
+                        node.HasChildren = true;
+                    else
+                        node.HasChildren = false;
+                }
+                else if (this.modelCategory == ModelCategory.Building)
+                {
+                    var bul = this.relateBuildings.Single(r => r.Id == item.EntityId);
+                    if (bul == null)
+                        continue;
+
+                    if (this.cascadeEntity && !string.IsNullOrEmpty(bul.ParentId))
+                    {
+                        if (relateBuildings.Count(r => r.Id == bul.ParentId) > 0)
+                            continue;
+                    }
+
+                    var node = this.tlGroup.AppendNode(new object[] { bul.Id, bul.Name, 2 }, parentNode);
+                    node.StateImageIndex = 1;
+
+                    if (this.cascadeEntity && relateBuildings.Count(r => r.ParentId == bul.Id) > 0)
+                        node.HasChildren = true;
+                    else
+                        node.HasChildren = false;
+                }
+                else if (this.modelCategory == ModelCategory.File)
+                {
+                    var fil = this.relateFiles.Single(r => r.Id == item.EntityId);
+                    if (fil == null)
+                        continue;
+
+                    var node = this.tlGroup.AppendNode(new object[] { fil.Id, fil.Name, 2 }, parentNode);
+                    node.StateImageIndex = 1;
+                    node.HasChildren = false;
+                }
+                else if (this.modelCategory == ModelCategory.Facility)
+                {
+                    var fac = this.relateFacilities.Single(r => r.Id == item.EntityId);
+                    if (fac == null)
+                        continue;
+
+                    var node = this.tlGroup.AppendNode(new object[] { fac.Id, fac.Name, 2 }, parentNode);
+                    node.StateImageIndex = 1;
+                    node.HasChildren = false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 增加对象子节点
+        /// </summary>
+        /// <param name="group"></param>
+        /// <param name="parentNode"></param>
+        private void AppendEntityNodes(string id, TreeListNode parentNode)
+        {
+            if (this.modelCategory == ModelCategory.Organization)
+            {
+                var org = this.relateOrganizations.Find(r => r.Id == id); //the selected org
+                var children = this.relateOrganizations.Where(r => r.ParentId == org.Id);
+
+                foreach (var item in children)
+                {
+                    var node = this.tlGroup.AppendNode(new object[] { item.Id, item.Name, 2 }, parentNode);
+                    node.StateImageIndex = 1;
+
+                    if (this.cascadeEntity && this.relateOrganizations.Count(r => r.ParentId == item.Id) > 0)
+                        node.HasChildren = true;
+                    else
+                        node.HasChildren = false;
+                }
+            }
+            else if (this.modelCategory == ModelCategory.Building)
+            {
+                var bul = this.relateBuildings.Find(r => r.Id == id); //the selected org
+                var children = this.relateBuildings.Where(r => r.ParentId == bul.Id);
+
+                foreach (var item in children)
+                {
+                    var node = this.tlGroup.AppendNode(new object[] { item.Id, item.Name, 2 }, parentNode);
+                    node.StateImageIndex = 1;
+
+                    if (this.cascadeEntity && this.relateBuildings.Count(r => r.ParentId == item.Id) > 0)
+                        node.HasChildren = true;
+                    else
+                        node.HasChildren = false;
+                }
+            }
+        }
+        #endregion //Function
+
         #region Method
         /// <summary>
         /// 设置相关分组代码
         /// </summary>
         /// <param name="code">分组代码</param>
-        public void SetGroupCode(string code)
+        /// <param name="cascadeEntity">是否级联显示</param>
+        public void SetGroupCode(string code, bool cascadeEntity = false)
         {
+            // load all groups include children
             this.relateGroups = CallerFactory<IGroupService>.Instance.FindWithChildrenByCode(code).ToList();
             if (this.relateGroups.Count == 0)
                 throw new PoseidonException(ErrorCode.ObjectNotFound);
 
-            this.tlGroup.BeginUnboundLoad();
-
             var top = relateGroups.Find(r => r.Code == code);
+            this.modelCategory = CallerFactory<IGroupService>.Instance.GetCategory(top);
 
-            // get all children organizations
             var groupItems = CallerFactory<IGroupService>.Instance.FindAllItems(top.Id).ToList();
-            this.relateOrganizations = CallerFactory<IOrganizationService>.Instance.FindByGroupItem(groupItems).ToList();
+            var ids = groupItems.Select(r => r.EntityId).ToList();
+            switch (modelCategory)
+            {
+                case ModelCategory.Organization:
+                    this.relateOrganizations = CallerFactory<IOrganizationService>.Instance.FindWithIds(ids).ToList();
+                    break;
+                case ModelCategory.Building:
+                    this.relateBuildings = CallerFactory<IBuildingService>.Instance.FindWithIds(ids).ToList();
+                    break;
+                case ModelCategory.File:
+                    this.relateFiles = CallerFactory<IFileService>.Instance.FindWithIds(ids).ToList();
+                    break;
+                case ModelCategory.Facility:
+                    this.relateFacilities = CallerFactory<IFacilityService>.Instance.FindWithIds(ids).ToList();
+                    break;
+            }
+
+            this.cascadeEntity = cascadeEntity;
+
+            this.tlGroup.BeginUnboundLoad();
+            this.tlGroup.ClearNodes();
 
             var topNode = this.tlGroup.AppendNode(new object[] { top.Id, top.Name, 1 }, null);
             topNode.StateImageIndex = 0;
             topNode.HasChildren = true;
 
-            var children = this.relateGroups.Where(r => r.ParentId == top.Id);
-            foreach (var item in children)
-            {
-                var node = this.tlGroup.AppendNode(new object[] { item.Id, item.Name, 1 }, topNode);
-                node.StateImageIndex = 0;
-                node.HasChildren = true;
-            }
+            var children = this.relateGroups.Where(r => r.ParentId == top.Id).ToList();
+            AppendGroupNodes(children, topNode);
 
             topNode.Expanded = true;
+            this.tlGroup.EndUnboundLoad();
+        }
+
+        /// <summary>
+        /// 设置多个分组
+        /// </summary>
+        /// <param name="codes">分组代码</param>
+        /// <param name="cascadeEntity">是否级联显示</param>
+        public void SetGroupCodes(string[] codes, bool cascadeEntity = false)
+        {
+            // load all groups include children
+            this.relateGroups = new List<Group>();
+            for (int i = 0; i < codes.Length; i++)
+            {
+                var subgroup = CallerFactory<IGroupService>.Instance.FindWithChildrenByCode(codes[i]);
+                this.relateGroups.AddRange(subgroup);
+            }
+            if (this.relateGroups.Count == 0)
+                throw new PoseidonException(ErrorCode.ObjectNotFound);
+
+            var tops = relateGroups.Where(r => codes.Contains(r.Code));
+
+            this.modelCategory = CallerFactory<IGroupService>.Instance.GetCategory(tops.First());
+
+            List<GroupItem> groupItems = new List<GroupItem>();
+            foreach (var top in tops)
+            {
+                var items = CallerFactory<IGroupService>.Instance.FindAllItems(top.Id);
+                groupItems.AddRange(items);
+            }
+
+            var ids = groupItems.Select(r => r.EntityId).ToList();
+            switch (modelCategory)
+            {
+                case ModelCategory.Organization:
+                    this.relateOrganizations = CallerFactory<IOrganizationService>.Instance.FindWithIds(ids).ToList();
+                    break;
+                case ModelCategory.Building:
+                    this.relateBuildings = CallerFactory<IBuildingService>.Instance.FindWithIds(ids).ToList();
+                    break;
+                case ModelCategory.File:
+                    this.relateFiles = CallerFactory<IFileService>.Instance.FindWithIds(ids).ToList();
+                    break;
+                case ModelCategory.Facility:
+                    this.relateFacilities = CallerFactory<IFacilityService>.Instance.FindWithIds(ids).ToList();
+                    break;
+            }
+
+            this.cascadeEntity = cascadeEntity;
+
+            this.tlGroup.BeginUnboundLoad();
+            this.tlGroup.ClearNodes();
+
+            foreach (var top in tops)
+            {
+                var topNode = this.tlGroup.AppendNode(new object[] { top.Id, top.Name, 1 }, null);
+                topNode.StateImageIndex = 0;
+                topNode.HasChildren = true;
+
+                var children = this.relateGroups.Where(r => r.ParentId == top.Id).ToList();
+                AppendGroupNodes(children, topNode);
+
+                topNode.Expanded = true;
+            }
+
             this.tlGroup.EndUnboundLoad();
         }
 
@@ -105,10 +336,10 @@ namespace Poseidon.Winform.Core
         public event EventHandler GroupSelected;
 
         /// <summary>
-        /// 组织选择事件
+        /// 对象选择事件
         /// </summary>
-        [Description("组织选择事件")]
-        public event EventHandler OrganizationSelected;
+        [Description("对象选择事件")]
+        public event EventHandler EntitySelected;
         #endregion //Delegate
 
         #region Event
@@ -140,55 +371,17 @@ namespace Poseidon.Winform.Core
 
                 var group = this.relateGroups.Find(r => r.Id == id); // the seleted group
 
-                // load children group
-                var children = this.relateGroups.Where(r => r.ParentId == id);
-                foreach (var item in children)
-                {
-                    var node = this.tlGroup.AppendNode(new object[] { item.Id, item.Name, 1 }, e.Node);
-                    node.StateImageIndex = 0;
-                    node.HasChildren = true;
-                }
+                var children = this.relateGroups.Where(r => r.ParentId == id).ToList();
+                AppendGroupNodes(children, e.Node);
 
-                // load contain organization
-                var orgs = this.relateOrganizations.Where(r => group.Items.Select(s => s.OrganizationId).Contains(r.Id));
-                foreach (var item in group.Items.OrderBy(r => r.Sort))
-                {
-                    var org = orgs.Single(r => r.Id == item.OrganizationId);
-                    if (org == null)
-                        continue;
+                AppendEntityNodes(group, e.Node);
 
-                    if (this.cascadeOrganization && !string.IsNullOrEmpty(org.ParentId))
-                    {
-                        if (orgs.Count(r => r.Id == org.ParentId) > 0)
-                            continue;
-                    }
-
-                    var node = this.tlGroup.AppendNode(new object[] { org.Id, org.Name, 2 }, e.Node);
-                    node.StateImageIndex = 1;
-
-                    if (this.cascadeOrganization && orgs.Count(r => r.ParentId == org.Id) > 0)
-                        node.HasChildren = true;
-                    else
-                        node.HasChildren = false;
-                }
             }
             else if (type == 2)
             {
                 e.Node.Nodes.Clear();
 
-                var org = this.relateOrganizations.Find(r => r.Id == id); //the selected org
-                var children = this.relateOrganizations.Where(r => r.ParentId == org.Id);
-
-                foreach (var item in children)
-                {
-                    var node = this.tlGroup.AppendNode(new object[] { item.Id, item.Name, 2 }, e.Node);
-                    node.StateImageIndex = 1;
-
-                    if (this.cascadeOrganization && this.relateOrganizations.Count(r => r.ParentId == item.Id) > 0)
-                        node.HasChildren = true;
-                    else
-                        node.HasChildren = false;
-                }
+                AppendEntityNodes(id, e.Node);
             }
 
             this.tlGroup.EndUnboundLoad();
@@ -201,6 +394,9 @@ namespace Poseidon.Winform.Core
         /// <param name="e"></param>
         private void tlGroup_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
+            if (e.Node == null)
+                return;
+
             int type = Convert.ToInt32(e.Node["colType"]);
             if (type == 1)
             {
@@ -208,7 +404,7 @@ namespace Poseidon.Winform.Core
             }
             else if (type == 2)
             {
-                OrganizationSelected?.Invoke(sender, e);
+                EntitySelected?.Invoke(sender, e);
             }
         }
         #endregion //Event
@@ -231,18 +427,18 @@ namespace Poseidon.Winform.Core
         }
 
         /// <summary>
-        /// 是否层级显示组织
+        /// 是否层级显示对象
         /// </summary>
-        [Description("是否层级显示组织")]
-        public bool CascadeOrganization
+        [Description("是否层级显示对象")]
+        public bool CascadeEntity
         {
             get
             {
-                return this.cascadeOrganization;
+                return this.cascadeEntity;
             }
             set
             {
-                this.cascadeOrganization = value;
+                this.cascadeEntity = value;
             }
         }
         #endregion //Property

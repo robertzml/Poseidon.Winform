@@ -43,9 +43,19 @@ namespace Poseidon.Winform.Base
         protected bool allowSort = true;
 
         /// <summary>
+        /// 是否启用多选
+        /// </summary>
+        protected bool enableMultiSelect = false;
+
+        /// <summary>
         /// 是否启用Master View
         /// </summary>
         protected bool enableMasterView = false;
+
+        /// <summary>
+        /// 是否显示查找面板
+        /// </summary>
+        protected bool showFindPanel = false;
 
         /// <summary>
         /// 是否显示行号
@@ -68,9 +78,24 @@ namespace Poseidon.Winform.Base
         protected bool showAddMenu = false;
 
         /// <summary>
+        /// 是否显示编辑菜单
+        /// </summary>
+        protected bool showEditMenu = false;
+
+        /// <summary>
+        /// 是否显示删除菜单
+        /// </summary>
+        protected bool showDeleteMenu = false;
+
+        /// <summary>
         /// 是否显示导航
         /// </summary>
         protected bool showNavigator = false;
+
+        /// <summary>
+        /// 增加右键菜单
+        /// </summary>
+        private ContextMenuStrip appendedMenu;
         #endregion //Field
 
         #region Constructor
@@ -140,6 +165,21 @@ namespace Poseidon.Winform.Base
         {
             this.dgvEntity.BestFitColumns();
         }
+
+        /// <summary>
+        /// 追加菜单项
+        /// </summary>
+        /// <param name="menu">菜单</param>
+        public void AppendMenu(ContextMenuStrip menu)
+        {
+            appendedMenu = menu;
+            int i = 0;
+            for (i = 0; appendedMenu.Items.Count > 0; i++)
+            {
+                this.contextMenu.Items.Insert(i, appendedMenu.Items[0]);
+            }
+            this.contextMenu.Items.Insert(i, new ToolStripSeparator());
+        }
         #endregion //Method
 
         #region Event
@@ -161,6 +201,8 @@ namespace Poseidon.Winform.Base
             this.dgvEntity.OptionsCustomization.AllowGroup = this.allowGroup;
             this.dgvEntity.OptionsCustomization.AllowSort = this.allowSort;
             this.dgvEntity.OptionsDetail.EnableMasterViewMode = this.enableMasterView;
+            this.dgvEntity.OptionsSelection.MultiSelect = this.enableMultiSelect;
+            this.dgvEntity.OptionsFind.AlwaysVisible = this.showFindPanel;
 
             this.dataNavigator.Visible = this.showNavigator;
         }
@@ -203,6 +245,10 @@ namespace Poseidon.Winform.Base
         private void contextMenu_Opening(object sender, CancelEventArgs e)
         {
             this.menuAdd.Visible = this.showAddMenu;
+            this.menuEdit.Visible = this.showEditMenu;
+            this.menuDelete.Visible = this.showDeleteMenu;
+
+            this.menuSep1.Visible = this.ShowAddMenu || this.showEditMenu || this.showDeleteMenu;
         }
 
         /// <summary>
@@ -241,6 +287,36 @@ namespace Poseidon.Winform.Base
         {
             ExportToExcelCustomCell?.Invoke(e);
         }
+
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuAdd_Click(object sender, EventArgs e)
+        {
+            MenuAdd?.Invoke(sender, e);
+        }
+
+        /// <summary>
+        /// 编辑
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuEdit_Click(object sender, EventArgs e)
+        {
+            MenuEdit?.Invoke(sender, e);
+        }
+
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuDelete_Click(object sender, EventArgs e)
+        {
+            MenuDelete?.Invoke(sender, e);
+        }
         #endregion //Event
 
         #region Delegate
@@ -253,8 +329,26 @@ namespace Poseidon.Winform.Base
         /// <summary>
         /// 导出Excel格式化事件
         /// </summary>
-        [Description("导出Excel格式化事件")]
+        [Description("导出Excel格式化事件"), Category("菜单")]
         public event Action<DevExpress.Export.CustomizeCellEventArgs> ExportToExcelCustomCell;
+
+        /// <summary>
+        /// 新增项
+        /// </summary>
+        [Description("新增项"), Category("菜单")]
+        public event Action<object, EventArgs> MenuAdd;
+
+        /// <summary>
+        /// 编辑项
+        /// </summary>
+        [Description("编辑项"), Category("菜单")]
+        public event Action<object, EventArgs> MenuEdit;
+
+        /// <summary>
+        /// 删除项
+        /// </summary>
+        [Description("删除项"), Category("菜单")]
+        public event Action<object, EventArgs> MenuDelete;
         #endregion //Delegate
 
         #region Property
@@ -357,6 +451,23 @@ namespace Poseidon.Winform.Base
         }
 
         /// <summary>
+        /// 是否启用多选
+        /// </summary>
+        [Category("功能"), Description("是否启用多选"), Browsable(true)]
+        public bool EnableMultiSelect
+        {
+            get
+            {
+                return enableMultiSelect;
+            }
+
+            set
+            {
+                enableMultiSelect = value;
+            }
+        }
+
+        /// <summary>
         /// 是否显示行号
         /// </summary>
         [Category("界面"), Description("是否显示行号"), Browsable(true)]
@@ -369,6 +480,23 @@ namespace Poseidon.Winform.Base
             set
             {
                 this.showLineNumber = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否显示查找面板
+        /// </summary>
+        [Category("界面"), Description("是否显示查找面板"), Browsable(true)]
+        public bool ShowFindPanel
+        {
+            get
+            {
+                return showFindPanel;
+            }
+
+            set
+            {
+                showFindPanel = value;
             }
         }
 
@@ -433,6 +561,40 @@ namespace Poseidon.Winform.Base
             set
             {
                 this.showAddMenu = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否显示编辑菜单
+        /// </summary>
+        [Category("菜单"), Description("是否显示编辑菜单"), Browsable(true)]
+        public bool ShowEditMenu
+        {
+            get
+            {
+                return showEditMenu;
+            }
+
+            set
+            {
+                showEditMenu = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否显示删除菜单
+        /// </summary>
+        [Category("菜单"), Description("是否显示删除菜单"), Browsable(true)]
+        public bool ShowDeleteMenu
+        {
+            get
+            {
+                return showDeleteMenu;
+            }
+
+            set
+            {
+                showDeleteMenu = value;
             }
         }
         #endregion //Property

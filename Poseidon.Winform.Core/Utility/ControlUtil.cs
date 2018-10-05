@@ -10,6 +10,7 @@ namespace Poseidon.Winform.Core.Utility
     using DevExpress.XtraEditors;
     using DevExpress.XtraEditors.Controls;
     using DevExpress.XtraEditors.Repository;
+    using Poseidon.Common;
     using Poseidon.Core.DL;
     using Poseidon.Core.Utility;
 
@@ -72,6 +73,23 @@ namespace Poseidon.Winform.Core.Utility
                 {
                     Description = item.Value,
                     Value = item.Key
+                });
+            }
+        }
+
+        /// <summary>
+        /// 绑定枚举到ComboBox
+        /// </summary>
+        /// <param name="cmb">控件</param>
+        /// <param name="type">枚举类型</param>
+        public static void BindEnumToComboBox(RepositoryItemImageComboBox cmb, Type type)
+        {
+            foreach (Enum item in Enum.GetValues(type))
+            {
+                cmb.Items.Add(new ImageComboBoxItem
+                {
+                    Description = item.DisplayName(),
+                    Value = Convert.ToInt32(item)
                 });
             }
         }
