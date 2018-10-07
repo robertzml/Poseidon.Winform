@@ -80,10 +80,17 @@ namespace Poseidon.Winform.ClientDx
             {
                 try
                 {
-                    CallerFactory<IPrivilegeService>.Instance.Delete(id);
-                    this.privilegeTree.RefreshData();
+                    var result = CallerFactory<IPrivilegeService>.Instance.Delete(id);
 
-                    MessageUtil.ShowInfo("删除成功");
+                    if (result.success)
+                    {
+                        MessageUtil.ShowInfo("删除成功");
+                        this.privilegeTree.RefreshData();
+                    }
+                    else
+                    {
+                        MessageUtil.ShowInfo("删除失败: " + result.errorMessage);
+                    }
                 }
                 catch (PoseidonException pe)
                 {

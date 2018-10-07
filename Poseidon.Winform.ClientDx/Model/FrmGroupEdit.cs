@@ -120,16 +120,16 @@ namespace Poseidon.Winform.ClientDx
                 var entity = CallerFactory<IGroupService>.Instance.FindById(this.currentEntity.Id);
                 SetEntity(entity);
 
-                bool result = CallerFactory<IGroupService>.Instance.Update(entity);
+                var result = CallerFactory<IGroupService>.Instance.Update(entity);
 
-                if (result)
+                if (result.success)
                 {
                     MessageUtil.ShowInfo("保存成功");
                     this.Close();
                 }
                 else
                 {
-                    MessageUtil.ShowInfo("保存失败");
+                    MessageUtil.ShowInfo("保存失败: " + result.errorMessage);
                 }
             }
             catch (PoseidonException pe)

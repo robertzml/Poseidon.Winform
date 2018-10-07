@@ -129,10 +129,17 @@ namespace Poseidon.Winform.ClientDx
                 var entity = CallerFactory<IPrivilegeService>.Instance.FindById(this.currentPrivilege.Id);
                 SetEntity(entity);
 
-                CallerFactory<IPrivilegeService>.Instance.Update(entity);
+                var result = CallerFactory<IPrivilegeService>.Instance.Update(entity);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result.success)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowInfo("保存失败: " + result.errorMessage);
+                }
             }
             catch (PoseidonException pe)
             {

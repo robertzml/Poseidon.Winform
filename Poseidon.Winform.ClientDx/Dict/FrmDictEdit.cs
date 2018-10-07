@@ -135,10 +135,17 @@ namespace Poseidon.Winform.ClientDx
 
                 SetEntity(entity);
 
-                CallerFactory<IDictService>.Instance.Update(entity);
+                var result = CallerFactory<IDictService>.Instance.Update(entity);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result.success)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowInfo("保存失败: " + result.errorMessage);
+                }
             }
             catch (PoseidonException pe)
             {

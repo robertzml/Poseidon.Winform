@@ -264,7 +264,6 @@
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlGroup2});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(577, 171);
             this.layoutControlGroup1.TextVisible = false;
@@ -381,9 +380,13 @@
             this.userGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userGrid.Editable = false;
             this.userGrid.EnableMasterView = false;
+            this.userGrid.EnableMultiSelect = false;
             this.userGrid.Location = new System.Drawing.Point(2, 21);
             this.userGrid.Name = "userGrid";
             this.userGrid.ShowAddMenu = false;
+            this.userGrid.ShowDeleteMenu = false;
+            this.userGrid.ShowEditMenu = false;
+            this.userGrid.ShowFindPanel = false;
             this.userGrid.ShowFooter = false;
             this.userGrid.ShowLineNumber = true;
             this.userGrid.ShowMenu = false;

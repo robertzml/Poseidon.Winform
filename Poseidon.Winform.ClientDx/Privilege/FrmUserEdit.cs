@@ -107,10 +107,17 @@ namespace Poseidon.Winform.ClientDx
                 User entity = CallerFactory<IUserService>.Instance.FindById(this.user.Id);
                 SetEntity(entity);
 
-                CallerFactory<IUserService>.Instance.Update(entity);
+                var result = CallerFactory<IUserService>.Instance.Update(entity);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result.success)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowInfo("保存失败: " + result.errorMessage);
+                }
             }
             catch (PoseidonException pe)
             {

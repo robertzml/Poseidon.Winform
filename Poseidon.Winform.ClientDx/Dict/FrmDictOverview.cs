@@ -125,10 +125,16 @@ namespace Poseidon.Winform.ClientDx
             {
                 try
                 {
-                    CallerFactory<IDictCategoryService>.Instance.Delete(this.currentCategory);
-                    this.treeDict.Reload();
-
-                    MessageUtil.ShowInfo("删除成功");
+                    var result = CallerFactory<IDictCategoryService>.Instance.Delete(this.currentCategory);
+                    if (result.success)
+                    {
+                        this.treeDict.Reload();
+                        MessageUtil.ShowInfo("删除成功");
+                    }
+                    else
+                    {
+                        MessageUtil.ShowClaim("删除失败: " + result.errorMessage);
+                    }
                 }
                 catch (PoseidonException pe)
                 {
@@ -176,10 +182,16 @@ namespace Poseidon.Winform.ClientDx
             {
                 try
                 {
-                    CallerFactory<IDictService>.Instance.Delete(this.currentDict);
-                    this.treeDict.Reload();
-
-                    MessageUtil.ShowInfo("删除成功");
+                    var result = CallerFactory<IDictService>.Instance.Delete(this.currentDict);
+                    if (result.success)
+                    {
+                        this.treeDict.Reload();
+                        MessageUtil.ShowInfo("删除成功");
+                    }
+                    else
+                    {
+                        MessageUtil.ShowClaim("删除失败: " + result.errorMessage);
+                    }
                 }
                 catch (PoseidonException pe)
                 {

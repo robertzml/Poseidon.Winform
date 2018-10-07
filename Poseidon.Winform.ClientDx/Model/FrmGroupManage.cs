@@ -127,10 +127,16 @@ namespace Poseidon.Winform.ClientDx
             {
                 try
                 {
-                    CallerFactory<IGroupService>.Instance.Delete(this.currentGroup);
-                    LoadGroupsTree();
-
-                    MessageUtil.ShowInfo("删除成功");
+                    var result = CallerFactory<IGroupService>.Instance.Delete(this.currentGroup);
+                    if (result.success)
+                    {
+                        LoadGroupsTree();
+                        MessageUtil.ShowInfo("删除成功");
+                    }
+                    else
+                    {
+                        MessageUtil.ShowClaim("删除失败:" + result.errorMessage);
+                    }
                 }
                 catch (PoseidonException pe)
                 {
