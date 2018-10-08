@@ -45,6 +45,7 @@
             this.colId,
             this.colName,
             this.colType});
+            this.tlData.DataSource = null;
             this.tlData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlData.Location = new System.Drawing.Point(0, 0);
             this.tlData.Name = "tlData";
@@ -79,10 +80,10 @@
             // imgCollection
             // 
             this.imgCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imgCollection.ImageStream")));
-            this.imgCollection.InsertGalleryImage("information_16x16.png", "images/function%20library/information_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/function%20library/information_16x16.png"), 0);
-            this.imgCollection.Images.SetKeyName(0, "information_16x16.png");
-            this.imgCollection.InsertGalleryImage("converttoparagraphs_16x16.png", "images/reports/converttoparagraphs_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/reports/converttoparagraphs_16x16.png"), 1);
-            this.imgCollection.Images.SetKeyName(1, "converttoparagraphs_16x16.png");
+            this.imgCollection.InsertImage(global::Poseidon.Winform.ClientDx.Properties.Resources.Information_16x16, "Information_16x16", typeof(global::Poseidon.Winform.ClientDx.Properties.Resources), 0);
+            this.imgCollection.Images.SetKeyName(0, "Information_16x16");
+            this.imgCollection.InsertImage(global::Poseidon.Winform.ClientDx.Properties.Resources.ConvertToParagraphs_16x16, "ConvertToParagraphs_16x16", typeof(global::Poseidon.Winform.ClientDx.Properties.Resources), 1);
+            this.imgCollection.Images.SetKeyName(1, "ConvertToParagraphs_16x16");
             // 
             // DictTree
             // 

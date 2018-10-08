@@ -491,6 +491,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ConvertToParagraphs_16x16.png" />
+    <None Include="Resources\Information_16x16.png" />
     <Content Include="Resources\poseidon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
