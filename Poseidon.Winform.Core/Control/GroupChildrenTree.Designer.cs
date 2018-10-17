@@ -47,12 +47,12 @@
             this.colId,
             this.colName,
             this.colType});
+            this.tlGroup.DataSource = null;
             this.tlGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlGroup.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlGroup.Location = new System.Drawing.Point(0, 0);
             this.tlGroup.Name = "tlGroup";
             this.tlGroup.OptionsBehavior.Editable = false;
-            this.tlGroup.OptionsFind.AllowFindPanel = true;
             this.tlGroup.Size = new System.Drawing.Size(239, 344);
             this.tlGroup.StateImageList = this.imageCollection;
             this.tlGroup.TabIndex = 0;
@@ -84,10 +84,10 @@
             // imageCollection
             // 
             this.imageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection.ImageStream")));
-            this.imageCollection.InsertGalleryImage("documentmap_16x16.png", "images/navigation/documentmap_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/navigation/documentmap_16x16.png"), 0);
-            this.imageCollection.Images.SetKeyName(0, "documentmap_16x16.png");
-            this.imageCollection.InsertGalleryImage("bonote_16x16.png", "images/business%20objects/bonote_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/business%20objects/bonote_16x16.png"), 1);
-            this.imageCollection.Images.SetKeyName(1, "bonote_16x16.png");
+            this.imageCollection.InsertImage(global::Poseidon.Winform.Core.Properties.Resources.DocumentMap_16x16, "DocumentMap_16x16", typeof(global::Poseidon.Winform.Core.Properties.Resources), 0);
+            this.imageCollection.Images.SetKeyName(0, "DocumentMap_16x16");
+            this.imageCollection.InsertImage(global::Poseidon.Winform.Core.Properties.Resources.BONote_16x16, "BONote_16x16", typeof(global::Poseidon.Winform.Core.Properties.Resources), 1);
+            this.imageCollection.Images.SetKeyName(1, "BONote_16x16");
             // 
             // GroupChildrenTree
             // 
